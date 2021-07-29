@@ -137,12 +137,14 @@
     }
 
     .product-grid4 .product-content {
-        padding: 25px
+        padding: 25px;
+        text-align: center;
+        
     }
 
     .product-grid4 .title {
-        font-size: 15px;
-        font-weight: 400;
+        font-size: 20px;
+        font-weight: 700;
         text-transform: capitalize;
         margin: 0 0 7px;
         transition: all .3s ease 0s
@@ -159,7 +161,6 @@
     .product-grid4 .price {
         color: #222;
         font-size: 17px;
-        font-weight: 700;
         margin: 0 2px 15px 0;
         display: block
     }

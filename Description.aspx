@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/description.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<%--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>--%>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -14,16 +14,17 @@
                                 <!-- header !-->
                                 <div class="card-header" style="background-color:white; ">
                                     <nav class="header-navigation" >
-                                        <a href="#" class="btn btn-link">Back to the list</a>
+                                        <%--<a href="#" class="btn btn-link">Back to the list</a>--%>
+                                        <br><br>
                                     </nav>
                                 </div>
-
+                                <br /><br /><br />
                                 <!-- image !-->
                                 <div class="card-body store-body">
                                     <div class="product-info">
                                         <div class="product-gallery">    
                                             <div class="product-gallery-featured">
-                                                <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%><asp:Image ID="imgArtwork" class="zoom" runat="server" />
+                                                <asp:Image ID="imgArtwork" class="zoom" runat="server" />
                                             </div>
                                         </div>
 
@@ -38,11 +39,7 @@
                                                 <div style="border-bottom: 1px solid lightgray;  margin-top: 10%; margin-bottom: 5%"></div>
 
                                                 <h5><b>Artist</b></h5>
-                                                <p>
-                                                    <asp:Label ID="lblArtist" runat="server" Text="Blabla"></asp:Label></p>
-
-                                                <div style="border-bottom: 1px solid lightgray;  margin-top: 10%; margin-bottom: 5%"></div>
-                                                                                                                                                                                                               
+                                                <p><asp:Label ID="lblArtist" runat="server" Text="Blabla"></asp:Label></p>
                                             </div>
                                         </div>
                                     </div>
@@ -50,15 +47,14 @@
                                     <!-- display price and some details !-->
                                     <div class="product-payment">
                                         
-                                        <h3><strong>
-                                            <asp:Label ID="lblName" runat="server" Text="Artwork Name"></asp:Label></strong></h3><br />
-                                        <h4 class="product-title mb-2">
-                                            <asp:Label ID="lblArtistName" runat="server" Text="Artist Name"></asp:Label></h4><br />
+                                        <h3><strong><asp:Label ID="lblName" runat="server" Text="Artwork Name"></asp:Label></strong></h3><br />
+
+                                        <h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server" Text="Artist Name"></asp:Label></h4><br />
+
                                         <p style="color: gray;">Description</p><br />
                                         
                                         <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%>
-                                        <h5 class="product-price display-4" style="font-size:1.5em;">
-                                            <asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label></h5>  <br />
+                                        <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label></h5>  <br />
                                        
                                         
                                         <!-- quantity !-->
@@ -76,5 +72,4 @@
                         </div>
                     </div>
                 </div>
-
 </asp:Content>

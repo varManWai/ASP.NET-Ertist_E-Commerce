@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/wishlist.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<%--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--%>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -10,7 +10,7 @@
 		<div class="container">
 	        <div class="row">
 			    <div class="col-md-12">
-			        <div class="main-heading mb-10">My wishlist</div>
+			        <div class="main-heading mb-10">My Wishlist</div>
 			        <div class="table-wishlist">
 				        <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				        	<thead>
@@ -25,7 +25,7 @@
 					        	<tr>
 					        		<td width="45%">
 					        			<div class="display-flex align-center">
-		                                    <div class="img-product" style="width:30%;">
+		                                    <div class="img-product" style="width:25%;">
 		                                        <%--<img src="Image/Brown.jpg" />--%><asp:Image ID="imgArtwork" runat="server" />
 		                                    </div>
 		                                    <div class="name-product">
@@ -42,7 +42,7 @@
 					        		<td width="15%">
                                         <asp:Button ID="btnRemove" class="round-red-btn small-btn" runat="server" Text="Remove"  />
                                     </td>				        		
-					        	</tr>					        				        	
+					        	</tr>		
 				        	</tbody>
 				        </table>
 				    </div>
