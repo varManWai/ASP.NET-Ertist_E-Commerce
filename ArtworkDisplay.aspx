@@ -7,24 +7,28 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
        
-<%--   <div class="container">--%>
+<%--        </div>--%>
     <h3 class="h3">Artwork </h3>
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="product-grid4">
                 <div class="product-image4">
                     <a href="#">
-                        <img class="pic-1" src="Image/Brown.jpg" />
+                        <%--<img class="pic-1" src="Image/Brown.jpg" />--%><asp:Image ID="imgArtwork" runat="server" />
                     </a>
                     <ul class="social">
                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title">Product Name</h3>
-                    <p style="color: gray; font-size:14px;">Type</p><br />
+                    <h3 class="title">
+                        <asp:Label ID="lblName" runat="server"></asp:Label>
+                    </h3>
+                    <p style="color: gray; font-size:14px;">
+                        <asp:Label ID="lblType" runat="server"></asp:Label>
+                    </p><br />
                     <div class="price">
-                        Price
+                        <asp:Label ID="lblPrice" runat="server">EEE</asp:Label>
                     </div>                   
                 </div>
             </div>

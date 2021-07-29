@@ -30,7 +30,7 @@
 }
 
     .table-wishlist tr td .img-product {
-        width: 72px;
+        width: 130%;
         float: left;
         margin-left: 8px;
         margin-right: 31px;
@@ -51,6 +51,7 @@
 
     .table-wishlist tr td.price {
         font-weight: 600;
+        font-size: 15px;
     }
 
     .table-wishlist tr td .quanlity {
@@ -184,7 +185,5 @@
     color: #fff;
 }
 
-.trash-icon {
-    font-size: 20px;
-    color: #212529;
-}a
+
+

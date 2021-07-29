@@ -164,7 +164,7 @@
         display: block
     }
 
-        .product-grid4 .price span {
+     /*   .product-grid4 .price span {
             color: #909090;
             font-size: 13px;
             font-weight: 400;
@@ -173,7 +173,7 @@
             text-align: left;
             vertical-align: middle;
             display: inline-block
-        }
+        }*/
 /*.product-grid4 .add-to-cart{border:1px solid #e5e5e5;display:inline-block;padding:10px 20px;color:#888;font-weight:600;font-size:14px;border-radius:4px;transition:all .3s}
 .product-grid4:hover .add-to-cart{border:1px solid transparent;background:#16a085;color:#fff}
 .product-grid4 .add-to-cart:hover{background-color:#505050;box-shadow:0 0 10px rgba(0,0,0,.5)}*/
