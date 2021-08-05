@@ -26,7 +26,7 @@
 					        		<td width="45%">
 					        			<div class="display-flex align-center">
 		                                    <div class="img-product" style="width:25%;">
-		                                        <%--<img src="Image/Brown.jpg" />--%><asp:Image ID="imgArtwork" runat="server" />
+		                                        <img src="Image/Star Clock at Night II.jpg" />
 		                                    </div>
 		                                    <div class="name-product">
 		                                        &emsp;<asp:Label ID="lblName" runat="server"></asp:Label>

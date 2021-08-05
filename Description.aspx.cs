@@ -11,7 +11,7 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            imgArtwork.ImageUrl = "Image/Star Clock at Night II.jpg";
+
         }
     }
 }

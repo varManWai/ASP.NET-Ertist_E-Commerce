@@ -24,7 +24,7 @@
                                     <div class="product-info">
                                         <div class="product-gallery">    
                                             <div class="product-gallery-featured">
-                                                <asp:Image ID="imgArtwork" class="zoom" runat="server" />
+                                                <img src="Image/Star Clock at Night II.jpg" />
                                             </div>
                                         </div>
 
