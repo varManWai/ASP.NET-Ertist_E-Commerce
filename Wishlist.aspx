@@ -37,7 +37,7 @@
                                         <asp:Label ID="lblPrice" runat="server"></asp:Label>
                                     </td>
 					        		<td width="15%">
-                                        <asp:Button ID="btnAddCart" class="round-black-btn small-btn" runat="server" Text="Add To Cart" />
+                                        <asp:Button ID="btnDetails" class="round-black-btn small-btn" runat="server" Text="See More" />
                                     </td>
 					        		<td width="15%">
                                         <asp:Button ID="btnRemove" class="round-red-btn small-btn" runat="server" Text="Remove"  />

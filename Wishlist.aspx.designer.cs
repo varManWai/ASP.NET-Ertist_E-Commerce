@@ -42,13 +42,13 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.Label lblPrice;
 
         /// <summary>
-        /// btnAddCart control.
+        /// btnDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddCart;
+        protected global::System.Web.UI.WebControls.Button btnDetails;
 
         /// <summary>
         /// btnRemove control.
