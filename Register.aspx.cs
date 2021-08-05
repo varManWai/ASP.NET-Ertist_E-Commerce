@@ -11,7 +11,15 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
+                string role = Request.QueryString["role"];
+            }
+        }
 
+        protected void loginPage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -12,35 +12,35 @@
 </head>
 <body>
     <header>
-        <div class="col text-center" style="margin:3%; padding:10px; color:white; background: #1a1a1a; text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);">
-            <h1>Registration.</h1>
+        <div class="col" style="margin-left:5%; margin-top:2%; padding:10px; color:white; background: #1a1a1a; text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);">
+            <h1>Register as.</h1>
         </div>
     </header>
 
     <form id="form1" runat="server">
         
-        <div class="row"  style="margin:5%;">
+        <div class="row"  style="margin:3% 5% 5% 4%;">
             <div class="col-sm-6">
                 <div class="card text-center">
                     <div class="card-header" style="background-color:gainsboro;">
-                        <bold>User</bold>
+                        <strong>User</strong>
                     </div>
                     <div class="card-body">
-                        <img src="Image/reg_user.jpg" alt="user" class="card-title" height="200px" width="200px"/>
+                        <img src="Image/reg_user.jpg" alt="user" class="card-title" height="300px" width="300px"/>
                         <p class="card-text">Pick the artworks and bring it home.</p>
-                        <asp:Button ID="btn_user" runat="server" Text="Register" class="btn btn-outline-dark"/>
+                        <asp:Button ID="btn_user" runat="server" Text="Register" class="btn btn-outline-dark" OnClick="btn_user_Click"/>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="card text-center">
                     <div class="card-header" style="background-color:gainsboro;">
-                        <bold>Artist</bold>
+                        <strong>Artist</strong>
                     </div>
                     <div class="card-body">
-                        <img src="Image/reg_artist.jpg" class="card-title" alt="artist" height="200px" width="200px" />
+                        <img src="Image/reg_artist.jpg" class="card-title" alt="artist" height="300px" width="300px" />
                         <p class="card-text">Create the artworks and bring money home.</p>
-                        <asp:Button ID="btn_artist" runat="server" Text="Register" CssClass="btn btn-outline-dark" />
+                        <asp:Button ID="btn_artist" runat="server" Text="Register" CssClass="btn btn-outline-dark" OnClick="btn_artist_Click" />
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 
     <footer>
         <div class="col text-center">
-            <h6>ERTIST</h6>
+            <a href="Homepage.aspx"><h6 style="color:black;">ERTIST</h6></a>
         </div>
     </footer>
 
