@@ -132,11 +132,11 @@
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
     <Content Include="Image\reg_user.jpg" />
+    <Content Include="Image\Star Clock at Night II.jpg" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterMain.aspx" />
     <Content Include="Wishlist.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Image\Brown.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

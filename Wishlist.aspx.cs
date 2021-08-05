@@ -11,8 +11,8 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            imgArtwork.ImageUrl = "Image/Brown.jpg";
-            lblName.Text = "HiHi";
+            imgArtwork.ImageUrl = "Image/Star Clock at Night II.jpg";
+            lblName.Text = "Star Clock at Night II";
             lblPrice.Text = "RM 100";
         }
     }

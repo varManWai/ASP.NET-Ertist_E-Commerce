@@ -22,7 +22,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title">
-                        <asp:Label ID="lblName" runat="server">Brown</asp:Label>
+                        <asp:Label ID="lblName" runat="server">Star Clock at Night II</asp:Label>
                     </h3>
                     <p style="color: gray; font-size:14px;">
                         <i><asp:Label ID="lblType" runat="server">Painting</asp:Label></i>
