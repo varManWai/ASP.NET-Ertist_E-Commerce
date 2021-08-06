@@ -30,31 +30,34 @@
 
                                         <!--description items-->
                                        
-                                        <div class="product-seller-recommended">                                                                        
+                                       <%-- <div class="product-seller-recommended">                                                                        
                                             <div class="product-description mb-5">
                                                 <br />
                                                 <h5><b>Description</b></h5>
-                                                <p><asp:Label ID="lblDesc" runat="server" Text="Blabla"></asp:Label></p>
+                                                
                                                
                                                 <div style="border-bottom: 1px solid lightgray;  margin-top: 10%; margin-bottom: 5%"></div>
 
                                                 <h5><b>Artist</b></h5>
-                                                <p><asp:Label ID="lblArtist" runat="server" Text="Blabla"></asp:Label></p>
+                                                <p><asp:Label ID="lblArtist" runat="server"></asp:Label></p>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
 
                                     <!-- display price and some details !-->
                                     <div class="product-payment">
                                         
-                                        <h3><strong><asp:Label ID="lblName" runat="server" Text="Artwork Name"></asp:Label></strong></h3><br />
+                                        <h3><strong><asp:Label ID="lblName" runat="server"></asp:Label></strong></h3><br />
 
-                                        <h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server" Text="Artist Name"></asp:Label></h4><br />
+                                        <h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server"></asp:Label></h4><br />
 
-                                        <p style="color: gray;">Description</p><br />
-                                        
+                                        <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
+
+                                        <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>
+                                        <p style="color: gray;">Status: <asp:Label ID="lblStatus" runat="server"></asp:Label></p>
+
                                         <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%>
-                                        <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label></h5>  <br />
+                                        <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server"></asp:Label></h5>  <br />
                                        
                                         
                                         <!-- quantity !-->
