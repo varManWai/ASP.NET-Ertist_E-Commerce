@@ -17,7 +17,7 @@
             <div class="product-grid4">
                 <div class="product-image4">
                     <a href="#">
-                        <img class="pic-1" style="height:300px" src="<%# GetImage(Eval("picture")) %>" />
+                        <img class="pic-1" style="height:300px;" src="<%# GetImage(Eval("picture")) %>" />
                     </a>
                     <ul class="social">
                         <%--<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>--%>

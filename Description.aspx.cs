@@ -17,7 +17,7 @@ namespace Ertist
             if (!Page.IsPostBack)
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
-                string sql = "Select [picture], [description], [name], [price], [available] from Artwork where artworkID = @artworkID";
+                string sql = "Select * from Artwork where artworkID = @artworkID";
 
                 //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -36,7 +36,20 @@ namespace Ertist
                 {
                     picture.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
                     lblDesc.Text = (string)dr["description"];
-                    //lblArtistName.Text = (string)dr["Artist"];
+                    if(dr["categoryID"].Equals(1))
+                    {
+                        lblCategory.Text = "Painting";
+
+                    }else if (dr["categoryID"].Equals(2))
+                    {
+                        lblCategory.Text = "Ink";
+
+                    }else if (dr["categoryID"].Equals(3))
+                    {
+                        lblCategory.Text = "Watercolour";
+
+                    }
+                    //lblCategory.Text = (string)dr["Artist"];
                     lblName.Text = (string)dr["name"];
                     lblPrice.Text = "RM " + Convert.ToString(dr["price"]);
                     //lblDate.Text = (string)dr["Date"];
@@ -48,6 +61,37 @@ namespace Ertist
                 dr.Close();
                 con.Close();
             }
+        }
+
+        protected void btnAddWish_Click(object sender, EventArgs e)
+        {
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection(strCon);
+            con.Open();
+
+                string sqlInsert = "INSERT INTO Wishlist (wishlistID, artworkID, userID) VALUES(@wishlistID, @artworkID, @userID)";
+               
+                SqlCommand cmd = new SqlCommand(sqlInsert, con);
+
+            //insert
+                int wishlistID = 
+                int artworkID = txtName.Text;
+                int userID = txtPrice.Text;
+
+                cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                cmd.Parameters.AddWithValue("@picture", imgbyte);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@stock", stock);
+                cmd.Parameters.AddWithValue("@available", available);
+
+
+                //add the rest
+
+                cmd.ExecuteNonQuery();
+                con.Close();
         }
     }
 }

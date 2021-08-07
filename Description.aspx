@@ -25,7 +25,7 @@
                                         <div class="product-gallery">    
                                             <div class="product-gallery-featured">
                                                 <%--<img src="GetImage("picture")" />--%>
-                                                <asp:Image ID="picture" runat="server" />
+                                                <asp:Image ID="picture" class="zoom" runat="server" />
                                             </div>
                                         </div>
 
@@ -48,17 +48,17 @@
                                     <!-- display price and some details !-->
                                     <div class="product-payment">
                                         
-                                        <h3><strong><asp:Label ID="lblName" runat="server"></asp:Label></strong></h3><br />
+                                        <h3><strong><asp:Label ID="lblName" runat="server"></asp:Label></strong></h3>
 
-                                        <%--<h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server"></asp:Label></h4><br />--%>
+                                        <p style="color:#ce2b2b;"><i><asp:Label ID="lblCategory" runat="server"></asp:Label></i></p><br />
 
                                         <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
 
-                                       <%-- <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>--%>
+                                        <%--<p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>--%>
                                         <p style="color: gray;"><asp:Label ID="lblStatus" runat="server"></asp:Label></p>
 
                                         <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%>
-                                        <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server"></asp:Label></h5>  <br />
+                                        <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server"></asp:Label></h5>  <br /><br /><br />
                                        
                                         
                                         <!-- quantity !-->
@@ -68,7 +68,7 @@
                                         <div class="add">                                           
                                             &emsp;&emsp;&emsp;
                                              <asp:Button ID="btnAddCart" runat="server" Text="Add To Cart" /> &emsp;&emsp;
-                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" />
+                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" OnClick="btnAddWish_Click" />
                                         </div>                                       
                                     </div>
                                 </div>
