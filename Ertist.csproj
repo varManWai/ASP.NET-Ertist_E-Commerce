@@ -112,6 +112,7 @@
     <Content Include="App_Data\ertistDB_log.ldf">
       <DependentUpon>ertistDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -119,7 +120,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\ArtworkDisplay.css" />
+    <Content Include="css\cart.css" />
     <Content Include="css\description.css" />
+    <Content Include="css\navbar.css" />
+    <Content Include="css\navbar1.css">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>navbar.scss</DependentUpon>
+    </Content>
     <Content Include="css\wishlist.css" />
     <Content Include="Default.aspx" />
     <Content Include="ArtworkDisplay.aspx" />
@@ -143,7 +151,12 @@
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterMain.aspx" />
+    <Content Include="testing.html" />
     <Content Include="Wishlist.aspx" />
+    <Content Include="css\navbar.scss">
+      <Generator>SassTranspiler</Generator>
+      <LastGenOutput>navbar1.css</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -188,6 +201,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
