@@ -15,6 +15,15 @@ namespace Ertist
     {
 
         /// <summary>
+        /// picture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image picture;
+
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -24,15 +33,6 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
-        /// lblArtistName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArtistName;
-
-        /// <summary>
         /// lblDesc control.
         /// </summary>
         /// <remarks>
@@ -40,15 +40,6 @@ namespace Ertist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDesc;
-
-        /// <summary>
-        /// lblDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
 
         /// <summary>
         /// lblStatus control.

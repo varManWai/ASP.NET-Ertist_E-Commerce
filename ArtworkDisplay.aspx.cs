@@ -15,13 +15,13 @@ namespace Ertist
         {
             //display image in repeater
             SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
 
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT [artID], [image], [type], [price] FROM [ArtWork]";
+            string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price] FROM [ArtWork]";
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
