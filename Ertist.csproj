@@ -132,6 +132,7 @@
     <Content Include="Default.aspx" />
     <Content Include="ArtworkDisplay.aspx" />
     <Content Include="Description.aspx" />
+    <Content Include="Ertisit_Cart.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="Description.aspx.designer.cs">
       <DependentUpon>Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ertisit_Cart.aspx.cs">
+      <DependentUpon>Ertisit_Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ertisit_Cart.aspx.designer.cs">
+      <DependentUpon>Ertisit_Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
