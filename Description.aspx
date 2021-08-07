@@ -24,7 +24,8 @@
                                     <div class="product-info">
                                         <div class="product-gallery">    
                                             <div class="product-gallery-featured">
-                                                <img src="Image/Star Clock at Night II.jpg" />
+                                                <%--<img src="GetImage("picture")" />--%>
+                                                <asp:Image ID="picture" runat="server" />
                                             </div>
                                         </div>
 
@@ -49,12 +50,12 @@
                                         
                                         <h3><strong><asp:Label ID="lblName" runat="server"></asp:Label></strong></h3><br />
 
-                                        <h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server"></asp:Label></h4><br />
+                                        <%--<h4 class="product-title mb-2"><asp:Label ID="lblArtistName" runat="server"></asp:Label></h4><br />--%>
 
                                         <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
 
-                                        <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>
-                                        <p style="color: gray;">Status: <asp:Label ID="lblStatus" runat="server"></asp:Label></p>
+                                       <%-- <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>--%>
+                                        <p style="color: gray;"><asp:Label ID="lblStatus" runat="server"></asp:Label></p>
 
                                         <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%>
                                         <h5 class="product-price display-4" style="font-size:1.5em;"><asp:Label ID="lblPrice" runat="server"></asp:Label></h5>  <br />
