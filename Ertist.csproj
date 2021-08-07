@@ -106,7 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="App_Data\ertistDB.mdf" />
+    <Content Include="App_Data\ertistDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\ertistDB_log.ldf">
       <DependentUpon>ertistDB.mdf</DependentUpon>
     </Content>
