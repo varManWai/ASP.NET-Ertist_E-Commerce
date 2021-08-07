@@ -40,7 +40,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-    </form>
+    
 
     <header class="navbar_section">
         <div class="navbar_section_upper">
@@ -312,6 +312,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-
+        </form>
 </body>
 </html>
