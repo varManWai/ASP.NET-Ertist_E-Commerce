@@ -1,189 +1,190 @@
-﻿.cart-wrap {
-    padding: 40px 0;
-    font-family: 'Open Sans', sans-serif;
+﻿body {
+    background-color: #f5f5f5;
 }
 
-.main-heading {
-    font-size: 19px;
-    margin-bottom: 20px;
-}
-
-.table-wishlist table {
+.cart_section .page_header {
+    background-color: #1b1b1b;
+    height: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     width: 100%;
 }
 
-.table-wishlist thead {
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 5px;
-}
-
-    .table-wishlist thead tr th {
-        padding: 8px 0 18px;
-        color: #484848;
-        font-size: 15px;
-        font-weight: 400;
+    .cart_section .page_header h1 {
+        color: #ffffff;
+        padding-bottom: 35px;
+        font-size: clamp(26px,4vw,36px);
     }
 
-.table-wishlist tr td {
-    padding: 25px 0;
-    vertical-align: middle;
+.cart_section .cart_all {
+    height: auto;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
 }
 
-    .table-wishlist tr td .img-product {
-        width: 130%;
-        float: left;
-        margin-left: 8px;
-        margin-right: 31px;
-        line-height: 63px;
+    .cart_section .cart_all .artwork_container_all {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
     }
 
-        .table-wishlist tr td .img-product img {
-            width: 100%;
+        .cart_section .cart_all .artwork_container_all .total_artwork_cart {
+            padding-top: 30px;
+            padding-left: 47px;
+            padding-bottom: 5px;
         }
 
-    .table-wishlist tr td .name-product {
-        font-size: 15px;
-        color: #484848;
-        padding-top: 8px;
-        line-height: 24px;
-        width: 50%;
-    }
+            .cart_section .cart_all .artwork_container_all .total_artwork_cart span {
+                font-size: 18px;
+                font-family: "Lato", sans-serif;
+                color: #0a0a0a;
+            }
 
-    .table-wishlist tr td.price {
-        font-weight: 600;
-        font-size: 15px;
-    }
+        .cart_section .cart_all .artwork_container_all .artwork_container {
+            background-color: White;
+            border: 1px #c8c8c8 solid;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
 
-    .table-wishlist tr td .quanlity {
-        position: relative;
-    }
+            .cart_section .cart_all .artwork_container_all .artwork_container .artwork_image {
+                overflow: hidden;
+                width: 100%;
+                max-width: 270px;
+                height: 100%;
+                height: 302px;
+            }
 
-.total {
-    font-size: 24px;
-    font-weight: 600;
-    color: #8660e9;
-}
+                .cart_section .cart_all .artwork_container_all .artwork_container .artwork_image img {
+                    width: 100%;
+                    height: 303px;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    padding: 38px 37px;
+                    padding-right: 0px;
+                }
 
-.display-flex {
-    display: flex;
-}
+            .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details {
+                padding: 38px 37px;
+            }
 
-.align-center {
-    align-items: center;
-}
+                .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .artwor_details_name {
+                    font-size: clamp(13px, 2vw, 24px);
+                    font-family: "Cardo", serif;
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                    text-overflow: ellipsis;
+                    height: auto;
+                    width: 90%;
+                    max-width: 614px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
 
-.round-black-btn {
-    border-radius: 25px;
-    background: #212529;
-    color: #fff;
-    padding: 5px 20px;
-    display: inline-block;
-    border: solid 2px #212529;
-    transition: all 0.5s ease-in-out 0s;
-    cursor: pointer;
-    font-size: 14px;
-}
+                .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .artist {
+                    width: 100%;
+                    padding-top: 12px;
+                    max-width: 614px;
+                    border-top: 1px black solid;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: left;
+                    -ms-flex-pack: left;
+                    justify-content: left;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                }
 
-    .round-black-btn:hover,
-    .round-black-btn:focus {
-        background: transparent;
-        color: #212529;
-        text-decoration: none;
-    }
+                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .artist img {
+                        width: 100%;
+                        max-width: 25px;
+                        height: 100%;
+                        max-height: 25px;
+                        border-radius: 300px;
+                    }
 
-.round-red-btn {
-    border-radius: 25px;
-    background: #ff0000;
-    color: #fff;
-    padding: 5px 20px;
-    display: inline-block;
-    border: solid 2px #ff0000;
-    transition: all 0.5s ease-in-out 0s;
-    cursor: pointer;
-    font-size: 14px;
-}
+                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .artist span {
+                        font-size: 13px;
+                        padding-left: 10px;
+                        text-overflow: ellipsis;
+                        width: 80%;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                    }
 
-    .round-red-btn:hover,
-    .round-red-btn:focus {
-        background: transparent;
-        color: #ff0000;
-        text-decoration: none;
-    }
+                .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .artwork_description {
+                    padding-top: 10px;
+                    font-size: clamp(10px, 2vw, 13px);
+                    width: 100%;
+                    max-width: 614px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                }
 
-.mb-10 {
-    margin-bottom: 10px !important;
-}
+                .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove {
+                    padding-top: 17px;
+                    padding-bottom: 2px;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                }
 
-.mt-30 {
-    margin-top: 30px !important;
-}
+                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove .price {
+                        font-size: clamp(15px, 2.5vw, 28px);
+                        font-family: "Cardo", serif;
+                    }
 
-.d-block {
-    display: block;
-}
-
-.custom-form label {
-    font-size: 14px;
-    line-height: 14px;
-}
-
-.pretty.p-default {
-    margin-bottom: 15px;
-}
-
-.pretty input:checked ~ .state.p-primary-o label:before,
-.pretty.p-toggle .state.p-primary-o label:before {
-    border-color: #8660e9;
-}
-
-.pretty.p-default:not(.p-fill) input:checked ~ .state.p-primary-o label:after {
-    background-color: #8660e9 !important;
-}
-
-.main-heading.border-b {
-    border-bottom: solid 1px #ededed;
-    padding-bottom: 15px;
-    margin-bottom: 20px !important;
-}
-
-.custom-form .pretty .state label {
-    padding-left: 6px;
-}
-
-    .custom-form .pretty .state label:before {
-        top: 1px;
-    }
-
-    .custom-form .pretty .state label:after {
-        top: 1px;
-    }
-
-.custom-form .form-control {
-    font-size: 14px;
-    height: 38px;
-}
-
-    .custom-form .form-control:focus {
-        box-shadow: none;
-    }
-
-.custom-form textarea.form-control {
-    height: auto;
-}
-
-.mt-40 {
-    margin-top: 40px !important;
-}
-
-.in-stock-box {
-    background: #ff0000;
-    font-size: 12px;
-    text-align: center;
-    border-radius: 25px;
-    padding: 4px 15px;
-    display: inline-block;
-    color: #fff;
-}
-
-
-
+                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove button {
+                        background-color: #ca3f49;
+                        outline: none;
+                        border: none;
+                        border-radius: 300px;
+                        width: 100%;
+                        max-width: 158px;
+                        height: 38px;
+                        color: white;
+                        font-size: clamp(10px, 1.5vw, 15px);
+                        margin-left: 20px;
+                        letter-spacing: 0.12em;
+                    }
