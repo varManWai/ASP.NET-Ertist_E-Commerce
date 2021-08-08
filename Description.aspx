@@ -7,6 +7,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     
+    <div style="padding:5%">
      <div class="container" style="font-size:12px;">
                     <div class="row">
                         <div class="col-lg-12">
@@ -76,4 +77,5 @@
                         </div>
                     </div>
                 </div>
+        </div>
 </asp:Content>
