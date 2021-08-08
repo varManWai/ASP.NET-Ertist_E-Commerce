@@ -40,7 +40,8 @@ namespace Ertist
                     txtDesc.Text = (string)dr["description"];
                     txtStock.Text = (string)dr["stock"].ToString();
                     ddlAvailable.Text = (string)dr["available"];
-                    ddlCategory.Text = (string)dr["categoryID"].ToString();
+                    ddlCategory.SelectedValue = (string)dr["categoryID"].ToString();
+                    ddlGallery.SelectedValue = (string)dr["galleryID"].ToString();
 
                 }
 
@@ -57,12 +58,11 @@ namespace Ertist
             string description = txtDesc.Text;
             int stock = Convert.ToInt32(txtStock.Text);
             string available = ddlAvailable.SelectedItem.Text;
-            //string category = ddlCategory.SelectedItem.Text;
-            int painting = 1;
-            int ink = 2;
-            int watercolour = 3;
+            string category = ddlCategory.SelectedValue;
+            string gallery = ddlGallery.SelectedValue;
 
-            string sql = @"update Artwork set name = @name, price = @price, description = @description, available = @available, categoryID = @categoryID where artworkID = @artworkID";
+
+            string sql = @"update Artwork set name = @name, price = @price, description = @description, available = @available, categoryID = @categoryID, galleryID = @galleryID where artworkID = @artworkID";
 
             //Connection
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -75,21 +75,9 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@description", description);
             cmd.Parameters.AddWithValue("@stock", stock);
             cmd.Parameters.AddWithValue("@available", available);
-            if (ddlCategory.SelectedItem.Text.Equals("Painting"))
-            {
-                cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(painting));
-
-            }
-            else if (ddlCategory.SelectedItem.Text.Equals("Ink"))
-            {
-                cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(ink));
-
-            }
-            else if (ddlCategory.SelectedItem.Text.Equals("Watercolour"))
-            {
-                cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(watercolour));
-            }
-
+            cmd.Parameters.AddWithValue("@categoryID", category);
+            cmd.Parameters.AddWithValue("@galleryID", gallery);
+            
             con.Open();
             cmd.ExecuteNonQuery(); //use in update, insert, delete
             con.Close();

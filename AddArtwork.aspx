@@ -75,11 +75,11 @@
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-                <%--<tr>
+                <tr>
                     <td class="auto-style3">Gallery</td>
                     <td>
                         <asp:DropDownList ID="ddlGallery" runat="server" DataSourceID="SqlGallery" DataTextField="name" DataValueField="galleryID"></asp:DropDownList></td>
-                </tr>--%>
+                </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</td>

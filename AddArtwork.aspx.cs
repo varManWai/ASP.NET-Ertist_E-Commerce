@@ -26,7 +26,7 @@ namespace Ertist
                 byte[] imgbyte = FileUpload1.FileBytes;
 
                 //string sqlUpdate = "UPDATE ArtWork set [image] = @image WHERE [artID] = @id";
-                string sqlInsert = "INSERT INTO ArtWork (artworkID, name, price, description, picture, stock, available, categoryID) VALUES(@artworkID, @name, @price, @description, @picture, @stock, @available, @categoryID)";
+                string sqlInsert = "INSERT INTO ArtWork (artworkID, name, price, description, picture, stock, available, categoryID, galleryID) VALUES(@artworkID, @name, @price, @description, @picture, @stock, @available, @categoryID, @galleryID)";
 
                 //SqlCommand cmd = new SqlCommand("INSERT INTO ArtWork(image) VALUES(@image) WHERE [artID] = '4001'");
 
@@ -44,9 +44,11 @@ namespace Ertist
                 string description = txtDesc.Text;
                 int stock = 1;
                 string available = ddlAvailable.SelectedItem.Text;
-                int painting = 1;
-                int ink = 2;
-                int watercolour = 3;
+                //int painting = 1;
+                //int ink = 2;
+                //int watercolour = 3;
+                string category = ddlCategory.SelectedValue;
+                string gallery = ddlGallery.SelectedValue;
                 //string galleryID = ddlGallery.SelectedItem.Text;
 
                 cmd.Parameters.AddWithValue("@artworkID", artworkID);
@@ -56,21 +58,22 @@ namespace Ertist
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock));
                 cmd.Parameters.AddWithValue("@available", available);
-                
-                if (ddlCategory.SelectedItem.Text.Equals("Painting"))
-                {
-                    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(painting));
+                cmd.Parameters.AddWithValue("@categoryID", category);
+                cmd.Parameters.AddWithValue("@galleryID", gallery);
+                //if (ddlCategory.SelectedItem.Text.Equals("Painting"))
+                //{
+                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(painting));
 
-                }
-                else if (ddlCategory.SelectedItem.Text.Equals("Ink"))
-                {
-                    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(ink));
+                //}
+                //else if (ddlCategory.SelectedItem.Text.Equals("Ink"))
+                //{
+                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(ink));
 
-                }
-                else if (ddlCategory.SelectedItem.Text.Equals("Watercolour"))
-                {
-                    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(watercolour));
-                }
+                //}
+                //else if (ddlCategory.SelectedItem.Text.Equals("Watercolour"))
+                //{
+                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(watercolour));
+                //}
 
                 
 

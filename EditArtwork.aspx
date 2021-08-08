@@ -23,7 +23,7 @@
                         
                         <asp:BoundField DataField="available" HeaderText="Available" />
                         <asp:BoundField DataField="categoryID" HeaderText="Category" />
-                        <%--<asp:BoundField DataField="galleryID" HeaderText="Gallery" />--%>
+                        <asp:BoundField DataField="galleryID" HeaderText="Gallery" />
                         <asp:HyperLinkField Text="Update" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}" />
                         <asp:HyperLinkField Text="Detele" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="DeleteArtwork.aspx?artworkID={0}" />
                     </Columns>

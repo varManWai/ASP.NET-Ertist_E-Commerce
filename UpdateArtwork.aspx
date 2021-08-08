@@ -76,11 +76,16 @@
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-                <%--<tr>
-                    <td class="auto-style3">Gallery</td>
-                    <td>
+                <tr>
+                    <td class="auto-style3" style="height: 22px">Gallery</td>
+                    <td style="height: 22px">
                         <asp:DropDownList ID="ddlGallery" runat="server" DataSourceID="SqlGallery" DataTextField="name" DataValueField="galleryID"></asp:DropDownList></td>
-                </tr>--%>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="height: 22px">&nbsp;</td>
+                    <td style="height: 22px">
+                        &nbsp;</td>
+                </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">
                         <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
