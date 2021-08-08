@@ -12,13 +12,6 @@
 
 
     <link rel="stylesheet" href="./css/cart.css">
-    <title>Hello, world!!!</title>
-
-
-
-
-
-
 
 
 
