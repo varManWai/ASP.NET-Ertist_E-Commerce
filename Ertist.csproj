@@ -104,6 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddArtwork.aspx" />
+    <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -192,6 +194,20 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddArtwork.aspx.cs">
+      <DependentUpon>AddArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddArtwork.aspx.designer.cs">
+      <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditArtwork.aspx.cs">
+      <DependentUpon>EditArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditArtwork.aspx.designer.cs">
+      <DependentUpon>EditArtwork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
