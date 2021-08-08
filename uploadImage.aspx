@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-   <form id="form1" runat="server">
+    <form id="form1" runat="server">
         <div>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <br />
@@ -56,24 +56,25 @@
                     <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
                     <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
                 </Columns>
-            </asp:GridView>--%><%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>--%>
+            </asp:GridView>--%>
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>--%>
             <br />
-            
+
             <!---Display Images-->
             <br />
-            <div style="width: 900px;">
-            <asp:GridView ID="Images" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
-                <Columns>
-                    <asp:BoundField DataField="artID" HeaderText="artID" />
-                    <asp:TemplateField HeaderText="Image">
-                        <ItemTemplate>
-                            <asp:Image ID="Image1" runat="server" width="200" height="300"/>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
+            <div style="width: 800px;">
+                <asp:GridView ID="Images" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
+                    <Columns>
+                        <asp:BoundField DataField="artworkID" HeaderText="artworkID" />
+                        <asp:TemplateField HeaderText="Image">
+                            <ItemTemplate>
+                                <asp:Image ID="Image1" runat="server" Width="200" Height="200" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
                 <br />
-                </div>
+            </div>
         </div>
     </form>
 </body>

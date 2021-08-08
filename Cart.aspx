@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Ertist.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Ertist.Cart" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-     <!-- Google font -->
+    <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -11,14 +12,7 @@
 
 
     <link rel="stylesheet" href="./css/cart.css">
-    <title>Hello, world!</title>
 
-
-    
-
-
-
-    
 
 
 
@@ -63,7 +57,7 @@
                         <img src="./Image/reg_artist.jpg" alt="">
                     </div>
                     <div class="artwork_details">
-                        <span class="artwor_details_name"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam
+                        <span class="artwor_details_name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam
                             nec amet, scelerisque pharetra
                             facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
                             suscipit
@@ -403,7 +397,7 @@
 
 
 
-   
+
 
 
 </asp:Content>
