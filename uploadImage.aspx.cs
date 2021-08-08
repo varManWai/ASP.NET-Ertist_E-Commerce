@@ -16,20 +16,20 @@ namespace Ertist
         protected void Page_Load(object sender, EventArgs e)
         {
             //Display Image
-            //if (!this.IsPostBack)
-            //{
-            //    string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //    using (SqlConnection conn = new SqlConnection(strCon))
-            //    {
-            //        using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM ArtWork", conn))
-            //        {
-            //            DataTable dt = new DataTable();
-            //            sda.Fill(dt);
-            //            Images.DataSource = dt;
-            //            Images.DataBind();
-            //        }
-            //    }
-            //}
+            if (!this.IsPostBack)
+            {
+                string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(strCon))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM ArtWork", conn))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        Images.DataSource = dt;
+                        Images.DataBind();
+                    }
+                }
+            }
 
         }
 

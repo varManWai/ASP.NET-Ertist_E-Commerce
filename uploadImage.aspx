@@ -62,13 +62,13 @@
 
             <!---Display Images-->
             <br />
-            <div style="width: 900px;">
+            <div style="width: 800px;">
                 <asp:GridView ID="Images" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
                     <Columns>
-                        <asp:BoundField DataField="artID" HeaderText="artID" />
+                        <asp:BoundField DataField="artworkID" HeaderText="artworkID" />
                         <asp:TemplateField HeaderText="Image">
                             <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server" Width="200" Height="300" />
+                                <asp:Image ID="Image1" runat="server" Width="200" Height="200" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
