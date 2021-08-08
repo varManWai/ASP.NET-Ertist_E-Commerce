@@ -1,8 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="uploadImage.aspx.cs" Inherits="Ertist.uploadImage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="uploadImage.aspx.cs" Inherits="Ertist.uploadImage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div id="form1" runat="server">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+   <form id="form1" runat="server">
         <div>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <br />
@@ -53,23 +58,23 @@
                 </Columns>
             </asp:GridView>--%><%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>--%>
             <br />
-
+            
             <!---Display Images-->
             <br />
             <div style="width: 900px;">
-                <asp:GridView ID="Images" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
-                    <Columns>
-                        <asp:BoundField DataField="artID" HeaderText="artID" />
-                        <asp:TemplateField HeaderText="Image">
-                            <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server" Width="200" Height="300" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+            <asp:GridView ID="Images" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
+                <Columns>
+                    <asp:BoundField DataField="artID" HeaderText="artID" />
+                    <asp:TemplateField HeaderText="Image">
+                        <ItemTemplate>
+                            <asp:Image ID="Image1" runat="server" width="200" height="300"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
                 <br />
-            </div>
+                </div>
         </div>
-    </div>
-
-</asp:Content>
+    </form>
+</body>
+</html>

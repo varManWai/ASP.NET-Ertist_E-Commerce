@@ -24,6 +24,11 @@
         border-radius: 300px;
     }
 
+
+.contain_container{
+    margin-top:150px;
+}
+
 body {
     margin: 0;
     padding: 0;

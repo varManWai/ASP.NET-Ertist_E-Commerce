@@ -40,278 +40,280 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-    
 
-    <header class="navbar_section">
-        <div class="navbar_section_upper">
-            <div class="navbar_upper_all">
-                <div class="logo">
-                    ERTIST
+
+        <header class="navbar_section">
+            <div class="navbar_section_upper">
+                <div class="navbar_upper_all">
+                    <div class="logo">
+                        ERTIST
+                    </div>
+                    <div class="navbar_upper_button">
+                        <form action="" method="get">
+                            <input class="search_input" type="search" name="search" id="" placeholder="Search">
+                            <button class="search_button" type="submit">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="20" fill="#E0E0E0" />
+                                    <path
+                                        d="M23.5 22H22.71L22.43 21.73C23.41 20.59 24 19.11 24 17.5C24 13.91 21.09 11 17.5 11C13.91 11 11 13.91 11 17.5C11 21.09 13.91 24 17.5 24C19.11 24 20.59 23.41 21.73 22.43L22 22.71V23.5L27 28.49L28.49 27L23.5 22ZM17.5 22C15.01 22 13 19.99 13 17.5C13 15.01 15.01 13 17.5 13C19.99 13 22 15.01 22 17.5C22 19.99 19.99 22 17.5 22Z"
+                                        fill="black" />
+                                </svg>
+                            </button>
+                        </form>
+
+
+                        <div class="cart_button_section">
+                            <a href="#" class="cart_button">
+                                <svg width="55" height="55" viewBox="0 0 55 55" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="55" height="55" rx="27.5" fill="#F6F6F6" />
+                                    <path
+                                        d="M22.7085 33.25C21.6543 33.25 20.8014 34.1125 20.8014 35.1666C20.8014 36.2208 21.6543 37.0833 22.7085 37.0833C23.7627 37.0833 24.6252 36.2208 24.6252 35.1666C24.6252 34.1125 23.7627 33.25 22.7085 33.25ZM16.9585 17.9166V19.8333H18.8752L22.3252 27.107L21.0314 29.455C20.8781 29.7233 20.7918 30.0395 20.7918 30.375C20.7918 31.4291 21.6543 32.2916 22.7085 32.2916H34.2085V30.375H23.111C22.9768 30.375 22.8714 30.2695 22.8714 30.1354L22.9002 30.0204L23.7627 28.4583H30.9022C31.621 28.4583 32.2535 28.0654 32.5793 27.4712L36.0102 21.2516C36.0868 21.1175 36.1252 20.9545 36.1252 20.7916C36.1252 20.2645 35.6939 19.8333 35.1668 19.8333H20.9931L20.0922 17.9166H16.9585ZM32.2918 33.25C31.2377 33.25 30.3847 34.1125 30.3847 35.1666C30.3847 36.2208 31.2377 37.0833 32.2918 37.0833C33.346 37.0833 34.2085 36.2208 34.2085 35.1666C34.2085 34.1125 33.346 33.25 32.2918 33.25Z"
+                                        fill="black" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="./Image/reg.jpg" alt="" srcset="">
+                                Lai Man Wai
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="navbar_upper_button">
+
+            </div>
+
+            <div class="navbar_section_lower">
+                <div class="navbar_lower_all">
+                    <ul class="nav">
+                        <li><a class="nav_link current" href="#1">Home</a></li>
+                        <li><a class="nav_link" href="#2">Paintings</a></li>
+                        <li><a class="nav_link" href="#3">Photography</a></li>
+                        <li><a class="nav_link" href="#4">Drawings</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="back_to_top">
+                <a href="#">
+                    <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 30.5C0 13.9315 13.4315 0.5 30 0.5C46.5685 0.5 60 13.9315 60 30.5C60 47.0685 46.5685 60.5 30 60.5C13.4315 60.5 0 47.0685 0 30.5Z"
+                            fill="#CA3F49" />
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M29.3072 43.1304L31.7988 43.0633L31.247 22.5823L37.2266 28.2481L38.9461 26.4334L29.8724 17.8358L21.2748 26.9095L23.0895 28.629L28.7554 22.6494L29.3072 43.1304Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="30" height="30" fill="white"
+                                    transform="translate(51.4111 29.6343) rotate(133.457)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <header class="navbar_section_mobile">
+            <div class="navbar_section_upper">
+                <div class="navbar_upper_all">
+                    <div class="logo">
+                        ERTIST
+                    </div>
+                    <div class="navbar_upper_button">
+
+
+                        <div class="cart_button_section">
+                            <a href="#" class="cart_button">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="7" fill="#F6F6F6" />
+                                    <path
+                                        d="M16.5158 24.1818C15.7491 24.1818 15.1288 24.8091 15.1288 25.5757C15.1288 26.3424 15.7491 26.9697 16.5158 26.9697C17.2825 26.9697 17.9097 26.3424 17.9097 25.5757C17.9097 24.8091 17.2825 24.1818 16.5158 24.1818ZM12.334 13.0303V14.4242H13.7279L16.237 19.7142L15.2961 21.4218C15.1846 21.6169 15.1219 21.8469 15.1219 22.0909C15.1219 22.8575 15.7491 23.4848 16.5158 23.4848H24.8794V22.0909H16.8085C16.711 22.0909 16.6343 22.0142 16.6343 21.9166L16.6552 21.833L17.2825 20.6969H22.4749C22.9976 20.6969 23.4576 20.4112 23.6946 19.9791L26.1897 15.4557C26.2455 15.3582 26.2734 15.2397 26.2734 15.1212C26.2734 14.7378 25.9597 14.4242 25.5764 14.4242H15.2682L14.6131 13.0303H12.334ZM23.4855 24.1818C22.7188 24.1818 22.0985 24.8091 22.0985 25.5757C22.0985 26.3424 22.7188 26.9697 23.4855 26.9697C24.2522 26.9697 24.8794 26.3424 24.8794 25.5757C24.8794 24.8091 24.2522 24.1818 23.4855 24.1818Z"
+                                        fill="black" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="burger_icon">
+                            <button onclick="openTheNav()">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#F6F6F6" />
+                                    <path d="M10 12H30V15H10V12Z" fill="black" />
+                                    <rect x="10" y="19" width="20" height="3" fill="black" />
+                                    <rect x="10" y="26" width="20" height="3" fill="black" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="navbar_section_lower">
+                <div class="navbar_lower_all">
                     <form action="" method="get">
                         <input class="search_input" type="search" name="search" id="" placeholder="Search">
                         <button class="search_button" type="submit">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="40" height="40" rx="20" fill="#E0E0E0" />
+                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.400391" y="0.75" width="25.5" height="22.5" rx="11.25" fill="#E0E0E0" />
                                 <path
-                                    d="M23.5 22H22.71L22.43 21.73C23.41 20.59 24 19.11 24 17.5C24 13.91 21.09 11 17.5 11C13.91 11 11 13.91 11 17.5C11 21.09 13.91 24 17.5 24C19.11 24 20.59 23.41 21.73 22.43L22 22.71V23.5L27 28.49L28.49 27L23.5 22ZM17.5 22C15.01 22 13 19.99 13 17.5C13 15.01 15.01 13 17.5 13C19.99 13 22 15.01 22 17.5C22 19.99 19.99 22 17.5 22Z"
+                                    d="M15.3809 13.125H14.8772L14.6987 12.9731C15.3235 12.3319 15.6996 11.4994 15.6996 10.5938C15.6996 8.57438 13.8445 6.9375 11.5559 6.9375C9.26723 6.9375 7.41211 8.57438 7.41211 10.5938C7.41211 12.6131 9.26723 14.25 11.5559 14.25C12.5822 14.25 13.5257 13.9181 14.2525 13.3669L14.4246 13.5244V13.9688L17.6121 16.7756L18.562 15.9375L15.3809 13.125V13.125ZM11.5559 13.125C9.96848 13.125 8.68711 11.9944 8.68711 10.5938C8.68711 9.19312 9.96848 8.0625 11.5559 8.0625C13.1432 8.0625 14.4246 9.19312 14.4246 10.5938C14.4246 11.9944 13.1432 13.125 11.5559 13.125Z"
                                     fill="black" />
                             </svg>
+
                         </button>
                     </form>
-
-
-                    <div class="cart_button_section">
-                        <a href="#" class="cart_button">
-                            <svg width="55" height="55" viewBox="0 0 55 55" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="55" height="55" rx="27.5" fill="#F6F6F6" />
-                                <path
-                                    d="M22.7085 33.25C21.6543 33.25 20.8014 34.1125 20.8014 35.1666C20.8014 36.2208 21.6543 37.0833 22.7085 37.0833C23.7627 37.0833 24.6252 36.2208 24.6252 35.1666C24.6252 34.1125 23.7627 33.25 22.7085 33.25ZM16.9585 17.9166V19.8333H18.8752L22.3252 27.107L21.0314 29.455C20.8781 29.7233 20.7918 30.0395 20.7918 30.375C20.7918 31.4291 21.6543 32.2916 22.7085 32.2916H34.2085V30.375H23.111C22.9768 30.375 22.8714 30.2695 22.8714 30.1354L22.9002 30.0204L23.7627 28.4583H30.9022C31.621 28.4583 32.2535 28.0654 32.5793 27.4712L36.0102 21.2516C36.0868 21.1175 36.1252 20.9545 36.1252 20.7916C36.1252 20.2645 35.6939 19.8333 35.1668 19.8333H20.9931L20.0922 17.9166H16.9585ZM32.2918 33.25C31.2377 33.25 30.3847 34.1125 30.3847 35.1666C30.3847 36.2208 31.2377 37.0833 32.2918 37.0833C33.346 37.0833 34.2085 36.2208 34.2085 35.1666C34.2085 34.1125 33.346 33.25 32.2918 33.25Z"
-                                    fill="black" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="./Image/reg.jpg" alt="" srcset="">
-                            Lai Man Wai
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
                 </div>
+
             </div>
 
-        </div>
-
-        <div class="navbar_section_lower">
-            <div class="navbar_lower_all">
-                <ul class="nav">
-                    <li><a class="nav_link current" href="#1">Home</a></li>
-                    <li><a class="nav_link" href="#2">Paintings</a></li>
-                    <li><a class="nav_link" href="#3">Photography</a></li>
-                    <li><a class="nav_link" href="#4">Drawings</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="back_to_top">
-            <a href="#">
-                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0 30.5C0 13.9315 13.4315 0.5 30 0.5C46.5685 0.5 60 13.9315 60 30.5C60 47.0685 46.5685 60.5 30 60.5C13.4315 60.5 0 47.0685 0 30.5Z"
-                        fill="#CA3F49" />
-                    <g clip-path="url(#clip0)">
+            <div class="back_to_top">
+                <a href="#">
+                    <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M29.3072 43.1304L31.7988 43.0633L31.247 22.5823L37.2266 28.2481L38.9461 26.4334L29.8724 17.8358L21.2748 26.9095L23.0895 28.629L28.7554 22.6494L29.3072 43.1304Z"
-                            fill="white" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0">
-                            <rect width="30" height="30" fill="white"
-                                transform="translate(51.4111 29.6343) rotate(133.457)" />
-                        </clipPath>
-                    </defs>
-                </svg>
-            </a>
-        </div>
-    </header>
-
-    <header class="navbar_section_mobile">
-        <div class="navbar_section_upper">
-            <div class="navbar_upper_all">
-                <div class="logo">
-                    ERTIST
-                </div>
-                <div class="navbar_upper_button">
-
-
-                    <div class="cart_button_section">
-                        <a href="#" class="cart_button">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="40" height="40" rx="7" fill="#F6F6F6" />
-                                <path
-                                    d="M16.5158 24.1818C15.7491 24.1818 15.1288 24.8091 15.1288 25.5757C15.1288 26.3424 15.7491 26.9697 16.5158 26.9697C17.2825 26.9697 17.9097 26.3424 17.9097 25.5757C17.9097 24.8091 17.2825 24.1818 16.5158 24.1818ZM12.334 13.0303V14.4242H13.7279L16.237 19.7142L15.2961 21.4218C15.1846 21.6169 15.1219 21.8469 15.1219 22.0909C15.1219 22.8575 15.7491 23.4848 16.5158 23.4848H24.8794V22.0909H16.8085C16.711 22.0909 16.6343 22.0142 16.6343 21.9166L16.6552 21.833L17.2825 20.6969H22.4749C22.9976 20.6969 23.4576 20.4112 23.6946 19.9791L26.1897 15.4557C26.2455 15.3582 26.2734 15.2397 26.2734 15.1212C26.2734 14.7378 25.9597 14.4242 25.5764 14.4242H15.2682L14.6131 13.0303H12.334ZM23.4855 24.1818C22.7188 24.1818 22.0985 24.8091 22.0985 25.5757C22.0985 26.3424 22.7188 26.9697 23.4855 26.9697C24.2522 26.9697 24.8794 26.3424 24.8794 25.5757C24.8794 24.8091 24.2522 24.1818 23.4855 24.1818Z"
-                                    fill="black" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="burger_icon">
-                        <button onclick="openTheNav()">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="40" height="40" rx="8" fill="#F6F6F6" />
-                                <path d="M10 12H30V15H10V12Z" fill="black" />
-                                <rect x="10" y="19" width="20" height="3" fill="black" />
-                                <rect x="10" y="26" width="20" height="3" fill="black" />
-                            </svg>
-
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="navbar_section_lower">
-            <div class="navbar_lower_all">
-                <form action="" method="get">
-                    <input class="search_input" type="search" name="search" id="" placeholder="Search">
-                    <button class="search_button" type="submit">
-                        <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.400391" y="0.75" width="25.5" height="22.5" rx="11.25" fill="#E0E0E0" />
+                            d="M0 30.5C0 13.9315 13.4315 0.5 30 0.5C46.5685 0.5 60 13.9315 60 30.5C60 47.0685 46.5685 60.5 30 60.5C13.4315 60.5 0 47.0685 0 30.5Z"
+                            fill="#CA3F49" />
+                        <g clip-path="url(#clip0)">
                             <path
-                                d="M15.3809 13.125H14.8772L14.6987 12.9731C15.3235 12.3319 15.6996 11.4994 15.6996 10.5938C15.6996 8.57438 13.8445 6.9375 11.5559 6.9375C9.26723 6.9375 7.41211 8.57438 7.41211 10.5938C7.41211 12.6131 9.26723 14.25 11.5559 14.25C12.5822 14.25 13.5257 13.9181 14.2525 13.3669L14.4246 13.5244V13.9688L17.6121 16.7756L18.562 15.9375L15.3809 13.125V13.125ZM11.5559 13.125C9.96848 13.125 8.68711 11.9944 8.68711 10.5938C8.68711 9.19312 9.96848 8.0625 11.5559 8.0625C13.1432 8.0625 14.4246 9.19312 14.4246 10.5938C14.4246 11.9944 13.1432 13.125 11.5559 13.125Z"
-                                fill="black" />
-                        </svg>
-
-                    </button>
-                </form>
+                                d="M29.3072 43.1304L31.7988 43.0633L31.247 22.5823L37.2266 28.2481L38.9461 26.4334L29.8724 17.8358L21.2748 26.9095L23.0895 28.629L28.7554 22.6494L29.3072 43.1304Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="30" height="30" fill="white"
+                                    transform="translate(51.4111 29.6343) rotate(133.457)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
             </div>
+        </header>
 
-        </div>
 
-        <div class="back_to_top">
-            <a href="#">
-                <svg width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <div id="navbar_subs_container" class="invisible">
+            <div class="model" onclick="closeTheNav()">
+            </div>
+            <button class="close_navbar_subs" onclick="closeTheNav()">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M0 30.5C0 13.9315 13.4315 0.5 30 0.5C46.5685 0.5 60 13.9315 60 30.5C60 47.0685 46.5685 60.5 30 60.5C13.4315 60.5 0 47.0685 0 30.5Z"
-                        fill="#CA3F49" />
-                    <g clip-path="url(#clip0)">
-                        <path
-                            d="M29.3072 43.1304L31.7988 43.0633L31.247 22.5823L37.2266 28.2481L38.9461 26.4334L29.8724 17.8358L21.2748 26.9095L23.0895 28.629L28.7554 22.6494L29.3072 43.1304Z"
-                            fill="white" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0">
-                            <rect width="30" height="30" fill="white"
-                                transform="translate(51.4111 29.6343) rotate(133.457)" />
-                        </clipPath>
-                    </defs>
+                        d="M31.6663 10.6834L29.3163 8.33337L19.9997 17.65L10.683 8.33337L8.33301 10.6834L17.6497 20L8.33301 29.3167L10.683 31.6667L19.9997 22.35L29.3163 31.6667L31.6663 29.3167L22.3497 20L31.6663 10.6834Z"
+                        fill="black" />
                 </svg>
-            </a>
-        </div>
-    </header>
 
-
-
-    <div id="navbar_subs_container" class="invisible">
-        <div class="model" onclick="closeTheNav()">
-        </div>
-        <button class="close_navbar_subs" onclick="closeTheNav()">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M31.6663 10.6834L29.3163 8.33337L19.9997 17.65L10.683 8.33337L8.33301 10.6834L17.6497 20L8.33301 29.3167L10.683 31.6667L19.9997 22.35L29.3163 31.6667L31.6663 29.3167L22.3497 20L31.6663 10.6834Z"
-                    fill="black" />
-            </svg>
-
-        </button>
-        <div class="navbar_subs">
-            <div class="navbar_subs_nav_container">
-                <div class="navbar_subs_user">
-                    <img src="./user_picture.jpg" alt="" srcset="">
-                    <span>Lai Man Wai</span>
-                </div>
-                <div class="navbar_subs_link_container">
-                    <a href="" class="navbar_subs_link current">Home</a>
-                    <a href="" class="navbar_subs_link">Photographer</a>
-                    <a href="" class="navbar_subs_link">Artwork</a>
-                    <div href="" class="">
-                        Artwork
+            </button>
+            <div class="navbar_subs">
+                <div class="navbar_subs_nav_container">
+                    <div class="navbar_subs_user">
+                        <img src="./user_picture.jpg" alt="" srcset="">
+                        <span>Lai Man Wai</span>
+                    </div>
+                    <div class="navbar_subs_link_container">
+                        <a href="" class="navbar_subs_link current">Home</a>
+                        <a href="" class="navbar_subs_link">Photographer</a>
+                        <a href="" class="navbar_subs_link">Artwork</a>
+                        <div href="" class="">
+                            Artwork
                         <ul>
                             <li><a href="" class="">example1</a></li>
                             <li><a href="" class="">example2</a></li>
                             <li><a href="" class="">example3</a></li>
                         </ul>
+                        </div>
+                        <a href="" class="navbar_subs_link">cincai2</a>
                     </div>
-                    <a href="" class="navbar_subs_link">cincai2</a>
+                </div>
+
+
+                <div class="setting_button">
+                    <a href="" class="navbar_sub_link">Setting</a>
+                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.4731 10.536C16.5091 10.236 16.5331 9.924 16.5331 9.6C16.5331 9.276 16.5091 8.964 16.4611 8.664L18.4891 7.08C18.6691 6.936 18.7171 6.672 18.6091 6.468L16.6891 3.144C16.5691 2.928 16.3171 2.856 16.1011 2.928L13.7131 3.888C13.2091 3.504 12.6811 3.192 12.0931 2.952L11.7331 0.408C11.6971 0.168 11.4931 0 11.2531 0H7.41311C7.17311 0 6.98112 0.168 6.94512 0.408L6.58511 2.952C5.99711 3.192 5.45711 3.516 4.96511 3.888L2.57711 2.928C2.36111 2.844 2.10911 2.928 1.98911 3.144L0.0691144 6.468C-0.0508856 6.684 -0.00288541 6.936 0.189115 7.08L2.21711 8.664C2.16911 8.964 2.13311 9.288 2.13311 9.6C2.13311 9.912 2.15711 10.236 2.20511 10.536L0.177114 12.12C-0.0028857 12.264 -0.0508856 12.528 0.0571144 12.732L1.97711 16.056C2.09711 16.272 2.34911 16.344 2.56511 16.272L4.95311 15.312C5.45711 15.696 5.98511 16.008 6.57311 16.248L6.93311 18.792C6.98111 19.032 7.17311 19.2 7.41311 19.2H11.2531C11.4931 19.2 11.6971 19.032 11.7211 18.792L12.0811 16.248C12.6691 16.008 13.2091 15.684 13.7011 15.312L16.0891 16.272C16.3051 16.356 16.5571 16.272 16.6771 16.056L18.5971 12.732C18.7171 12.516 18.6691 12.264 18.4771 12.12L16.4731 10.536V10.536ZM9.33311 13.2C7.35311 13.2 5.73311 11.58 5.73311 9.6C5.73311 7.62 7.35311 6 9.33311 6C11.3131 6 12.9331 7.62 12.9331 9.6C12.9331 11.58 11.3131 13.2 9.33311 13.2Z"
+                            fill="black" />
+                    </svg>
                 </div>
             </div>
-
-
-            <div class="setting_button">
-                <a href="" class="navbar_sub_link">Setting</a>
-                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.4731 10.536C16.5091 10.236 16.5331 9.924 16.5331 9.6C16.5331 9.276 16.5091 8.964 16.4611 8.664L18.4891 7.08C18.6691 6.936 18.7171 6.672 18.6091 6.468L16.6891 3.144C16.5691 2.928 16.3171 2.856 16.1011 2.928L13.7131 3.888C13.2091 3.504 12.6811 3.192 12.0931 2.952L11.7331 0.408C11.6971 0.168 11.4931 0 11.2531 0H7.41311C7.17311 0 6.98112 0.168 6.94512 0.408L6.58511 2.952C5.99711 3.192 5.45711 3.516 4.96511 3.888L2.57711 2.928C2.36111 2.844 2.10911 2.928 1.98911 3.144L0.0691144 6.468C-0.0508856 6.684 -0.00288541 6.936 0.189115 7.08L2.21711 8.664C2.16911 8.964 2.13311 9.288 2.13311 9.6C2.13311 9.912 2.15711 10.236 2.20511 10.536L0.177114 12.12C-0.0028857 12.264 -0.0508856 12.528 0.0571144 12.732L1.97711 16.056C2.09711 16.272 2.34911 16.344 2.56511 16.272L4.95311 15.312C5.45711 15.696 5.98511 16.008 6.57311 16.248L6.93311 18.792C6.98111 19.032 7.17311 19.2 7.41311 19.2H11.2531C11.4931 19.2 11.6971 19.032 11.7211 18.792L12.0811 16.248C12.6691 16.008 13.2091 15.684 13.7011 15.312L16.0891 16.272C16.3051 16.356 16.5571 16.272 16.6771 16.056L18.5971 12.732C18.7171 12.516 18.6691 12.264 18.4771 12.12L16.4731 10.536V10.536ZM9.33311 13.2C7.35311 13.2 5.73311 11.58 5.73311 9.6C5.73311 7.62 7.35311 6 9.33311 6C11.3131 6 12.9331 7.62 12.9331 9.6C12.9331 11.58 11.3131 13.2 9.33311 13.2Z"
-                        fill="black" />
-                </svg>
-            </div>
         </div>
-    </div>
 
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
-    <hr />
-    <footer>
-        <p>&copy; <%: DateTime.Now.Year %> ERTIST</p>
-    </footer>
-
-
-    <!-- mobile navbar subs -->
-    <script>
-        const nav_container = document.getElementById("navbar_subs_container");
-        // const model = document.getElementsByClassName("model");
+        <div class="contain_container">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+        </asp:ContentPlaceHolder>
+            </div>
+        <hr />
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %> ERTIST</p>
+        </footer>
 
 
+        <!-- mobile navbar subs -->
+        <script>
+            const nav_container = document.getElementById("navbar_subs_container");
+            // const model = document.getElementsByClassName("model");
 
-        function closeTheNav() {
-            nav_container.classList.remove("visible");
-            nav_container.classList.add("invisible");
 
-        }
 
-        function openTheNav() {
-            nav_container.classList.remove("invisible");
-            nav_container.classList.add("visible");
-        }
+            function closeTheNav() {
+                nav_container.classList.remove("visible");
+                nav_container.classList.add("invisible");
 
-    </script>
-
-    <!-- scrolling js -->
-    <script>
-        const body = document.body;
-        let lastScroll = 0;
-
-        window.addEventListener("scroll", () => {
-            const currentScroll = window.pageYOffset;
-            // console.log(currentScroll);
-            if (currentScroll <= 0) {
-                body.classList.remove("scroll-up");
-                return;
             }
 
-            if (currentScroll > lastScroll && !body.classList.contains("scroll-down") && currentScroll > 500) {
-                body.classList.remove("scroll-up");
-                body.classList.add("scroll-down");
-            } else if (
-                currentScroll < lastScroll &&
-                body.classList.contains("scroll-down")
-            ) {
-                body.classList.remove("scroll-down");
-                body.classList.add("scroll-up");
+            function openTheNav() {
+                nav_container.classList.remove("invisible");
+                nav_container.classList.add("visible");
             }
-            lastScroll = currentScroll;
-        });
 
-    </script>
+        </script>
 
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        <!-- scrolling js -->
+        <script>
+            const body = document.body;
+            let lastScroll = 0;
 
-        </form>
+            window.addEventListener("scroll", () => {
+                const currentScroll = window.pageYOffset;
+                // console.log(currentScroll);
+                if (currentScroll <= 0) {
+                    body.classList.remove("scroll-up");
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !body.classList.contains("scroll-down") && currentScroll > 500) {
+                    body.classList.remove("scroll-up");
+                    body.classList.add("scroll-down");
+                } else if (
+                    currentScroll < lastScroll &&
+                    body.classList.contains("scroll-down")
+                ) {
+                    body.classList.remove("scroll-down");
+                    body.classList.add("scroll-up");
+                }
+                lastScroll = currentScroll;
+            });
+
+        </script>
+
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    </form>
 </body>
 </html>
