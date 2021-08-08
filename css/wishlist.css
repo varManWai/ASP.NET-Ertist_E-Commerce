@@ -4,7 +4,7 @@
 
 .cart_section .page_header {
     background-color: #1b1b1b;
-    height: 290px;
+    height: 150px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -20,6 +20,7 @@
     .cart_section .page_header h1 {
         color: #ffffff;
         padding-bottom: 35px;
+        font-size: clamp(26px,4vw,36px);
     }
 
 .cart_section .cart_all {
