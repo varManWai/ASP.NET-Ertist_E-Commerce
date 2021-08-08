@@ -126,6 +126,7 @@
     <Content Include="css\ArtworkDisplay.css" />
     <Content Include="css\cart.css" />
     <Content Include="css\description.css" />
+    <Content Include="css\MakeOrder.css" />
     <Content Include="css\navbar.css" />
     <Content Include="css\wishlist.css" />
     <Content Include="Default.aspx" />
@@ -151,6 +152,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterMain.aspx" />
+    <Content Include="Wishlist.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -292,6 +294,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
