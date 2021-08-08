@@ -47,6 +47,7 @@ namespace Ertist
                 int painting = 1;
                 int ink = 2;
                 int watercolour = 3;
+                //string galleryID = ddlGallery.SelectedItem.Text;
 
                 cmd.Parameters.AddWithValue("@artworkID", artworkID);
                 cmd.Parameters.AddWithValue("@picture", imgbyte);
@@ -55,6 +56,7 @@ namespace Ertist
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock));
                 cmd.Parameters.AddWithValue("@available", available);
+                
                 if (ddlCategory.SelectedItem.Text.Equals("Painting"))
                 {
                     cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(painting));
@@ -70,6 +72,7 @@ namespace Ertist
                     cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(watercolour));
                 }
 
+                
 
                 //add the rest
 
@@ -79,6 +82,11 @@ namespace Ertist
 
 
             con.Close();
+            Response.Redirect("EditArtwork.aspx");
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
             Response.Redirect("EditArtwork.aspx");
         }
     }

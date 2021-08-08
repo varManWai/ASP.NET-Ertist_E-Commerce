@@ -67,17 +67,18 @@
                 <tr>
                     <td class="auto-style3">Category</td>
                     <td>
-                        <asp:DropDownList ID="ddlCategory" runat="server">
-                            <asp:ListItem>Painting</asp:ListItem>
-                            <asp:ListItem>Ink</asp:ListItem>
-                            <asp:ListItem>Watercolour</asp:ListItem>
+                        <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="SqlCategory" DataTextField="name" DataValueField="categoryID">
                         </asp:DropDownList>
                     </td>
                 </tr>
-               
+               <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
                 <%--<tr>
                     <td class="auto-style3">Gallery</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:DropDownList ID="ddlGallery" runat="server" DataSourceID="SqlGallery" DataTextField="name" DataValueField="galleryID"></asp:DropDownList></td>
                 </tr>--%>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
@@ -85,10 +86,14 @@
                 </tr>
                
                 <tr>
-                    <td class="auto-style1" style="width: 140px"></td>
-                    <td class="auto-style4"><asp:Button ID="btnAdd" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
+                    <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
+                    <td class="auto-style4"><asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click"  /></td>
                 </tr>
                
             </table>
+
+        <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+            <br />
     </div>
 </asp:Content>

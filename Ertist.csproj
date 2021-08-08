@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -157,6 +158,7 @@
     <Content Include="PurchaseHistory.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterMain.aspx" />
+    <Content Include="UpdateArtwork.aspx" />
     <Content Include="Wishlist.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -188,7 +190,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="uploadImage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteArtwork.aspx.cs">
+      <DependentUpon>DeleteArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteArtwork.aspx.designer.cs">
+      <DependentUpon>DeleteArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditArtwork.aspx.cs">
       <DependentUpon>EditArtwork.aspx</DependentUpon>
@@ -321,12 +329,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="uploadImage.aspx.cs">
-      <DependentUpon>uploadImage.aspx</DependentUpon>
+    <Compile Include="UpdateArtwork.aspx.cs">
+      <DependentUpon>UpdateArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="uploadImage.aspx.designer.cs">
-      <DependentUpon>uploadImage.aspx</DependentUpon>
+    <Compile Include="UpdateArtwork.aspx.designer.cs">
+      <DependentUpon>UpdateArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

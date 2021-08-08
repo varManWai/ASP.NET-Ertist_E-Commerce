@@ -23,8 +23,9 @@
                         
                         <asp:BoundField DataField="available" HeaderText="Available" />
                         <asp:BoundField DataField="categoryID" HeaderText="Category" />
-                        <asp:HyperLinkField Text="Update" />
-                        <asp:HyperLinkField Text="Detele" />
+                        <%--<asp:BoundField DataField="galleryID" HeaderText="Gallery" />--%>
+                        <asp:HyperLinkField Text="Update" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}" />
+                        <asp:HyperLinkField Text="Detele" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="DeleteArtwork.aspx?artworkID={0}" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
