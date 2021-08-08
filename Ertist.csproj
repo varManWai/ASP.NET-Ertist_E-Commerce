@@ -124,11 +124,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\ArtistProfile.css" />
     <Content Include="css\ArtworkDisplay.css" />
-    <Content Include="css\cart.css" />
+    <Content Include="css\Cart.css" />
     <Content Include="css\description.css" />
     <Content Include="css\MakeOrder.css" />
     <Content Include="css\navbar.css" />
-    <Content Include="css\wishlist.css" />
+    <Content Include="css\Payment.css" />
+    <Content Include="css\Wishlist.css" />
     <Content Include="Default.aspx" />
     <Content Include="ArtworkDisplay.aspx" />
     <Content Include="Description.aspx" />
@@ -150,6 +151,8 @@
     <Content Include="Image\search.svg" />
     <Content Include="Image\Star Clock at Night II.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="MakeOrder.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterMain.aspx" />
     <Content Include="Wishlist.aspx" />
@@ -258,6 +261,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeOrder.aspx.cs">
+      <DependentUpon>MakeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeOrder.aspx.designer.cs">
+      <DependentUpon>MakeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
