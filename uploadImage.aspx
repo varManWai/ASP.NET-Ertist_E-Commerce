@@ -1,8 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="uploadImage.aspx.cs" Inherits="Ertist.uploadImage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="uploadImage.aspx.cs" Inherits="Ertist.uploadImage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div id="form1" runat="server">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
         <div>
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <br />
@@ -51,7 +56,8 @@
                     <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
                     <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
                 </Columns>
-            </asp:GridView>--%><%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>--%>
+            </asp:GridView>--%>
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>--%>
             <br />
 
             <!---Display Images-->
@@ -70,6 +76,6 @@
                 <br />
             </div>
         </div>
-    </div>
-
-</asp:Content>
+    </form>
+</body>
+</html>
