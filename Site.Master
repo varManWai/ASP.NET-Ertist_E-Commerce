@@ -58,8 +58,8 @@
                     </div>
                     <div class="navbar_upper_button">
                         <div class="form">
-                            <asp:TextBox ID="TxtSearch" runat="server" CssClass="search_input">Search</asp:TextBox>
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="./Image/search.svg" />
+                            <asp:TextBox ID="TxtSearch1" runat="server" CssClass="search_input" placeholder="Search"></asp:TextBox>
+                            <asp:ImageButton ID="BtnSearch1" runat="server" ImageUrl="./Image/search.svg" />
                         </div>
 
 
@@ -166,18 +166,10 @@
 
             <div class="navbar_section_lower">
                 <div class="navbar_lower_all">
-                    <form action="" method="get">
-                        <input class="search_input" type="search" name="search" id="" placeholder="Search">
-                        <button class="search_button" type="submit">
-                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.400391" y="0.75" width="25.5" height="22.5" rx="11.25" fill="#E0E0E0" />
-                                <path
-                                    d="M15.3809 13.125H14.8772L14.6987 12.9731C15.3235 12.3319 15.6996 11.4994 15.6996 10.5938C15.6996 8.57438 13.8445 6.9375 11.5559 6.9375C9.26723 6.9375 7.41211 8.57438 7.41211 10.5938C7.41211 12.6131 9.26723 14.25 11.5559 14.25C12.5822 14.25 13.5257 13.9181 14.2525 13.3669L14.4246 13.5244V13.9688L17.6121 16.7756L18.562 15.9375L15.3809 13.125V13.125ZM11.5559 13.125C9.96848 13.125 8.68711 11.9944 8.68711 10.5938C8.68711 9.19312 9.96848 8.0625 11.5559 8.0625C13.1432 8.0625 14.4246 9.19312 14.4246 10.5938C14.4246 11.9944 13.1432 13.125 11.5559 13.125Z"
-                                    fill="black" />
-                            </svg>
-
-                        </button>
-                    </form>
+                    <div class="form">
+                        <asp:TextBox ID="TxtSearch2" runat="server" CssClass="search_input" placeholder="Search"></asp:TextBox>
+                        <asp:ImageButton ID="btnSearch2" runat="server" ImageUrl="./Image/search.svg" />
+                    </div>
                 </div>
 
             </div>

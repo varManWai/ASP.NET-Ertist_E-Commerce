@@ -53,6 +53,7 @@ body {
         left: 0;
         -webkit-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
+        z-index: 9999999;
     }
 
         body .navbar_section .navbar_section_upper {
@@ -130,7 +131,7 @@ body {
                         align-items: center;
                     }
 
-                        body .navbar_section .navbar_section_upper .navbar_upper_all .navbar_upper_button .form #TxtSearch {
+                        body .navbar_section .navbar_section_upper .navbar_upper_all .navbar_upper_button .form #TxtSearch1 {
                             border-radius: 100vh;
                             border: none;
                             background: none;
@@ -140,7 +141,7 @@ body {
                             color: #acacac;
                         }
 
-                        body .navbar_section .navbar_section_upper .navbar_upper_all .navbar_upper_button .form #BtnSearch {
+                        body .navbar_section .navbar_section_upper .navbar_upper_all .navbar_upper_button .form #BtnSearch1 {
                             border: none;
                             border-radius: 100vh;
                             padding: 0;
@@ -220,7 +221,7 @@ body {
             body .navbar_section .navbar_section_lower .nav .nav_link:hover,
             body .navbar_section .navbar_section_lower .nav .nav_link:focus {
                 color: #ca3f49;
-                background:none;
+                background: none;
             }
 
             body .navbar_section .navbar_section_lower .nav .nav_link:active {
@@ -556,7 +557,7 @@ body {
                 padding-right: 15px;
             }
 
-            body .navbar_section_mobile .navbar_section_lower form {
+            body .navbar_section_mobile .navbar_section_lower .form {
                 margin: auto;
                 background-color: #f6f6f6;
                 height: -webkit-fit-content;
@@ -575,7 +576,7 @@ body {
                 max-width: 500px;
             }
 
-                body .navbar_section_mobile .navbar_section_lower form .search_input {
+                body .navbar_section_mobile .navbar_section_lower .form #TxtSearch2 {
                     border-radius: 100vh;
                     border: none;
                     background: none;
@@ -586,7 +587,7 @@ body {
                     padding-top: 5px;
                 }
 
-                body .navbar_section_mobile .navbar_section_lower form .search_button {
+                body .navbar_section_mobile .navbar_section_lower .form #btnSearch2 {
                     border: none;
                     border-radius: 100vh;
                     padding: clamp(0px, 1vw, 10px);
