@@ -2,14 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato:wght@400;900&family=Poppins:wght@400;900&family=Roboto&display=swap"
-        rel="stylesheet">
+    
 
-    <link rel="stylesheet" href=".\css\wishlist.css">
+    <link rel="stylesheet" href=".\css\Wishlist.css">
 
 
 
