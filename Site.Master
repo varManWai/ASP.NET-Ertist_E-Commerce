@@ -58,9 +58,8 @@
                     </div>
                     <div class="navbar_upper_button">
                         <div class="form">
-                            <asp:TextBox ID="TxtSearch" runat="server" CssClass="search_input"></asp:TextBox>
+                            <asp:TextBox ID="TxtSearch" runat="server" CssClass="search_input">Search</asp:TextBox>
                             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="./Image/search.svg" />
-                            <asp:ImageButton ID="ImageButton2" runat="server" />
                         </div>
 
 

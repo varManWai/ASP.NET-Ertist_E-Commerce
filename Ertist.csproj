@@ -146,6 +146,7 @@
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
     <Content Include="Image\reg_user.jpg" />
+    <Content Include="Image\search.svg" />
     <Content Include="Image\Star Clock at Night II.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
