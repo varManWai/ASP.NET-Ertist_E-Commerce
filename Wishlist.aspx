@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    
+
 
     <link rel="stylesheet" href=".\css\Wishlist.css">
 
@@ -20,92 +20,32 @@
                 <div class="total_artwork_cart">
                     <span>3 Artwroks in Wishlist</span>
                 </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./Image/reg_artist.jpg" alt="An Artwork Picture">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Name of the Artwork</span>
-                        <div class="artist">
-                            <img src="./Image/reg.jpg" alt="An Artist Picture">
-                            <span>Lai Man Wai</span>
+
+                <asp:Repeater ID="Repeater2" runat="server">
+                    <ItemTemplate>
+                        <div class="artwork_container">
+                            <div class="artwork_image">
+                                <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
+                            </div>
+                            <div class="artwork_details">
+                                <span class="artwor_details_name">Name of the Artwork</span>
+                                <div class="artist">
+                                    <img src="./Image/reg.jpg" alt="An Artist Picture">
+                                    <span>Lai Man Wai</span>
+                                </div>
+                                <div class="artwork_description">
+                                    <%# Eval("artwork_description") %>
+                                </div>
+                                <div class="price_remove">
+                                    <span class="price"><%# Eval("user_name") %></span>
+                                    <button>REMOVE</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./2.jpg" alt="">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam
-                            nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....</span>
-                        <div class="artist">
-                            <img src="./user_picture.jpg" alt="">
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque
-                                pharetra
-                                facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                                suscipit
-                                feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam
-                                nulla
-                                enim
-                                .....</span>
-                        </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./pexels-tom-balabaud-1579708.jpg" alt="">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Name of the Artwork</span>
-                        <div class="artist">
-                            <img src="./user_picture.jpg" alt="">
-                            <span>Lai Man Wai</span>
-                        </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID"></asp:SqlDataSource>
         </div>
 
     </section>

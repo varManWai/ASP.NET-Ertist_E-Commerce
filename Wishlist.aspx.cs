@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Ertist
 {
@@ -11,7 +13,30 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //display image in repeater
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection(strCon);
 
+            //open connection
+            con.Open();
+
+            string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price] FROM [ArtWork]";
+
+            SqlCommand cmd = new SqlCommand(sqlSelect, con);
+
+            Repeater2.DataSource = cmd.ExecuteReader();
+            Repeater2.DataBind();
+
+            //close connection
+            con.Close();
         }
+
+        public string GetImage(object img)
+        {
+            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
+        }
+
+
     }
 }
