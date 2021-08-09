@@ -105,7 +105,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="ArtistsDisplay.aspx" />
     <Content Include="css\button.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\register.css" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
@@ -158,8 +161,9 @@
     <Content Include="Payment.aspx" />
     <Content Include="PurchaseHistory.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="RegisterMain.aspx" />
+    <Content Include="RegisterPick.aspx" />
     <Content Include="UpdateArtwork.aspx" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="Wishlist.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -202,6 +206,13 @@
     </Compile>
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistsDisplay.aspx.cs">
+      <DependentUpon>ArtistsDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistsDisplay.aspx.designer.cs">
+      <DependentUpon>ArtistsDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteArtwork.aspx.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
@@ -316,12 +327,12 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterMain.aspx.cs">
-      <DependentUpon>RegisterMain.aspx</DependentUpon>
+    <Compile Include="RegisterPick.aspx.cs">
+      <DependentUpon>RegisterPick.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterMain.aspx.designer.cs">
-      <DependentUpon>RegisterMain.aspx</DependentUpon>
+    <Compile Include="RegisterPick.aspx.designer.cs">
+      <DependentUpon>RegisterPick.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -336,6 +347,13 @@
     </Compile>
     <Compile Include="UpdateArtwork.aspx.designer.cs">
       <DependentUpon>UpdateArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

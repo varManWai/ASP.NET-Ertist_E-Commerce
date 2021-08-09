@@ -17,9 +17,5 @@ namespace Ertist
             }
         }
 
-        protected void loginPage_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
     }
 }
