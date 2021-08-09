@@ -23,7 +23,7 @@
 
                 <asp:Repeater ID="Repeater2" runat="server">
                     <ItemTemplate>
-                        <div class="artwork_container">
+                        <%--<div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
                             </div>
@@ -41,7 +41,7 @@
                                     <button>REMOVE</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>

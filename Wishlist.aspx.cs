@@ -25,8 +25,8 @@ namespace Ertist
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
-            Repeater2.DataSource = cmd.ExecuteReader();
-            Repeater2.DataBind();
+            //Repeater2.DataSource = cmd.ExecuteReader();
+            //Repeater2.DataBind();
 
             //close connection
             con.Close();
