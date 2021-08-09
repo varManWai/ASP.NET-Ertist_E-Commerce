@@ -86,6 +86,29 @@ namespace Ertist
 
             //Response.Redirect("Wishlist.aspx");
         }
+
+        protected void btnAddCart_Click(object sender, EventArgs e)
+        {
+            string artworkID = Request.QueryString["artworkID"] ?? "";
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection(strCon);
+            con.Open();
+
+            string sqlInsert = "INSERT INTO Cart (artworkID) VALUES(@artworkID)";
+
+            SqlCommand cmd = new SqlCommand(sqlInsert, con);
+
+            //insert            
+
+            cmd.Parameters.AddWithValue("@artworkID", artworkID);
+
+            //add the rest
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
     }
  
 }

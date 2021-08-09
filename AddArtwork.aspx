@@ -80,8 +80,7 @@
                 <tr>
                     <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
                     <td class="auto-style4"><asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click"  /></td>
-                </tr>
-               
+                </tr>             
             </table>
 
         <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
