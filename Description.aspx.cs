@@ -83,6 +83,8 @@ namespace Ertist
 
             cmd.ExecuteNonQuery();
             con.Close();
+
+            //Response.Redirect("Wishlist.aspx");
         }
     }
  
