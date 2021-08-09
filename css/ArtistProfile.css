@@ -73,6 +73,7 @@ a .material-icons {
     z-index: 3;
     margin-top: 150px;
     margin-bottom: 50px;
+    padding:50px;
 }
 
 .profile-page .profile {    
@@ -260,8 +261,17 @@ img.rounded {
     font-weight:400;
 }
 
-/* dropdown */
+.edit-gal-dropbtn{
+    width:fit-content;
+    padding:0 20px;
+    margin-left:100px;
+}
 
+.edit-gal-dropbtn:hover{
+    cursor:pointer;
+}
+
+/* dropdown */
 /*.dropdown-menu {
     position: absolute;
     top: 100%;
@@ -312,8 +322,34 @@ img.rounded {
         opacity: .5;
     }*/
 
-/* footer */
+.edit-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left:100px;
+    display:block;
+}
 
+.edit-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.edit-content a:hover {
+    background-color: #ddd;
+}
+
+.edit-gal-dropbtn:hover .edit-content {
+    display: block;
+}
+
+/* footer */
 footer {
     margin-top: 10px;
     color: #555;
@@ -339,27 +375,63 @@ footer p a {
     }
 
 .profile-gallery-delimiter {
-    margin-right: 100px;
-    margin-left: 100px;
+    margin: 30px 100px;
 }
 
-.arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+* {
+    box-sizing: border-box;
 }
 
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.edit-gal-dd, .edit-gal-dd:hover, .edit-gal-dd::after {
-    color: #555;
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 15px;
-    margin-left: 100px;
-    
+/* Float four columns side by side */
+.gal-column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
+
+/* Remove extra left and right margins, due to padding */
+.gal-row {
+    margin: 30px 10px;
+    padding:0 100px;
+}
+
+    /* Clear floats after the columns */
+    .gal-row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .gal-column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.gal-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: transparent;
+    border-radius:20px;
+}
+
+.gal-card>img {
+    width: 100%;
+    height: 200px;
+    object-fit:cover;
+}
+
+
+
+
