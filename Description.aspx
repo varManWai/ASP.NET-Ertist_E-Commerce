@@ -69,7 +69,7 @@
                                         <div class="add">                                           
                                             &emsp;&emsp;&emsp;
                                              <asp:Button ID="btnAddCart" runat="server" Text="Add To Cart" /> &emsp;&emsp;
-                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" />
+                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" OnClick="btnAddWish_Click1"/>
                                         </div>                                       
                                     </div>
                                 </div>

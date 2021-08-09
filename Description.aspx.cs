@@ -17,7 +17,7 @@ namespace Ertist
             if (!Page.IsPostBack)
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
-                string sql = "Select * from Artwork artworkID = @artworkID";
+                string sql = "SELECT * from Artwork WHERE artworkID = @artworkID";
 
                 //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -63,35 +63,27 @@ namespace Ertist
             }
         }
         
+        protected void btnAddWish_Click1(object sender, EventArgs e)
+        {
+            string artworkID = Request.QueryString["artworkID"] ?? "";
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection(strCon);
+            con.Open();
+
+            string sqlInsert = "INSERT INTO Wishlist (artworkID) VALUES(@artworkID)";
+
+            SqlCommand cmd = new SqlCommand(sqlInsert, con);
+
+            //insert            
+
+            cmd.Parameters.AddWithValue("@artworkID", artworkID);
+
+            //add the rest
+
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
-    //protected void btnAddWish_Click(object sender, EventArgs e)
-    //    {
-    //        SqlConnection con;
-    //        string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-    //        con = new SqlConnection(strCon);
-    //        con.Open();
-
-    //            string sqlInsert = "INSERT INTO Wishlist (wishlistID, artworkID, userID) VALUES(@wishlistID, @artworkID, @userID)";
-               
-    //            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-
-    //        //insert
-    //            int wishlistID = 
-    //            int artworkID = txtName.Text;
-    //            int userID = txtPrice.Text;
-
-    //            cmd.Parameters.AddWithValue("@artworkID", artworkID);
-    //            cmd.Parameters.AddWithValue("@picture", imgbyte);
-    //            cmd.Parameters.AddWithValue("@name", name);
-    //            cmd.Parameters.AddWithValue("@price", price);
-    //            cmd.Parameters.AddWithValue("@description", description);
-    //            cmd.Parameters.AddWithValue("@stock", stock);
-    //            cmd.Parameters.AddWithValue("@available", available);
-
-
-    //            //add the rest
-
-    //            cmd.ExecuteNonQuery();
-    //            con.Close();
-    //}
+    }
+ 
 }
