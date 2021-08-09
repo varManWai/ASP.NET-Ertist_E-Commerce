@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="ArtistProfileClient.aspx" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfileClient.aspx.cs">
+      <DependentUpon>ArtistProfileClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfileClient.aspx.designer.cs">
+      <DependentUpon>ArtistProfileClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteArtwork.aspx.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
