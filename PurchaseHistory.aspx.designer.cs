@@ -11,16 +11,25 @@ namespace Ertist
 {
 
 
-    public partial class PurchaseHistory
+    public partial class PurchaseHistory1
     {
 
         /// <summary>
-        /// Repeater1 control.
+        /// rptPurchase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Repeater rptPurchase;
+
+        /// <summary>
+        /// SqlPurchase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlPurchase;
     }
 }
