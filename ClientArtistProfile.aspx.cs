@@ -7,7 +7,7 @@ using System. Web. UI. WebControls;
 
 namespace Ertist
 {
-    public partial class ArtistProfileClient : System. Web. UI. Page
+    public partial class ClientArtistProfile : System. Web. UI. Page
     {
         protected void Page_Load ( object sender, EventArgs e )
         {

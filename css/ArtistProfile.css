@@ -14,7 +14,7 @@ html * {
     text-transform: uppercase;
 }
 
-.name h6 {
+.artist-username h6 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -186,7 +186,7 @@ p {
         margin-bottom: 2.142rem;
     }
 
-.profile-page .profile .name {
+.profile-page .profile .artist-username {
     margin-top: -80px;
 }
 

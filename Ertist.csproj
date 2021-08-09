@@ -105,10 +105,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
-    <Content Include="ArtistsDisplay.aspx" />
-    <Content Include="css\button.css" />
-    <Content Include="css\login.css" />
-    <Content Include="css\register.css" />
+    <Content Include="ClientArtistDetails.aspx" />
+    <Content Include="ClientArtistProfile.aspx" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
@@ -151,6 +149,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Image\browser_logo.png" />
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
     <Content Include="Image\reg_user.jpg" />
@@ -207,12 +206,19 @@
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ArtistsDisplay.aspx.cs">
-      <DependentUpon>ArtistsDisplay.aspx</DependentUpon>
+    <Compile Include="ClientArtistDetails.aspx.cs">
+      <DependentUpon>ClientArtistDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArtistsDisplay.aspx.designer.cs">
-      <DependentUpon>ArtistsDisplay.aspx</DependentUpon>
+    <Compile Include="ClientArtistDetails.aspx.designer.cs">
+      <DependentUpon>ClientArtistDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientArtistProfile.aspx.cs">
+      <DependentUpon>ClientArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientArtistProfile.aspx.designer.cs">
+      <DependentUpon>ClientArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteArtwork.aspx.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
