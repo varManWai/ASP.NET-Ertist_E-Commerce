@@ -15,29 +15,39 @@
 				        <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				        	<thead>
 					        	<tr>	
-					        		<%--<th width="45%">Product</th>	--%>
+                                    <%--					        		<th width="10%"></th>--%>
 									<th width="15%">Order ID</th>
+                                    <%--<th width="15%">Name</th>--%>
 					        		<th width="15%">Date</th>
 					        		<th width="15%">Total Price</th>
 									<th width="15%"></th>
-<%--					        		<th width="10%"></th>--%>
+                                    <%# Eval("orderID") %>
 					        	</tr>
 					        </thead>
-							<asp:Repeater ID="Repeater1" runat="server">
-							<ItemTemplate>
-					        <tbody>
-					        	<tr>
-									<td width="15%" class="price"><asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label></td>
-									<%--<td width="15%" class="price"><asp:Label ID="lblName" runat="server">RM <%# Eval("name") %>.00</asp:Label></td>--%>
-									<td width="15%" class="price"><asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
-									<td width="15%" class="price"><asp:Label ID="lblTotalPrice" runat="server">RM <%# Eval("totalPrice") %>.00</asp:Label></td> 
-					        	</tr>					        
-				        	</tbody>
-							  </ItemTemplate>
-							 </asp:Repeater>
+            <asp:Repeater ID="Repeater1" runat="server">
+                                <ItemTemplate>
+                                    <tbody>
+                                        <tr>
+                                            <td width="15%" class="price">
+                                                <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label></td>
+                                            <%--<td width="15%" class="price"><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></td>--%>
+                                            <td width="15%" class="price">
+                                                <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
+                                            <td width="15%" class="price">
+                                                <asp:Label ID="lblTotalPrice" runat="server">RM <%# Eval("totalPrice") %>.00</asp:Label></td>
+                                        </tr>
+                                    </tbody>
+                                </ItemTemplate>
+            </asp:Repeater>
 				        </table>
 				    </div>
 			    </div>
+            <%--<asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, Artwork.picture, [Order].date, [Order].orderID FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID WHERE (Artwork.artworkID = @artworkID)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="artworkID" SessionField="userID" />
+                </SelectParameters>
+            </asp:SqlDataSource>--%>
+                <br />
 			</div>
 		</div>
 	</div>

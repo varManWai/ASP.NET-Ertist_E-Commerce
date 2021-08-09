@@ -21,8 +21,8 @@ namespace Ertist
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT [orderID], [date], [totalPrice] FROM [Order]";
-            //string sqlSelect = "SELECT Order.orderID, Order.date, Artwork.name FROM (([Order] INNER JOIN [Order Artwork] ON Order.orderID = ([Order Artwork].orderID)) INNER JOIN Artwork ON Artwork.artworkID = ([Order Artwork].orderID))";
+            //string sqlSelect = "SELECT [orderID], [date], [totalPrice] FROM [Order]";
+            string sqlSelect = "SELECT Artwork.name, Artwork.picture, [Order].date, [Order].orderID FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN[Order] ON Order_Artwork.orderID = [Order].orderID WHERE(Artwork.artworkID = @artworkID)";
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 

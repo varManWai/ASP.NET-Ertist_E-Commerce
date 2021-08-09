@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditArtwork.aspx.cs" Inherits="Ertist.AddArtwork" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-            <!---Display Images-->
+    <style>
 
-            
+    </style>
+            <!---Display Images-->           
             <div style="padding:5%;">
-                <asp:Button ID="btnAdd" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnAdd" runat="server" class="art-pg-btn more-details-btn" Text="Add Artwork" OnClick="btnAdd_Click" />
                 <br />
                 <br />
                 <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" style="width: 100%; text-align:center;" GridLines="Vertical">
