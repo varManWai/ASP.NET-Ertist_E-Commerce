@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PurchaseHistory.aspx.cs" Inherits="Ertist.PurchaseHistory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="PurchaseHistory.aspx.cs" Inherits="Ertist.PurchaseHistory1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/PurchaseHistory.css" rel="stylesheet" />
@@ -17,20 +17,30 @@
                                 <tr>
                                     <%--<th width="10%"></th>--%>
                                     <th width="15%">Order ID</th>
-                                    <th width="15%">Name</th>
+                                    <th width="45%"></th>
+                                    <%--<th width="15%">Name</th>--%>
                                     <th width="15%">Date</th>
                                     <th width="15%">Total Price</th>
                                     <th width="15%"></th>
                                     <%--<%# Eval("orderID") %>--%>
                                 </tr>
                             </thead>
-                            <asp:Repeater ID="Repeater1" runat="server">
+                            <asp:Repeater ID="rptPurchase" runat="server" DataSourceID="SqlPurchase">
                                 <ItemTemplate>
                                     <tbody>
                                         <tr>
                                             <td width="15%" class="price">
                                                 <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label></td>
-                                            <%--<td width="15%" class="price"><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></td>--%>
+                                            <td width="45%">
+                                                <div class="display-flex align-center">
+                                                    <div class="img-product">
+                                                        <img src="<%# GetImage(Eval("picture")) %>">
+                                                    </div>
+                                                    <div class="name-product">
+                                                        <asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label>
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td width="15%" class="price">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
                                             <td width="15%" class="price">
@@ -42,14 +52,11 @@
                         </table>
                     </div>
                 </div>
-                <%--<asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, Artwork.picture, [Order].date, [Order].orderID FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID WHERE (Artwork.artworkID = @artworkID)">
-                <SelectParameters>
-                    <asp:SessionParameter Name="artworkID" SessionField="userID" />
-                </SelectParameters>
-            </asp:SqlDataSource>--%>
+                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID">
+            </asp:SqlDataSource>
                 <br />
             </div>
         </div>
     </div>
-	
+
 </asp:Content>
