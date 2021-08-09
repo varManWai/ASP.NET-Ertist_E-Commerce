@@ -149,6 +149,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Image\browser_logo.png" />
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
     <Content Include="Image\reg_user.jpg" />
