@@ -49,7 +49,6 @@ namespace Ertist
                 cmd.Parameters.AddWithValue("@picture", imgbyte);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@price", price);
-                //cmd.Parameters.AddWithValue("@date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock));
                 cmd.Parameters.AddWithValue("@available", available);
