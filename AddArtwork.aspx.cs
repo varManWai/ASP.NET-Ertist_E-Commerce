@@ -26,7 +26,7 @@ namespace Ertist
                 byte[] imgbyte = FileUpload1.FileBytes;
 
                 //string sqlUpdate = "UPDATE ArtWork set [image] = @image WHERE [artID] = @id";
-                string sqlInsert = "INSERT INTO ArtWork (artworkID, name, price, description, picture, stock, available, categoryID, galleryID) VALUES(@artworkID, @name, @price, @description, @picture, @stock, @available, @categoryID, @galleryID)";
+                string sqlInsert = "INSERT INTO ArtWork (name, price, description, picture, date, stock, available, categoryID, galleryID) VALUES(@name, @price, @description, @picture, GetDate(), @stock, @available, @categoryID, @galleryID)";
 
                 //SqlCommand cmd = new SqlCommand("INSERT INTO ArtWork(image) VALUES(@image) WHERE [artID] = '4001'");
 
@@ -38,44 +38,23 @@ namespace Ertist
                 SqlCommand cmd = new SqlCommand(sqlInsert, con);
 
                 //insert
-                int artworkID = Convert.ToInt32(artid.Text);
                 string name = txtName.Text;
                 string price = txtPrice.Text;
                 string description = txtDesc.Text;
                 int stock = 1;
                 string available = ddlAvailable.SelectedItem.Text;
-                //int painting = 1;
-                //int ink = 2;
-                //int watercolour = 3;
                 string category = ddlCategory.SelectedValue;
                 string gallery = ddlGallery.SelectedValue;
-                //string galleryID = ddlGallery.SelectedItem.Text;
 
-                cmd.Parameters.AddWithValue("@artworkID", artworkID);
                 cmd.Parameters.AddWithValue("@picture", imgbyte);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@price", price);
+                //cmd.Parameters.AddWithValue("@date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock));
                 cmd.Parameters.AddWithValue("@available", available);
                 cmd.Parameters.AddWithValue("@categoryID", category);
-                cmd.Parameters.AddWithValue("@galleryID", gallery);
-                //if (ddlCategory.SelectedItem.Text.Equals("Painting"))
-                //{
-                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(painting));
-
-                //}
-                //else if (ddlCategory.SelectedItem.Text.Equals("Ink"))
-                //{
-                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(ink));
-
-                //}
-                //else if (ddlCategory.SelectedItem.Text.Equals("Watercolour"))
-                //{
-                //    cmd.Parameters.AddWithValue("@categoryID", Convert.ToInt32(watercolour));
-                //}
-
-                
+                cmd.Parameters.AddWithValue("@galleryID", gallery);             
 
                 //add the rest
 

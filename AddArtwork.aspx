@@ -13,14 +13,6 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="width: 140px">Artwork ID</td>
-                    <td><asp:TextBox ID="artid" runat="server"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
                     <td class="auto-style3" style="height: 22px; width: 140px">Artwork Name</td>
                     <td style="height: 22px"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
                 </tr>

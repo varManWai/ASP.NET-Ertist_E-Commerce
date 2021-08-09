@@ -24,15 +24,6 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
-        /// artid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox artid;
-
-        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>

@@ -55,7 +55,7 @@
 
                                         <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
 
-                                        <%--<p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>--%>
+                                        <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>
                                         <p style="color: gray;"><asp:Label ID="lblStatus" runat="server"></asp:Label></p>
 
                                         <%--<input type="submit" value="Add To Wishlist" name="addWishList">--%>
@@ -69,7 +69,7 @@
                                         <div class="add">                                           
                                             &emsp;&emsp;&emsp;
                                              <asp:Button ID="btnAddCart" runat="server" Text="Add To Cart" /> &emsp;&emsp;
-                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" />
+                                            <asp:Button ID="btnAddWish" runat="server" Text="Add To Wishlist" OnClick="btnAddWish_Click1"/>
                                         </div>                                       
                                     </div>
                                 </div>
