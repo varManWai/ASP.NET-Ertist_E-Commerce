@@ -18,7 +18,7 @@
 	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
 	                            </div>
 	                            <div class="name">
-	                                <h3 class="title">Christian Louboutin</h3>
+	                                <h3 class="title">Christiii</h3>
 	                            </div>
                                <div class="description text-center artist-bio">
                                  <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
