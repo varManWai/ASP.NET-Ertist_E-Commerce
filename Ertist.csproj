@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="css\button.css" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateArtwork.aspx.cs" Inherits="Ertist.UpdateArtwork" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href="css/button.css" rel="stylesheet" />
     <div style="padding:5%;">
     <h3>Update Artwork</h3><br />
             <table class="auto-style5" style="font-size:14px">
@@ -88,10 +88,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">
-                        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
+                        <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
                     </td>
                     <td>
-                        <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update" />
+                        <asp:Button ID="btnUpdate" class="art-pg-btn" runat="server" OnClick="btnUpdate_Click" Text="Update" />
                     </td>
                 </tr>
                

@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddArtwork.aspx.cs" Inherits="Ertist.AddArtwork1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <link href="css/button.css" rel="stylesheet" />
+    <style>        
+        .auto-style1 {
+            width: 140px;
+            height: 21px;
+        }
+        .auto-style2 {
+            height: 21px;
+        }
+    </style>
+
     <div style="font-size:14px; padding:5%">
             <h3>Add Artwork</h3><br />
             <table class="auto-style5">
@@ -73,13 +84,13 @@
                         <asp:DropDownList ID="ddlGallery" runat="server" DataSourceID="SqlGallery" DataTextField="name" DataValueField="galleryID"></asp:DropDownList></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style2"></td>
                 </tr>
                
                 <tr>
-                    <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
-                    <td class="auto-style4"><asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click"  /></td>
+                    <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" class="art-pg-btn" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
+                    <td class="auto-style4"><asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" OnClick="btnCancel_Click"  /></td>
                 </tr>             
             </table>
 
