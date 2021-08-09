@@ -37,12 +37,11 @@
                                                         <img src="<%# GetImage(Eval("picture")) %>">
                                                     </div>
                                                     <div class="name-product">
-                                                        <asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></td>		                                   
+                                                        <asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label>
                                                     </div>
                                                 </div>
                                             </td>
-                                            
-                                                <td width="15%" class="price">
+                                            <td width="15%" class="price">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
                                             <td width="15%" class="price">
                                                 <asp:Label ID="lblTotalPrice" runat="server">RM <%# Eval("totalPrice") %>.00</asp:Label></td>
