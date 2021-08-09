@@ -26,7 +26,7 @@ namespace Ertist
                 byte[] imgbyte = FileUpload1.FileBytes;
 
                 //string sqlUpdate = "UPDATE ArtWork set [image] = @image WHERE [artID] = @id";
-                string sqlInsert = "INSERT INTO ArtWork (artworkID, name, price, description, picture, stock, available, categoryID, galleryID) VALUES(@artworkID, @name, @price, @description, @picture, @stock, @available, @categoryID, @galleryID)";
+                string sqlInsert = "INSERT INTO ArtWork (artworkID, name, price, description, picture, date, stock, available, categoryID, galleryID) VALUES(@artworkID, @name, @price, @description, @picture, GetDate(), @stock, @available, @categoryID, @galleryID)";
 
                 //SqlCommand cmd = new SqlCommand("INSERT INTO ArtWork(image) VALUES(@image) WHERE [artID] = '4001'");
 
@@ -55,6 +55,7 @@ namespace Ertist
                 cmd.Parameters.AddWithValue("@picture", imgbyte);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@price", price);
+                //cmd.Parameters.AddWithValue("@date", DateTime.Now);
                 cmd.Parameters.AddWithValue("@description", description);
                 cmd.Parameters.AddWithValue("@stock", Convert.ToInt32(stock));
                 cmd.Parameters.AddWithValue("@available", available);
