@@ -1,80 +1,54 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Ertist.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Ertist.Register" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
+    <link href="css/register.css" rel="stylesheet" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Register Form</title>
+    <div class="back">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                        <div class="card-img-left d-none d-md-flex">
+                            <!-- Background image for card set in CSS! -->
+                        </div>
+                        <div class="card-body p-4 p-sm-5" style="margin:3%;">
+                            <h3 style="padding-bottom:20px;"><strong class="title">Sign Up Here !</strong></h3>
 
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+                            <div class="mb-3">
+                                <span class="title">Username :</span> 
+                                <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
 
-    <style>
-        body {
-            background-color: black;
-            background: linear-gradient(to right, #434545, #787a7a);
-        }
+                            <div class="mb-3">
+                                <span class="title">Email address :</span> 
+                                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                            </div>
 
-        .card-img-left {
-            width: 45%;
-            background: url('Image/reg.jpg');
-            background-size: cover;
-        }
+                            <div class="mb-3">
+                                <span class="title">Password :</span> 
+                                <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                            </div>
 
-        .btn-login {
-            font-size: 0.9rem;
-            letter-spacing: 0.05rem;
-            padding: 0.75rem 1rem;
-        }
+                            <div class="mb-3">
+                                <span class="title">Confirm password :</span> 
+                                <asp:TextBox ID="txtConfirmPwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                            </div>
 
-    </style>
-</head>
+                            <hr class="my-4">
 
-<body>
-    <div class="container">
-    <div class="row">
-      <div class="col-lg-10 col-xl-9 mx-auto">
-        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-          <div class="card-img-left d-none d-md-flex">
-            <!-- Background image for card set in CSS! -->
-          </div>
-          <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fs-5">Register</h5>
-            <form id="form1" runat="server">
+                            <div class="d-grid mb-2">
+                                <asp:Button ID="submitReg" runat="server" Text="Register" CssClass="btn-reg" />
+                            </div>
 
-              <div class="mb-3">
-                  Username : <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
-              </div>
+                            <hr class="my-4">
 
-              <div class="mb-3">
-                  Email address : <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
-              </div>
+                                <a class="d-block mt-2 small" href="Login.aspx">Have an account? Sign In</a>
 
-              <hr>
 
-              <div class="mb-3">
-                  Password : <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-              </div>
-
-              <div class="mb-3">
-                  Confirm password : <asp:TextBox ID="txtConfirmPwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-              </div>
-
-              <hr class="my-4">
-
-                <div class="d-grid mb-2">
-                    <asp:Button ID="submitReg" runat="server" Text="Register" CssClass="btn btn-lg btn-dark btn-login fw-bold text-uppercase"/>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="d-grid mb-2">
-                    <asp:Button ID="loginPage" runat="server" Text="Have an account? Sign In" CssClass="btn btn-lg btn-light btn-login fw-bold text-uppercase" OnClick="loginPage_Click"/>
-                </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</body>
-</html>
+</asp:Content>
