@@ -12,18 +12,19 @@
                 <div class="container">
                     
 
-                    <%-- Artist Profile --%>
+                    <%-- Edit Gallery/Artwork --%>
                         <div class="profile">
-	                            <div class="avatar">
+	                            <div class="avatar text-center">
 	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-	                            </div>
-	                            <div class="name">
-	                                <h3 class="title">Christiii</h3>
+                                    <div class="artist-username">
+	                                    <h2 class="title username">Christiii</h2>
+	                                </div>
 	                            </div>
                                <div class="description text-center artist-bio">
                                  <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
                                     <div class="artist-profile-btn artist-btn btn-container">
-                                        <button class="art-pg-btn more-details-btn">More Details</button>
+                                        <asp:Button ID="btnMoreDetails" runat="server" Text="More Details" 
+                                            class="art-pg-btn more-details-btn" OnClick="btnMoreDetails_Click"/>
                                     </div>
                                </div>
 	                        </div>
@@ -32,13 +33,13 @@
                     <hr class="profile-gallery-delimiter"/>
 
 
-                    <%-- Edit Gallery/Artwork --%>
-                      <div class="ddl-container artist-dropdown-container">
-                        <%--<button class="art-pg-btn dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
+                    <%--<button class="art-pg-btn dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
                         <div class="edit-content">
                           <a href="#">Gallery</a>
                           <a href="#">Artwork</a>
                         </div>--%>
+                      <div class="ddl-container artist-dropdown-container">
+                          <%-- Display Gallery --%>
                       </div> 
 
 
