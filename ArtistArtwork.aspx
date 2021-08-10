@@ -10,7 +10,7 @@
             <%-- Back to Gallery --%>
             <div class="view-gal-btn-container artist-btn btn-container">
                 <asp:Button ID="btnBackGallery" runat="server" Text="Gallery" 
-                    class="art-pg-btn view-gal-btn"/>
+                    class="art-pg-btn view-gal-btn" OnClick="btnBackGallery_Click"/>
             </div>
 
             <%-- Gallery Info --%>

@@ -37,8 +37,8 @@
                     <div class="dropdown artist-dropdown-container ddl-container">
                       <button class="art-pg-btn dropbtn edit-gal-dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
                       <div class="dropdown-content edit-content">
-                        <a href="#">Gallery</a>
-                        <a href="#">Artwork</a>
+                        <a href="EditGallery.aspx">Gallery</a>
+                        <a href="EditArtwork.aspx">Artwork</a>
                       </div>
                     </div>
 

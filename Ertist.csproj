@@ -105,12 +105,16 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
     <Content Include="Artist\Contact.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
+    <Content Include="css\GalleryCRUD.css" />
     <Content Include="DeleteArtwork.aspx" />
+    <Content Include="DeleteGallery.aspx" />
+    <Content Include="EditArtistProfile.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -140,6 +144,7 @@
     <Content Include="Default.aspx" />
     <Content Include="ArtworkDisplay.aspx" />
     <Content Include="Description.aspx" />
+    <Content Include="EditGallery.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -164,6 +169,7 @@
     <Content Include="Register.aspx" />
     <Content Include="RegisterPick.aspx" />
     <Content Include="UpdateArtwork.aspx" />
+    <Content Include="UpdateGallery.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="Wishlist.aspx" />
     <Content Include="Artist\Web.config" />
@@ -210,6 +216,13 @@
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddGallery.aspx.cs">
+      <DependentUpon>AddGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddGallery.aspx.designer.cs">
+      <DependentUpon>AddGallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ArtistArtwork.aspx.cs">
       <DependentUpon>ArtistArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,6 +257,20 @@
     </Compile>
     <Compile Include="DeleteArtwork.aspx.designer.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteGallery.aspx.cs">
+      <DependentUpon>DeleteGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteGallery.aspx.designer.cs">
+      <DependentUpon>DeleteGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditArtistProfile.aspx.cs">
+      <DependentUpon>EditArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditArtistProfile.aspx.designer.cs">
+      <DependentUpon>EditArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditArtwork.aspx.cs">
       <DependentUpon>EditArtwork.aspx</DependentUpon>
@@ -304,6 +331,13 @@
     </Compile>
     <Compile Include="Description.aspx.designer.cs">
       <DependentUpon>Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditGallery.aspx.cs">
+      <DependentUpon>EditGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditGallery.aspx.designer.cs">
+      <DependentUpon>EditGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -371,6 +405,13 @@
     </Compile>
     <Compile Include="UpdateArtwork.aspx.designer.cs">
       <DependentUpon>UpdateArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGallery.aspx.cs">
+      <DependentUpon>UpdateGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateGallery.aspx.designer.cs">
+      <DependentUpon>UpdateGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
