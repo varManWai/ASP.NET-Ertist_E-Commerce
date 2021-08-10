@@ -13,5 +13,10 @@ namespace Ertist
         {
 
         }
+
+        protected void btnMoreDetails_Click ( object sender, EventArgs e )
+        {
+            Response. Redirect ("ClientArtistDetails.aspx");
+        }
     }
 }
