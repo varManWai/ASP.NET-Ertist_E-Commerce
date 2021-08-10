@@ -175,7 +175,7 @@
                         font-family: "Cardo", serif;
                     }
 
-                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove button {
+                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove #Button1 {
                         background-color: #ca3f49;
                         outline: none;
                         border: none;
