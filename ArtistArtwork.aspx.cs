@@ -7,16 +7,11 @@ using System. Web. UI. WebControls;
 
 namespace Ertist
 {
-    public partial class ClientArtistDetails : System. Web. UI. Page
+    public partial class ArtistArtwork : System. Web. UI. Page
     {
         protected void Page_Load ( object sender, EventArgs e )
         {
 
-        }
-
-        protected void btnBackGallery_Click ( object sender, EventArgs e )
-        {
-            Response. Redirect ("ClientArtistProfile.aspx");
         }
     }
 }

@@ -10,38 +10,6 @@
         <div class="main">
 		    <div class="profile-content">
                 <div class="container">
-                    
-
-                    <%-- Artist Profile --%>
-                        <%--<div class="profile">
-	                        <div class="avatar">
-	                            <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                                <div class="artist-username">
-	                                <h2 class="title username">Christiii</h2>
-	                            </div>
-	                        </div>
-                            <div class="description text-center artist-name">
-                                <p>(Christine Rose)</p>
-                            </div>
-                            <div class="description text-center artist-gender">
-                                <p>Female</p>
-                            </div>
-                            <div class="description text-center artist-bio">
-                                <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, 
-                                    Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
-                            </div>
-	                    </div>--%>
-
-
-                                <%--<div class="info-contact text-center">
-                                    <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf098;</i> 012-20000000</p>
-                                    <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf073;</i> Joined 05 May 2021</p>
-                                    <p class="artist-contact"><i class="fa fa-envelope" aria-hidden="true"></i> christinerose@gmail.com</p>
-                                </div>--%>
-
-
-
-
 
 
                     <div class="page-content page-container" id="page-content">
@@ -88,6 +56,10 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="artist-profile-btn artist-btn btn-container">
+                                                        <asp:Button ID="btnBackGallery" runat="server" Text="View Gallery" 
+                                                            class="art-pg-btn view-gal-btn" OnClick="btnBackGallery_Click"/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,14 +69,7 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
+                    
 		    </div>
             </div>
 	    </div>

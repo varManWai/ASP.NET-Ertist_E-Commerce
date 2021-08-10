@@ -33,16 +33,6 @@
 
 
                     <%-- Edit Gallery/Artwork --%>
-                      <div class="ddl-container artist-dropdown-container">
-                        <%--<button class="art-pg-btn dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
-                        <div class="edit-content">
-                          <a href="#">Gallery</a>
-                          <a href="#">Artwork</a>
-                        </div>--%>
-                      </div> 
-
-
-
                     <div class="dropdown artist-dropdown-container ddl-container">
                       <button class="art-pg-btn dropbtn edit-gal-dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
                       <div class="dropdown-content edit-content">
@@ -50,9 +40,6 @@
                         <a href="#">Artwork</a>
                       </div>
                     </div>
-
-
-
 
                     <%-- Display Gallery --%>
                      <div class="gal-row">
