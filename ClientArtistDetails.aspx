@@ -23,7 +23,7 @@
                                 <div class="description text-center artist-name">
                                     <p>(Christine Rose)</p>
                                 </div>
-                                <div class="description text-center artist-name">
+                                <div class="description text-center artist-gender">
                                     <p>Female</p>
                                 </div>
                                 <div class="description text-center artist-bio">
@@ -33,9 +33,9 @@
 	                            </div>
 
 
-                                <div class="description text-center artist-name">
-                                    <p><i style="font-size:24px" class="fa">&#xf098;</i> 012-20000000</p>
-                                    <p><i style="font-size:24px" class="fa">&#xf073;</i> Joined 05 May 2021</p>
+                                <div class="info-contact text-center">
+                                    <p><i style="font-size:16px" class="fa">&#xf098;</i> 012-20000000</p>
+                                    <p><i style="font-size:16px" class="fa">&#xf073;</i> Joined 05 May 2021</p>
                                     <p><i class="fa fa-envelope" aria-hidden="true"></i> christinerose@gmail.com</p>
                                 </div>
 
