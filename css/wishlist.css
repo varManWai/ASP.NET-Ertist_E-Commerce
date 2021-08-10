@@ -175,16 +175,16 @@
                         font-family: "Cardo", serif;
                     }
 
-                    .cart_section .cart_all .artwork_container_all .artwork_container .artwork_details .price_remove #Button1 {
-                        background-color: #ca3f49;
-                        outline: none;
-                        border: none;
-                        border-radius: 300px;
-                        width: 100%;
-                        max-width: 158px;
-                        height: 38px;
-                        color: white;
-                        font-size: clamp(10px, 1.5vw, 15px);
-                        margin-left: 20px;
-                        letter-spacing: 0.12em;
-                    }
+#Button1 {
+    background-color: #ca3f49;
+    outline: none;
+    border: none;
+    border-radius: 300px;
+    width: 100%;
+    max-width: 158px;
+    height: 38px;
+    color: white;
+    font-size: clamp(10px, 1.5vw, 15px);
+    margin-left: 20px;
+    letter-spacing: 0.12em;
+}

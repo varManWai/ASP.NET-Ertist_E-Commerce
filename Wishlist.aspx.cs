@@ -22,12 +22,13 @@ namespace Ertist
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN[User] ON Wishlist.userID = [User].UserID AND[User].UserID = 6";
+            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID  AND [User].UserID = 6";
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
             Repeater2.DataSource = cmd.ExecuteReader();
             Repeater2.DataBind();
+
 
             //close connection
             con.Close();
@@ -39,6 +40,18 @@ namespace Ertist
             return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
- 
+        protected void btnRemove_Click(object sender, EventArgs e)
+        {
+            //int artworkID = Convert.ToInt32(txtWishlistID.Text);
+            string sql = "DELETE from Wishlist where wishlistID = @wishlistID";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@wishlistID", "6");
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
