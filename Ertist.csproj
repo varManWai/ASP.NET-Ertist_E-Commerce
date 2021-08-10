@@ -105,9 +105,11 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="ArtistArtwork.aspx" />
     <Content Include="Artist\Contact.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
+    <Content Include="css\ArtistArtwork.css" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
@@ -208,6 +210,13 @@
     </Compile>
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistArtwork.aspx.cs">
+      <DependentUpon>ArtistArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistArtwork.aspx.designer.cs">
+      <DependentUpon>ArtistArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="Artist\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
