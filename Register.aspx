@@ -14,6 +14,8 @@
                         <div class="card-body p-4 p-sm-5" style="margin:3%;">
                             <h3 style="padding-bottom:20px;"><strong class="title">Sign Up Here !</strong></h3>
 
+                            <asp:Label ID="message" runat="server" ForeColor="Red"></asp:Label>
+
                             <div class="mb-3">
                                 <span class="title">Username :</span> 
                                 <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
@@ -37,7 +39,7 @@
                             <hr class="my-4">
 
                             <div class="d-grid mb-2">
-                                <asp:Button ID="submitReg" runat="server" Text="Register" CssClass="btn-reg" />
+                                <asp:Button ID="submitReg" runat="server" Text="Register" CssClass="btn-reg" OnClick="submitReg_Click" />
                             </div>
 
                             <hr class="my-4">

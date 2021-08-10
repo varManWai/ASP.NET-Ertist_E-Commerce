@@ -17,6 +17,9 @@ namespace Ertist
         {
             if (!this.IsPostBack)
             {
+                string messageReg = Request.QueryString["message"];
+                message.Text = messageReg;
+
                 if (this.Page.User.Identity.IsAuthenticated)
                 {
                     FormsAuthentication.SignOut();
