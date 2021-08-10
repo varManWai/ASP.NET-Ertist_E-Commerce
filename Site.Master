@@ -75,18 +75,37 @@
                             </a>
                         </div>
 
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="./Image/reg.jpg" alt="" srcset="">
-                                Lai Man Wai
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="./Image/reg.jpg" alt="" srcset="">
+                                        Lai Man Wai <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap"/>
+                                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">    
+                                    <LevelMenuItemStyles>
+                                        <asp:MenuItemStyle CssClass="main_menu"/>
+                                        <asp:MenuItemStyle CssClass="level_menu"/>
+                                    </LevelMenuItemStyles>
+                                </asp:Menu>
+
+                                <div class="cart_button_section">
+                                        <i class="glyphicon glyphicon-remove"><asp:LoginStatus ID="LoginStatus1" runat="server" /></i>
+                                </div>
+
+                                
+                            </LoggedInTemplate>
+                        </asp:LoginView>
                     </div>
                 </div>
 

@@ -105,6 +105,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddArtwork.aspx" />
+    <Content Include="Artist\Contact.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="DeleteArtwork.aspx" />
@@ -164,6 +165,7 @@
     <Content Include="UpdateArtwork.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="Wishlist.aspx" />
+    <Content Include="Artist\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -197,6 +199,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddArtwork.aspx.cs">
@@ -205,6 +208,13 @@
     </Compile>
     <Compile Include="AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artist\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientArtistDetails.aspx.cs">
       <DependentUpon>ClientArtistDetails.aspx</DependentUpon>
