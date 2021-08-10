@@ -17,7 +17,8 @@ namespace Ertist
             if (!Page.IsPostBack)
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
-                string sql = "SELECT * from Artwork WHERE artworkID = @artworkID";
+                //string sql = "SELECT * from Artwork WHERE artworkID = @artworkID";
+                string sql = "SELECT Artwork.*, Category.name AS Expr1 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID WHERE artworkID = @artworkID";
 
                 //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -36,24 +37,25 @@ namespace Ertist
                 {
                     picture.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
                     lblDesc.Text = (string)dr["description"];
-                    if (dr["categoryID"].Equals(1))
-                    {
-                        lblCategory.Text = "Painting";
+                    lblCategory.Text = (string)dr["Expr1"];
+                    //if (dr["categoryID"].Equals(1))
+                    //{
+                    //    lblCategory.Text = "Painting";
 
-                    }
-                    else if (dr["categoryID"].Equals(2))
-                    {
-                        lblCategory.Text = "Ink";
+                    //}
+                    //else if (dr["categoryID"].Equals(2))
+                    //{
+                    //    lblCategory.Text = "Ink";
 
-                    }
-                    else if (dr["categoryID"].Equals(3))
-                    {
-                        lblCategory.Text = "Watercolour";
+                    //}
+                    //else if (dr["categoryID"].Equals(3))
+                    //{
+                    //    lblCategory.Text = "Watercolour";
 
-                    }
+                    //}
                     //lblCategory.Text = (string)dr["name"];
                     lblName.Text = (string)dr["name"];
-                    lblPrice.Text = "RM " + Convert.ToString(dr["price"]);
+                    lblPrice.Text = "$ " + Convert.ToString(dr["price"]);
                     lblDate.Text = (string)dr["Date"].ToString();
                     lblStatus.Text = (string)dr["available"];                 
                 }
