@@ -55,7 +55,7 @@ namespace Ertist
                     //}
                     //lblCategory.Text = (string)dr["name"];
                     lblName.Text = (string)dr["name"];
-                    lblPrice.Text = "RM " + Convert.ToString(dr["price"]);
+                    lblPrice.Text = "$ " + Convert.ToString(dr["price"]);
                     lblDate.Text = (string)dr["Date"].ToString();
                     lblStatus.Text = (string)dr["available"];                 
                 }

@@ -44,7 +44,7 @@
                                             <td width="15%" class="price">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
                                             <td width="15%" class="price">
-                                                <asp:Label ID="lblTotalPrice" runat="server">RM <%# Eval("totalPrice") %>.00</asp:Label></td>
+                                                <asp:Label ID="lblTotalPrice" runat="server">$ <%# Eval("totalPrice") %></asp:Label></td>
                                         </tr>
                                     </tbody>
                                 </ItemTemplate>
