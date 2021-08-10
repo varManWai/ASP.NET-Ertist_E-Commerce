@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Ertist.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+
     <link href="css/login.css" rel="stylesheet" />
 
     <div class="box">
@@ -14,14 +14,18 @@
                 </div>
                 <div class="form-group">
                     Password
-                <asp:TextBox ID="TextBox1" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
-                <asp:Button ID="submitLogin" runat="server" Text="Login" CssClass="btn-login" />
+                <asp:Button ID="submitLogin" runat="server" Text="Login" CssClass="btn-login" OnClick="submitLogin_Click" />
                 <br />
                 <br />
                 <br />
                 <br />
-                <div class="text-center small">Don't have an account? <a href="RegisterPick.aspx">Sign up</a></div>
+                <div class="text-center small">Don't have an account? <a href="RegisterPick.aspx">Sign up</a>
+                <br />
+                <br />
+                <asp:Label ID="errorMsg" runat="server" ForeColor="Red"></asp:Label>
+                </div>
 
 
             </div>
