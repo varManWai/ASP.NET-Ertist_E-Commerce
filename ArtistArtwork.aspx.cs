@@ -13,5 +13,10 @@ namespace Ertist
         {
 
         }
+
+        protected void btnBackGallery_Click ( object sender, EventArgs e )
+        {
+            Response. Redirect ("ArtistProfile.aspx");
+        }
     }
 }

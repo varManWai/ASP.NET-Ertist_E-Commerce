@@ -6,34 +6,156 @@
     background: #FFF;
     position: relative;
     z-index: 3;
-    margin: 100px;
     padding: 50px;
+    margin-bottom:50px;
 }
 
 .main {
     margin-top: 250px;
 }
 
-/* Gallery */
+.artwork-container{
+    padding:50px;
+}
 
+.title {
+    margin-top: 30px;
+    min-height: 32px;
+    color: #3C4858;
+    font-weight: 700;
+    font-family: "Roboto Slab","Times New Roman",serif;
+}
+
+.description {
+    margin: 20px auto 20px;
+    max-width: 600px;
+    color: #999;
+    font-weight: 300;
+}
+
+.gal-info{
+    margin-top:100px;
+}
+/* Button */
+.art-pg-btn {
+    background-color: #ca3f49;
+    outline: none;
+    border: none;
+    border-radius: 300px;
+    width: 100%;
+    max-width: 158px;
+    height: 38px;
+    color: white;
+    font-size: clamp(10px, 1.5vw, 15px);
+    margin-left: 20px;
+    letter-spacing: 0.12em;
+}
+
+.artwork-delimiter {
+    margin: 30px 100px;
+}
+
+.artwork-section {
+    padding: 30px 100px;
+}
+
+.view-gal-btn {
+    margin-left: 100px;
+    margin-top: 10px;
+    float: left;
+}
+
+/* Dropdown */
+.cat-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+}
+
+    .cat-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 12px;
+    }
+
+.cat-content a:hover {
+    background-color: #ddd;
+}
+
+.artist-dropdown-container:hover .cat-content {
+    display: block;
+}
+
+.cat-dropbtn {
+    width: fit-content;
+    padding: 0 20px;
+    margin-left:0px;
+    margin-top:10px
+}
+
+    .cat-dropbtn:hover {
+        cursor: pointer;
+    }
+
+.artist-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+    .artist-dropdown-container:hover .cat-dropbtn {
+        opacity: 0.9;
+    }
+
+/* Gallery Cover Photo */
+    .gal-cover-pic img {
+        object-fit: cover;
+        width: 100%;
+        height:400px;
+    }
+
+/* Artwork */
+.art-column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.art-row {
+    margin: 30px 10px;
+}
+
+    .art-row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
 @media screen and (max-width: 600px) {
-    .gal-column {
+    .art-column {
         width: 100%;
         display: block;
         margin-bottom: 20px;
     }
 }
 
-.gal-img {
+.art-card {
     text-align: center;
-    background-color: transparent;
 }
 
-    .gal-img img {
+    .art-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background-color: transparent;
+        border-radius: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 40px;
-        width:200px;
-        height:250px;
-        object-fit:cover;
     }
+

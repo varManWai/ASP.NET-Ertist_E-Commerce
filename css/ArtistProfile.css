@@ -125,16 +125,6 @@ a .material-icons {
     font-weight: 300;
 }
 
-/*.info-contact{
-    margin-top:40px;
-    display:inline-flex;
-    margin-left:25%;
-}
-
-.artist-contact{
-    margin:0 30px;
-}*/
-
 p {
     font-size: 14px;
     margin: 0 0 10px;
@@ -389,18 +379,17 @@ body {
 }
 
 .gal-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
     text-align: center;
-    background-color: transparent;
-    border-radius:20px;
 }
 
-.gal-card img {
-    width: 100%;
-    height: 200px;
-    object-fit:cover;
-}
+    .gal-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background-color: transparent;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
 
 /* Artist Details */
 .padding {
