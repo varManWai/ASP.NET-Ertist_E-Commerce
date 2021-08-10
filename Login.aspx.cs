@@ -62,9 +62,6 @@ namespace Ertist
                         break;
                     default:
 
-                        // Create a custom FormsAuthenticationTicket containing
-                        // application specific data for the user.
-
                         FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, username, DateTime.Now, DateTime.Now.AddMinutes(2880), isPersistent,roles, FormsAuthentication.FormsCookiePath);
 
                         // Encrypt the ticket.
