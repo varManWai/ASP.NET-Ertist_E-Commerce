@@ -28,8 +28,27 @@
     <link rel="stylesheet" href="./css/navbar.css">
 
     <style>
-        .main_menu{width: 100px; background-color: #fff;border: 1px solid #ccc !important; color: #000;text-align: center;height: 30px;line-height: 30px;margin-right: 5px;}
-        .level_menu{width: 110px; background-color: #fff; color: #333;border: 1px solid #ccc !important;text-align: center;height: 30px;line-height: 30px;margin-top: 5px;}
+        .main_menu {
+            width: 100px;
+            background-color: #fff;
+            border: 1px solid #ccc !important;
+            color: #000;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 5px;
+        }
+
+        .level_menu {
+            width: 110px;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ccc !important;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +105,8 @@
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="./Image/reg.jpg" alt="" srcset="">
-                                        Lai Man Wai <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
+                                        Lai Man Wai
+                                        <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -96,19 +116,21 @@
                                         </ul>
                                     </ul>
                                 </div>
-                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap"/>
-                                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">    
+                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap" />
+                                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
                                     <LevelMenuItemStyles>
-                                        <asp:MenuItemStyle CssClass="main_menu"/>
-                                        <asp:MenuItemStyle CssClass="level_menu"/>
+                                        <asp:MenuItemStyle CssClass="main_menu" />
+                                        <asp:MenuItemStyle CssClass="level_menu" />
                                     </LevelMenuItemStyles>
                                 </asp:Menu>
 
                                 <div class="cart_button_section">
-                                        <i class="glyphicon glyphicon-remove"><asp:LoginStatus ID="LoginStatus1" runat="server" /></i>
+                                    <i class="glyphicon glyphicon-remove">
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                                    </i>
                                 </div>
 
-                                
+
                             </LoggedInTemplate>
                         </asp:LoginView>
                     </div>
@@ -274,7 +296,7 @@
         </div>
         <hr />
         <footer>
-            <p>&copy; <%: DateTime.Now.Year %> ERTIST</p>
+            <p style="font-size: clamp(14px,1.5vw,18px);background-color: #1B1B1B;color: white;text-align: center;height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
 
