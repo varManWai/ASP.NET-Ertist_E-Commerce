@@ -47,11 +47,13 @@ namespace Ertist
         private DataSet GetData()
         {
             string CS = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(CS))
+            using (SqlConnection conn = new SqlConnection(CS))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, " +
                     "Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = " +
-                    "Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID", con);
+                    "Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID", conn);
+
+                //SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN[User] ON Wishlist.userID = [User].UserID AND[User].UserID = 6
 
                 DataSet ds = new DataSet();
                 da.Fill(ds);

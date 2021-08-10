@@ -44,7 +44,7 @@
                                             <td width="15%" class="price">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
                                             <td width="15%" class="price">
-                                                <asp:Label ID="lblTotalPrice" runat="server">RM <%# Eval("totalPrice") %>.00</asp:Label></td>
+                                                <asp:Label ID="lblTotalPrice" runat="server">$ <%# Eval("totalPrice") %></asp:Label></td>
                                         </tr>
                                     </tbody>
                                 </ItemTemplate>
@@ -52,7 +52,7 @@
                         </table>
                     </div>
                 </div>
-                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID">
+                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID AND [User].UserID = 6">
             </asp:SqlDataSource>
                 <br />
             </div>
