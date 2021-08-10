@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Wishlist.aspx.cs" Inherits="Ertist.Wishlist" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Wishlist.aspx.cs" Inherits="Ertist.Wishlist" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -23,7 +23,7 @@
 
                 <asp:Repeater ID="Repeater2" runat="server">
                     <ItemTemplate>
-                        <%--<div class="artwork_container">
+                        <div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
                             </div>
@@ -41,11 +41,11 @@
                                     <button>REMOVE</button>
                                 </div>
                             </div>
-                        </div>--%>
+                        </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID"></asp:SqlDataSource>
+            <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID"></asp:SqlDataSource>--%>
         </div>
 
     </section>
