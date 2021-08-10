@@ -25,19 +25,19 @@
                     <ItemTemplate>
                         <div class="artwork_container">
                             <div class="artwork_image">
-                                <img src="<%# GetImage(Eval("Artwork.picture")) %>" alt="An Artwork Picture">
+                                <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
                             </div>
                             <div class="artwork_details">
-                                <span class="artwor_details_name"><%# Eval("Artwork.name") %></span>
+                                <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
-                                    <img src=" <%# GetImage(Eval("[User].picture")) %>" alt="An Artist Picture">
-                                    <span><%# Eval("[User].username") %></span>
+                                    <img src=" <%# GetImage(Eval("Expr1")) %>" alt="An Artist Picture">
+                                    <span><%# Eval("username") %></span>
                                 </div>
                                 <div class="artwork_description">
-                                    <%# Eval("Artwork.description") %>
+                                    <%# Eval("description") %>
                                 </div>
                                 <div class="price_remove">
-                                    <span class="price"><%# Eval("Artwork.price") %></span>
+                                    <span class="price"><%# Eval("price") %></span>
                                     <button>REMOVE</button>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = 6"></asp:SqlDataSource>
         </div>
 
     </section>
