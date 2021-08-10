@@ -4,6 +4,12 @@
     <link href="css/login.css" rel="stylesheet" />
 
     <div class="box">
+
+        <div class="text-center">
+            <asp:Label ID="message" runat="server" Font-Bold="False" Font-Size="Large" ForeColor="#000099" Font-Strikeout="False"></asp:Label>
+        </div>
+        <br />
+        <br />
         <div class="login-form">
             <div class="avatar" style="background-color: firebrick"><i class="glyphicon">&#xe008;</i></div>
             <h4 class="modal-title">Login to Your Account</h4>

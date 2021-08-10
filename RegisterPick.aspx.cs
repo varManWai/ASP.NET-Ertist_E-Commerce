@@ -16,13 +16,13 @@ namespace Ertist
 
         protected void btn_user_Click(object sender, EventArgs e)
         {
-            string role = "user";
+            int role = 3;
             Response.Redirect(string.Format("~/Register.aspx?role={0}", role));
         }
 
         protected void btn_artist_Click(object sender, EventArgs e)
         {
-            string role = "artist";
+            int role = 2;
             Response.Redirect(string.Format("~/Register.aspx?role={0}", role));
         }
     }

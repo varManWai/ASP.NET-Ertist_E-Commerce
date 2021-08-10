@@ -26,6 +26,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/navbar.css">
+
+    <style>
+        .main_menu{width: 100px; background-color: #fff;border: 1px solid #ccc !important; color: #000;text-align: center;height: 30px;line-height: 30px;margin-right: 5px;}
+        .level_menu{width: 110px; background-color: #fff; color: #333;border: 1px solid #ccc !important;text-align: center;height: 30px;line-height: 30px;margin-top: 5px;}
+    </style>
 </head>
 <body>
     <form runat="server">
