@@ -13,5 +13,10 @@ namespace Ertist
         {
 
         }
+
+        public string GetImage(object img)
+        {
+            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
+        }
     }
 }

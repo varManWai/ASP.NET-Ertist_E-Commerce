@@ -28,7 +28,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <asp:Repeater ID="Repeater4" runat="server">
                                         <ItemTemplate>
-                                            <li><a class="dropdown-item" href="#"><%# Eval("addressName") %></a></li>
+                                            <li><div class="dropdown-item" ><%# Eval("addressName") %></div></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </ul>
