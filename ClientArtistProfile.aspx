@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ClientArtistProfile.aspx.cs" Inherits="Ertist.ClientArtistProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientArtistProfile.aspx.cs" Inherits="Ertist.ClientArtistProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/ArtistProfile.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     
-
     <div class="container">
     <div class="profile-page">
         <div class="main">
@@ -15,13 +14,20 @@
                     <%-- Edit Gallery/Artwork --%>
                         <div class="profile">
 	                            <div class="avatar text-center">
-	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                                    <!--image-->
+                                    <asp:Image ID="artist_picture" class="img-raised rounded-circle img-fluid" runat="server" />
                                     <div class="artist-username">
-	                                    <h2 class="title username">Christiii</h2>
+	                                    <h2 class="title username">
+                                            <!--Username-->
+                                            <asp:Label ID="lbl_artist_username" runat="server" Text="Label"></asp:Label></h2>
 	                                </div>
 	                            </div>
                                <div class="description text-center artist-bio">
-                                 <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                                 <p>
+                                     <!--bio-->
+                                     <asp:Label ID="lbl_bio" runat="server" Text="Label"></asp:Label>
+
+                                 </p>
                                     <div class="artist-profile-btn artist-btn btn-container">
                                         <asp:Button ID="btnMoreDetails" runat="server" Text="More Details" 
                                             class="art-pg-btn more-details-btn" OnClick="btnMoreDetails_Click"/>
@@ -32,25 +38,25 @@
 
                     <hr class="profile-gallery-delimiter"/>
 
-
-                    <%--<button class="art-pg-btn dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
-                        <div class="edit-content">
-                          <a href="#">Gallery</a>
-                          <a href="#">Artwork</a>
-                        </div>--%>
-                      <div class="ddl-container artist-dropdown-container">
-                          <%-- Display Gallery --%>
-                      </div> 
-
-
                     <%-- Display Gallery --%>
                      <div class="gal-row">
+                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                             <ItemTemplate>
                           <div class="gal-column">
                             <div class="gal-card">
                               <h3>Gallery Name</h3>
-                              <a href="#"><img src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72da2f550f8cbd0ec252ad6fb89c96b2&auto=format&fit=crop&w=334&q=80" class="rounded"></a>
+                              <a href="Description.aspx?artworkID=<%# DataBinder.Eval(Container.DataItem, "artworkID") %>"><img src="<%# GetImage(Eval("picture")) %>" class="rounded"></a>
+                                
+                                
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="userID" SessionField="UserID" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
                             </div>
                           </div>
+                                 </ItemTemplate>
+                          </asp:Repeater>
                      </div>
 
 		    </div>
