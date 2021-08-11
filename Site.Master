@@ -103,18 +103,27 @@
                             {
 
                         %>
+                        <div class="cart_button_section" style="padding: 10px 20px; background-color: #f6f6f6;">
+                                    <i class="glyphicon glyphicon-star">
+                                        <a href="./Login.aspx">Login</a>
+                                    </i>
+                        </div>
+                        <div class="cart_button_section" style="padding: 10px 20px; background-color: #f6f6f6;">
+                                    <i class="glyphicon glyphicon-star-empty">
+                                        <a href="./RegisterPick.aspx">Register</a>
+                                    </i>
+                        </div>
+                        
 
-                        <a href="./Login.aspx" style="padding: 10px 20px; background-color: #ca3f49; height:60px; width:100%; max-width:300px; display:flex;justify-content:center;align-items:center; text-decoration:none; font-size:clamp(15px,1.5vw,18px);color:white;font-weight:700;letter-spacing:1px; margin-right:20px;margin-left:10px;border-radius:20px">Login</a>
+                        <% }else { %>
 
-                        <% } %>
-
-                        <asp:LoginView ID="LoginView1" runat="server">
-                            <LoggedInTemplate>
+                        <!-- <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate> -->
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="./Image/reg.jpg" alt="" srcset="">
-
+                                        <img src="./Image/reg.jpg" alt="" srcset=""/>
+                                        <!-- <asp:Image ID="UserImage" runat="server" />-->
                                         <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
                                     </button>
                                     <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">--%>
@@ -132,14 +141,12 @@
                                             {
                                                 if (Session["roles"].Equals("Artist"))
                                                 { %>
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
+                                        <li><a class="dropdown-item" href="GalleryDisplay.aspx">Gallery</a></li>
                                         <%}
                                             else
                                             { %>
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
 
                                         <%}
                                             }%>
@@ -154,15 +161,17 @@
                                     </LevelMenuItemStyles>
                                 </asp:Menu>--%>
 
-                                <div class="cart_button_section" style="padding: 10px 20px; background-color: #ca3f49; height:60px; width:100%; max-width:300px; display:flex;justify-content:center;align-items:center;margin-right:20px;margin-left:10px;border-radius:20px">
-                                    <%--<i class="glyphicon glyphicon-remove">--%>
-                                        <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="MasterLoginStatus_LoggingOut" style="text-decoration:none; font-size:clamp(15px,1.5vw,18px);color:white;font-weight:700;letter-spacing:1px;"/>
-                                    <%--</i>--%>
+                                <div class="cart_button_section" style="padding: 10px 20px; background-color: #f6f6f6;">
+                                    <i class="glyphicon glyphicon-remove">
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" 
+                             LogoutPageUrl="~/Login.aspx" OnLoggingOut="MasterLoginStatus_LoggingOut" />
+                                    </i>
                                 </div>
 
-
-                            </LoggedInTemplate>
-                        </asp:LoginView>
+                        
+                             <!-- </LoggedInTemplate>
+                        </asp:LoginView>-->
+                        <% } %>
                     </div>
                 </div>
 
@@ -171,11 +180,11 @@
             <div class="navbar_section_lower">
                 <div class="navbar_lower_all">
                     <ul class="nav">
-                        <li><a class="nav_link current" href="#1">Home</a></li>
+                        <li><a class="nav_link current" href="Homepage.aspx">Home</a></li>
                         <li><a class="nav_link" href="#2">Paintings</a></li>
                         <li><a class="nav_link" href="#3">Photography</a></li>
                         <li><a class="nav_link" href="#4">Drawings</a></li>
-                        <li><a class="nav_link" href="#4">Artists</a></li>
+                        <li><a class="nav_link" href="ArtistDisplay.aspx">Artists</a></li>
                     </ul>
                 </div>
 
@@ -326,7 +335,6 @@
         </div>
         <hr />
         <footer>
-            <a href="UserProfile.aspx">UserProfile</a>
             <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center; height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
