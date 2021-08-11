@@ -14,6 +14,15 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                wishlistFunction();
+            }
+
+        }
+
+        public void wishlistFunction()
+        {
             //display image in repeater
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -22,7 +31,7 @@ namespace Ertist
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID  AND [User].UserID = 6";
+            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID  AND [User].UserID = 19";
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
@@ -32,7 +41,6 @@ namespace Ertist
 
             //close connection
             con.Close();
-
         }
 
         public string GetImage(object img)
@@ -42,16 +50,20 @@ namespace Ertist
 
         protected void btnRemove_Click(object sender, EventArgs e)
         {
-            //int artworkID = Convert.ToInt32(txtWishlistID.Text);
+
+            Button btn = sender as Button;
+            string wishlistID = btn.Attributes["CustomParameter"].ToString();
             string sql = "DELETE from Wishlist where wishlistID = @wishlistID";
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             SqlConnection con = new SqlConnection(strCon);
             SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@wishlistID", "6");
+            cmd.Parameters.AddWithValue("@wishlistID", wishlistID);
 
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+            wishlistFunction();
+
         }
     }
 }
