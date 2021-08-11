@@ -12,30 +12,34 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="OnRowDataBound" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="197px" Width="1065px">
+        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="OnRowDataBound" 
+            AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" 
+            CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" 
+            ForeColor="Black" GridLines="Vertical" Height="197px" Width="1225px" 
+            Font-Size="Medium" BackColor="White" BorderColor="#DEDFDE" 
+            BorderStyle="None" BorderWidth="1px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="name" HeaderText="Gallery Name" SortExpression="name" />
                 <asp:TemplateField HeaderText="Cover Photo">
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" Width="200" Height="200" />
+                        <asp:Image ID="Image1" runat="server" Width="100" Height="100" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="date" HeaderText="Created Date" SortExpression="date" />
                 <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}"/>
                 <asp:HyperLinkField NavigateUrl="DeleteGallery.aspx" Text="Delete"/>
             </Columns>
-            <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" ForeColor="White" />
-            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
-            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F8FAFA" />
-            <SortedAscendingHeaderStyle BackColor="#246B61" />
-            <SortedDescendingCellStyle BackColor="#D4DFE1" />
-            <SortedDescendingHeaderStyle BackColor="#15524A" />
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" ForeColor="White"/>
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+            <SelectedRowStyle BackColor="#CE5D5A" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+            <SortedAscendingHeaderStyle BackColor="#848384" />
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+            <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
         <br />
         <br />

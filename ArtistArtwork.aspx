@@ -30,14 +30,14 @@
 
 
                 <%-- Filter --%>
-                <div class="dropdown artist-dropdown-container ddl-container">
+                <%--<div class="dropdown artist-dropdown-container ddl-container">
                     <button class="art-pg-btn dropbtn cat-dropbtn" disabled>Categories <i style='font-size:15px' class='fas'>&#xf107;</i></button>
                     <div class="dropdown-content cat-content">
                         <a href="#">Painting</a>
                         <a href="#">Ink</a>
                         <a href="#">Watercolour</a>
                     </div>
-                </div>
+                </div>--%>
                 
 
                 <%-- Artwork --%>

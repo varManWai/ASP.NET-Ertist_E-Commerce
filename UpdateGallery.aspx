@@ -27,6 +27,12 @@
                     </td>
                 </tr>
                     
+                <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                    
         </table>
 
            <div class="gal-con-btn-container">
@@ -39,7 +45,5 @@
             <br />
     </div>
 
-    <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
-</asp:Content>
+    </asp:Content>
 

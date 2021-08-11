@@ -22,17 +22,17 @@ namespace Ertist
 
             if ( imgUpload. HasFile )
             {
-                //string fileExt = System.IO.Path.GetExtension(imgUpload.FileName);
+                string fileExt = System.IO.Path.GetExtension(imgUpload.FileName);
 
-                //if ( fileExt == ".jpeg" || fileExt == ".jpg" || fileExt == ".png" || fileExt == ".gif" )
-                //{
+                if ( fileExt == ".jpeg" || fileExt == ".jpg" || fileExt == ".png" || fileExt == ".gif" )
+                {
                     byte[] imgbyte = imgUpload.FileBytes;
                     string insertGal = "INSERT INTO Gallery (name, date, cover, userID) VALUES(@name, GetDate(), @coverpic, @userid)";
                     SqlCommand cmd = new SqlCommand(insertGal, con);
 
                     //insert
                     string name = txtGalName.Text;
-                    int userid = 19;
+                    int userid = ( int ) Session["UserID"];
 
                     cmd. Parameters. AddWithValue ("@name", name);
                     cmd. Parameters. AddWithValue ("@coverpic", imgbyte);
@@ -46,11 +46,11 @@ namespace Ertist
                     {
                         Response. Write (ex. Message);
                     }
-                //}
-                //else
-                //{
-                //    lblError. Text = "Please select an image";
-                //}
+                }
+                else
+                {
+                    lblError. Text = "Please select an image";
+                }
             }
 
             con.Close ();
