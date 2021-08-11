@@ -12,7 +12,7 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="197px" Width="1065px">
+        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="OnRowDataBound" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="197px" Width="1065px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
