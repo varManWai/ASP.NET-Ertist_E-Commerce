@@ -38,12 +38,12 @@
                     </td>
                 </tr>
                     
-                <tr>
+                <%--<tr>
                     <td class="auto-style3 gal-lbl" style="width: 140px">Artist&nbsp;</td>
                     <td>
                         <asp:Label ID="lblArtist" runat="server" Text="" CssClass="gal-lbl"></asp:Label>
                     </td>
-                </tr>
+                </tr>--%>
                     
         </table>
 
@@ -53,9 +53,6 @@
             <asp:Button ID="btnCancel" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
                 Text="Cancel" OnClick="btnCancel_Click" />
            </div>
-
-        <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
             <br />
             <br />
     </div>
