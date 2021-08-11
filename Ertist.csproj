@@ -173,6 +173,7 @@
     <Content Include="UpdateArtwork.aspx" />
     <Content Include="UpdateGallery.aspx" />
     <Content Include="UserProfile.aspx" />
+    <Content Include="UserProfileEdit.aspx" />
     <Content Include="Wishlist.aspx" />
     <Content Include="Artist\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -428,6 +429,13 @@
     </Compile>
     <Compile Include="UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfileEdit.aspx.cs">
+      <DependentUpon>UserProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfileEdit.aspx.designer.cs">
+      <DependentUpon>UserProfileEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

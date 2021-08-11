@@ -43,10 +43,6 @@ namespace Ertist
 
                 dr.Close();
                 con.Close();
-
-                
-                //close connection
-                con.Close();
             }
         }
 
@@ -57,7 +53,8 @@ namespace Ertist
 
         protected void btnMoreDetails_Click ( object sender, EventArgs e )
         {
-            Response.Redirect ("ClientArtistDetails.aspx");
+            string artistID = Request.QueryString["artistID"] ?? "";
+            Response.Redirect ("ClientArtistDetails.aspx?artistID="+ artistID);
         }
     }
 }

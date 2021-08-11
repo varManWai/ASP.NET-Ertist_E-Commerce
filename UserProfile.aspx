@@ -15,16 +15,21 @@
                     <%-- Artist Profile --%>
                         <div class="profile">
 	                            <div class="avatar text-center">
-	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                                    <div class="artist-username">
-	                                    <h2 class="title username">Christiii</h2>
+                                    <!-- image -->
+                                    <asp:Image ID="user_picture" class="img-raised rounded-circle img-fluid" runat="server" /> 
+	                                <div class="artist-username">
+	                                    <h2 class="title username">
+                                            <!-- username -->
+                                            <asp:Label ID="lbl_username" runat="server" Text="Label"></asp:Label></h2>
 	                                </div>
 	                            </div>
                                <div class="description text-center artist-bio">
-                                 <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                                   <!-- bio -->
+                                 <p>
+                                     <asp:Label ID="lbl_bio" runat="server" Text="Label"></asp:Label></p>
                                     <div class="artist-profile-btn artist-btn btn-container">
                                         <asp:Button ID="btnEditProfile" runat="server" Text="Edit Profile" 
-                                            class="art-pg-btn edit-bio-btn"/>
+                                            class="art-pg-btn edit-bio-btn" OnClick="btnEditProfile_Click"/>
                                     </div>
                                </div>
 	                        </div>

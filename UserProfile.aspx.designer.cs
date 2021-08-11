@@ -15,6 +15,33 @@ namespace Ertist
     {
 
         /// <summary>
+        /// user_picture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image user_picture;
+
+        /// <summary>
+        /// lbl_username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_username;
+
+        /// <summary>
+        /// lbl_bio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_bio;
+
+        /// <summary>
         /// btnEditProfile control.
         /// </summary>
         /// <remarks>

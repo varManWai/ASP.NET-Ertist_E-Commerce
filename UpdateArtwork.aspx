@@ -88,10 +88,11 @@
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">
-                        <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
+                         <asp:Button ID="btnUpdate" class="art-pg-btn" runat="server" OnClick="btnUpdate_Click" Text="Update" />
                     </td>
                     <td>
-                        <asp:Button ID="btnUpdate" class="art-pg-btn" runat="server" OnClick="btnUpdate_Click" Text="Update" />
+                       
+                        <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
                     </td>
                 </tr>
                

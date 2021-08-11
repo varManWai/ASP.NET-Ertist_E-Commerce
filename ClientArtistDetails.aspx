@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ClientArtistDetails.aspx.cs" Inherits="Ertist.ClientArtistDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientArtistDetails.aspx.cs" Inherits="Ertist.ClientArtistDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/ArtistProfile.css" rel="stylesheet" />
@@ -20,7 +20,8 @@
                                         <div class="row m-l-0 m-r-0">
                                             <div class="col-sm-4 user-profile">
                                                 <div class="card-block text-center">
-                                                    <div class="m-b-25"> <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" class="img-raised rounded-circle img-fluid"> </div>
+                                                    <!--Image-->
+                                                    <div class="m-b-25"> <asp:Image ID="artist_picture" class="img-raised rounded-circle img-fluid" runat="server" /> </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-8">
@@ -28,37 +29,41 @@
                                                     <h3 class="m-b-20 m-t-40 p-b-5 b-b-default">Information</h3>
                                                     <div class="artist-info">
                                                         <div class="details-username-container">
-	                                                        <h2 class="title username details-username">Christiii</h2>
+	                                                        <h2 class="title username details-username">
+                                                                <!--Username-->
+                                                                <asp:Label ID="lbl_username" runat="server" Text="Label"></asp:Label></h2>
 	                                                    </div>
                                                         <div class="description artist-name">
-                                                            <p>Christine Rose</p>
+                                                            <p> <!--Fn ln-->
+                                                                <asp:Label ID="lbl_fn" runat="server" Text="Label"></asp:Label><asp:Label ID="lbl_ln" runat="server" Text="Label"></asp:Label></p>
                                                         </div>
                                                         <div class="description artist-gender">
-                                                            <p>Female</p>
+                                                            <p> <!--Gender-->
+                                                                <asp:Label ID="lbl_gender" runat="server" Text="Label"></asp:Label></p>
                                                         </div>
                                                         <div class="description artist-bio">
-                                                            <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, 
-                                                                Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                                                            <p> <!--Bio-->
+                                                                <asp:Label ID="lbl_bio" runat="server" Text="Label"></asp:Label></p>
                                                         </div>
 
                                                         <div class="joined-date">
-                                                            <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf073;</i> Joined 05 May 2021</p>
+                                                            <!--created date-->
+                                                            <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf073;</i> <asp:Label ID="lbl_date" runat="server" Text="Label"></asp:Label></p>
                                                         </div>
                                                     </div>
                                                     <h3 class="m-b-20 m-t-40 p-b-5 b-b-default">Contact</h3>
                                                     <div class="artist-contact">
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf098;</i> 012-20000000</p>
+                                                                <!--phoneNo-->
+                                                                <p class="artist-contact"><i style="font-size:16px" class="fa">&#xf098;</i> <asp:Label ID="lbl_no" runat="server" Text="Label"></asp:Label></p>
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <p class="artist-contact"><i class="fa fa-envelope" aria-hidden="true"></i> christinerose@gmail.com</p>
+                                                                <!--email-->
+                                                                <p class="artist-contact"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                                                     <asp:Label ID="lbl_mail" runat="server" Text="Label"></asp:Label></p>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="artist-profile-btn artist-btn btn-container">
-                                                        <asp:Button ID="btnBackGallery" runat="server" Text="View Gallery" 
-                                                            class="art-pg-btn view-gal-btn" OnClick="btnBackGallery_Click"/>
                                                     </div>
                                                 </div>
                                             </div>
