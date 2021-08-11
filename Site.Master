@@ -99,13 +99,20 @@
                             </a>
                         </div>
 
+                           <% if (Session["UserID"] == null)
+                               { %>
+
+                            <a href="./Login.aspx" >Login</a>
+
+                            <% } %>
+
                         <asp:LoginView ID="LoginView1" runat="server">
                             <LoggedInTemplate>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="./Image/reg.jpg" alt="" srcset="">
-                                        Lai Man Wai
+                                        
                                         <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">
@@ -126,7 +133,7 @@
 
                                 <div class="cart_button_section">
                                     <i class="glyphicon glyphicon-remove">
-                                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" onloggingout="MasterLoginStatus_LoggingOut"  />
                                     </i>
                                 </div>
 

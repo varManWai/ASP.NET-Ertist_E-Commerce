@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Ertist.Login" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/login.css" rel="stylesheet" />
@@ -27,10 +28,11 @@
                 <br />
                 <br />
                 <br />
-                <div class="text-center small">Don't have an account? <a href="RegisterPick.aspx">Sign up</a>
-                <br />
-                <br />
-                <asp:Label ID="errorMsg" runat="server" ForeColor="Red"></asp:Label>
+                <div class="text-center small">
+                    Don't have an account? <a href="RegisterPick.aspx">Sign up</a>
+                    <br />
+                    <br />
+                    <asp:Label ID="errorMsg" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
 
