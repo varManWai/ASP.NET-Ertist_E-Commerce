@@ -23,6 +23,9 @@ namespace Ertist
                 if (this.Page.User.Identity.IsAuthenticated)
                 {
                     FormsAuthentication.SignOut();
+                    Session.Abandon();
+                    Session.Clear();
+                    Request.Cookies.Clear();
                     Response.Redirect("~/Login.aspx");
                 }
             }
