@@ -21,7 +21,7 @@
             <table class="gal-table">
                 <tr>
                     <td class="gal-lbl auto-style3">Gallery Name&nbsp;</td>
-                    <td class="auto-style4"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <td class="auto-style4"><asp:TextBox ID="txtGalName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
@@ -38,6 +38,13 @@
                     </td>
                 </tr>
                     
+                <%--<tr>
+                    <td class="auto-style3 gal-lbl" style="width: 140px">Artist&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblArtist" runat="server" Text="" CssClass="gal-lbl"></asp:Label>
+                    </td>
+                </tr>--%>
+                    
         </table>
 
            <div class="gal-con-btn-container">
@@ -46,9 +53,6 @@
             <asp:Button ID="btnCancel" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
                 Text="Cancel" OnClick="btnCancel_Click" />
            </div>
-
-        <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
             <br />
             <br />
     </div>
