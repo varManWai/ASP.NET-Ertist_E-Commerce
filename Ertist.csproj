@@ -108,6 +108,7 @@
     <Content Include="AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
     <Content Include="ArtistDisplay.aspx" />
+    <Content Include="ClientArtistArtwork.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="ArtistDisplay.aspx.designer.cs">
       <DependentUpon>ArtistDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientArtistArtwork.aspx.cs">
+      <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientArtistArtwork.aspx.designer.cs">
+      <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientArtistDetails.aspx.cs">
       <DependentUpon>ClientArtistDetails.aspx</DependentUpon>

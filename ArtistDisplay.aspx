@@ -17,7 +17,7 @@
                             <a href="ClientArtistProfile.aspx?artistID=<%# DataBinder.Eval(Container.DataItem, "UserID") %>">
                                 <img src="<%# GetImage(Eval("picture")) %>" class="card-img-top" alt="artist">
                             </a>
-                            <div class="card-body text-center">
+                            &nbsp;<div class="card-body text-center">
                                 <h5 class="card-title mb-0"><%# Eval("username") %></h5>
                                 <div class="card-text text-black-50"><%# Eval("bio") %></div>
                             </div>

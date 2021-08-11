@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="" title="Home"  description="" roles ="*">
+    <siteMapNode url="~/ArtistDisplay.aspx" title="ArtistDisplay" description="Profile"  roles="*" />
     <siteMapNode url="~/UserProfile.aspx" title="Profile" description="Profile"  roles="*" />
-    <siteMapNode url="~/AddArtwork.aspx" title="Profile" description="Profile"  roles="*" />
+    <siteMapNode url="~/AddArtwork.aspx" title="Add artwork" description="Add artwork"  roles="*" />
     <siteMapNode url="javascript:;" title="Artist" description="Artist Page" roles ="Artist" >
-     <siteMapNode url ="~/ArtistProfile.aspx" title="Profile" description="Profile Page"></siteMapNode>
+     <siteMapNode url ="~/ArtistProfile.aspx" title="ArtistProfile" description="Profile Page"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>
