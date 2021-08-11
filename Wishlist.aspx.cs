@@ -31,21 +31,36 @@ namespace Ertist
             //open connection
             con.Open();
 
-            
 
-            
 
-            if (!string.IsNullOrEmpty(Session["UserID"] as string))
-            {
-                string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = @UserId";
-                SqlCommand cmd = new SqlCommand(sqlSelect, con);
-                string userId = Session["UserID"].ToString();
-                cmd.Parameters.AddWithValue("@UserId", userId);
-                Response.Write(cmd);
 
-                Repeater2.DataSource = cmd.ExecuteReader();
-                Repeater2.DataBind();
-            }
+
+
+            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = '20'";
+            SqlCommand cmd = new SqlCommand(sqlSelect, con);
+            //string userId = Session["UserID"].ToString();
+            //cmd.Parameters.AddWithValue("@UserId", userId);
+            //Response.Write(cmd);
+
+            Repeater1.DataSource = cmd.ExecuteReader();
+            Repeater1.DataBind();
+
+            //if (!string.IsNullOrEmpty(Session["UserID"] as string))
+            //{
+            //    int userId = (int) Session["UserID"];
+            //    string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = @userId";
+            //    SqlCommand cmd = new SqlCommand(sqlSelect, con);
+
+
+
+            //    cmd.Parameters.AddWithValue("@userId", userId);
+            //    Repeater1.DataSource = cmd.ExecuteReader();
+            //    Repeater1.DataBind();
+            //}
+            //Response.Write(cmd);
+
+
+
 
 
 
