@@ -11,7 +11,7 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = HttpContext.Current.User.Identity.Name;
+            //string username = HttpContext.Current.User.Identity.Name;
         }
     }
 }
