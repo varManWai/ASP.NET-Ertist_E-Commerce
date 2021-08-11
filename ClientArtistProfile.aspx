@@ -38,25 +38,25 @@
 
                     <hr class="profile-gallery-delimiter"/>
 
-
-                    <%--<button class="art-pg-btn dropbtn" disabled>Edit <i style='font-size:15px' class='fas'>&#xf107;</i></button>
-                        <div class="edit-content">
-                          <a href="#">Gallery</a>
-                          <a href="#">Artwork</a>
-                        </div>--%>
-                      <div class="ddl-container artist-dropdown-container">
-                          <%-- Display Gallery --%>
-                      </div> 
-
-
                     <%-- Display Gallery --%>
                      <div class="gal-row">
+                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                             <ItemTemplate>
                           <div class="gal-column">
                             <div class="gal-card">
                               <h3>Gallery Name</h3>
-                              <a href="#"><img src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72da2f550f8cbd0ec252ad6fb89c96b2&auto=format&fit=crop&w=334&q=80" class="rounded"></a>
+                              <a href="Description.aspx?artworkID=<%# DataBinder.Eval(Container.DataItem, "artworkID") %>"><img src="<%# GetImage(Eval("picture")) %>" class="rounded"></a>
+                                
+                                
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="userID" SessionField="UserID" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
                             </div>
                           </div>
+                                 </ItemTemplate>
+                          </asp:Repeater>
                      </div>
 
 		    </div>

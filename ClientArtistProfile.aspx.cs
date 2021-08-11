@@ -39,20 +39,25 @@ namespace Ertist
                     lbl_artist_username.Text = (string)dr["username"];
                     lbl_bio.Text = (string)dr["bio"];
 
-                    //lblName.Text = (string)dr["name"];
-                    //lblPrice.Text = "$ " + Convert.ToString(dr["price"]);
-                    //lblDate.Text = (string)dr["Date"].ToString();
-                    //lblStatus.Text = (string)dr["available"];
                 }
 
                 dr.Close();
                 con.Close();
+
+                
+                //close connection
+                con.Close();
             }
+        }
+
+        public string GetImage(object img)
+        {
+            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
         protected void btnMoreDetails_Click ( object sender, EventArgs e )
         {
-            Response. Redirect ("ClientArtistDetails.aspx");
+            Response.Redirect ("ClientArtistDetails.aspx");
         }
     }
 }
