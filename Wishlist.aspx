@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="price_remove">
                                     <span class="price">$<%# Eval("price") %></span><asp:TextBox runat="server" ID="txtWishlistID" Text='<%# Eval("wishlistID")%>'></asp:TextBox>
-                                    <asp:Button ID="Button1" runat="server" OnClick="btnRemove_Click" Text="Remove" Style="background-color: #ca3f49; outline: none; border: none; border-radius: 300px; width: 100%; max-width: 158px; height: 38px; color: white; font-size: clamp(10px, 1.5vw, 15px); margin-left: 20px; letter-spacing: 0.12em;" />
+                                    <asp:Button ID="Button1" runat="server" OnClick="btnRemove_Click"  CustomParameter=<%# Eval("wishlistID") %> Text="Remove" Style="background-color: #ca3f49; outline: none; border: none; border-radius: 300px; width: 100%; max-width: 158px; height: 38px; color: white; font-size: clamp(10px, 1.5vw, 15px); margin-left: 20px; letter-spacing: 0.12em;" />
 
                                 </div>
                             </div>

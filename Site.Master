@@ -99,12 +99,14 @@
                             </a>
                         </div>
 
-                           <% if (Session["UserID"] == null)
-                               { %>
+                        <% if (Session["UserID"] == null)
+                            {
 
-                            <a href="./Login.aspx" >Login</a>
+                        %>
 
-                            <% } %>
+                        <a href="./Login.aspx">Login</a>
+
+                        <% } %>
 
                         <asp:LoginView ID="LoginView1" runat="server">
                             <LoggedInTemplate>
@@ -112,28 +114,44 @@
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="./Image/reg.jpg" alt="" srcset="">
-                                        
+
                                         <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">
+                                    <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">--%>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                                            <script>
+                                                console.log("<% 
+                                                //Response.Write(Session["UserID"]);
+
+                                                Response.Write(Session["roles"]); %>");
+                                            </script>
+
+                                            <% 
+                                                if (Session["roles"].Equals("Artist"))
+                                                { %>
                                             <li><a class="dropdown-item" href="#">Action</a></li>
                                             <li><a class="dropdown-item" href="#">Another action</a></li>
                                             <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <%}else{ %>
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+
+                                            <%} %>
                                         </ul>
-                                    </ul>
+                                    <%--</ul>--%>
                                 </div>
-                                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap" />
+                                <%--<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap" />
                                 <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
                                     <LevelMenuItemStyles>
                                         <asp:MenuItemStyle CssClass="dropdown-item" />
                                         <asp:MenuItemStyle CssClass="dropdown-item" />
                                     </LevelMenuItemStyles>
-                                </asp:Menu>
+                                </asp:Menu>--%>
 
-                                <div class="cart_button_section">
+                                <div class="cart_button_section" style="padding:10px 20px; background-color: #f6f6f6; ">
                                     <i class="glyphicon glyphicon-remove">
-                                        <asp:LoginStatus ID="LoginStatus1" runat="server" onloggingout="MasterLoginStatus_LoggingOut"  />
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="MasterLoginStatus_LoggingOut" />
                                     </i>
                                 </div>
 
@@ -303,7 +321,7 @@
         </div>
         <hr />
         <footer>
-            <p style="font-size: clamp(14px,1.5vw,18px);background-color: #1B1B1B;color: white;text-align: center;height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
+            <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center; height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
 
