@@ -4,7 +4,7 @@
     <link href="css/button.css" rel="stylesheet" />
 
      <div style="padding:5%;">
-    <h3>Update Artwork</h3><br />
+    <h3>Delete Artwork</h3><br />
             <table class="auto-style5" style="font-size:14px">
                 <tr>
                     <td class="auto-style3" style="width: 140px">Image</td>

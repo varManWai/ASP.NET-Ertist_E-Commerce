@@ -280,6 +280,7 @@ body {
     display: none;
 }
 
+
 @media screen and (max-width: 790px) {
     .model {
         height: 100vh;

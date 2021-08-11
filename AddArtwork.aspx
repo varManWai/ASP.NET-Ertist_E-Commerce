@@ -12,7 +12,7 @@
         }
     </style>
 
-    <div style="font-size:14px; padding:5%">
+    <div style="font-size:14px; padding:5%;">
             <h3>Add Artwork</h3><br />
             <table class="auto-style5">
                 <tr>
@@ -94,7 +94,11 @@
                 </tr>             
             </table>
 
-        <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
+            <SelectParameters>
+                <asp:SessionParameter Name="userID" SessionField="UserID" Type="Int32" />
+            </SelectParameters>
+            </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
             <br />
     </div>
