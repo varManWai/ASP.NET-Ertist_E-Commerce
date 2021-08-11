@@ -119,8 +119,8 @@
                                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap" />
                                 <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
                                     <LevelMenuItemStyles>
-                                        <asp:MenuItemStyle CssClass="main_menu" />
-                                        <asp:MenuItemStyle CssClass="level_menu" />
+                                        <asp:MenuItemStyle CssClass="dropdown-item" />
+                                        <asp:MenuItemStyle CssClass="dropdown-item" />
                                     </LevelMenuItemStyles>
                                 </asp:Menu>
 

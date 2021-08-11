@@ -58,6 +58,9 @@ namespace Ertist
                     roles = reader["Roles"].ToString();
                     con.Close();
                 }
+
+                Session["UserID"] = userID;
+
                 switch (userID)
                 {
                     case -1:

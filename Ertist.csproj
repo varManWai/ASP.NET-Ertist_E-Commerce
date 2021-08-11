@@ -107,7 +107,7 @@
     <Content Include="AddArtwork.aspx" />
     <Content Include="AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
-    <Content Include="Artist\Contact.aspx" />
+    <Content Include="ArtistDisplay.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
@@ -162,6 +162,7 @@
     <Content Include="Image\reg_user.jpg" />
     <Content Include="Image\search.svg" />
     <Content Include="Image\Star Clock at Night II.jpg" />
+    <Content Include="Image\user_default_pic.svg" />
     <Content Include="Login.aspx" />
     <Content Include="MakeOrder.aspx" />
     <Content Include="Payment.aspx" />
@@ -230,12 +231,12 @@
     <Compile Include="ArtistArtwork.aspx.designer.cs">
       <DependentUpon>ArtistArtwork.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Artist\Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ArtistDisplay.aspx.cs">
+      <DependentUpon>ArtistDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Artist\Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ArtistDisplay.aspx.designer.cs">
+      <DependentUpon>ArtistDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientArtistDetails.aspx.cs">
       <DependentUpon>ClientArtistDetails.aspx</DependentUpon>

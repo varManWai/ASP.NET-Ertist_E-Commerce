@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditArtwork.aspx.cs" Inherits="Ertist.AddArtwork" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/button.css" rel="stylesheet" />
-    <!---Display Images-->           
+    <!---Display Images-->
     <div style="padding: 5%;">
         <div>
-        <asp:Button ID="btnAdd" runat="server"  class="art-pg-btn" Text="Add Artwork" OnClick="btnAdd_Click" />
-            </div>
+            <asp:Button ID="btnAdd" runat="server" class="art-pg-btn" Text="Add Artwork" OnClick="btnAdd_Click" />
+        </div>
         <br />
         <br />
         <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" Style="width: 100%; text-align: center;" GridLines="Vertical">
@@ -23,8 +24,8 @@
                 <asp:BoundField DataField="stock" HeaderText="Stock" />
                 <asp:BoundField DataField="date" HeaderText="Date" />
                 <asp:BoundField DataField="available" HeaderText="Available" />
-                <%--<asp:BoundField DataField="categoryID" HeaderText="Category" />
-                        <asp:BoundField DataField="galleryID" HeaderText="Gallery" />--%>
+                <asp:BoundField DataField="Expr1" HeaderText="Category" />
+                <asp:BoundField DataField="Expr2" HeaderText="Gallery" />
                 <asp:HyperLinkField Text="Update" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}" />
                 <asp:HyperLinkField Text="Detele" DataNavigateUrlFields="artworkID" DataNavigateUrlFormatString="DeleteArtwork.aspx?artworkID={0}" />
             </Columns>
@@ -38,6 +39,12 @@
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         <br />
+
+        <asp:SqlDataSource ID="SqlEditArtwork" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID WHERE [User].UserID = @userID">
+            <SelectParameters>
+                <asp:SessionParameter SessionField="UserID" Name="userID" DefaultValue="3"></asp:SessionParameter>
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 
 
