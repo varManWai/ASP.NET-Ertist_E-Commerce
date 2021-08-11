@@ -14,51 +14,44 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ////display image in repeater
-            //SqlConnection con;
-            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //con = new SqlConnection(strCon);
+            //display image in repeater
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection(strCon);
 
-            ////open connection
-            //con.Open();
+            //open connection
+            con.Open();
 
-            //string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price] FROM [ArtWork]";
+            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID  AND [User].UserID = 6";
 
-            //SqlCommand cmd = new SqlCommand(sqlSelect, con);
+            SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
-            ////Repeater2.DataSource = cmd.ExecuteReader();
-            ////Repeater2.DataBind();
-
-            ////close connection
-            //con.Close();
-
-            DataSet ds = GetData();
-
-            Repeater2.DataSource = ds;
+            Repeater2.DataSource = cmd.ExecuteReader();
             Repeater2.DataBind();
+
+
+            //close connection
+            con.Close();
+
         }
 
         public string GetImage(object img)
         {
-
             return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
-        private DataSet GetData()
+        protected void btnRemove_Click(object sender, EventArgs e)
         {
-            string CS = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(CS))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, " +
-                    "Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = " +
-                    "Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID", conn);
+            //int artworkID = Convert.ToInt32(txtWishlistID.Text);
+            string sql = "DELETE from Wishlist where wishlistID = @wishlistID";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@wishlistID", "6");
 
-                //SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1 FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN[User] ON Wishlist.userID = [User].UserID AND[User].UserID = 6
-
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                return ds;
-            }
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
