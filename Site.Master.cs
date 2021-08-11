@@ -15,5 +15,12 @@ namespace Ertist
 
         }
 
+        protected void MasterLoginStatus_LoggingOut(object sender, LoginCancelEventArgs e)
+        {
+            Session["UserID"] = null;
+            Session.Remove("UserID");
+            Session.RemoveAll();
+        }
+
     }
 }

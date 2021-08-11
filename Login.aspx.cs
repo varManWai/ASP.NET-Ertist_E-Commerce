@@ -60,7 +60,6 @@ namespace Ertist
                 }
 
                 Session["UserID"] = userID;
-
                 switch (userID)
                 {
                     case -1:
