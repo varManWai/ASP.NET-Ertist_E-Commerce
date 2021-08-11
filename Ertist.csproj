@@ -108,6 +108,7 @@
     <Content Include="AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
     <Content Include="ArtistDisplay.aspx" />
+    <Content Include="ClientArtistArtwork.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
@@ -122,7 +123,7 @@
     <Content Include="App_Data\ertistDB_log.ldf">
       <DependentUpon>ertistDB.mdf</DependentUpon>
     </Content>
-    <Content Include="ArtistProfile.aspx" />
+    <Content Include="GalleryDisplay.aspx" />
     <Content Include="Cart.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -238,6 +239,13 @@
     <Compile Include="ArtistDisplay.aspx.designer.cs">
       <DependentUpon>ArtistDisplay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientArtistArtwork.aspx.cs">
+      <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientArtistArtwork.aspx.designer.cs">
+      <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClientArtistDetails.aspx.cs">
       <DependentUpon>ClientArtistDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,12 +297,12 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ArtistProfile.aspx.cs">
-      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    <Compile Include="GalleryDisplay.aspx.cs">
+      <DependentUpon>GalleryDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArtistProfile.aspx.designer.cs">
-      <DependentUpon>ArtistProfile.aspx</DependentUpon>
+    <Compile Include="GalleryDisplay.aspx.designer.cs">
+      <DependentUpon>GalleryDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>

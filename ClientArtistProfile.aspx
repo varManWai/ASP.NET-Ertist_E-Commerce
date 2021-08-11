@@ -39,27 +39,26 @@
                     <hr class="profile-gallery-delimiter"/>
 
                     <%-- Display Gallery --%>
-                     <div class="gal-row">
-                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-                             <ItemTemplate>
-                          <div class="gal-column">
-                            <div class="gal-card">
-                              <h3>Gallery Name</h3>
-                              <a href="Description.aspx?artworkID=<%# DataBinder.Eval(Container.DataItem, "artworkID") %>"><img src="<%# GetImage(Eval("picture")) %>" class="rounded"></a>
-                                
-                                
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
-                                    <SelectParameters>
-                                        <asp:SessionParameter Name="userID" SessionField="UserID" Type="Int32" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
-                            </div>
-                          </div>
-                                 </ItemTemplate>
-                          </asp:Repeater>
-                     </div>
+                    <div class="gal-row">
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                <div class="gal-column">
+                                    <div class="gal-card">
+                                        <h3><%# Eval("name") %></h3>
+                                        <a href="ClientArtistArwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>">
+                                            <img src="<%# GetImage(Eval("picture")) %>" class="rounded"></a>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
+                            <SelectParameters>
+                                <asp:QueryStringParameter Name="userID" QueryStringField="artistID" Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
 
-		    </div>
+                </div>
             </div>
 	    </div>
    
