@@ -42,7 +42,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
             SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
             <SelectParameters>
-                <asp:SessionParameter Name="userID" SessionField="userid" Type="Int32" DefaultValue="19" />
+                <asp:SessionParameter Name="userID" SessionField="userid" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
