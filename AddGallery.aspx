@@ -14,7 +14,7 @@
         }
     </style>
 
-    <div style="font-size:14px; padding:5%" class="container">
+    <div style="font-size:14px; padding:2%" class="container">
             <div class="title-container">
                 <h3 class="text-center">Add Gallery</h3><br />
             </div>
