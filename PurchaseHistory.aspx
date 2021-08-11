@@ -29,7 +29,7 @@
                                 <ItemTemplate>
                                     <tbody>
                                         <tr>
-                                            <td width="15%" class="price">
+                                            <td width="15%" class="price" style="font-size:13px">
                                                 <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label></td>
                                             <td width="45%">
                                                 <div class="display-flex align-center">
@@ -41,10 +41,10 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td width="15%" class="price">
+                                            <td width="15%" class="price" style="font-size:13px">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
-                                            <td width="15%" class="price">
-                                                <asp:Label ID="lblTotalPrice" runat="server">$ <%# Eval("totalPrice") %></asp:Label></td>
+                                            <td width="15%" class="price" style="font-size:13px">
+                                                <asp:Label ID="lblTotalPrice" runat="server">&emsp;$ <%# Eval("totalPrice") %></asp:Label></td>
                                         </tr>
                                     </tbody>
                                 </ItemTemplate>

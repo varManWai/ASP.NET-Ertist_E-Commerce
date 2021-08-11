@@ -15,21 +15,21 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Display Image
-            if (!this.IsPostBack)
-            {
-                string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(strCon))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter("SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID", conn))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                        Images.DataSource = dt;
-                        Images.DataBind();
-                    }
-                }
-            }
+            ////Display Image
+            //if (!this.IsPostBack)
+            //{
+            //    string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            //    using (SqlConnection conn = new SqlConnection(strCon))
+            //    {
+            //        using (SqlDataAdapter sda = new SqlDataAdapter("SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID", conn))
+            //        {
+            //            DataTable dt = new DataTable();
+            //            sda.Fill(dt);
+            //            Images.DataSource = dt;
+            //            Images.DataBind();
+            //        }
+            //    }
+            //}
 
         }
 

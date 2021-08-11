@@ -10,7 +10,7 @@
         </div>
         <br />
         <br />
-        <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" Style="width: 100%; text-align: center;" GridLines="Vertical">
+        <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" Style="width: 100%; text-align: center;" GridLines="Vertical" DataSourceID="SqlEditArtwork">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:BoundField DataField="artworkID" HeaderText="Artwork ID" />
@@ -42,7 +42,7 @@
 
         <asp:SqlDataSource ID="SqlEditArtwork" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID WHERE [User].UserID = @userID">
             <SelectParameters>
-                <asp:SessionParameter SessionField="UserID" Name="userID" DefaultValue="3"></asp:SessionParameter>
+                <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
