@@ -1,101 +1,55 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddGallery.aspx.cs" Inherits="Ertist.AddGallery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <link href="css/GalleryCRUD.css" rel="stylesheet" />
     <link href="css/button.css" rel="stylesheet" />
+
     <style>        
-        .auto-style1 {
+        .auto-style3 {
             width: 140px;
-            height: 21px;
+            height: 22px;
         }
-        .auto-style2 {
-            height: 21px;
+        .auto-style4 {
+            height: 22px;
         }
     </style>
 
-    <div style="font-size:14px; padding:5%">
-            <h3>Add Artwork</h3><br />
-            <%--<table class="auto-style5">
+    <div style="font-size:14px; padding:5%" class="container">
+            <div class="title-container">
+                <h3 class="text-center">Add Gallery</h3><br />
+            </div>
+            <table class="gal-table">
                 <tr>
-                    <td class="auto-style3" style="width: 140px">Image</td>
-                    <td><asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style2" /></td>
+                    <td class="gal-lbl auto-style3">Gallery Name&nbsp;</td>
+                    <td class="auto-style4"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style4"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3 gal-lbl" style="width: 140px">Cover Photo&nbsp;</td>
+                    <td><asp:FileUpload ID="imgUpload" runat="server" CssClass="auto-style2"/></td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3" style="height: 22px; width: 140px">Artwork Name</td>
-                    <td style="height: 22px"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                 <tr>
-                    <td class="auto-style1" style="width: 140px">Artwork Price</td>
-                    <td><asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
-                </tr>
-                 <tr>
-                    <td class="auto-style1" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</tr>
-                 <tr>
-                    <td class="auto-style3" style="width: 140px">Artwork Description</td>
-                    <td> <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox></td>
-                </tr>
-                 <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td> &nbsp;</td>
-                </tr>
-                  <tr>
-                    <td class="auto-style3" style="width: 140px">Stock</td>
-                    <td><asp:TextBox ID="txtStock" ReadOnly="True" placeHolder="1" runat="server"></asp:TextBox></td>
-                </tr>
-                  <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3" style="width: 140px; height: 22px;">Available</td>
-                    <td style="height: 22px"><asp:DropDownList ID="ddlAvailable" runat="server">
-                <asp:ListItem>Available</asp:ListItem>
-                <asp:ListItem>Not Available</asp:ListItem>
-            </asp:DropDownList></td>
-                </tr>
-               
-                <tr>
-                    <td class="auto-style3" style="width: 140px; height: 22px;">&nbsp;</td>
-                    <td style="height: 22px">&nbsp;</td>
-                </tr>
-               
-                <tr>
-                    <td class="auto-style3">Category</td>
                     <td>
-                        <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="SqlCategory" DataTextField="name" DataValueField="categoryID">
-                        </asp:DropDownList>
+                        <asp:Label ID="lblError" runat="server" Text="" CssClass="gal-err-lbl"></asp:Label>
                     </td>
                 </tr>
-               <tr>
-                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Gallery</td>
-                    <td>
-                        <asp:DropDownList ID="ddlGallery" runat="server" DataSourceID="SqlGallery" DataTextField="name" DataValueField="galleryID"></asp:DropDownList></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1"></td>
-                    <td class="auto-style2"></td>
-                </tr>
-               
-                <tr>
-                    <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" class="art-pg-btn" runat="server" Text="Add Artwork" /></td>
-                    <td class="auto-style4"><asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" /></td>
-                </tr>             
-            </table>--%>
+                    
+        </table>
+
+           <div class="gal-con-btn-container">
+            <asp:Button ID="btnAddGal" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
+                Text="Add Gallery" OnClick="btnAddGal_Click" />
+            <asp:Button ID="btnCancel" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
+                Text="Cancel" OnClick="btnCancel_Click" />
+           </div>
 
         <asp:SqlDataSource ID="SqlGallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Gallery]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlCategory" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+            <br />
             <br />
     </div>
 </asp:Content>

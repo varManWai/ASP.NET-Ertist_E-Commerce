@@ -5,7 +5,7 @@
     <!---Display Images-->           
     <div style="padding: 5%;">
         <div>
-        <asp:Button ID="btnAddGallery" runat="server" class="art-pg-btn add-gal-btn" 
+        <asp:Button ID="btnAddGallery" runat="server" class="art-pg-btn gal-btn" 
                 Text="Add Gallery" OnClick="btnAddGallery_Click"/>
             </div>
         <br />
