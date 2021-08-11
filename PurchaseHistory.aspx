@@ -52,8 +52,11 @@
                         </table>
                     </div>
                 </div>
-                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID AND [User].UserID = 6">
-            </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID WHERE [User].UserID = @userID">
+                    <SelectParameters>
+                        <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <br />
             </div>
         </div>
