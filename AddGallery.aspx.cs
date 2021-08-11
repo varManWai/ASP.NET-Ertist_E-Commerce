@@ -1,5 +1,6 @@
 ﻿using System;
 using System. Collections. Generic;
+using System. Configuration;
 using System. Data;
 using System. Data. SqlClient;
 using System. IO;
@@ -12,62 +13,54 @@ namespace Ertist
 {
     public partial class AddGallery : System. Web. UI. Page
     {
-        protected void Page_Load ( object sender, EventArgs e )
-        {
-
-        }
-
         protected void btnAddGal_Click ( object sender, EventArgs e )
         {
-            if (imgUpload. PostedFile != null )
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            con = new SqlConnection (strCon);
+            con. Open ();
+
+            if ( imgUpload. HasFile )
             {
-                string fileExt =
-               System.IO.Path.GetExtension(imgUpload.FileName);
+                //string fileExt = System.IO.Path.GetExtension(imgUpload.FileName);
 
-                if ( fileExt != ".jpeg" && fileExt != ".jpg" && fileExt != ".png" && fileExt != ".gif" )
-                {
-                    lblError.Text = "Please select an image";
+                //if ( fileExt == ".jpeg" || fileExt == ".jpg" || fileExt == ".png" || fileExt == ".gif" )
+                //{
+                    byte[] imgbyte = imgUpload.FileBytes;
+                    string insertGal = "INSERT INTO Gallery (name, date, cover, userID) VALUES(@name, GetDate(), @coverpic, @userid)";
+                    SqlCommand cmd = new SqlCommand(insertGal, con);
 
+                    //insert
+                    string name = txtGalName.Text;
+                    int userid = 19;
 
-                    //string FileName = Path.GetFileName(imgUpload.PostedFile.FileName);
+                    cmd. Parameters. AddWithValue ("@name", name);
+                    cmd. Parameters. AddWithValue ("@coverpic", imgbyte);
+                    cmd. Parameters. AddWithValue ("@userid", userid);
 
-                    //Save files to disk
-                    //imgUpload. SaveAs (Server. MapPath ("~/_PublicData/Images/" + FileName));
-
-                    //Add Entry to DataBase
-                    //String strConnString = System.Configuration.ConfigurationManager.ConnectionStrings["Computer_Klubben_CommunitySiteConnectionString"].ConnectionString;
-                    //SqlConnection con = new SqlConnection(strConnString);
-                    //string strQuery = "insert into dbo.Billeder (FileName, FilePath)" + " values(@FileName, @FilePath)";
-                    //SqlCommand cmd = new SqlCommand(strQuery);
-                    //cmd. Parameters. AddWithValue ("@FileName", FileName);
-                    //cmd. Parameters. AddWithValue ("@FilePath", "~/_PublicData/Images/" + FileName);
-                    //cmd. CommandType = CommandType.Text;
-                    //cmd. Connection = con;
-
-                    //try
-                    //{
-                    //    con. Open ();
-                    //    cmd. ExecuteNonQuery ();
-                    //}
-                    //catch ( Exception ex )
-                    //{
-                    //    Response. Write (ex. Message);
-                    //}
-
-                    //finally
-                    //{
-                    //    con. Close ();
-                    //    con. Dispose ();
-                    //}
-                }
-
+                    try
+                    {
+                        cmd. ExecuteNonQuery ();
+                    }
+                    catch ( Exception ex )
+                    {
+                        Response. Write (ex. Message);
+                    }
+                //}
+                //else
+                //{
+                //    lblError. Text = "Please select an image";
+                //}
             }
 
+            con.Close ();
+            Response. Redirect ("EditGallery.aspx");
         }
 
         protected void btnCancel_Click ( object sender, EventArgs e )
         {
             lblError. Text = "";
+            Response. Redirect ("EditGallery.aspx");
         }
     }
 }

@@ -10,40 +10,40 @@
             </div>
         <br />
         <br />
-        <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" 
-            BackColor="White" BorderColor="#999999" 
-            BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" 
-            Style="width: 100%; text-align: center;" GridLines="Vertical" 
-            AllowPaging="True" AllowSorting="True" DataKeyNames="galleryID" 
-            DataSourceID="SqlDataSource1">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="OnRowDataBound" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="197px" Width="1065px">
+            <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <%--<asp:BoundField DataField="categoryID" HeaderText="Category" />
-                        <asp:BoundField DataField="galleryID" HeaderText="Gallery" />--%>
                 <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="galleryID" HeaderText="galleryID" 
-                    InsertVisible="False" ReadOnly="True" SortExpression="galleryID" />
-                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
-                <asp:BoundField DataField="userID" HeaderText="userID" 
-                    SortExpression="userID" />
+                <asp:BoundField DataField="name" HeaderText="Gallery Name" SortExpression="name" />
+                <asp:TemplateField HeaderText="Cover Photo">
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" Width="200" Height="200" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="date" HeaderText="Created Date" SortExpression="date" />
                 <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" />
                 <asp:HyperLinkField NavigateUrl="DeleteGallery.aspx" Text="Delete" />
             </Columns>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#808080" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
-            SelectCommand="SELECT [galleryID], [name], [date], [cover], [userID] FROM [Gallery]">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
+            SelectCommand="SELECT * FROM [Gallery] WHERE ([userID] = @userID)">
+            <SelectParameters>
+                <asp:SessionParameter Name="userID" SessionField="userid" Type="Int32" />
+            </SelectParameters>
         </asp:SqlDataSource>
     </div>
 

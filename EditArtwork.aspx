@@ -16,7 +16,7 @@
                 <asp:BoundField DataField="artworkID" HeaderText="Artwork ID" />
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
-                        <asp:Image ID="Image1" runat="server" Width="200" Height="200" />
+                        <asp:Image ID="Image1" runat="server" Width="100" Height="100" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="name" HeaderText="Name" />
