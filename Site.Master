@@ -326,6 +326,7 @@
         </div>
         <hr />
         <footer>
+            <a href="UserProfile.aspx">UserProfile</a>
             <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center; height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
