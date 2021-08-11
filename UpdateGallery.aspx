@@ -31,7 +31,7 @@
 
            <div class="gal-con-btn-container">
             <asp:Button ID="btnUpGal" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
-                Text="Update Gallery" />
+                Text="Update Gallery" OnClick="btnUpGal_Click" />
             <asp:Button ID="btnCancel" class="art-pg-btn gal-btn gal-con-btn" runat="server" 
                 Text="Cancel" OnClick="btnCancel_Click" />
            </div>

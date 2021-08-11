@@ -23,8 +23,8 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="date" HeaderText="Created Date" SortExpression="date" />
-                <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" />
-                <asp:HyperLinkField NavigateUrl="DeleteGallery.aspx" Text="Delete" />
+                <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}"/>
+                <asp:HyperLinkField NavigateUrl="DeleteGallery.aspx" Text="Delete"/>
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" ForeColor="White" />
