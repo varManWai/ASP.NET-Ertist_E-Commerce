@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="ClientArtistProfile.aspx.cs" Inherits="Ertist.ClientArtistProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientArtistProfile.aspx.cs" Inherits="Ertist.ClientArtistProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/ArtistProfile.css" rel="stylesheet" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     
-
     <div class="container">
     <div class="profile-page">
         <div class="main">
@@ -15,13 +14,20 @@
                     <%-- Edit Gallery/Artwork --%>
                         <div class="profile">
 	                            <div class="avatar text-center">
-	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                                    <!--image-->
+                                    <asp:Image ID="artist_picture" class="img-raised rounded-circle img-fluid" runat="server" />
                                     <div class="artist-username">
-	                                    <h2 class="title username">Christiii</h2>
+	                                    <h2 class="title username">
+                                            <!--Username-->
+                                            <asp:Label ID="lbl_artist_username" runat="server" Text="Label"></asp:Label></h2>
 	                                </div>
 	                            </div>
                                <div class="description text-center artist-bio">
-                                 <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                                 <p>
+                                     <!--bio-->
+                                     <asp:Label ID="lbl_bio" runat="server" Text="Label"></asp:Label>
+
+                                 </p>
                                     <div class="artist-profile-btn artist-btn btn-container">
                                         <asp:Button ID="btnMoreDetails" runat="server" Text="More Details" 
                                             class="art-pg-btn more-details-btn" OnClick="btnMoreDetails_Click"/>
