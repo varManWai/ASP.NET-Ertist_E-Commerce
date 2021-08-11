@@ -18,31 +18,19 @@ namespace Ertist
                 string artworkID = Request.QueryString["artworkID"] ?? "";
                 string sql = "Select * from Artwork where artworkID = @artworkID";
 
-                //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
                 SqlConnection con = new SqlConnection(strCon);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd. Parameters. AddWithValue ("@artworkID", artworkID);
 
-                //open the connection
                 con. Open ();
 
-                //select use the execute reader
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                //data binding
                 if ( dr. Read () )
                 {
-                    //picture. ImageUrl = "data:image/jpg;base64," + Convert. ToBase64String (( byte [ ] ) dr [ "picture" ]);
-                    //artid. Text = ( string ) dr [ "artworkID" ]. ToString ();
+                    //cover. ImageUrl = "data:image/jpg;base64," + Convert. ToBase64String (( byte [ ] ) dr [ "cover" ]);
                     //txtName. Text = ( string ) dr [ "name" ];
-                    //txtPrice. Text = ( string ) dr [ "price" ]. ToString ();
-                    //txtDesc. Text = ( string ) dr [ "description" ];
-                    //txtStock. Text = ( string ) dr [ "stock" ]. ToString ();
-                    //ddlAvailable. Text = ( string ) dr [ "available" ];
-                    //ddlCategory. SelectedValue = ( string ) dr [ "categoryID" ]. ToString ();
-                    //ddlGallery. SelectedValue = ( string ) dr [ "galleryID" ]. ToString ();
-
                 }
 
                 dr. Close ();
