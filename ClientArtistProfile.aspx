@@ -45,8 +45,8 @@
                                 <div class="gal-column">
                                     <div class="gal-card">
                                         <h3><%# Eval("name") %></h3>
-                                        <a href="ClientArtistArwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>">
-                                            <img src="<%# GetImage(Eval("picture")) %>" class="rounded"></a>
+                                        <a href="ClientArtistArtwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>">
+                                            <img src="<%# GetImage(Eval("cover")) %>" class="rounded"></a>
                                     </div>
                                 </div>
                             </ItemTemplate>
