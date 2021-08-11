@@ -134,7 +134,7 @@
 
     .art-row:after {
         content: "";
-        display: table;
+        display: inline-block;
         clear: both;
     }
 

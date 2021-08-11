@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="GalleryDisplay.aspx.cs" Inherits="Ertist.ArtistProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GalleryDisplay.aspx.cs" Inherits="Ertist.GalleryDisplay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/ArtistProfile.css" rel="stylesheet" />
@@ -13,12 +13,10 @@
                     
 
                     <%-- Artist Profile --%>
-                        <div class="profile">
+                        <%--<div class="profile">
 	                            <div class="avatar text-center">
 	                                <img src="https://i.pinimg.com/originals/89/54/38/895438247efa788551d1919d44f176ca.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                                    <div class="artist-username">
-	                                    <h2 class="title username">Christiii</h2>
-	                                </div>
+                                    
 	                            </div>
                                <div class="description text-center artist-bio">
                                  <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
@@ -27,8 +25,16 @@
                                             class="art-pg-btn edit-bio-btn"/>
                                     </div>
                                </div>
-	                        </div>
+	                        </div>--%>
 
+                    <div class="art-info-container text-center">
+                        <h3 class="title">
+                            <asp:Label ID="lblArtName" runat="server" Text=""></asp:Label>
+                        </h3>
+                        <p class="description">
+                            <asp:Label ID="lblArtDate" runat="server" Text=""></asp:Label>
+                        </p>
+                    </div>
 
                     <hr class="profile-gallery-delimiter"/>
 
@@ -43,18 +49,30 @@
                     </div>
 
                     <%-- Display Gallery --%>
-                     <div class="gal-row">
-                          <div class="gal-column">
-                            <div class="gal-card">
-                              <a href="#"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.soPKqPf6PI4-NnarSP-HgAHaJ3%26pid%3DApi&f=1" class="rounded"></a>
-                              <h3>Gallery Name</h3>
-                            </div>
-                          </div>
-                     </div>
+                    <div class="gal-row">
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            <ItemTemplate>
+                                <div class="gal-column">
+                                <div class="gal-card">
+                                    <a href="ArtistArtwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>"><img src="<%# GetImage(Eval("cover")) %>" class="rounded"></a>
+                                    <h3><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></h3>
+                                </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
 		    </div>
             </div>
 	    </div>
-   
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
+            
+            SelectCommand="SELECT [name], [cover] FROM [Gallery] WHERE ([userID] = @userID)" >
+            <SelectParameters>
+                <asp:SessionParameter Name="userID" SessionField="userid" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 	
       <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
       <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>

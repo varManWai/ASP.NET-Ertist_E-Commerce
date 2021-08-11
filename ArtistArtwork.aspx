@@ -15,8 +15,10 @@
 
             <%-- Gallery Info --%>
             <div class="gal-info text-center">
-                <h3 class="title">Gallery Name</h3>
-                <p class="description">Created: 05 May 2021</p>
+                <h3 class="title">
+                    <asp:Label ID="lblGalName" runat="server" Text=""></asp:Label>
+                </h3>
+                <p class="description">Created: <asp:Label ID="lblGalDate" runat="server" Text=""></asp:Label></p>
             </div>
 
             <hr class="artwork-delimiter"/>
@@ -25,7 +27,7 @@
 
                 <%-- Gallery Cover Picture --%>
                 <div class="gal-cover-pic">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.MHBvFpGuSDyVT1y-gWyDFAHaFT%26pid%3DApi&f=1" class="rounded">
+                    <asp:Image ID="cover" runat="server" />
                 </div>
 
 
@@ -43,22 +45,29 @@
                 <%-- Artwork --%>
                 <div class="artwork-grid-container">
                 <div class="art-row">
-                    <div class="art-column">
-                    <div class="art-card">
-                        <a href="#"><img src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72da2f550f8cbd0ec252ad6fb89c96b2&auto=format&fit=crop&w=334&q=80" class="rounded"></a>
-                    </div>
-                    </div>
-                    
+                    <asp:Repeater ID="Repeater1" runat="server">
+                        <ItemTemplate>
+                              <div class="art-column">
+                                <div class="art-card">
+                                  <img src="<%# GetImage(Eval("picture")) %>" class="rounded">
+                                  <h3><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></h3>
+                                </div>
+                              </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
                 </div>
-
             </div>
             </div>
         </div>
     </div>
 
-
-
-
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
+        SelectCommand="SELECT [name], [picture] FROM [Artwork] WHERE ([galleryID] = @galleryID)">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="galleryID" 
+                QueryStringField="[&quot;galleryID&quot;] ??" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 
 </asp:Content>
