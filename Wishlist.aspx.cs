@@ -31,12 +31,24 @@ namespace Ertist
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID  AND [User].UserID = 19";
+            
 
-            SqlCommand cmd = new SqlCommand(sqlSelect, con);
+            
 
-            Repeater2.DataSource = cmd.ExecuteReader();
-            Repeater2.DataBind();
+            if (!string.IsNullOrEmpty(Session["UserID"] as string))
+            {
+                string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = @UserId";
+                SqlCommand cmd = new SqlCommand(sqlSelect, con);
+                string userId = Session["UserID"].ToString();
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                Response.Write(cmd);
+
+                Repeater2.DataSource = cmd.ExecuteReader();
+                Repeater2.DataBind();
+            }
+
+
+
 
 
             //close connection
