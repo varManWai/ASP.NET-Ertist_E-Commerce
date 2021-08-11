@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Ertist.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Ertist.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    
+
 
 
     <link rel="stylesheet" href="./css/Cart.css">
@@ -23,371 +23,69 @@
                 <div class="total_artwork_cart">
                     <span>3 Artwroks in Cart</span>
                 </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./Image/reg_user.jpg" alt="">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Name of the Artwork</span>
-                        <div class="artist">
-                            <img src="./Image/reg.jpg" alt="">
-                            <span>Lai Man Wai</span>
+
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <div class="artwork_container">
+                            <div class="artwork_image">
+                                <img src="<%# GetImage(Eval("picture")) %>" alt="">
+                            </div>
+                            <div class="artwork_details">
+                                <span class="artwor_details_name"><%# Eval("name") %></span>
+                                <div class="artist">
+                                    <img src="<%# Eval("Expr1") %>" alt="">
+                                    <span><%# Eval("username") %></span>
+                                </div>
+                                <div class="artwork_description">
+                                    <%# Eval("description") %>
+                                </div>
+                                <div class="price_remove">
+                                    <span class="price">$<%# Eval("price") %></span>
+                                    <button>REMOVE</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./Image/reg_artist.jpg" alt="">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam
-                            nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....</span>
-                        <div class="artist">
-                            <img src="./Image/reg.jpg" alt="">
-                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque
-                                pharetra
-                                facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                                suscipit
-                                feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam
-                                nulla
-                                enim
-                                .....</span>
-                        </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="artwork_container">
-                    <div class="artwork_image">
-                        <img src="./Image/reg.jpg" alt="">
-                    </div>
-                    <div class="artwork_details">
-                        <span class="artwor_details_name">Name of the Artwork</span>
-                        <div class="artist">
-                            <img src="./Image/reg.jpg" alt="">
-                            <span>Lai Man Wai</span>
-                        </div>
-                        <div class="artwork_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque pharetra
-                            facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                            suscipit
-                            feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam nulla
-                            enim
-                            .....
-                        </div>
-                        <div class="price_remove">
-                            <span class="price">$50.00</span>
-                            <button>REMOVE</button>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
             </div>
+
+
             <aside class="summary">
                 <h2>Summary</h2>
                 <div class="artwork_each_price">
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam nec amet, scelerisque
-                                pharetra
-                                facilisis ultricies. Bibendum massa mus ornare enim ullamcorper nec. Enim sed id pretium
-                                suscipit
-                                feugiat id morbi mauris. Ut neque id a, gravida consequat. Nullam sagittis sed quam
-                                nulla
-                                enim
-                                .....
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
 
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
+
+                    <asp:Repeater ID="Repeater2" runat="server">
+                        <ItemTemplate>
+                            <div class="each_artwork">
+                                <div class="artwork_quantity">
+                                    <div class="quantity">1x</div>
+                                    <div class="summary_artwork_name">
+                                        <%# Eval("name") %>
+                                    </div>
+                                </div>
+                                <div class="summary_each_price">
+                                    $<%# Eval("price") %>
+                                </div>
                             </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
-                    <div class="each_artwork">
-                        <div class="artwork_quantity">
-                            <div class="quantity">1x</div>
-                            <div class="summary_artwork_name">
-                                name
-                            </div>
-                        </div>
-                        <div class="summary_each_price">
-                            $50.00
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
 
                 </div>
                 <div class="total_price">
-                    <div>
-                        Total: <span>$250</span>
-                    </div>
+                    <asp:Repeater ID="Repeater3" runat="server">
+                        <ItemTemplate>
+                            <div>
+                                Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
                 <div class="checkout_button_container">
-                    <button class="checkout_button">Checkout</button>
+                    <a href="./MakeOrder.aspx" class="checkout_button" style="text-decoration: none; display: flex; justify-content: center; align-items: center;">Checkout</a>
                 </div>
             </aside>
-
-
-        </div>
-
     </section>
 
 
