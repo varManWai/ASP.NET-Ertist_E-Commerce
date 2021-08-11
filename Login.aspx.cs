@@ -60,6 +60,8 @@ namespace Ertist
                 }
 
                 Session["UserID"] = userID;
+                Session["roles"] = roles;
+
                 switch (userID)
                 {
                     case -1:
