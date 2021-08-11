@@ -21,7 +21,7 @@
             <table class="gal-table">
                 <tr>
                     <td class="gal-lbl auto-style3">Gallery Name&nbsp;</td>
-                    <td class="auto-style4"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <td class="auto-style4"><asp:TextBox ID="txtGalName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
@@ -35,6 +35,13 @@
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>
                         <asp:Label ID="lblError" runat="server" Text="" CssClass="gal-err-lbl"></asp:Label>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td class="auto-style3 gal-lbl" style="width: 140px">Artist&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblArtist" runat="server" Text="" CssClass="gal-lbl"></asp:Label>
                     </td>
                 </tr>
                     
