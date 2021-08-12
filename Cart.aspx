@@ -21,10 +21,10 @@
         <div class="cart_all">
             <div class="artwork_container_all">
                 <div class="total_artwork_cart">
-                    <span>3 Artwroks in Cart</span>
+                    <span>Artwroks in Cart</span>
                 </div>
 
-                <asp:Repeater ID="Repeater1" runat="server">
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
                         <div class="artwork_container">
                             <div class="artwork_image">
@@ -33,7 +33,7 @@
                             <div class="artwork_details">
                                 <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
-                                    <img src="<%# Eval("Expr1") %>" alt="">
+                                    <img src="<%# GetImage(Eval("Expr1")) %>" alt="">
                                     <span><%# Eval("username") %></span>
                                 </div>
                                 <div class="artwork_description">
@@ -56,7 +56,7 @@
                 <div class="artwork_each_price">
 
 
-                    <asp:Repeater ID="Repeater2" runat="server">
+                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource1">
                         <ItemTemplate>
                             <div class="each_artwork">
                                 <div class="artwork_quantity">
@@ -66,22 +66,29 @@
                                     </div>
                                 </div>
                                 <div class="summary_each_price">
-                                    $<%# Eval("price") %>
-                                </div>
+                                    $<%# Eval("price") %></div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, [User].picture AS Expr1, [User].username FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
                 <div class="total_price">
-                    <asp:Repeater ID="Repeater3" runat="server">
+                    <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
                             <div>
-                                Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span>
-                            </div>
+                                Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span></div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                    <SelectParameters>
+                        <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <div class="checkout_button_container">
                     <a href="./MakeOrder.aspx" class="checkout_button" style="text-decoration: none; display: flex; justify-content: center; align-items: center;">Checkout</a>
                 </div>
