@@ -14,36 +14,33 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                wishlistFunction();
-            }
+           
 
         }
 
         public void wishlistFunction()
         {
-            //display image in repeater
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            con = new SqlConnection(strCon);
+            ////display image in repeater
+            //SqlConnection con;
+            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            //con = new SqlConnection(strCon);
 
-            //open connection
-            con.Open();
-
-
+            ////open connection
+            //con.Open();
 
 
 
 
-            string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = '20'";
-            SqlCommand cmd = new SqlCommand(sqlSelect, con);
-            //string userId = Session["UserID"].ToString();
-            //cmd.Parameters.AddWithValue("@UserId", userId);
-            //Response.Write(cmd);
 
-            Repeater1.DataSource = cmd.ExecuteReader();
-            Repeater1.DataBind();
+
+            //string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = '20'";
+            //SqlCommand cmd = new SqlCommand(sqlSelect, con);
+            ////string userId = Session["UserID"].ToString();
+            ////cmd.Parameters.AddWithValue("@UserId", userId);
+            ////Response.Write(cmd);
+
+            //Repeater1.DataSource = cmd.ExecuteReader();
+            //Repeater1.DataBind();
 
             //if (!string.IsNullOrEmpty(Session["UserID"] as string))
             //{
@@ -67,7 +64,7 @@ namespace Ertist
 
 
             //close connection
-            con.Close();
+            //con.Close();
         }
 
         public string GetImage(object img)
@@ -89,7 +86,8 @@ namespace Ertist
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            wishlistFunction();
+            Response.Redirect("Wishlist.aspx");
+
 
         }
     }
