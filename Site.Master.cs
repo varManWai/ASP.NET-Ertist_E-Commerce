@@ -14,7 +14,7 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             //Try to display user image at the dropdown list
             //if (Session["UserID"] != null)
             //{
@@ -38,13 +38,13 @@ namespace Ertist
             //    {
             //        //The name doesnt exist in current content
             //        UserImage.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
-                    
+
             //    }
 
             //    dr.Close();
             //    con.Close();
             //}
-                
+
         }
 
         protected void MasterLoginStatus_LoggingOut(object sender, LoginCancelEventArgs e)
