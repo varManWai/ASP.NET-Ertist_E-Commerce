@@ -113,6 +113,7 @@
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
     <Content Include="css\GalleryCRUD.css" />
+    <Content Include="css\Homepage.css" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="DeleteGallery.aspx" />
     <Content Include="EditArtistProfile.aspx" />
@@ -157,6 +158,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Image\1.jpg" />
+    <Content Include="Image\2.jpg" />
+    <Content Include="Image\3.jpg" />
     <Content Include="Image\browser_logo.png" />
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
