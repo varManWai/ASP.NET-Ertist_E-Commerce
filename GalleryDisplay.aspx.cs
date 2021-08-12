@@ -15,46 +15,18 @@ namespace Ertist
         {
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             SqlConnection con = new SqlConnection (strCon);
-            string sqlSelect = "SELECT [name], [cover], [galleryID] FROM [Gallery]";
+            string sqlSelect = "SELECT [name], [cover], [galleryID] FROM [Gallery] WHERE userID = @userid";
+            SqlCommand cmd = new SqlCommand(sqlSelect, con);
+
+            int userid = ( int ) Session["UserID"];
 
             con. Open ();
 
-            SqlCommand cmd = new SqlCommand(sqlSelect, con);
+            cmd. Parameters. AddWithValue ("@userid", userid);
             Repeater1. DataSource = cmd. ExecuteReader ();
             Repeater1.DataBind ();
 
             con. Close ();
-
-
-            //string galleryID = Request.QueryString["galleryID"] ?? "";
-            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //SqlConnection con = new SqlConnection(strCon);
-
-            ////Cover Photo
-            //string sqlSelectCover = "SELECT name, cover, date FROM Gallery WHERE galleryID = @galleryID";
-            //SqlCommand cmdCover = new SqlCommand(sqlSelectCover, con);
-            //cmdCover. Parameters. AddWithValue ("@galleryID", galleryID);
-
-            //con. Open ();
-            //SqlDataReader dr = cmdCover.ExecuteReader();
-            //if ( dr. Read () )
-            //{
-            //    cover. ImageUrl = "data:image/jpg;base64," + Convert. ToBase64String (( byte [ ] ) dr [ "cover" ]);
-            //    lblGalName. Text = ( string ) dr [ "name" ];
-            //    lblGalDate. Text = ( string ) dr [ "date" ]. ToString ();
-            //}
-            //dr. Close ();
-            //con. Close ();
-
-            ////Artwork
-            //string sqlSelectArtwork = "SELECT [name], [picture] FROM [Artwork] WHERE galleryID = @galleryID";
-            //SqlCommand cmdArt = new SqlCommand(sqlSelectArtwork, con);
-            //cmdArt. Parameters. AddWithValue ("@galleryID", galleryID);
-
-            //con. Open ();
-            //Repeater1. DataSource = cmdArt. ExecuteScalar ();
-            //con. Close ();
-
         }
 
         public string GetImage ( object img )

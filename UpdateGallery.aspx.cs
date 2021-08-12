@@ -15,13 +15,13 @@ namespace Ertist
         {
             if ( !Page. IsPostBack )
             {
-                string artworkID = Request.QueryString["artworkID"] ?? "";
-                string sql = "Select * from Artwork where artworkID = @artworkID";
+                string galleryID = Request.QueryString["galleryID"] ?? "";
+                string sql = "Select * from Gallery where galleryID = @galleryID";
 
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
                 SqlConnection con = new SqlConnection(strCon);
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd. Parameters. AddWithValue ("@artworkID", artworkID);
+                cmd. Parameters. AddWithValue ("@galleryID", galleryID);
 
                 con. Open ();
 
@@ -29,10 +29,9 @@ namespace Ertist
 
                 if ( dr. Read () )
                 {
-                    //cover. ImageUrl = "data:image/jpg;base64," + Convert. ToBase64String (( byte [ ] ) dr [ "cover" ]);
-                    //txtName. Text = ( string ) dr [ "name" ];
+                    cover.ImageUrl = "data:image/jpg;base64," + Convert. ToBase64String (( byte [ ] ) dr [ "cover" ]);
+                    txtGalName. Text = ( string ) dr [ "name" ];
                 }
-
                 dr. Close ();
                 con. Close ();
             }
@@ -45,37 +44,37 @@ namespace Ertist
 
         protected void btnUpGal_Click ( object sender, EventArgs e )
         {
-            //int artworkID = Convert.ToInt32(artid.Text);
-            //string name = txtName.Text;
-            //string price = txtPrice.Text;
-            //string description = txtDesc.Text;
-            //int stock = Convert.ToInt32(txtStock.Text);
-            //string available = ddlAvailable.SelectedItem.Text;
-            //string category = ddlCategory.SelectedValue;
-            //string gallery = ddlGallery.SelectedValue;
+            string name = txtGalName.Text;
+            string galleryID = Request.QueryString["galleryID"] ?? "";
+            string sql=null;
 
+            if ( imgUpload. HasFile )
+            {
+                sql = "UPDATE Gallery SET name = @name, cover = @coverpic WHERE galleryID = @galleryID";
+            }
+            else
+            {
+                sql = "UPDATE Gallery SET name = @name WHERE galleryID = @galleryID";
+            }
 
-            //string sql = @"update Artwork set name = @name, price = @price, description = @description, available = @available, categoryID = @categoryID, galleryID = @galleryID where artworkID = @artworkID";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
 
-            ////Connection
-            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //SqlConnection con = new SqlConnection(strCon);
-            //SqlCommand cmd = new SqlCommand(sql, con);
+            cmd. Parameters. AddWithValue ("@name", name);
+            cmd. Parameters. AddWithValue ("@galleryID", galleryID);
 
-            //cmd. Parameters. AddWithValue ("@artworkID", artworkID);
-            //cmd. Parameters. AddWithValue ("@name", name);
-            //cmd. Parameters. AddWithValue ("@price", price);
-            //cmd. Parameters. AddWithValue ("@description", description);
-            //cmd. Parameters. AddWithValue ("@stock", stock);
-            //cmd. Parameters. AddWithValue ("@available", available);
-            //cmd. Parameters. AddWithValue ("@categoryID", category);
-            //cmd. Parameters. AddWithValue ("@galleryID", gallery);
+            if ( imgUpload. HasFile )
+            {
+                byte[] imgbyte = imgUpload.FileBytes;
+                cmd. Parameters. AddWithValue ("@coverpic", imgbyte);
+            }
 
-            //con. Open ();
-            //cmd. ExecuteNonQuery (); //use in update, insert, delete
-            //con. Close ();
+            con. Open ();
+            cmd. ExecuteNonQuery ();
+            con. Close ();
 
-            Response. Redirect ("EditArtwork.aspx");
+            Response. Redirect ("EditGallery.aspx");
         }
     }
 }

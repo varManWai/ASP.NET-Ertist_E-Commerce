@@ -114,7 +114,6 @@
     <Content Include="css\ArtistArtwork.css" />
     <Content Include="css\GalleryCRUD.css" />
     <Content Include="DeleteArtwork.aspx" />
-    <Content Include="DeleteGallery.aspx" />
     <Content Include="EditArtistProfile.aspx" />
     <Content Include="EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
@@ -267,13 +266,6 @@
     </Compile>
     <Compile Include="DeleteArtwork.aspx.designer.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteGallery.aspx.cs">
-      <DependentUpon>DeleteGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteGallery.aspx.designer.cs">
-      <DependentUpon>DeleteGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditArtistProfile.aspx.cs">
       <DependentUpon>EditArtistProfile.aspx</DependentUpon>
