@@ -20,12 +20,12 @@ namespace Ertist
             con = new SqlConnection (strCon);
             con. Open ();
 
-            if ( imgUpload. HasFile )
-            {
-                string fileExt = System.IO.Path.GetExtension(imgUpload.FileName);
+            //if ( imgUpload. HasFile )
+            //{
+            //    string fileExt = Path.GetExtension(imgUpload.FileName);
 
-                if ( fileExt == ".jpeg" || fileExt == ".jpg" || fileExt == ".png" || fileExt == ".gif" )
-                {
+            //    if ( fileExt == ".jpeg" || fileExt == ".jpg" || fileExt == ".png" || fileExt == ".gif" )
+            //    {
                     byte[] imgbyte = imgUpload.FileBytes;
                     string insertGal = "INSERT INTO Gallery (name, date, cover, userID) VALUES(@name, GetDate(), @coverpic, @userid)";
                     SqlCommand cmd = new SqlCommand(insertGal, con);
@@ -46,20 +46,19 @@ namespace Ertist
                     {
                         Response. Write (ex. Message);
                     }
-                }
-                else
-                {
-                    lblError. Text = "Please select an image";
-                }
-            }
-
+            //    }
+            //}
+            //else
+            //{
+            //    lblErr. Text = "Please select an image";
+            //}
             con.Close ();
             Response. Redirect ("EditGallery.aspx");
         }
 
         protected void btnCancel_Click ( object sender, EventArgs e )
         {
-            lblError. Text = "";
+            //lblErr. Text = "";
             Response. Redirect ("EditGallery.aspx");
         }
     }

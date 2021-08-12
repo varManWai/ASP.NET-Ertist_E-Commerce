@@ -6,12 +6,12 @@
 
     <div class="main">
         <div class="container">
-            <div class="artwork-container">
+            <%--<div class="artwork-container">--%>
             <%-- Back to Gallery --%>
-            <div class="view-gal-btn-container artist-btn btn-container">
+            <%--<div class="view-gal-btn-container artist-btn btn-container">
                 <asp:Button ID="btnBackGallery" runat="server" Text="Gallery" 
                     class="art-pg-btn view-gal-btn" OnClick="btnBackGallery_Click"/>
-            </div>
+            </div>--%>
 
             <%-- Gallery Info --%>
             <div class="gal-info text-center">
@@ -44,20 +44,24 @@
 
                 <%-- Artwork --%>
                 <div class="artwork-grid-container">
-                <div class="art-row">
-                    <asp:Repeater ID="Repeater1" runat="server">
-                        <ItemTemplate>
-                              <div class="art-column">
-                                <div class="art-card">
-                                  <img src="<%# GetImage(Eval("picture")) %>" class="rounded">
-                                  <h3><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></h3>
+                    <div class="art-row">
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="artworkINgallery">
+                            <ItemTemplate>
+                                <div class="art-column">
+                                    <div class="art-card">
+                                        <img src="<%# GetImage(Eval("picture")) %>" class="rounded">
+                                    </div>
                                 </div>
-                              </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:SqlDataSource ID="artworkINgallery" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [Artwork] WHERE ([galleryID] = @galleryID)">
+                            <SelectParameters>
+                                <asp:QueryStringParameter Name="galleryID" QueryStringField="galleryID" Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
                 </div>
-                </div>
-            </div>
+            <%--</div>--%>
             </div>
         </div>
     </div>

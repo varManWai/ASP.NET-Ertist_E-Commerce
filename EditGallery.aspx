@@ -17,7 +17,7 @@
             CellPadding="4" DataKeyNames="galleryID" DataSourceID="SqlDataSource1" 
             ForeColor="Black" GridLines="Vertical" Height="197px" Width="1225px" 
             Font-Size="Medium" BackColor="White" BorderColor="#DEDFDE" 
-            BorderStyle="None" BorderWidth="1px">
+            BorderStyle="None" BorderWidth="1px" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -28,8 +28,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="date" HeaderText="Created Date" SortExpression="date" />
-                <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" DataNavigateUrlFormatString="UpdateArtwork.aspx?artworkID={0}"/>
-                <asp:HyperLinkField NavigateUrl="DeleteGallery.aspx" Text="Delete"/>
+                <asp:HyperLinkField NavigateUrl="UpdateGallery.aspx" Text="Update" DataNavigateUrlFields="galleryID" DataNavigateUrlFormatString="UpdateGallery.aspx?galleryID={0}"/>
             </Columns>
             <FooterStyle BackColor="#CCCC99" />
             <HeaderStyle BackColor="#6B696B" ForeColor="White"/>
