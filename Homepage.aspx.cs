@@ -12,7 +12,7 @@ namespace Ertist
 {
     public partial class Homepage : System.Web.UI.Page
     {
-        public object Repeater2 { get; private set; }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,8 +21,11 @@ namespace Ertist
             Repeater1.DataSource = ds;
             Repeater1.DataBind();
 
-           
 
+            DataSet ds2 = GetData_2();
+
+            Repeater2.DataSource = ds2;
+            Repeater2.DataBind();
 
 
         }
@@ -43,7 +46,17 @@ namespace Ertist
                 return ds;
             }
         }
-
+        private DataSet GetData_2()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT TOP 3 UserID, username, bio, picture, roleID FROM [User] WHERE (roleID = 2)", con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        }
 
 
     }

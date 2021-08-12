@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="section_2">
+        <div class="section_2" style="margin-top: 100px;">
             <a href="ArtworkPainting.aspx" class="cards">
                 <img src="./Image/11.jpg" alt="a picture of art">
                 <span class="card_title">Paintings
@@ -44,7 +44,7 @@
                 </span>
             </a>
             <a href="ArtworkWatercolor.aspx" class="cards">
-                <img src="./Image/13.jpg" alt="a picture of art">
+                <img src="./Image/13.jpeg" alt="a picture of art">
                 <span class="card_title">Watercolour
                 </span>
             </a>
@@ -65,6 +65,7 @@
                                         <%# Eval("name") %>
                                     </div>
                                 </a>
+                                &nbsp;&nbsp;&nbsp;
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -79,7 +80,31 @@
             </div>
         </div>
 
+        <div class="section_4">
+            <div class="artist_wall">
+                <div class="artist_wall_title">
+                    <h2>POPULAR ARTIST</h2>
+                </div>
+                <asp:Repeater ID="Repeater2" runat="server">
+                    <ItemTemplate>
+                        <div class="artists">
+                            <a href="#" class="artist">
+                                <img src="<%# GetImage(Eval("picture")) %>" alt="an artwork image">
+                                <div class="artist_details">
+                                    <div class="artist_name"><%# Eval("username") %></div>
+                                    <div class="artist_bio">
+                                        <%# Eval("bio") %>
+                                    </div>
+                                </div>
+                            </a>
+                        &nbsp;&nbsp;&nbsp;
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+        </div>
         
     </section>
 
+    <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT UserID, username, bio, picture, roleID FROM [User] WHERE (roleID = 2)"></asp:SqlDataSource>--%>
 </asp:Content>
