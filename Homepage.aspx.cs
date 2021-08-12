@@ -12,12 +12,19 @@ namespace Ertist
 {
     public partial class Homepage : System.Web.UI.Page
     {
+        public object Repeater2 { get; private set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             DataSet ds = GetData_1();
 
             Repeater1.DataSource = ds;
             Repeater1.DataBind();
+
+           
+
+
+
         }
 
         public string GetImage(object img)
@@ -36,6 +43,8 @@ namespace Ertist
                 return ds;
             }
         }
+
+
 
     }
 }

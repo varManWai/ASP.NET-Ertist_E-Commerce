@@ -164,6 +164,9 @@
     <Content Include="Image\2.jpg" />
     <Content Include="Image\3.jpg" />
     <Content Include="Image\browser_logo.png" />
+    <Content Include="Image\11.jpg" />
+    <Content Include="Image\12.jpg" />
+    <Content Include="Image\13.jpeg" />
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
     <Content Include="Image\reg_user.jpg" />
