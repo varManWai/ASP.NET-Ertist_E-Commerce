@@ -194,9 +194,9 @@
                 <div class="navbar_lower_all">
                     <ul class="nav">
                         <li><a class="nav_link current" href="Homepage.aspx">Home</a></li>
-                        <li><a class="nav_link" href="#2">Paintings</a></li>
-                        <li><a class="nav_link" href="#3">Photography</a></li>
-                        <li><a class="nav_link" href="#4">Drawings</a></li>
+                        <li><a class="nav_link" href="ArtworkPainting.aspx">Paintings</a></li>
+                        <li><a class="nav_link" href="ArtworkInk.aspx">Ink</a></li>
+                        <li><a class="nav_link" href="ArtworkWatercolor.aspx">Watercolour</a></li>
                         <li><a class="nav_link" href="ArtistDisplay.aspx">Artists</a></li>
                     </ul>
                 </div>
