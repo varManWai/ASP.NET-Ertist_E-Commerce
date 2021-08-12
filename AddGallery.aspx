@@ -33,17 +33,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
-                    <td>
-                        <asp:Label ID="lblError" runat="server" Text="" CssClass="gal-err-lbl"></asp:Label>
-                    </td>
+                    <%--<td>
+                        <asp:Label ID="lblErr" runat="server" Text="" CssClass="gal-err-lbl"></asp:Label>
+                    </td>--%>
                 </tr>
-                    
-                <%--<tr>
-                    <td class="auto-style3 gal-lbl" style="width: 140px">Artist&nbsp;</td>
-                    <td>
-                        <asp:Label ID="lblArtist" runat="server" Text="" CssClass="gal-lbl"></asp:Label>
-                    </td>
-                </tr>--%>
                     
         </table>
 

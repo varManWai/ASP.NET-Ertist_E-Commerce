@@ -33,19 +33,19 @@
         </div>
 
         <div class="section_2">
-            <a href="#" class="cards">
+            <a href="ArtworkPainting.aspx" class="cards">
                 <img src="./2.jpg" alt="a picture of art">
                 <span class="card_title">Paintings
                 </span>
             </a>
-            <a href="" class="cards">
+            <a href="ArtworkInk.aspx" class="cards">
                 <img src="./2.jpg" alt="a picture of art">
-                <span class="card_title">Photographys
+                <span class="card_title">Ink
                 </span>
             </a>
-            <a href="#" class="cards">
+            <a href="ArtworkWatercolor.aspx" class="cards">
                 <img src="./2.jpg" alt="a picture of art">
-                <span class="card_title">Drawings
+                <span class="card_title">Watercolour
                 </span>
             </a>
         </div>
@@ -56,30 +56,18 @@
                     <h2>Artwork</h2>
                 </div>
                 <div class="artworks">
-                    <div class="artwork">
-                        <a href="#">
-                            <img src="./user_picture.jpg" alt="">
-                            <div class="artwork_name">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa.
+                    <asp:Repeater ID="Repeater1" runat="server">
+                        <ItemTemplate>
+                            <div class="artwork">
+                                <a href="#">
+                                    <img src="<%# GetImage("picture") %>" alt="">
+                                    <div class="artwork_name">
+                                        <%# Eval("name") %>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="artwork">
-                        <a href="#">
-                            <img src="./user_picture.jpg" alt="">
-                            <div class="artwork_name">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa.
-                            </div>
-                        </a>
-                    </div>
-                    <div class="artwork">
-                        <a href="#">
-                            <img src="./user_picture.jpg" alt="">
-                            <div class="artwork_name">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa.
-                            </div>
-                        </a>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
                 <div class="view_more_button">
                     <a href="">Let’s see the Artwork<svg width="24" height="24" viewBox="0 0 24 24" fill="none"

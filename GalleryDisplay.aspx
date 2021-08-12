@@ -29,11 +29,8 @@
 
                     <div class="art-info-container text-center">
                         <h3 class="title">
-                            <asp:Label ID="lblArtName" runat="server" Text=""></asp:Label>
+                            <asp:LoginName ID="LoginName1" runat="server" />
                         </h3>
-                        <p class="description">
-                            <asp:Label ID="lblArtDate" runat="server" Text=""></asp:Label>
-                        </p>
                     </div>
 
                     <hr class="profile-gallery-delimiter"/>

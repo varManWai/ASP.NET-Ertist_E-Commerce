@@ -34,13 +34,13 @@ namespace Ertist
             con. Close ();
 
             //Artwork
-            string sqlSelectArtwork = "SELECT [name], [picture] FROM [Artwork] WHERE galleryID = @galleryID";
-            SqlCommand cmdArt = new SqlCommand(sqlSelectArtwork, con);
-            cmdArt. Parameters. AddWithValue ("@galleryID", galleryID);
+            //string sqlSelectArtwork = "SELECT [name], [picture] FROM [Artwork] WHERE galleryID = @galleryID";
+            //SqlCommand cmdArt = new SqlCommand(sqlSelectArtwork, con);
+            //cmdArt. Parameters. AddWithValue ("@galleryID", galleryID);
 
-            con. Open ();
-            Repeater1. DataSource = cmdArt. ExecuteScalar ();
-            con. Close ();
+            //con. Open ();
+            //Repeater1. DataSource = cmdArt. ExecuteScalar ();
+            //con. Close ();
         }
 
         public string GetImage ( object img )
