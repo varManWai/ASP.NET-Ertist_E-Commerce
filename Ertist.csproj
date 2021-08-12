@@ -108,11 +108,15 @@
     <Content Include="AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
     <Content Include="ArtistDisplay.aspx" />
+    <Content Include="ArtworkInk.aspx" />
+    <Content Include="ArtworkPainting.aspx" />
+    <Content Include="ArtworkWatercolor.aspx" />
     <Content Include="ClientArtistArtwork.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
     <Content Include="css\GalleryCRUD.css" />
+    <Content Include="css\Homepage.css" />
     <Content Include="DeleteArtwork.aspx" />
     <Content Include="EditArtistProfile.aspx" />
     <Content Include="EditArtwork.aspx" />
@@ -156,6 +160,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Image\1.jpg" />
+    <Content Include="Image\2.jpg" />
+    <Content Include="Image\3.jpg" />
     <Content Include="Image\browser_logo.png" />
     <Content Include="Image\reg.jpg" />
     <Content Include="Image\reg_artist.jpg" />
@@ -238,6 +245,27 @@
     </Compile>
     <Compile Include="ArtistDisplay.aspx.designer.cs">
       <DependentUpon>ArtistDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtworkInk.aspx.cs">
+      <DependentUpon>ArtworkInk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtworkInk.aspx.designer.cs">
+      <DependentUpon>ArtworkInk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtworkPainting.aspx.cs">
+      <DependentUpon>ArtworkPainting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtworkPainting.aspx.designer.cs">
+      <DependentUpon>ArtworkPainting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtworkWatercolor.aspx.cs">
+      <DependentUpon>ArtworkWatercolor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtworkWatercolor.aspx.designer.cs">
+      <DependentUpon>ArtworkWatercolor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientArtistArtwork.aspx.cs">
       <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>

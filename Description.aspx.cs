@@ -68,18 +68,21 @@ namespace Ertist
         protected void btnAddWish_Click1(object sender, EventArgs e)
         {
             string artworkID = Request.QueryString["artworkID"] ?? "";
+            string userid = Session["UserID"].ToString();
+
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
             con.Open();
 
-            string sqlInsert = "INSERT INTO Wishlist (artworkID) VALUES(@artworkID)";
-
+            string sqlInsert = "INSERT INTO Wishlist (artworkID, userID) VALUES(@artworkID, @userID)";
+            
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
 
             //insert            
 
             cmd.Parameters.AddWithValue("@artworkID", artworkID);
+            cmd.Parameters.AddWithValue("@userID", userid);
 
             //add the rest
 
@@ -92,14 +95,17 @@ namespace Ertist
         protected void btnAddCart_Click(object sender, EventArgs e)
         {
             string artworkID = Request.QueryString["artworkID"] ?? "";
+            string userid = Session["UserID"].ToString();
+
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
             con.Open();
 
-            string sqlInsert = "INSERT INTO Cart (artworkID) VALUES(@artworkID)";
+            string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
 
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
+            cmd.Parameters.AddWithValue("@userID", userid);
 
             //insert            
 
