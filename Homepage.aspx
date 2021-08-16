@@ -59,7 +59,7 @@
                     <asp:Repeater ID="Repeater1" runat="server">
                         <ItemTemplate>
                             <div class="artwork">
-                                <a href="#">
+                                <a href="Description.aspx?artworkID=<%# DataBinder.Eval(Container.DataItem, "artworkID") %>">
                                     <img src="<%# GetImage(Eval("picture"))%>" alt="">
                                     <div class="artwork_name">
                                         <%# Eval("name") %>

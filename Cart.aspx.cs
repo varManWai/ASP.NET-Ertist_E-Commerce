@@ -82,7 +82,7 @@ namespace Ertist
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnRemove_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             string cartID = btn.Attributes["CustomParameter"].ToString();
