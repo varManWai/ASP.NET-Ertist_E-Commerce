@@ -14,13 +14,14 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
                 string UserID = Request.QueryString["UserID"] ?? "";
                 //string sql = "SELECT * from Artwork WHERE artworkID = @artworkID";
                 //string sql = "SELECT Artwork.*, Category.name AS Expr1 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID WHERE artworkID = @artworkID";
-                string sql = "SELECT Artwork.*, Category.name AS Expr1, [User].username FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID  WHERE artworkID = @artworkID";
+                string sql = "SELECT Artwork.*, Category.name AS Expr1, [User].username, [User].UserID FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID  WHERE artworkID = @artworkID";
 
                 //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -62,13 +63,15 @@ namespace Ertist
                     lblDate.Text = (string)dr["Date"].ToString();
                     lblStatus.Text = (string)dr["available"];
                     lblSize.Text = (string)dr["size"];
-                    //hplArtist.Text = (string)dr["username"];
-
-                    lblArtist.Text = (string)dr["username"];
+                    hplArtist.Text = (string)dr["username"];                  
+                    hplArtist.NavigateUrl = "~/ClientArtistProfile.aspx?artistID=" + Convert.ToString(dr["UserID"]);
+                    //lblArtist.Text = (string)dr["username"];
                 }
 
                 dr.Close();
                 con.Close();
+
+                
             }
         }
         
