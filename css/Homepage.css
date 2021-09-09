@@ -67,7 +67,7 @@ body {
 
         .home .section_1 .left_side .home_header {
             font-family: "Cardo", serif;
-            font-size: clamp(28px, 3vw, 36px);
+            font-size: clamp(1.5rem, 3vh, 1.5rem);
         }
 
         .home .section_1 .left_side .home_description {

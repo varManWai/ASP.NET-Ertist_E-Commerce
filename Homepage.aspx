@@ -12,7 +12,7 @@
                     enim quam. Mauris quis vivamus nam varius. Volutpat suspendisse tristique adipiscing nec. Phasellus
                     ac nibh euismod sit sit id.
                 </p>
-                <a href="">Let's see the Artwork<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <a href="#">Let's see the Artwork<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.99984 6L8.58984 7.41L13.1698 12L8.58984 16.59L9.99984 18L15.9998 12L9.99984 6Z"
                         fill="white" />
@@ -65,7 +65,7 @@
                                         <%# Eval("name") %>
                                     </div>
                                 </a>
-                                &nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -97,13 +97,12 @@
                                     </div>
                                 </div>
                             </a>
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>
-        </div>
-        
+
     </section>
 
     <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT UserID, username, bio, picture, roleID FROM [User] WHERE (roleID = 2)"></asp:SqlDataSource>--%>
