@@ -10,8 +10,8 @@
         </div>
         <br />
         <br />
-        <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" Style="width: 100%; text-align: center;" GridLines="Vertical" DataSourceID="SqlEditArtwork">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
+        <asp:GridView ID="Images" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" Style="width: 100%; text-align: center;" GridLines="Vertical" DataSourceID="SqlEditArtwork" DataKeyNames="artworkID" AllowPaging="True">
+              <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:BoundField DataField="artworkID" HeaderText="Artwork ID" />
                 <asp:TemplateField HeaderText="Image">
@@ -21,6 +21,7 @@
                 </asp:TemplateField>
                 <asp:BoundField DataField="name" HeaderText="Name" />
                 <asp:BoundField DataField="price" HeaderText="Price" />
+	            <asp:BoundField DataField="size" HeaderText="size"/>
                 <asp:BoundField DataField="stock" HeaderText="Stock" />
                 <asp:BoundField DataField="date" HeaderText="Date" />
                 <asp:BoundField DataField="available" HeaderText="Available" />
@@ -40,7 +41,7 @@
         </asp:GridView>
         <br />
 
-        <asp:SqlDataSource ID="SqlEditArtwork" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2 FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID WHERE [User].UserID = @userID">
+        <asp:SqlDataSource ID="SqlEditArtwork" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, Category.name AS Expr1, Gallery.name AS Expr2, Artwork.size FROM Artwork INNER JOIN Category ON Artwork.categoryID = Category.categoryID INNER JOIN Gallery ON Artwork.galleryID = Gallery.galleryID INNER JOIN [User] ON Gallery.userID = [User].UserID WHERE ([User].UserID = @userID)">
             <SelectParameters>
                 <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
             </SelectParameters>

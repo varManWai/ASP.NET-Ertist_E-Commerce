@@ -39,6 +39,7 @@ namespace Ertist
                     txtPrice.Text = (string)dr["price"].ToString();
                     txtDesc.Text = (string)dr["description"];
                     txtStock.Text = (string)dr["stock"].ToString();
+                    txtSize.Text = (string)dr["size"].ToString();
                     ddlAvailable.Text = (string)dr["available"];
                     ddlCategory.SelectedValue = (string)dr["categoryID"].ToString();
                     ddlGallery.SelectedValue = (string)dr["galleryID"].ToString();
@@ -57,12 +58,13 @@ namespace Ertist
             string price = txtPrice.Text;
             string description = txtDesc.Text;
             int stock = Convert.ToInt32(txtStock.Text);
+            string size = txtSize.Text;
             string available = ddlAvailable.SelectedItem.Text;
             string category = ddlCategory.SelectedValue;
             string gallery = ddlGallery.SelectedValue;
 
 
-            string sql = @"update Artwork set name = @name, price = @price, description = @description, available = @available, categoryID = @categoryID, galleryID = @galleryID where artworkID = @artworkID";
+            string sql = @"update Artwork set name = @name, price = @price, description = @description, available = @available, categoryID = @categoryID, galleryID = @galleryID, size = @size where artworkID = @artworkID";
 
             //Connection
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -73,6 +75,7 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@price", price);
             cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@size", size);
             cmd.Parameters.AddWithValue("@stock", stock);
             cmd.Parameters.AddWithValue("@available", available);
             cmd.Parameters.AddWithValue("@categoryID", category);

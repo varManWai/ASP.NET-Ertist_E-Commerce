@@ -40,9 +40,17 @@
                     <td>&nbsp;</tr>
                  <tr>
                     <td class="auto-style3" style="width: 140px">Artwork Description</td>
-                    <td> <asp:TextBox ID="txtDesc" runat="server" ReadOnly="true"></asp:TextBox></td>
+                    <td> <asp:TextBox ID="txtDesc" runat="server" ReadOnly="true" TextMode="MultiLine"></asp:TextBox></td>
                 </tr>
                  <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
+                 <tr>
+                    <td class="auto-style3" style="width: 140px">Dimensions</td>
+                    <td><asp:TextBox ID="txtSize" runat="server" ReadOnly="True" TextMode="MultiLine"></asp:TextBox></td>
+                </tr>
+                <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td> &nbsp;</td>
                 </tr>
@@ -56,7 +64,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px; height: 22px;">Available</td>
-                    <td style="height: 22px"><asp:DropDownList ID="ddlAvailable" runat="server" ReadOnly="true">
+                    <td style="height: 22px"><asp:DropDownList ID="ddlAvailable" runat="server">
                 <asp:ListItem>Available</asp:ListItem>
                 <asp:ListItem>Not Available</asp:ListItem>
             </asp:DropDownList></td>

@@ -33,16 +33,25 @@
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">Artwork Price</td>
-                    <td><asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                    <td><asp:TextBox ID="txtPrice" runat="server"></asp:TextBox></td>
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</tr>
                  <tr>
                     <td class="auto-style3" style="width: 140px">Artwork Description</td>
-                    <td> <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox></td>
+
+                    <td> <asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine"></asp:TextBox></td>
                 </tr>
                  <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="width: 140px">Dimensions</td>
+                    <td><asp:TextBox ID="txtSize" runat="server" TextMode="MultiLine"></asp:TextBox></td>
+                </tr>
+                <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td> &nbsp;</td>
                 </tr>

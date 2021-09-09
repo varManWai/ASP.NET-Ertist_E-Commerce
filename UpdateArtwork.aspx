@@ -44,6 +44,14 @@
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td> &nbsp;</td>
                 </tr>
+                <tr>
+                    <td class="auto-style3" style="width: 140px">Dimensions</td>
+                    <td><asp:TextBox ID="txtSize" runat="server" TextMode="MultiLine"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
                   <tr>
                     <td class="auto-style3" style="width: 140px">Stock</td>
                     <td><asp:TextBox ID="txtStock" ReadOnly="True" placeHolder="1" runat="server"></asp:TextBox></td>

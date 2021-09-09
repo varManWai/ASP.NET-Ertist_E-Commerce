@@ -39,6 +39,7 @@ namespace Ertist
                     txtPrice.Text = (string)dr["price"].ToString();
                     txtDesc.Text = (string)dr["description"];
                     txtStock.Text = (string)dr["stock"].ToString();
+                    txtSize.Text = (string)dr["size"].ToString();
                     ddlAvailable.Text = (string)dr["available"];
                     ddlCategory.SelectedValue = (string)dr["categoryID"].ToString();
                     ddlGallery.SelectedValue = (string)dr["galleryID"].ToString();
