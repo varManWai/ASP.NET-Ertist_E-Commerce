@@ -173,6 +173,7 @@
     <Content Include="Image\search.svg" />
     <Content Include="Image\Star Clock at Night II.jpg" />
     <Content Include="Image\user_default_pic.svg" />
+    <Content Include="Image\user_picture.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MakeOrder.aspx" />
     <Content Include="Payment.aspx" />

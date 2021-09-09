@@ -17,7 +17,7 @@
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="precon`nect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="precon`nect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato:wght@400;900&family=Poppins:wght@400;900&family=Roboto&display=swap"
         rel="stylesheet">
@@ -116,8 +116,8 @@
 
 
                         <% }
-                        else
-                        { %>
+                            else
+                            { %>
 
                         <!-- <asp:LoginView ID="LoginView1" runat="server">
                             <LoggedInTemplate> -->
@@ -207,7 +207,7 @@
                                 fill="white" />
                         </g>
                         <defs>
-                            <clipPath id="clip0">
+                            <clipPath id="clip1">
                                 <rect width="30" height="30" fill="white"
                                     transform="translate(51.4111 29.6343) rotate(133.457)" />
                             </clipPath>
@@ -303,7 +303,7 @@
             <div class="navbar_subs">
                 <div class="navbar_subs_nav_container">
                     <div class="navbar_subs_user">
-                        <img src="./user_picture.jpg" alt="" srcset="">
+                        <img src="./Image/user_picture.jpg" alt="" srcset="">
                         <span>Lai Man Wai</span>
                     </div>
                     <div class="navbar_subs_link_container">
@@ -340,7 +340,7 @@
         </div>
         <hr />
         <footer>
-            <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center; height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
+            <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
 

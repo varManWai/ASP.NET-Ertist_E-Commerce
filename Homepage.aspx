@@ -5,9 +5,10 @@
 
     <section class="home">
         <div class="section_1">
-            <div class="left_side">
-                <h2 class="home_header">Every Artwork has their own story and meaning</h2>
-                <p class="home_description">
+            <div class="left_side" >
+                <div class="left_side_container">
+                <h2 class="home_header" >Every Artwork has their own story and meaning</h2>
+                <p class="home_description" style="font-size: clamp(15px, 2vw, 20px);">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. At dolor diam odio
                     enim quam. Mauris quis vivamus nam varius. Volutpat suspendisse tristique adipiscing nec. Phasellus
                     ac nibh euismod sit sit id.
@@ -18,6 +19,7 @@
                         fill="white" />
                 </svg>
                 </a>
+                    </div>
             </div>
             <div class="right_side">
                 <div class="slide_image_1">
