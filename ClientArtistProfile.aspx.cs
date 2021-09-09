@@ -17,6 +17,7 @@ namespace Ertist
 
             if (!Page.IsPostBack)
             {
+
                 string artistID = Request.QueryString["artistID"] ?? "";
                 string sql = "Select * from [User] where UserID = @artistID";
 
@@ -25,6 +26,7 @@ namespace Ertist
                 SqlConnection con = new SqlConnection(strCon);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@artistID", artistID);
+  
 
                 //open the connection
                 con.Open();
