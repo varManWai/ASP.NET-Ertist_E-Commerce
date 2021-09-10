@@ -7,7 +7,28 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        #paging, #paging span, #paging a {
+            margin: 50%;
+            color:black;
+        }
 
+        .activeLink{
+            color:black;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .activeLink:hover{
+            color:#ca3f49;
+            text-decoration: none;
+            
+        }
+
+        #MainContent_paging span{
+            color:#ca3f49;
+        }
+    </style>
     <br />
     <h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artwork </h3>
     <div style="width: 100%; max-width: 1366px; margin: auto; padding: 0px 20px;">
@@ -44,7 +65,6 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <div  id="paging" style="margin-left:5px; font-size:0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align:center;" runat="server"></div>
     </div>
-
-
 </asp:Content>
