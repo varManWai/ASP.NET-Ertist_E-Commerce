@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace Ertist
 {
@@ -71,6 +72,30 @@ namespace Ertist
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("EditArtwork.aspx");
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+
+        {
+
+            Bitmap bmIP = new Bitmap(FileUpload1.PostedFile.InputStream);
+
+            if (bmIP.Width > 100 | bmIP.Height > 100)
+
+            {
+
+                args.IsValid = false;
+
+            }
+
+            else
+
+            {
+
+                args.IsValid = true;
+
+            }
+
         }
     }
 }
