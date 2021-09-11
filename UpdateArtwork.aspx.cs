@@ -76,14 +76,14 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@artworkID", artworkID);
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@price", price);
-            cmd.Parameters.AddWithValue("@description", description);
-            cmd.Parameters.AddWithValue("@width", width);
-            cmd.Parameters.AddWithValue("@height", height);
+            cmd.Parameters.AddWithValue("@description", description);     
             cmd.Parameters.AddWithValue("@stock", stock);
             cmd.Parameters.AddWithValue("@available", available);
             cmd.Parameters.AddWithValue("@categoryID", category);
             cmd.Parameters.AddWithValue("@galleryID", gallery);
-            
+            cmd.Parameters.AddWithValue("@width", width);
+            cmd.Parameters.AddWithValue("@height", height);
+
             con.Open();
             cmd.ExecuteNonQuery(); //use in update, insert, delete
             con.Close();

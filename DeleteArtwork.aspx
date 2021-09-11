@@ -24,7 +24,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="height: 22px; width: 140px">Artwork Name</td>
+                    <td class="auto-style3" style="height: 22px; width: 140px">Name</td>
                     <td style="height: 22px"><asp:TextBox ID="txtName" runat="server" ReadOnly="true"></asp:TextBox></td>
                 </tr>
                 <tr>
@@ -32,14 +32,14 @@
                     <td>&nbsp;</td>
                 </tr>
                  <tr>
-                    <td class="auto-style1" style="width: 140px">Artwork Price</td>
+                    <td class="auto-style1" style="width: 140px">Price</td>
                     <td><asp:TextBox ID="txtPrice" runat="server" ReadOnly="true"></asp:TextBox>
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</tr>
                  <tr>
-                    <td class="auto-style3" style="width: 140px">Artwork Description</td>
+                    <td class="auto-style3" style="width: 140px">Description</td>
                     <td> <asp:TextBox ID="txtDesc" runat="server" ReadOnly="true" TextMode="MultiLine"></asp:TextBox></td>
                 </tr>
                  <tr>
@@ -47,7 +47,7 @@
                     <td> &nbsp;</td>
                 </tr>
                  <tr>
-                    <td class="auto-style3" style="width: 140px">Artwork Height</td>
+                    <td class="auto-style3" style="width: 140px">Height</td>
                     <td><asp:TextBox ID="txtHeight" runat="server" ReadOnly="True"></asp:TextBox></td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                     <td> &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="width: 140px">Artwork Width</td>
+                    <td class="auto-style3" style="width: 140px">Width</td>
                     <td><asp:TextBox ID="txtWidth" runat="server" ReadOnly="True"></asp:TextBox></td>
                 </tr>
                 <tr>

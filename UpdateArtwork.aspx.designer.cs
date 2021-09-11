@@ -123,6 +123,15 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHeight;
 
         /// <summary>
+        /// rgvHeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvHeight;
+
+        /// <summary>
         /// txtWidth control.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,15 @@ namespace Ertist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWidth;
+
+        /// <summary>
+        /// rgvWidth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvWidth;
 
         /// <summary>
         /// txtStock control.
@@ -159,6 +177,15 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.DropDownList ddlAvailable;
 
         /// <summary>
+        /// rfvAvailable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAvailable;
+
+        /// <summary>
         /// ddlCategory control.
         /// </summary>
         /// <remarks>
@@ -168,6 +195,15 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
 
         /// <summary>
+        /// rfvCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategory;
+
+        /// <summary>
         /// ddlGallery control.
         /// </summary>
         /// <remarks>
@@ -175,6 +211,15 @@ namespace Ertist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGallery;
+
+        /// <summary>
+        /// rfvGallery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGallery;
 
         /// <summary>
         /// btnUpdate control.
