@@ -115,7 +115,7 @@ body {
     .home .section_1 .right_side {
         position: relative;
         top: -185px;
-        left:-150px;
+        left:-500px;
         padding-right:20px;
 
     }
@@ -124,7 +124,7 @@ body {
             position: absolute;
             width: 133px;
             height: 400px;
-            right: 0px;
+            left: 0;
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.349);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.349);
@@ -143,7 +143,7 @@ body {
             position: absolute;
             width: 133px;
             height: 400px;
-            right: 150px;
+            left: clamp(140px,10vw,150px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
@@ -162,7 +162,7 @@ body {
             position: absolute;
             width: 133px;
             height: 400px;
-            right: 300px;
+            left: clamp(290px,10vw,300px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
@@ -368,6 +368,7 @@ body {
     width: 100%;
     max-width: 1366px;
     margin: auto;
+    margin-bottom:130px;
 }
 
     .home .section_4 .artist_wall {
@@ -396,60 +397,124 @@ body {
                 font-size: clamp(30px, 3vw, 36px);
             }
 
-        .home .section_4 .artist_wall .artists {
+        .home .section_4 .artist_wall .section_artist {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            -webkit-box-orient: vertical;
+            -webkit-box-orient: horizontal;
             -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
+            -ms-flex-direction: row;
+            flex-direction: row;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1366px;
         }
 
-            .home .section_4 .artist_wall .artists .artist {
+            .home .section_4 .artist_wall .section_artist .artist_contianer {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                -webkit-box-orient: horizontal;
+                -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
-                -ms-flex-direction: row;
-                flex-direction: row;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                background-color: white;
                 -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
                 box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
-                text-decoration: none;
-                margin-bottom: 40px;
+                margin: 0px 15px;
             }
 
-                .home .section_4 .artist_wall .artists .artist img {
-                    height: 250px;
-                    width: 250px;
+                .home .section_4 .artist_wall .section_artist .artist_contianer a {
+                    width: 330px;
+                    text-decoration: none;
+                    color: black;
                 }
 
-                .home .section_4 .artist_wall .artists .artist .artist_details {
-                    height: 250px;
-                    width: 100%;
-                    max-width: 500px;
-                    padding: 25px;
+                    .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                    }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_img {
+                            margin: 20px auto;
+                            width: 100%;
+                            max-width: 100px;
+                            height: 100%;
+                            max-height: 100px;
+                            border-radius: 300px;
+                        }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_name {
+                            font-family: "Lato", sans-serif;
+                            font-size: clamp(15px, 2vh, 18px);
+                            color: black;
+                            width: 100%;
+                            max-width: 50%;
+                            text-align: center;
+                        }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_bio {
+                            font-family: "Cardo", serif;
+                            text-align: center;
+                            width: 100%;
+                            max-width: 80%;
+                            text-align: center;
+                            color: #828282;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+
+                .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                    flex-direction: row;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    width: 330px;
                 }
 
-                    .home .section_4 .artist_wall .artists .artist .artist_details .artist_name {
-                        padding-bottom: 10px;
+                    .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container a {
+                        text-decoration: none;
                         color: black;
                     }
 
-                    .home .section_4 .artist_wall .artists .artist .artist_details .artist_bio {
-                        padding-top: 20px;
-                        border-top: 1px solid black;
-                        color: black;
-                    }
+                        .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container a .artwork_image .artwork_img {
+                            width: 110px;
+                            height: 110px;
+                        }
 
 @-webkit-keyframes up {
     0% {
