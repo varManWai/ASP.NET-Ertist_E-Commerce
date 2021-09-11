@@ -143,7 +143,7 @@ body {
             position: absolute;
             width: 133px;
             height: 400px;
-            left: clamp(140px,10vw,150px);
+            left: clamp(140px,13vw,150px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
@@ -162,7 +162,7 @@ body {
             position: absolute;
             width: 133px;
             height: 400px;
-            left: clamp(290px,10vw,300px);
+            left: clamp(290px,30vw,300px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
