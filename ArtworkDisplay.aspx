@@ -8,10 +8,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
-        #paging, #paging span, #paging a {
-            margin: 50%;
-            color:black;
-        }
+        
 
         .activeLink{
             color:black;
@@ -25,8 +22,12 @@
             
         }
 
-        #MainContent_paging span{
+        /*#MainContent_paging span{
             color:#ca3f49;
+        }*/
+
+        #MainContent_paging span element{
+            background-color:#ca3f49;
         }
     </style>
     <br />
