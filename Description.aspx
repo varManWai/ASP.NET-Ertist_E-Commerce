@@ -54,7 +54,7 @@
                                        
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                                         <p style="color:#ce2b2b;"><i><asp:Label ID="lblCategory" runat="server"></asp:Label></i></p>
-                                        <p>Dimensions:   <asp:Label ID="lblSize" runat="server"></asp:Label></p><br />
+                                        <p>Dimensions:   <asp:Label ID="lblHeight" runat="server"></asp:Label>cm (H) x <asp:Label ID="lblWidth" runat="server"></asp:Label>cm (W)</p><br />
                                       
                                         <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
                                         

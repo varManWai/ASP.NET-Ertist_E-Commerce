@@ -47,8 +47,16 @@
                     <td> &nbsp;</td>
                 </tr>
                  <tr>
-                    <td class="auto-style3" style="width: 140px">Dimensions</td>
-                    <td><asp:TextBox ID="txtSize" runat="server" ReadOnly="True" TextMode="MultiLine"></asp:TextBox></td>
+                    <td class="auto-style3" style="width: 140px">Artwork Height</td>
+                    <td><asp:TextBox ID="txtHeight" runat="server" ReadOnly="True"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" style="width: 140px">Artwork Width</td>
+                    <td><asp:TextBox ID="txtWidth" runat="server" ReadOnly="True"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>

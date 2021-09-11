@@ -60,13 +60,22 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
-        /// lblSize control.
+        /// lblHeight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSize;
+        protected global::System.Web.UI.WebControls.Label lblHeight;
+
+        /// <summary>
+        /// lblWidth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWidth;
 
         /// <summary>
         /// lblDesc control.

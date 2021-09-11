@@ -3,6 +3,7 @@
     <link href="css/button.css" rel="stylesheet" />
     <div style="padding:5%;">
     <h3>Update Artwork</h3><br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Width="500px" />
             <table class="auto-style5" style="font-size:14px">
                 <tr>
                     <td class="auto-style3" style="width: 140px">Image</td>
@@ -23,31 +24,54 @@
                 </tr>
                 <tr>
                     <td class="auto-style3" style="height: 22px; width: 140px">Artwork Name</td>
-                    <td style="height: 22px"><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                    <td style="height: 22px">
+                        <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Artwork Name is Required" Text="*" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
-                 <tr>
+                <tr>
                     <td class="auto-style1" style="width: 140px">Artwork Price</td>
-                    <td><asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                    <td>
+                        <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvPrice" runat="server" ErrorMessage="Artwork Price is Required" Text="*" ForeColor="Red" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revPrice" runat="server" ErrorMessage="Price must in Number" Text="*" ForeColor="Red" ControlToValidate="txtPrice" ValidationExpression="^(\d+)?$"></asp:RegularExpressionValidator>
+                    </td>
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</tr>
                  <tr>
                     <td class="auto-style3" style="width: 140px">Artwork Description</td>
-                    <td> <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox></td>
+                    <td> <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ErrorMessage="Artwork Description is Required" ControlToValidate="txtDesc" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+
                 </tr>
                  <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td> &nbsp;</td>
                 </tr>
-                <tr>
-                    <td class="auto-style3" style="width: 140px">Dimensions</td>
-                    <td><asp:TextBox ID="txtSize" runat="server" TextMode="MultiLine"></asp:TextBox></td>
+               <tr>
+                    <td class="auto-style3" style="width: 140px">Artwork Height(cm)</td>
+                    <td><asp:TextBox ID="txtHeight" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvHeight" runat="server" ErrorMessage="Artwork Height is Required" ControlToValidate="txtHeight" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <%--<asp:RegularExpressionValidator ID="rgvSize" runat="server" ErrorMessage="Invalid Format" ControlToValidate="txtSize" Text="*" ForeColor="Red" ValidationExpression="^\d+(\.\d+)+(cm\s)+(x|X)"></asp:RegularExpressionValidator>--%>
+                    </td>
                 </tr>
+                 <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
+                 <tr>
+                    <td class="auto-style3" style="width: 140px">Artwork Width(cm)</td>
+                    <td><asp:TextBox ID="txtWidth" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvWidth" runat="server" ErrorMessage="Artwork Width is Required" ControlToValidate="txtWidth" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <%--<asp:RegularExpressionValidator ID="rgvSize" runat="server" ErrorMessage="Invalid Format" ControlToValidate="txtSize" Text="*" ForeColor="Red" ValidationExpression="^\d+(\.\d+)+(cm\s)+(x|X)"></asp:RegularExpressionValidator>--%>
+                    </td>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td> &nbsp;</td>

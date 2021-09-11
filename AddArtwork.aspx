@@ -33,8 +33,8 @@
                     <td class="auto-style3" style="height: 22px; width: 140px">Artwork Name</td>
                     <td style="height: 22px">
                         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Name is Required" Text="*" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
-                       <%-- <asp:RegularExpressionValidator ID="revName" runat="server" ErrorMessage="Name should not be more than 100 words " Text="*" ForeColor="Red" ControlToValidate="txtName" ValidationExpression="^[a-zA-Z''-'\s]{33,57}$"></asp:RegularExpressionValidator>--%>
+                        <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Artwork Name is Required" Text="*" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
+                       <%-- <asp:RegularExpressionValidator ID="revName" runat="server" ErrorMessage="Name should not be more than 100 words " Text="*" ForeColor="Red" ControlToValidate="txtName" ValidationExpression="^[a-zA-Z0-9''-'\s]{33,57}$"></asp:RegularExpressionValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                     <td class="auto-style1" style="width: 140px">Artwork Price</td>
                     <td>
                         <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvPrice" runat="server" ErrorMessage="Price is Required" Text="*" ForeColor="Red" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvPrice" runat="server" ErrorMessage="Artwork Price is Required" Text="*" ForeColor="Red" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="revPrice" runat="server" ErrorMessage="Price must in Number" Text="*" ForeColor="Red" ControlToValidate="txtPrice" ValidationExpression="^(\d+)?$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -64,10 +64,21 @@
                     <td> &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="width: 140px">Dimensions</td>
-                    <td><asp:TextBox ID="txtSize" runat="server" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvSize" runat="server" ErrorMessage="Dimensions is Required" ControlToValidate="txtSize" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <%--<asp:RegularExpressionValidator ID="rgvSize" runat="server" ErrorMessage="Invalid Format" ControlToValidate="txtSize" Text="*" ForeColor="Red" ValidationExpression="^\d+(\.\d+)+(cm\s)+(x|X)"></asp:RegularExpressionValidator>--%>
+                    <td class="auto-style3" style="width: 140px">Artwork Height(cm)</td>
+                    <td><asp:TextBox ID="txtHeight" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvHeight" runat="server" ErrorMessage="Artwork Height is Required" ControlToValidate="txtHeight" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="rgvHeight" runat="server" ErrorMessage="Height must in Number and cannot more than 4 numbers" ControlToValidate="txtHeight" Text="*" ForeColor="Red" ValidationExpression="\d{0,4}"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="auto-style3" style="width: 140px">&nbsp;</td>
+                    <td> &nbsp;</td>
+                </tr>
+                 <tr>
+                    <td class="auto-style3" style="width: 140px">Artwork Width(cm)</td>
+                    <td><asp:TextBox ID="txtWidth" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvWidth" runat="server" ErrorMessage="Artwork Width is Required" ControlToValidate="txtWidth" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="rgvWidth" runat="server" ErrorMessage="Width must in Number and cannot more than 4 numbers" ControlToValidate="txtWidth" Text="*" ForeColor="Red" ValidationExpression="\d{0,4}"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
