@@ -62,7 +62,8 @@ namespace Ertist
                     lblPrice.Text = "$ " + Convert.ToString(dr["price"]);
                     lblDate.Text = (string)dr["Date"].ToString();
                     lblStatus.Text = (string)dr["available"];
-                    lblSize.Text = (string)dr["size"];
+                    lblHeight.Text = Convert.ToString(dr["height"]);
+                    lblWidth.Text = Convert.ToString(dr["width"]);
                     hplArtist.Text = (string)dr["username"];                  
                     hplArtist.NavigateUrl = "~/ClientArtistProfile.aspx?artistID=" + Convert.ToString(dr["UserID"]);
                     //lblArtist.Text = (string)dr["username"];
