@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="Ertist.Homepage" %>
 
+<%@ Import Namespace="System.Data" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="./css/Homepage.css">
 
@@ -34,7 +36,7 @@
             </div>
         </div>
 
-        <div class="section_2" style="margin-top: 100px;">
+        <div class="section_2" >
             <a href="ArtworkPainting.aspx" class="cards">
                 <img src="./Image/11.jpg" alt="a picture of art">
                 <span class="card_title">Paintings
@@ -67,7 +69,7 @@
                                         <%# Eval("name") %>
                                     </div>
                                 </a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -82,7 +84,6 @@
             </div>
         </div>
 
-        
 
         <div class="section_4">
             <div class="artist_wall">
@@ -90,11 +91,12 @@
                     <h2>POPULAR ARTIST</h2>
                 </div>
                 <div class="section_artist">
-                    <asp:Repeater ID="Repeater2" runat="server">
+                    <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="rpt2_ItemDataBound">
                         <ItemTemplate>
                             <div class="artist_contianer">
                                 <a href="#">
                                     <div class="artist_details">
+                                        <asp:HiddenField ID="hdfUserId" runat="server" Value='<%# Eval("userId") %>' />
                                         <img src="<%# GetImage(Eval("picture")) %>" alt="" class="artist_img" />
                                         <div class="artist_name"><%# Eval("username") %></div>
                                         <p class="artist_bio">
@@ -103,21 +105,15 @@
                                     </div>
                                 </a>
                                 <div class="artist_artwork_container">
-                                    <a href="#">
-                                        <div class="artwork_image">
-                                            <img src=".\user_picture.jpg" alt="" class="artwork_img" />
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="artwork_image">
-                                            <img src=".\user_picture.jpg" alt="" class="artwork_img" />
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="artwork_image">
-                                            <img src=".\user_picture.jpg" alt="" class="artwork_img" />
-                                        </div>
-                                    </a>
+                                    <asp:Repeater ID="Repeater3" runat="server">
+                                        <ItemTemplate>
+                                            <a href="Description?artworkID=<%# Eval("artworkID") %>">
+                                                <div class="artwork_image ">
+                                                    <img src="<%# GetImage(Eval("picture")) %>" alt="" class="artwork_img" />
+                                                </div>
+                                            </a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -129,5 +125,6 @@
 
     </section>
 
-    <asp:sqldatasource id="sqldatasource1" runat="server" connectionstring="<%$ connectionstrings:ertistdb %>" selectcommand="select userid, username, bio, picture, roleid from [user] where (roleid = 2)"></asp:sqldatasource>
+
+    <asp:SqlDataSource ID="sqldatasource1" runat="server" ConnectionString="<%$ connectionstrings:ertistdb %>" SelectCommand="select userid, username, bio, picture, roleid from [user] where (roleid = 2)"></asp:SqlDataSource>
 </asp:Content>

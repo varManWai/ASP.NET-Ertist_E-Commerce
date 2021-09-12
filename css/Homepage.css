@@ -123,7 +123,7 @@ body {
         .home .section_1 .right_side .slide_image_1 {
             position: absolute;
             width: 133px;
-            height: 400px;
+            height: 355px;
             left: 0;
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.349);
@@ -142,7 +142,7 @@ body {
         .home .section_1 .right_side .slide_image_2 {
             position: absolute;
             width: 133px;
-            height: 400px;
+            height: 355px;
             left: clamp(140px,13vw,150px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
@@ -161,7 +161,7 @@ body {
         .home .section_1 .right_side .slide_image_3 {
             position: absolute;
             width: 133px;
-            height: 400px;
+            height: 355px;
             left: clamp(290px,30vw,300px);
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
@@ -193,6 +193,7 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    margin-top:0;
 }
 
     .home .section_2 .cards {
