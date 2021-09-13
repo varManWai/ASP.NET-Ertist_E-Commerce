@@ -15,7 +15,7 @@
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-0 shadow">
                             <a href="ClientArtistProfile.aspx?artistID=<%# DataBinder.Eval(Container.DataItem, "UserID") %>">
-                                <img src="<%# GetImage(Eval("picture")) %>" class="card-img-top" alt="artist">
+                                <img src="<%# GetImage(Eval("picture")) %>" class="card-img-top" alt="artist" style="height:236px; width:315px; object-fit:cover;">
                             </a>
                             &nbsp;&nbsp;&nbsp;<div class="card-body text-center">
                                 <h5 class="card-title mb-0"><%# Eval("username") %></h5>

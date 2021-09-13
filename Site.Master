@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="./css/navbar.css">
 
     <style>
+        body {
+        }
+
         .main_menu {
             width: 100px;
             background-color: #fff;
@@ -58,8 +61,9 @@
         #login_btn:hover {
             color: white !important;
         }
-        #register_btn:hover{
-            background-color:#AD353D !important;
+
+        #register_btn:hover {
+            background-color: #AD353D !important;
         }
     </style>
 </head>
@@ -85,6 +89,7 @@
             </Scripts>
         </asp:ScriptManager>
 
+       
 
         <header class="navbar_section">
             <div class="navbar_section_upper">
@@ -136,9 +141,18 @@
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="./Image/reg.jpg" alt="" srcset="" />
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [picture] FROM [User] WHERE ([UserID] = @UserID)">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="UserID" SessionField="UserID" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:Repeater ID="Rpt1" DataSourceID="SqlDataSource1" runat="server">
+                                    <ItemTemplate>
+                                        <img src="<%# GetImage(Eval("picture"))%>" alt="" srcset="" />
+                                    </ItemTemplate>
+                                </asp:Repeater>
                                 <!-- <asp:Image ID="UserImage" runat="server" />-->
-                                <asp:LoginName ID="LoginName1" runat="server"  />
+                                <asp:LoginName ID="LoginName1" runat="server" />
                             </button>
                             <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">--%>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -159,7 +173,7 @@
                                 <li><a class="dropdown-item" href="./Wishlist.aspx">Wishlist</a></li>
                                 <li><a class="dropdown-item" href="GalleryDisplay.aspx">Gallery</a></li>
                                 <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
-                                
+
                                 <%}
                                     else
                                     { %>
@@ -167,9 +181,11 @@
                                 <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
                                 <%}
                                     }%>
-                                <li><asp:LoginStatus ID="LoginStatus2" runat="server" LogoutAction="Redirect"
-                                LogoutPageUrl="~/Login.aspx" style="" CssClass="dropdown-item"
-                                OnLoggingOut="MasterLoginStatus_LoggingOut" /></li>
+                                <li>
+                                    <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutAction="Redirect"
+                                        LogoutPageUrl="~/Login.aspx" Style="" CssClass="dropdown-item"
+                                        OnLoggingOut="MasterLoginStatus_LoggingOut" />
+                                </li>
                             </ul>
                             <%--</ul>--%>
                         </div>
@@ -182,11 +198,11 @@
                                 </asp:Menu>--%>
 
                         <%--<div class="cart_button_section logout_user" style="background-color: #ca3f49; border-radius: 10px">--%>
-                            <%--<i class="glyphicon glyphicon-remove">--%>
-                           <%-- <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"
+                        <%--<i class="glyphicon glyphicon-remove">--%>
+                        <%-- <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"
                                 LogoutPageUrl="~/Login.aspx" Style="padding: 10px 40px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 1px;"
                                 OnLoggingOut="MasterLoginStatus_LoggingOut" />--%>
-                            <%--</i>--%>
+                        <%--</i>--%>
                         <%--</div>--%>
 
 
@@ -350,7 +366,7 @@
             </div>
         </div>
 
-        <div class="contain_container">
+        <div class="contain_container" style="min-height: 70vh;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>

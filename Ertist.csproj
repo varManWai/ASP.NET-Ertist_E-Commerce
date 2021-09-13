@@ -123,7 +123,7 @@
     <Content Include="App_Data\ertistDB_log.ldf">
       <DependentUpon>ertistDB.mdf</DependentUpon>
     </Content>
-    <Content Include="GalleryDisplay.aspx" />
+    <Content Include="Artist\GalleryDisplay.aspx" />
     <Content Include="Cart.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -291,11 +291,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="GalleryDisplay.aspx.cs">
+    <Compile Include="Artist\GalleryDisplay.aspx.cs">
       <DependentUpon>GalleryDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GalleryDisplay.aspx.designer.cs">
+    <Compile Include="Artist\GalleryDisplay.aspx.designer.cs">
       <DependentUpon>GalleryDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
