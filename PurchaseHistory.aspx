@@ -25,7 +25,7 @@
                                     <%--<%# Eval("orderID") %>--%>
                                 </tr>
                             </thead>
-                            <asp:Repeater ID="rptPurchase" runat="server" DataSourceID="SqlPurchase">
+                            <asp:Repeater ID="rptPurchase" runat="server" DataSourceID="SqlPurchase" EnableTheming="False">
                                 <ItemTemplate>
                                     <tbody>
                                         <tr>

@@ -34,7 +34,7 @@
                     <td style="height: 22px">
                         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Name is required" Text="*" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revName" runat="server" ErrorMessage="Name should not be more than 100 words " Text="*" ForeColor="Red" ControlToValidate="txtName" ValidationExpression="^[0-9a-zA-Z ]{0,100}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revName" runat="server" ErrorMessage="Name should not be more than 50 words " Text="*" ForeColor="Red" ControlToValidate="txtName" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -57,6 +57,7 @@
 
                     <td> <asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ErrorMessage="Description is required" ControlToValidate="txtDesc" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Name should not be more than 1000 words " Text="*" ForeColor="Red" ControlToValidate="txtDesc" ValidationExpression="^[0-9a-zA-Z ]{0,1000}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
