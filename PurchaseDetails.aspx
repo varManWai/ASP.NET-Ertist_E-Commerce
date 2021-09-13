@@ -26,42 +26,72 @@
                                     <%--<%# Eval("orderID") %>--%>
                                 </tr>
                             </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td width="15%" class="price" style="font-size: 13px; font-weight: 600; ">
-                                                <asp:Label ID="lblID" runat="server"></asp:Label></td>
-                                            <td width="15%">
-                                                <div class="display-flex align-center">
-                                                    <%--<div class="img-product">
+                            <tbody>
+                                <tr>
+                                    <td width="15%" class="price" style="font-size: 13px; font-weight: 600;">
+                                        <asp:Label ID="lblID" runat="server"></asp:Label></td>
+                                    <td width="15%">
+                                        <div class="display-flex align-center">
+                                            <%--<div class="img-product">
                                                         <img src="<%# GetImage(Eval("picture")) %>">
                                                     </div>--%>
-                                                    <div class="name-product">
-                                                        <asp:Label ID="lblName" runat="server"></asp:Label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                           <%-- <td width="15%" class="price" style="font-size: 13px">
+                                            <div class="name-product">
+                                                <asp:Label ID="lblName" runat="server"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <%-- <td width="15%" class="price" style="font-size: 13px">
                                                 <asp:Label ID="lblDate" runat="server"></asp:Label></td>--%>
 
-                                            <td width="15%" class="address" style="font-size: 13px">
-                                                <asp:Label ID="lblAddress" runat="server"></asp:Label>
-                                                <asp:Label ID="lblPostCode" runat="server"></asp:Label></td> 
-                                            
-                                             <td width="15%" class="price" style="font-size: 13px">
-                                                 <asp:Label ID="lblShippingFee" runat="server">&emsp;</asp:Label></td>
+                                    <td width="15%" class="address" style="font-size: 13px">
+                                        <%--<asp:Label ID="lblAddress" runat="server"></asp:Label>
+                                                <asp:Label ID="lblPostCode" runat="server"></asp:Label>--%></td>
 
-                                            <td width="15%" class="price" style="font-size: 13px">
-                                                <asp:Label ID="lblTotalPrice" runat="server">&emsp;</asp:Label></td>
+                                    <td width="15%" class="price" style="font-size: 13px">
+                                        <asp:Label ID="lblShippingFee" runat="server">&emsp;</asp:Label></td>
 
-                                            <td width="15%" class="price" style="font-size: 13px">
-                                                <asp:Label ID="lblStatus" runat="server">&emsp;</asp:Label></td>
-                                        </tr>
-                                    </tbody>
+                                    <td width="15%" class="price" style="font-size: 13px">
+                                        <asp:Label ID="lblTotalPrice" runat="server">&emsp;</asp:Label></td>
+
+                                    <td width="15%" class="price" style="font-size: 13px">
+                                        <asp:Label ID="lblStatus" runat="server">&emsp;</asp:Label></td>
+                                </tr>
+                            </tbody>
                         </table>
-                    </div>
+
+                        </div>
+                        <div style="font-size: 15px;">
+                            <%--User Name&emsp;:<asp:Label ID="lblUserName" runat="server"></asp:Label><br />
+                            Name&emsp;&emsp;&emsp;:<asp:Label ID="lblflname" runat="server"></asp:Label><br />
+                            Contact No&emsp;&emsp;:<asp:Label ID="lblContact" runat="server"></asp:Label><br />
+                            Address&emsp;:<asp:Label ID="lblAddress" runat="server"></asp:Label><asp:Label ID="lblPostCode" runat="server"></asp:Label>--%>
+                            <table style="width: 100%; font-size: 15px; padding: 1px;">
+                                <tr>
+                                    <td style="width: 177px">User Name :</td>
+                                    <td>
+                                        <asp:Label ID="lblUserName" runat="server"></asp:Label></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 177px">Name      :</td>
+                                    <td>
+                                        <asp:Label ID="lblflname" runat="server"></asp:Label></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 177px">Contact No:</td>
+                                    <td>
+                                        <asp:Label ID="lblContact" runat="server"></asp:Label></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 177px">Address   :</td>
+                                    <td>
+                                        <asp:Label ID="lblAddress" runat="server"></asp:Label><asp:Label ID="lblPostCode" runat="server"></asp:Label></td>
+                                </tr>
+                            </table>
+                        </div>
+                    
 
                     <div>
-                        <asp:Button ID="btnAdd" runat="server" class="art-pg-btn" Text="Back" OnClick="btnAdd_Click" />
+                        <asp:Button ID="btnBack" runat="server" class="art-pg-btn" Text="Back" OnClick="btnBack_Click" />
                     </div>
 
                 </div>

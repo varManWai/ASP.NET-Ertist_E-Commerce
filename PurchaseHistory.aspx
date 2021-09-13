@@ -27,13 +27,13 @@
                             </thead>
                             <asp:Repeater ID="rptPurchase" runat="server" DataSourceID="SqlPurchase">
                                 <ItemTemplate>
-                                    <tbody>
-                                        <tr>
-                                            <td width="15%" class="price" style="font-size: 13px; text-decoration: underline;">
+                                    <tbody>                                        
+                                        <tr>                                            
+                                            <td width="15%" class="price" style="font-size: 13px; text-decoration: underline;">   
                                                 <a href="PurchaseDetails.aspx?orderID=<%# DataBinder.Eval(Container.DataItem, "orderID") %>">
-                                                    <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label>
-                                                    <%--<asp:HyperLink ID="hylID" runat="server"><%# Eval("orderID") %></asp:HyperLink>--%>
-                                                </a>
+                                                    <asp:Label ID="lblID" runat="server">#<%# Eval("orderID") %></asp:Label>
+                                                    <%--<asp:HyperLink ID="hylID" runat="server"><%# Eval("orderID") %></asp:HyperLink>--%>  
+                                                    </a>
                                             </td>
                                             <td width="45%">
                                                 <div class="display-flex align-center">
@@ -41,15 +41,19 @@
                                                         <img src="<%# GetImage(Eval("picture")) %>">
                                                     </div>
                                                     <div class="name-product">
+                                                         <a href="PurchaseDetails.aspx?orderID=<%# DataBinder.Eval(Container.DataItem, "orderID") %>">
                                                         <asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label>
-                                                    </div>
+                                                    </a>
+                                                             </div>
                                                 </div>
                                             </td>
                                             <td width="15%" class="price" style="font-size:13px; font-weight:400;">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
                                             <td width="15%" class="price" style="font-size:13px ; font-weight:400;">
                                                 <asp:Label ID="lblTotalPrice" runat="server">&emsp;$ <%# Eval("totalPrice") %></asp:Label></td>
+                                          
                                         </tr>
+                                        
                                     </tbody>
                                 </ItemTemplate>
                             </asp:Repeater>

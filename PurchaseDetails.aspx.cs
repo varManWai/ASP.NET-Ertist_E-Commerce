@@ -16,7 +16,7 @@ namespace Ertist
             if (!Page.IsPostBack)
             {
                 string orderID = Request.QueryString["orderID"] ?? "";                            
-                string sql = "SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture, [User].phoneNo, [Order].status, [Order].shippingFee, [User].username, Address.addressName+', '+Address.address+', '+Address.state+', '+Address.city+', ' as fullAddress ,Address.postCode  FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID INNER JOIN User_Address ON [User].UserID = User_Address.userID INNER JOIN Address ON [Order].addressID = Address.addressID AND User_Address.addressID = Address.addressID WHERE ([Order].orderID = @orderID)";
+                string sql = "SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture, [User].lname+' '+[User].fname as fullname, [User].phoneNo, [Order].status, [Order].shippingFee, [User].username, Address.addressName+', '+Address.address+', '+Address.state+', '+Address.city+', ' as fullAddress ,Address.postCode  FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID INNER JOIN User_Address ON [User].UserID = User_Address.userID INNER JOIN Address ON [Order].addressID = Address.addressID AND User_Address.addressID = Address.addressID WHERE ([Order].orderID = @orderID)";
 
                 //Connect the db
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -42,7 +42,10 @@ namespace Ertist
                     lblShippingFee.Text = "$ " + Convert.ToString(dr["shippingFee"]);
                     lblTotalPrice.Text = "$ " + Convert.ToString(dr["totalPrice"]);
                     lblStatus.Text = (string)dr["status"];
-                    
+                    lblUserName.Text = (string)dr["username"];
+                    lblContact.Text = (string)dr["phoneNo"];
+                    lblflname.Text = (string)dr["fullname"];
+
                 }
 
                 dr.Close();
@@ -52,7 +55,7 @@ namespace Ertist
             }
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("PurchaseHistory.aspx");
         }
