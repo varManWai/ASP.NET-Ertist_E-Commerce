@@ -64,7 +64,7 @@
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">Bio</td>
-                    <td><asp:TextBox ID="txtBio" runat="server"></asp:TextBox>
+                    <td><asp:TextBox ID="txtBio" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </tr>
                  <tr>
                     <td class="auto-style1" style="width: 140px">&nbsp;</td>
