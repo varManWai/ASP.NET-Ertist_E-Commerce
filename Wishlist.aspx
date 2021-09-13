@@ -18,7 +18,7 @@
         <div class="cart_all">
             <div class="artwork_container_all">
                 <div class="total_artwork_cart">
-                    <span>3 Artwroks in Wishlist</span>
+                    <span>Artwroks in Wishlist</span>
                 </div>
 
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
@@ -27,7 +27,7 @@
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
                             </div>
-                            <div class="artwork_details">
+                            <div class="artwork_details" style="width:614px;height:302px;">
                                 <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
                                     <img src=" <%#  GetImage(Eval("Expr1")) %>" alt="An Artist Picture">

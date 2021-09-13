@@ -15,7 +15,7 @@
                         <div class="profile">
 	                            <div class="avatar text-center">
                                     <!--image-->
-                                    <asp:Image ID="artist_picture" class="img-raised rounded-circle img-fluid" runat="server" />
+                                    <asp:Image ID="artist_picture" class="img-raised rounded-circle img-fluid" runat="server" Style="height:160px;width:160px;object-fit:cover;"/>
                                     <div class="artist-username">
 	                                    <h2 class="title username">
                                             <!--Username-->

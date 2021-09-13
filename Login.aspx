@@ -23,7 +23,7 @@
                     Password
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
-                <asp:Button ID="submitLogin" runat="server" Text="Login" CssClass="btn-login" OnClick="submitLogin_Click" />
+                <asp:Button ID="submitLogin" Style="color: white;" runat="server" Text="Login" CssClass="btn-login" OnClick="submitLogin_Click" />
                 <br />
                 <br />
                 <br />

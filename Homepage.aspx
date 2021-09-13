@@ -60,7 +60,9 @@
                     <h2>Artwork</h2>
                 </div>
                 <div class="artworks">
-                    <asp:Repeater ID="Repeater1" runat="server">
+
+
+                    <asp:Repeater ID="Repeater1" runat="server" >
                         <ItemTemplate>
                             <div class="artwork">
                                 <a href="Description.aspx?artworkID=<%# DataBinder.Eval(Container.DataItem, "artworkID") %>">
@@ -69,7 +71,7 @@
                                         <%# Eval("name") %>
                                     </div>
                                 </a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -126,5 +128,4 @@
     </section>
 
 
-    <asp:SqlDataSource ID="sqldatasource1" runat="server" ConnectionString="<%$ connectionstrings:ertistdb %>" SelectCommand="select userid, username, bio, picture, roleid from [user] where (roleid = 2)"></asp:SqlDataSource>
-</asp:Content>
+    </asp:Content>

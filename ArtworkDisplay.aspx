@@ -8,26 +8,35 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
-        
-
-        .activeLink{
-            color:black;
+        .activeLink {
+            color: black;
             text-decoration: none;
             margin: 10px;
         }
 
-        .activeLink:hover{
-            color:#ca3f49;
-            text-decoration: none;
-            
+
+
+            .activeLink:hover {
+                color: #ca3f49;
+                text-decoration: none;
+            }
+
+
+
+        /*span:nth-of-type(1) {
+            color: black !important;
         }
+
+        span:nth-of-type(2) {
+            background-color: #ca3f49 !important;
+        }*/
 
         /*#MainContent_paging span{
             color:#ca3f49;
         }*/
 
-        #MainContent_paging span element{
-            background-color:#ca3f49;
+        #MainContent_paging span element {
+            background-color: #ca3f49;
         }
     </style>
     <br />
@@ -66,6 +75,6 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div  id="paging" style="margin-left:5px; font-size:0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align:center;" runat="server"></div>
+        <div id="paging" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server"></div>
     </div>
 </asp:Content>

@@ -16,7 +16,7 @@
                         <div class="profile">
 	                            <div class="avatar text-center">
                                     <!-- image -->
-                                    <asp:Image ID="user_picture" class="img-raised rounded-circle img-fluid" runat="server" /> 
+                                    <asp:Image ID="user_picture" class="img-raised rounded-circle img-fluid" runat="server" Style="height:160px; width:160px;object-fit:cover;"/> 
 	                                <div class="artist-username">
 	                                    <h2 class="title username">
                                             <!-- username -->
@@ -27,9 +27,9 @@
                                    <!-- bio -->
                                  <p>
                                      <asp:Label ID="lbl_bio" runat="server" Text="Label"></asp:Label></p>
-                                    <div class="artist-profile-btn artist-btn btn-container">
+                                    <div class="artist-profile-btn artist-btn btn-container ">
                                         <asp:Button ID="btnEditProfile" runat="server" Text="Edit Profile" 
-                                            class="art-pg-btn edit-bio-btn" OnClick="btnEditProfile_Click"/>
+                                            class="art-pg-btn edit-bio-btn"  OnClick="btnEditProfile_Click"/>
                                     </div>
                                </div>
 	                        </div>
