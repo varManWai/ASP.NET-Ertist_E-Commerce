@@ -110,7 +110,7 @@
                         <asp:Button ID="btnDelete" class="art-pg-btn" runat="server"  Text="Delete" OnClick="btnDelete_Click" />
                     </td>
                     <td>
-                         <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+                         <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" />
                     </td>
                 </tr>
                

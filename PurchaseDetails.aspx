@@ -14,7 +14,7 @@
                     <div class="table-wishlist">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <thead>
-                                <tr style="font-weight: 800;">
+                                <tr style="font-weight: 600;">
                                     <%--<th width="10%"></th>--%>
                                     <th width="10%">Order ID</th>
                                     <th width="15%">Artwork</th>
@@ -26,8 +26,6 @@
                                     <%--<%# Eval("orderID") %>--%>
                                 </tr>
                             </thead>
-                            <%--<asp:Repeater ID="rptPurchase" runat="server">
-                                <ItemTemplate>--%>
                                     <tbody>
                                         <tr>
                                             <td width="15%" class="price" style="font-size: 13px; font-weight: 600; ">
@@ -59,8 +57,6 @@
                                                 <asp:Label ID="lblStatus" runat="server">&emsp;</asp:Label></td>
                                         </tr>
                                     </tbody>
-                            <%--    </ItemTemplate>
-                            </asp:Repeater>--%>
                         </table>
                     </div>
 
@@ -69,11 +65,6 @@
                     </div>
 
                 </div>
-                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.name, [Order].date, [Order].orderID, [Order].totalPrice, Artwork.picture, [User].username, [User].phoneNo, [Order].status, [Order].shippingFee, Address.addressName+' '+Address.address+' '+Address.state+' '+Address.city+' '+Address.postCode as fullAddress FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID INNER JOIN User_Address ON [User].UserID = User_Address.userID INNER JOIN Address ON [Order].addressID = Address.addressID AND User_Address.addressID = Address.addressID WHERE ([User].UserID = @userID)">
-                    <SelectParameters>
-                        <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
-                    </SelectParameters>
-                </asp:SqlDataSource>
                 <br />
             </div>
         </div>

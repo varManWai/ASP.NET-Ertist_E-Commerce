@@ -130,7 +130,7 @@
                     </td>
                     <td>
                        
-                        <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
+                        <asp:Button ID="btnCancel" class="art-pg-btn" runat="server" OnClick="btnCancel_Click" Text="Cancel" CausesValidation="False"/>
                     </td>
                 </tr>
                

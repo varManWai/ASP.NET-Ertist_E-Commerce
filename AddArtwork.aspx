@@ -138,7 +138,7 @@
 
                 <tr>
                     <td class="auto-style1" style="width: 140px"><asp:Button ID="btnAdd" class="art-pg-btn" runat="server" Text="Add Artwork" OnClick="btnAdd_Click" /></td>
-                    <td class="auto-style4"><asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" /></td>
+                    <td class="auto-style4"><asp:Button ID="btnCancel" class="art-pg-btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" CausesValidation="False" /></td>
                 </tr>             
             </table>
 
