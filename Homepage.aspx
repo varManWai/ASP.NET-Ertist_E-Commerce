@@ -94,7 +94,7 @@
                     <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="rpt2_ItemDataBound">
                         <ItemTemplate>
                             <div class="artist_contianer">
-                                <a href="#">
+                                <a href="ClientArtistProfile?artistID=<%# Eval("userId") %>">
                                     <div class="artist_details">
                                         <asp:HiddenField ID="hdfUserId" runat="server" Value='<%# Eval("userId") %>' />
                                         <img src="<%# GetImage(Eval("picture")) %>" alt="" class="artist_img" />
