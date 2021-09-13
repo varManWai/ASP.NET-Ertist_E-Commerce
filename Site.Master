@@ -179,7 +179,7 @@
                                         if (Session["roles"].Equals("Artist"))
                                         { %>
                                 <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
-                                <li><a class="dropdown-item" href="GalleryDisplay.aspx">Gallery</a></li>
+                                <li><a class="dropdown-item" href="Artist/GalleryDisplay.aspx">Gallery</a></li>
                                 <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
 
                                 <%}
