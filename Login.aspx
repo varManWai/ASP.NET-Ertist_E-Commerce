@@ -21,11 +21,14 @@
                             <div class="form-group">
                                 Username
                             <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredUsername" runat="server" Text="Please enter your username." ControlToValidate="txtUsername" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
                             <div class="form-group">
                                 Password
                             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredPassword" runat="server" Text="Please enter your password." ControlToValidate="txtPassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             </div>
+                            <asp:Label ID="errorMsg" runat="server" ForeColor="Red"></asp:Label>
                             <asp:Button ID="submitLogin" Style="color: white;" runat="server" Text="Login" CssClass="btn-login" OnClick="submitLogin_Click" />
                             <br />
                             <br />
@@ -35,7 +38,6 @@
                                 Don't have an account? <a href="RegisterPick.aspx">Sign up</a>
                                 <br />
                                 <br />
-                                <asp:Label ID="errorMsg" runat="server" ForeColor="Red"></asp:Label>
                             </div>
                         </div>
                     </div>
