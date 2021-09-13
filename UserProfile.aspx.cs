@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -51,21 +50,6 @@ namespace Ertist
         {
             string userid = Session["UserID"].ToString();
             Response.Redirect(string.Format("~/UserProfileEdit.aspx?userID=" + userid));
-        }
-
-        protected void btnAddAddress_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddAddress.aspx");
-        }
-
-        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                DataRowView dr = (DataRowView)e.Row.DataItem;
-                //string imageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
-                //(e.Row.FindControl("Image1") as Image).ImageUrl = imageUrl;
-            }
         }
     }
 }
