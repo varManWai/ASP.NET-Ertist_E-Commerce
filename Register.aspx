@@ -2,7 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/register.css" rel="stylesheet" />
+    <link href="css/ArtistProfile.css" rel="stylesheet" />
 
+    <div class="container">
+    <div class="profile-page">
+    <div class="main" style="margin-top:5%;">
     <div class="back">
         <div class="container">
             <div class="row">
@@ -39,7 +43,7 @@
                             <hr class="my-4">
 
                             <div class="d-grid mb-2">
-                                <asp:Button ID="submitReg" runat="server" Text="Register" CssClass="btn-reg" OnClick="submitReg_Click" />
+                                <asp:Button ID="submitReg" Style="color: white;" runat="server" Text="Register" CssClass="btn-reg" OnClick="submitReg_Click" />
                             </div>
 
                             <hr class="my-4">
@@ -53,4 +57,7 @@
             </div>
         </div>
     </div>
+ </div>
+ </div>
+ </div>
 </asp:Content>

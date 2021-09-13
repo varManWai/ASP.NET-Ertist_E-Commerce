@@ -1,13 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArtistDisplay.aspx.cs" Inherits="Ertist.ArtistDisplay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        .activeLink {
+            color: black;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+            .activeLink:hover {
+                color: #ca3f49;
+                text-decoration: none;
+            }
+
+       #MainContent_paging span element {
+            background-color: #ca3f49;
+        }
+    </style>
+
     <!-- Page Content -->
     <div class="container">
         <h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artist </h3>
     
         <div class="row">
 
-            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSourceArtists">
+            <asp:Repeater ID="Repeater1" runat="server">
 
                 <ItemTemplate>
 
@@ -26,12 +43,15 @@
 
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSourceArtists" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [User] WHERE ([roleID] = @roleID)">
+            <%--<asp:SqlDataSource ID="SqlDataSourceArtists" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM [User] WHERE ([roleID] = @roleID)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="2" Name="roleID" Type="Int32" />
                 </SelectParameters>
-            </asp:SqlDataSource>
+            </asp:SqlDataSource>--%>
         </div>
+
+        <div id="paging2" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server"></div>
+    
     </div>
 <!-- /.container -->
 

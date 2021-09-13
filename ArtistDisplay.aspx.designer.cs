@@ -24,12 +24,12 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
 
         /// <summary>
-        /// SqlDataSourceArtists control.
+        /// paging2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceArtists;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl paging2;
     }
 }

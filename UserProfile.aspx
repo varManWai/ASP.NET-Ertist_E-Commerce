@@ -11,7 +11,6 @@
 		    <div class="profile-content">
                 <div class="container">
                     
-
                     <%-- Artist Profile --%>
                         <div class="profile">
 	                            <div class="avatar text-center">
@@ -33,8 +32,7 @@
                                     </div>
                                </div>
 	                        </div>
-
-		    </div>
+		        </div>
             </div>
 	    </div>
    
