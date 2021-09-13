@@ -17,11 +17,11 @@
     margin-bottom: 5px;
 }
 
-    .table-wishlist thead tr th {
+    .table-wishlist thead tr {
         padding: 8px 0 18px;
         color: #484848;
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 600;
     }
 
 .table-wishlist tr td {
@@ -49,9 +49,9 @@
         width: 50%;
     }
 
-    .table-wishlist tr td.price {
-        font-weight: 600;
-    }
+.table-wishlist tr .purchase {
+    font-weight: 600;
+}
 
     .table-wishlist tr td .quanlity {
         position: relative;
@@ -59,7 +59,7 @@
 
 .total {
     font-size: 24px;
-    font-weight: 600;
+    /*font-weight: 600;*/
     color: #8660e9;
 }
 
@@ -169,3 +169,6 @@
     font-size: 20px;
     color: #212529;
 }
+
+
+

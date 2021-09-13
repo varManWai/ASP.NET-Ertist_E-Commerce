@@ -16,11 +16,11 @@
                             <thead>
                                 <tr>
                                     <%--<th width="10%"></th>--%>
-                                    <th width="15%">Order ID</th>
+                                    <th width="10%" style="font-weight: 600;">Order ID</th>
                                     <th width="45%"></th>
                                     <%--<th width="15%">Name</th>--%>
-                                    <th width="15%">Date</th>
-                                    <th width="15%">Total Price</th>
+                                    <th width="15%" style="font-weight: 600;">Date</th>
+                                    <th width="15%" style="font-weight: 600;">Total Price</th>
                                     <th width="15%"></th>
                                     <%--<%# Eval("orderID") %>--%>
                                 </tr>
@@ -29,8 +29,12 @@
                                 <ItemTemplate>
                                     <tbody>
                                         <tr>
-                                            <td width="15%" class="price" style="font-size:13px">
-                                                <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label></td>
+                                            <td width="15%" class="price" style="font-size: 13px; text-decoration: underline;">
+                                                <a href="PurchaseDetails.aspx?orderID=<%# DataBinder.Eval(Container.DataItem, "orderID") %>">
+                                                    <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label>
+                                                    <%--<asp:HyperLink ID="hylID" runat="server"><%# Eval("orderID") %></asp:HyperLink>--%>
+                                                </a>
+                                            </td>
                                             <td width="45%">
                                                 <div class="display-flex align-center">
                                                     <div class="img-product">
@@ -41,9 +45,9 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td width="15%" class="price" style="font-size:13px">
+                                            <td width="15%" class="price" style="font-size:13px; font-weight:400;">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
-                                            <td width="15%" class="price" style="font-size:13px">
+                                            <td width="15%" class="price" style="font-size:13px ; font-weight:400;">
                                                 <asp:Label ID="lblTotalPrice" runat="server">&emsp;$ <%# Eval("totalPrice") %></asp:Label></td>
                                         </tr>
                                     </tbody>
