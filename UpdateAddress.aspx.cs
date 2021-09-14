@@ -62,7 +62,7 @@ namespace Ertist
             string postCode = txtPostCode.Text;
 
 
-            string sql = @"update Address set addressName = @addressName, address = @address, state = @state, city = @city, postCode = @postCode";
+            string sql = @"update Address set addressName = @addressName, address = @address, state = @state, city = @city, postCode = @postCode where addressID = @addressID";
             //Connection
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             SqlConnection con = new SqlConnection(strCon);
