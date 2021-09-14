@@ -22,7 +22,7 @@
         }
     </style>
 
-    <div style="font-size:14px; padding:5%;">
+    <div style="font-size:14px; padding:5%; margin-left:32%;">
             <h3>Edit Profile</h3><br />
             <table class="auto-style5">
                 <tr>
