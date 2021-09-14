@@ -27,30 +27,52 @@ namespace Ertist
             }
 
             SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            con = new SqlConnection(strCon);
-            SqlCommand cmdRepeater = new SqlCommand("SELECT[artworkID],[name], [description], [picture], [price], [height], [width] FROM[ArtWork] order by artworkID Asc" + pagequery, con);  //Select the records
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(cmdRepeater);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            {
-                Repeater1.DataSource = ds;
-                Repeater1.DataBind();  //Bind the repeater
-                cmdRepeater = new SqlCommand("select COUNT(*) from Artwork", con);  //Count the total records
-                con.Open();
-                int count = (int)cmdRepeater.ExecuteScalar();
-                con.Close();
+            string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+            con = new SqlConnection (strCon);
+            SqlCommand cmdRepeater=null;
+            SqlCommand cmdRepeaterCond=null;
+            int count;
 
-                var uri = new Uri(Request.Url.AbsoluteUri);
-                var query = HttpUtility.ParseQueryString(uri.Query); //Get the query strings from the url
-                query.Remove("pn"); //Remove the query string [pn] to avoid repetation
-                string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
-                paging.InnerHtml = Set_Paging(page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
+            string categoryID = "";
+
+            if (!Page.IsPostBack) {
+                categoryID = Request.QueryString ["categoryID"] ?? "";
             }
 
+            if (categoryID != "") {
+                cmdRepeaterCond = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE categoryID = @categoryID ORDER BY artworkID Asc" + pagequery, con);  //Select the records
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
+                Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
+                Repeater1.DataBind ();  //Bind the repeater
+                con.Close ();
+                cmdRepeaterCond = new SqlCommand ("select COUNT(*) from Artwork WHERE categoryID = @categoryID", con);  //Count the total records
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
+                count = ( int )cmdRepeaterCond.ExecuteScalar ();
+                con.Close ();
+            }
+            else {
+                cmdRepeater = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] order by artworkID Asc" + pagequery, con);  //Select the records
+                con.Open ();
+                SqlDataAdapter da = new SqlDataAdapter (cmdRepeater);
+                DataSet ds = new DataSet ();
+                da.Fill (ds);
+                con.Close ();
+                if (ds.Tables.Count > 0 && ds.Tables [0].Rows.Count > 0) {
+                    Repeater1.DataSource = ds;
+                    Repeater1.DataBind ();  //Bind the repeater
+                    cmdRepeater = new SqlCommand ("select COUNT(*) from Artwork", con);  //Count the total records
+                }
+                con.Open ();
+                count = ( int )cmdRepeater.ExecuteScalar ();
+                con.Close ();
+            }
+                var uri = new Uri (Request.Url.AbsoluteUri);
+                var query = HttpUtility.ParseQueryString (uri.Query); //Get the query strings from the url
+                query.Remove ("pn"); //Remove the query string [pn] to avoid repetation
+                string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
+                paging.InnerHtml = Set_Paging (page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
 
             ////display image in repeater
             //SqlConnection con;
@@ -72,7 +94,7 @@ namespace Ertist
 
             string strConn = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
             SqlConnection conn = new SqlConnection (strCon);
-            string selectCat = "SELECT [name] FROM [Category]";
+            string selectCat = "SELECT [name], [categoryID] FROM [Category]";
             SqlCommand cmd = new SqlCommand (selectCat, conn);
 
             conn.Open ();
@@ -81,30 +103,6 @@ namespace Ertist
             Repeater2.DataBind ();
 
             conn.Close ();
-
-            if (!Page.IsPostBack) {
-                string categoryID = Request.QueryString ["categoryID"] ?? "";
-                string selCatArt = "SELECT Artwork.*, INNER JOIN Category ON Artwork.categoryID = Category.categoryID WHERE categoryID = @categoryID";
-
-                //Connect the db
-                string sCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
-                SqlConnection connect = new SqlConnection (sCon);
-                SqlCommand cmdSql = new SqlCommand (selCatArt, connect);
-                cmdSql.Parameters.AddWithValue ("@categoryID", categoryID);
-
-
-                //open the connection
-                con.Open ();
-
-                //select use the execute reader
-                SqlDataReader dr3 = cmdSql.ExecuteReader ();
-                if (dr3.Read ()) {
-                    
-                }
-
-                dr3.Close ();
-                connect.Close ();
-            }
         }
 
         public string GetImage(object img)

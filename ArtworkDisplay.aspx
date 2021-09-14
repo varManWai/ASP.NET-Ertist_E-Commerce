@@ -104,7 +104,7 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="byCategoryMenu"
                     data-bs-toggle="dropdown" aria-expanded="false">By Category</button>
                 <ul class="dropdown-menu" aria-labelledby="byCategoryMenu">
-                    <li><a class="dropdown-item" href="#">All</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?categoryID=">All</a></li>
                     <asp:Repeater ID="Repeater2" runat="server">
                          <ItemTemplate>
                             <li><a class="dropdown-item" href="ArtworkDisplay.aspx?categoryID=<%# DataBinder.Eval(Container.DataItem, "categoryID") %>"><%# Eval("name") %></a></li>
@@ -118,33 +118,11 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="byAlphabetMenu"
                     data-bs-toggle="dropdown" aria-expanded="false">By Alphabet</button>
                 <ul class="dropdown-menu" aria-labelledby="byAlphabetMenu">
-                    <li><a class="dropdown-item" href="#">#</a></li>
-                    <li><a class="dropdown-item" href="#">A</a></li>
-                    <li><a class="dropdown-item" href="#">B</a></li>
-                    <li><a class="dropdown-item" href="#">C</a></li>
-                    <li><a class="dropdown-item" href="#">D</a></li>
-                    <li><a class="dropdown-item" href="#">E</a></li>
-                    <li><a class="dropdown-item" href="#">F</a></li>
-                    <li><a class="dropdown-item" href="#">G</a></li>
-                    <li><a class="dropdown-item" href="#">H</a></li>
-                    <li><a class="dropdown-item" href="#">I</a></li>
-                    <li><a class="dropdown-item" href="#">J</a></li>
-                    <li><a class="dropdown-item" href="#">K</a></li>
-                    <li><a class="dropdown-item" href="#">L</a></li>
-                    <li><a class="dropdown-item" href="#">M</a></li>
-                    <li><a class="dropdown-item" href="#">N</a></li>
-                    <li><a class="dropdown-item" href="#">O</a></li>
-                    <li><a class="dropdown-item" href="#">P</a></li>
-                    <li><a class="dropdown-item" href="#">Q</a></li>
-                    <li><a class="dropdown-item" href="#">R</a></li>
-                    <li><a class="dropdown-item" href="#">S</a></li>
-                    <li><a class="dropdown-item" href="#">T</a></li>
-                    <li><a class="dropdown-item" href="#">U</a></li>
-                    <li><a class="dropdown-item" href="#">V</a></li>
-                    <li><a class="dropdown-item" href="#">W</a></li>
-                    <li><a class="dropdown-item" href="#">X</a></li>
-                    <li><a class="dropdown-item" href="#">Y</a></li>
-                    <li><a class="dropdown-item" href="#">Z</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=">#</a></li>
+                    <% for(int i=65; i<=90; i++)
+                    {%>
+                        <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=<%(( char )i).ToString (); %>"><%Response.Write(((char)i).ToString()); %></a></li>
+                    <%}%>
                 </ul>
             </div>
             <div class="search-form">

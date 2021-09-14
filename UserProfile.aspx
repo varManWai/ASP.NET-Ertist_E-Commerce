@@ -38,7 +38,7 @@
                                </div>
 	                        </div>
                     <br /><br /><br /><br />
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" DataSourceID="sqlAddress" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Style="width: 100%; text-align: center;" AllowPaging="True">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="OnRowDataBound" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Style="width: 100%; text-align: center;" AllowPaging="True" DataKeyNames="addressID" DataSourceID="sqlAddress">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
                             <asp:BoundField DataField="addressID" HeaderText="Address ID" Visible="False" />
@@ -59,7 +59,7 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                        <asp:SqlDataSource ID="sqlAddress" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Address.addressID, Address.addressName, Address.address, Address.state, Address.city, Address.postCode FROM Address INNER JOIN User_Address ON Address.addressID = User_Address.addressID INNER JOIN [User] ON User_Address.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                        <asp:SqlDataSource ID="sqlAddress" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Address.addressID, Address.addressName, Address.address, Address.state, Address.city, Address.postCode FROM Address INNER JOIN [User] ON Address.userID = [User].UserID WHERE ([User].UserID = @userID)">
                             <SelectParameters>
                                 <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
                             </SelectParameters>
