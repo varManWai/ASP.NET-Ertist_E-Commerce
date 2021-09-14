@@ -166,7 +166,7 @@
                 </ul>
             </div>
             <div class="search-form">
-                <asp:TextBox ID="txtSearch" runat="server" CssClass="search_input" placeholder="Search By Name"></asp:TextBox>
+                <asp:TextBox ID="searchByName" runat="server" CssClass="search_input" placeholder="Search By Name" OnTextChanged="searchByName_TextChanged"></asp:TextBox>
                 <asp:ImageButton ID="btnSearch" runat="server" ImageUrl="./Image/search.svg" />
             </div>
         </div>
