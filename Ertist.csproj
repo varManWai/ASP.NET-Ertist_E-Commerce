@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddAddress.aspx" />
     <Content Include="Artist\AddArtwork.aspx" />
     <Content Include="Artist\AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
@@ -143,6 +144,7 @@
     <Content Include="css\PurchaseHistory.css" />
     <Content Include="css\Wishlist.css" />
     <Content Include="ArtworkDisplay.aspx" />
+    <Content Include="DeleteAddress.aspx" />
     <Content Include="Description.aspx" />
     <Content Include="Artist\EditGallery.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -181,6 +183,7 @@
     <Content Include="RegisterPick.aspx" />
     <Content Include="Artist\UpdateArtwork.aspx" />
     <Content Include="Artist\UpdateGallery.aspx" />
+    <Content Include="UpdateAddress.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserProfileEdit.aspx" />
     <Content Include="Wishlist.aspx" />
@@ -221,6 +224,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAddress.aspx.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAddress.aspx.designer.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Artist\AddArtwork.aspx.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,6 +333,13 @@
     <Compile Include="ArtworkDisplay.aspx.designer.cs">
       <DependentUpon>ArtworkDisplay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeleteAddress.aspx.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteAddress.aspx.designer.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Description.aspx.cs">
       <DependentUpon>Description.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -417,6 +434,13 @@
     </Compile>
     <Compile Include="Artist\UpdateGallery.aspx.designer.cs">
       <DependentUpon>UpdateGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAddress.aspx.cs">
+      <DependentUpon>UpdateAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAddress.aspx.designer.cs">
+      <DependentUpon>UpdateAddress.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
