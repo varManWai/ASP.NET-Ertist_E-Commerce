@@ -15,7 +15,7 @@
                         <asp:TextBox ID="txtAddressID" runat="server" Visible="False"></asp:TextBox>
                         <asp:TextBox ID="txtAddressName" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvAddressName" runat="server" ErrorMessage="Address Name is required" Text="*" ControlToValidate="txtAddressName" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revAddressName" runat="server" ErrorMessage="Address Name should not be more than 50 words " Text="*" ForeColor="Red" ControlToValidate="txtAddressName" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revAddressName" runat="server" ErrorMessage="Address Name should not be more than 50 characters " Text="*" ForeColor="Red" ControlToValidate="txtAddressName" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@
                     <td> 
                         <asp:TextBox ID="txtAddress" runat="server" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvAddress" runat="server" ErrorMessage="Address is required" Text="*" ForeColor="Red" ControlToValidate="txtAddress"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revAddress" runat="server" ErrorMessage="Address should not be more than 50 words" Text="*" ForeColor="Red" ControlToValidate="txtAddress" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revAddress" runat="server" ErrorMessage="Address should not be more than 50 characters" Text="*" ForeColor="Red" ControlToValidate="txtAddress" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
@@ -40,7 +40,7 @@
 
                     <td> <asp:TextBox ID="txtState" runat="server" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvState" runat="server" ErrorMessage="State is required" ControlToValidate="txtState" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revState" runat="server" ErrorMessage="State should not be more than 50 words " Text="*" ForeColor="Red" ControlToValidate="txtState" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revState" runat="server" ErrorMessage="State should not be more than 50 characters " Text="*" ForeColor="Red" ControlToValidate="txtState" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
@@ -52,7 +52,7 @@
                     <td style="width: 36px">&nbsp;</td>
                     <td><asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvCity" runat="server" ErrorMessage="City is required" ControlToValidate="txtCity" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="rgvCity" runat="server" ErrorMessage="City must in characters and should not be more than 50" ControlToValidate="txtCity" Text="*" ForeColor="Red" ValidationExpression="^[a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="rgvCity" runat="server" ErrorMessage="City must in characters and should not be more than 50 characters" ControlToValidate="txtCity" Text="*" ForeColor="Red" ValidationExpression="^[a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
