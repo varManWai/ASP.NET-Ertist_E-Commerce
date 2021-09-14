@@ -83,22 +83,38 @@ namespace Ertist
 
             if (FileUpload1.HasFile)
             {
+                string[] validFileTypes = { "gif", "png", "jpg", "jpeg"};
+                string ext = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName);
+                bool isValidFile = false;
 
-                byte[] imgbyte = FileUpload1.FileBytes;
+                    for (int i = 0; i < validFileTypes.Length; i++){
+                        if (ext == "." + validFileTypes[i]){
+                            isValidFile = true;
+                            break;
+                        }
+                    }
 
-                string sql2 = @"update [User] set picture = @picture where userID = @userID";
-                SqlCommand cmd2 = new SqlCommand(sql2, con);
-                cmd2.Parameters.AddWithValue("@userID", userID);
+                    if (!isValidFile){
+                        lblFileUpload.ForeColor = System.Drawing.Color.Red;
+                        lblFileUpload.Text = "Invalid File. Please upload a File with extension " +
+                        string.Join(",", validFileTypes);
 
-                cmd2.Parameters.AddWithValue("@picture", imgbyte);
-                cmd2.ExecuteNonQuery();
+                    }else{
+
+                        byte[] imgbyte = FileUpload1.FileBytes;
+
+                        string sql2 = @"update [User] set picture = @picture where userID = @userID";
+                        SqlCommand cmd2 = new SqlCommand(sql2, con);
+                        cmd2.Parameters.AddWithValue("@userID", userID);
+
+                        cmd2.Parameters.AddWithValue("@picture", imgbyte);
+                        cmd2.ExecuteNonQuery();
+                }
 
             }
             
             con.Close();
-
             Response.Redirect("UserProfile.aspx");
-
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
