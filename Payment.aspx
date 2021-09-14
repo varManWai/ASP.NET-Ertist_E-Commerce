@@ -17,33 +17,50 @@
                         <span>Address</span>
                     </div>
                     <div class="address_container">
-                        <div class="address_name">
-                            Name of Address
-                        </div>
-                        <div class="address_detail">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos ipsam perspiciatis nihil dolor
-                            amet, blanditiis tempora fugit accusantium earum aut ullam sed, harum nam iure sint
-                            temporibus inventore? Minima quam voluptas, reiciendis, neque ullam, nulla ex necessitatibus
-                            quisquam et deleniti adipisci voluptatem fuga! Vel, placeat?
-                        </div>
+                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [User].UserID, User_Address.userID AS Expr1, User_Address.addressID, Address.addressName, Address.address, Address.addressID AS Expr2 FROM [User] INNER JOIN User_Address ON [User].UserID = User_Address.userID INNER JOIN Address ON User_Address.addressID = Address.addressID WHERE ([User].UserID = @UserID) AND (Address.addressName = @addressName)">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="UserID" SessionField="UserID" />
+
+                                <asp:QueryStringParameter Name="addressName" QueryStringField="Address" />
+
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <asp:Repeater ID="Repeater6" runat="server" DataSourceID="SqlDataSource6">
+                            <ItemTemplate>
+                                <div class="address_name">
+                                    <asp:Label ID="lblAddressName" runat="server" Text=""> <%# Eval("addressName") %></asp:Label>
+                                </div>
+                                <div class="address_detail">
+                                    <asp:Label ID="lblAddress" runat="server" Text=""> <%# Eval("address") %></asp:Label>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
 
                     <div class="total_artwork_cart">
                         <span>Order Product</span>
                     </div>
                     <div class="artworks_container_all">
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [User].UserID, [User].username, [User].picture, Cart.userID AS UserID2, Cart.artworkID, Artwork.artworkID AS ArtworkID2, Artwork.price, Artwork.name, Artwork.picture AS picture2, Artwork.description FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [User].UserID,[User].email, [User].username, [User].picture, Cart.userID AS UserID2, Cart.artworkID, Artwork.artworkID AS ArtworkID2, Artwork.price, Artwork.name, Artwork.picture AS picture2, Artwork.description FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
                             <SelectParameters>
                                 <asp:SessionParameter Name="UserID" SessionField="UserID" />
                             </SelectParameters>
                         </asp:SqlDataSource>
+
+
+
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2">
                             <ItemTemplate>
+                                <div style="display: none">
+                                    <%# Session["email"] = Eval("email") %>
+                                    <%# Session["username"] = Eval("username") %>
+                                </div>
+
                                 <div class="artwork_container">
                                     <div class="artwork_image">
                                         <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
-                                    <div class="artwork_details">
+                                    <div class="artwork_details" style="width:614px;">
                                         <span class="artwor_details_name">Name of the Artwork</span>
                                         <div class="artist">
                                             <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
@@ -53,8 +70,7 @@
                                             <%# Eval("description") %>
                                         </div>
                                         <div class="price_remove">
-                                            <span class="price">$<%# Eval("price") %></span>
-                                        </div>
+                                            <span class="price">$<%# Eval("price") %></span></div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -66,7 +82,7 @@
                 <aside class="summary">
                     <h2>Summary</h2>
                     <div class="artwork_each_price">
-                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.price, Artwork.name FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.price, Artwork.name FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
                             <SelectParameters>
                                 <asp:SessionParameter Name="UserID" SessionField="UserID" />
                             </SelectParameters>
@@ -81,8 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="summary_each_price">
-                                        $<%# Eval("price") %>
-                                    </div>
+                                        $<%# Eval("price") %></div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -98,9 +113,7 @@
                         <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
                                 <div>
-                                    Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span>
-                                                  
-                                </div>
+                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span></div>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -120,7 +133,16 @@
     <script
         src="https://www.paypal.com/sdk/js?client-id=AW6etbpDGUmFpY-iA9-r3wXXmd2nDHo6PwCKP734surDr3TIqspck31udHgAXjKaUakbTysCiI7TB0Jz&currency=USD"></script>
 
+
+    
+
     <script>
+        const total = <%= Session["payment"].ToString() %>
+
+            console.log(total);
+        console.log(total);
+
+
         // Render the PayPal button into #paypal-button-container
         paypal.Buttons({
 
@@ -136,7 +158,7 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '250.00'
+                            value: total
                         }
                     }]
                 });
@@ -151,7 +173,16 @@
                     //alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
 
                     // Replace the above to show a success message within this page, e.g.
+
+
+
+
                     const element = document.getElementById('paypal-button-container');
+
+                   <%  sendEmail(); %>
+
+
+
                     element.innerHTML = '';
                     element.innerHTML = '<h3>Thank you for your payment!</h3>';
                     //Or go to another URL:  actions.redirect('thank_you.html');
@@ -161,5 +192,7 @@
 
         }).render('#paypal-button-container');
     </script>
+
+
 
 </asp:Content>

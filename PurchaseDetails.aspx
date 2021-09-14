@@ -99,5 +99,5 @@
             </div>
         </div>
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.name, Artwork.price, Artwork.picture, [Order].totalPrice, [Order].shippingFee, [User].fname, [User].lname, [User].username, [User].phoneNo, Address.addressName, Address.address, Address.state, Address.city, Address.postCode FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID INNER JOIN Address ON [Order].addressID = Address.addressID AND [User].UserID = Address.userID"></asp:SqlDataSource>
 </asp:Content>
