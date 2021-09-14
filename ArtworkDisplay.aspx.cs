@@ -195,26 +195,34 @@ namespace Ertist
             return (ReturnValue);
         }
 
-        protected void searchByName_TextChanged (object sender, EventArgs e) {
-            
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
-            con = new SqlConnection (strCon);
-            SqlCommand cmdSearch = null;
+        protected void btnSearch_Click (object sender, ImageClickEventArgs e) {
+            if (searchByName.Text != "") {
+                SqlConnection con;
+                string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+                con = new SqlConnection (strCon);
+                SqlCommand cmdSearch = null;
+                int count;
 
-            con.Open ();
+                string searchInput = searchByName.Text;
 
-            string selectSearch = "[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE ([name] LIKE '%' + @search + '%') ORDER BY artworkID Asc" + pagequery;
-            cmdSearch = new SqlCommand (selectSearch, con);
-            string searchInput = searchByName.Text;
+                con.Open ();
 
-            cmdSearch.Parameters.AddWithValue ("@search", searchInput);
-            cmdSearch.ExecuteNonQuery ();
+                string selectSearch = "SELECT [artworkID], [name], [description], [picture], [price], [height], [width] " +
+                                      "FROM[ArtWork] " +
+                                      "WHERE ([name] LIKE '%' + @search + '%')" +
+                                      "ORDER BY artworkID Asc";
+                cmdSearch = new SqlCommand (selectSearch, con);
+                cmdSearch.Parameters.AddWithValue ("@search", searchInput);
+                Repeater1.DataSource = cmdSearch.ExecuteReader ();
+                Repeater1.DataBind ();
+                con.Close ();
+                cmdSearch = new SqlCommand ("SELECT COUNT(*) FROM Artwork WHERE ([name] LIKE '%' + @search + '%')", con);
+                con.Open ();
+                cmdSearch.Parameters.AddWithValue ("@search", searchInput);
+                count = ( int )cmdSearch.ExecuteScalar ();
+                con.Close ();
 
-            Repeater1.DataSource = cmdSearch.ExecuteReader ();
-            Repeater1.DataBind ();  //Bind the repeater
-
-            con.Close ();
+            }
         }
     }
 }
