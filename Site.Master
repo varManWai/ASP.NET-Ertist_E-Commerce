@@ -17,7 +17,7 @@
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="precon`nect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="precon`nect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato:wght@400;900&family=Poppins:wght@400;900&family=Roboto&display=swap"
         rel="stylesheet">
@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="./css/navbar.css">
 
     <style>
+        body {
+        }
+
         .main_menu {
             width: 100px;
             background-color: #fff;
@@ -48,6 +51,19 @@
             height: 30px;
             line-height: 30px;
             margin-top: 5px;
+        }
+
+        .acc_login:hover {
+            background: #ca3f49;
+            border-radius: 10px;
+        }
+
+        #login_btn:hover {
+            color: white !important;
+        }
+
+        #register_btn:hover {
+            background-color: #AD353D !important;
         }
     </style>
 </head>
@@ -72,6 +88,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+
 
 
         <header class="navbar_section">
@@ -99,34 +116,52 @@
                             </a>
                         </div>
 
+                        <div class="cart_button_section">
+                            <a href="./Wishlist.aspx" class="cart_button">
+                                <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="55" height="55" rx="27.5" fill="#F6F6F6" />
+                                    <path d="M28 39L26.55 37.5613C21.4 32.4714 18 29.1144 18 24.9946C18 21.6376 20.42 19 23.5 19C25.24 19 26.91 19.8828 28 21.2779C29.09 19.8828 30.76 19 32.5 19C35.58 19 38 21.6376 38 24.9946C38 29.1144 34.6 32.4714 29.45 37.5722L28 39Z" fill="black" />
+                                </svg>
+                            </a>
+                        </div>
+
                         <% if (Session["UserID"] == null)
                             {
 
                         %>
-                        <div class="cart_button_section" style="padding: 10px 20px; background-color: #ca3f49; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; margin-right: 20px; margin-left: 10px; border-radius: 20px">
+                        <div class="cart_button_section acc_login" style="">
                             <%--<i class="glyphicon glyphicon-star">--%>
-                            <a href="./Login.aspx" style="text-decoration: none; font-size: clamp(15px,1.5vw,18px); color: white; font-weight: 700; letter-spacing: 1px;">Login</a>
+                            <a id="login_btn" href="./Login.aspx" style="padding: 10px 40px; border: #ca3f49 solid 2px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: #ca3f49; font-weight: 700; letter-spacing: 1px;">Login</a>
                             <%--</i>--%>
                         </div>
-                        <div class="cart_button_section" style="padding: 10px 20px; background-color: #ca3f49; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; margin-right: 20px; margin-left: 10px; border-radius: 20px">
+                        <div class="cart_button_section " style="margin-left: 0px; margin-right: 20px; background-color: #ca3f49; border-radius: 10px">
                             <%--<i class="glyphicon glyphicon-star-empty">--%>
-                            <a href="./RegisterPick.aspx" style="text-decoration: none; font-size: clamp(15px,1.5vw,18px); color: white; font-weight: 700; letter-spacing: 1px;">Register</a>
+                            <a id="register_btn" href="./RegisterPick.aspx" style="text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 2px; padding: 10px 30px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px;">Register</a>
                             <%--</i>--%>
                         </div>
 
 
                         <% }
-                        else
-                        { %>
+                            else
+                            { %>
 
                         <!-- <asp:LoginView ID="LoginView1" runat="server">
                             <LoggedInTemplate> -->
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="./Image/reg.jpg" alt="" srcset="" />
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [picture] FROM [User] WHERE ([UserID] = @UserID)">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="UserID" SessionField="UserID" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:Repeater ID="Rpt1" DataSourceID="SqlDataSource1" runat="server">
+                                    <ItemTemplate>
+                                        <img src="<%# GetImage(Eval("picture"))%>" alt="" srcset="" />
+                                    </ItemTemplate>
+                                </asp:Repeater>
                                 <!-- <asp:Image ID="UserImage" runat="server" />-->
-                                <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
+                                <asp:LoginName ID="LoginName1" runat="server" />
                             </button>
                             <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" runat="server">--%>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -144,16 +179,21 @@
                                         if (Session["roles"].Equals("Artist"))
                                         { %>
                                 <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
-                                <li><a class="dropdown-item" href="./Wishlist.aspx">Wishlist</a></li>
                                 <li><a class="dropdown-item" href="GalleryDisplay.aspx">Gallery</a></li>
-                                <li><a class="dropdown-item" href="PurchaseHistory.aspx">Gallery</a></li>
+                                <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
+
                                 <%}
                                     else
                                     { %>
                                 <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
-                                <li><a class="dropdown-item" href="PurchaseHistory.aspx">Gallery</a></li>
+                                <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
                                 <%}
                                     }%>
+                                <li>
+                                    <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutAction="Redirect"
+                                        LogoutPageUrl="~/Login.aspx" Style="" CssClass="dropdown-item"
+                                        OnLoggingOut="MasterLoginStatus_LoggingOut" />
+                                </li>
                             </ul>
                             <%--</ul>--%>
                         </div>
@@ -165,13 +205,13 @@
                                     </LevelMenuItemStyles>
                                 </asp:Menu>--%>
 
-                        <div class="cart_button_section" style="padding: 10px 20px; background-color: #ca3f49; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; margin-right: 20px; margin-left: 10px; border-radius: 20px">
-                            <%--<i class="glyphicon glyphicon-remove">--%>
-                            <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"
-                                LogoutPageUrl="~/Login.aspx" Style="text-decoration: none; font-size: clamp(15px,1.5vw,18px); color: white; font-weight: 700; letter-spacing: 1px;"
-                                OnLoggingOut="MasterLoginStatus_LoggingOut" />
-                            <%--</i>--%>
-                        </div>
+                        <%--<div class="cart_button_section logout_user" style="background-color: #ca3f49; border-radius: 10px">--%>
+                        <%--<i class="glyphicon glyphicon-remove">--%>
+                        <%-- <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"
+                                LogoutPageUrl="~/Login.aspx" Style="padding: 10px 40px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 1px;"
+                                OnLoggingOut="MasterLoginStatus_LoggingOut" />--%>
+                        <%--</i>--%>
+                        <%--</div>--%>
 
 
                         <!-- </LoggedInTemplate>
@@ -186,9 +226,7 @@
                 <div class="navbar_lower_all">
                     <ul class="nav">
                         <li><a class="nav_link current" href="Homepage.aspx">Home</a></li>
-                        <li><a class="nav_link" href="ArtworkPainting.aspx">Paintings</a></li>
-                        <li><a class="nav_link" href="ArtworkInk.aspx">Ink</a></li>
-                        <li><a class="nav_link" href="ArtworkWatercolor.aspx">Watercolour</a></li>
+                        <li><a class="nav_link" href="ArtworkDisplay.aspx">Artwork</a></li>
                         <li><a class="nav_link" href="ArtistDisplay.aspx">Artists</a></li>
                     </ul>
                 </div>
@@ -207,7 +245,7 @@
                                 fill="white" />
                         </g>
                         <defs>
-                            <clipPath id="clip0">
+                            <clipPath id="clip1">
                                 <rect width="30" height="30" fill="white"
                                     transform="translate(51.4111 29.6343) rotate(133.457)" />
                             </clipPath>
@@ -303,7 +341,7 @@
             <div class="navbar_subs">
                 <div class="navbar_subs_nav_container">
                     <div class="navbar_subs_user">
-                        <img src="./user_picture.jpg" alt="" srcset="">
+                        <img src="./Image/user_picture.jpg" alt="" srcset="">
                         <span>Lai Man Wai</span>
                     </div>
                     <div class="navbar_subs_link_container">
@@ -334,13 +372,13 @@
             </div>
         </div>
 
-        <div class="contain_container">
+        <div class="contain_container" style="min-height: 70vh;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
         <hr />
         <footer>
-            <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center; height;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
+            <p style="font-size: clamp(14px,1.5vw,18px); background-color: #1B1B1B; color: white; text-align: center;">&copy; <%: DateTime.Now.Year %> ERTIST</p>
         </footer>
 
 

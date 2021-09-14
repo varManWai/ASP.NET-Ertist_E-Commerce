@@ -45,16 +45,19 @@
                                             </div>
                                         </div>--%>
                                     </div>
-
+                                    
                                     <!-- display price and some details !-->
-                                    <div class="product-payment">
-                                        
+                                    <div class="product-payment">                                       
                                         <h3><strong><asp:Label ID="lblName" runat="server"></asp:Label></strong></h3>
-
-                                        <p style="color:#ce2b2b;"><i><asp:Label ID="lblCategory" runat="server"></asp:Label></i></p><br />
-
+                                        Artist: <asp:HyperLink ID="hplArtist" runat="server"></asp:HyperLink>
+                                        <%--Artist:<a href='ClientArtistProfile.aspx?artistID='><asp:Label ID="lblArtist" runat="server" Text="Label"></asp:Label> </a>--%>
+                                       
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                                        <p style="color:#ce2b2b;"><i><asp:Label ID="lblCategory" runat="server"></asp:Label></i></p>
+                                        <p>Dimensions:   <asp:Label ID="lblHeight" runat="server"></asp:Label>cm (H) x <asp:Label ID="lblWidth" runat="server"></asp:Label>cm (W)</p><br />
+                                      
                                         <h4 class="product-title mb-2"><asp:Label ID="lblDesc" runat="server"></asp:Label></h4><br />
-
+                                        
                                         <p style="color: gray;">Published Date: <asp:Label ID="lblDate" runat="server"></asp:Label></p>
                                         <p style="color: gray;"><asp:Label ID="lblStatus" runat="server"></asp:Label></p>
 

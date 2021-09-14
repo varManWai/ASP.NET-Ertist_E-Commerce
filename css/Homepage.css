@@ -53,26 +53,40 @@ body {
         justify-content: center;
         -webkit-box-align: start;
         -ms-flex-align: start;
-        align-items: flex-start;
+        align-items: flex-end;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
         height: 100%;
         width: 100%;
-        max-width: 40%;
+        max-width: 50%;
         -webkit-animation: up 2s ease-out;
         animation: up 2s ease-out;
+        padding-left: 20px;
+        padding-bottom:100px;
+    }
+
+    .left_side_container{
+        display:flex;
+        justify-content:center;
+        align-items:flex-start;
+        flex-direction:column;
+        width:80%;
     }
 
         .home .section_1 .left_side .home_header {
             font-family: "Cardo", serif;
-            font-size: clamp(28px, 3vw, 36px);
+            font-size: clamp(20px, 3vw, 28px);
+            
+            text-align:justify;
         }
 
         .home .section_1 .left_side .home_description {
+           
             font-family: "Cardo", serif;
-            font-size: clamp(20px, 2vw, 24px);
+            font-size: clamp(15px, 2vw, 20px);
+            text-align: justify;
         }
 
         .home .section_1 .left_side a {
@@ -94,18 +108,23 @@ body {
             max-width: 345px;
             background-color: #ca3f49;
             color: white;
+            
+            
         }
 
     .home .section_1 .right_side {
         position: relative;
-        top: -100px;
+        top: -185px;
+        left:-500px;
+        padding-right:20px;
+
     }
 
         .home .section_1 .right_side .slide_image_1 {
             position: absolute;
             width: 133px;
-            height: 470px;
-            right: 0px;
+            height: 375px;
+            left: 0;
             top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.349);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.349);
@@ -115,7 +134,7 @@ body {
 
             .home .section_1 .right_side .slide_image_1 img {
                 width: 133px;
-                height: 470px;
+                height: 100%;
                 -o-object-fit: cover;
                 object-fit: cover;
             }
@@ -123,9 +142,9 @@ body {
         .home .section_1 .right_side .slide_image_2 {
             position: absolute;
             width: 133px;
-            height: 470px;
-            right: 150px;
-            top:-100px;
+            height: 375px;
+            left: clamp(140px,13vw,150px);
+            top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.37);
             -webkit-animation: float 12s ease-in-out infinite;
@@ -134,7 +153,7 @@ body {
 
             .home .section_1 .right_side .slide_image_2 img {
                 width: 133px;
-                height: 470px;
+                height: 100%;
                 -o-object-fit: cover;
                 object-fit: cover;
             }
@@ -142,9 +161,9 @@ body {
         .home .section_1 .right_side .slide_image_3 {
             position: absolute;
             width: 133px;
-            height: 470px;
-            right: 300px;
-            top: 0px;
+            height: 375px;
+            left: clamp(290px,30vw,300px);
+            top: -50px;
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.363);
             -webkit-animation: float 8s ease-in-out infinite;
@@ -153,7 +172,7 @@ body {
 
             .home .section_1 .right_side .slide_image_3 img {
                 width: 133px;
-                height: 470px;
+                height: 100%;
                 -o-object-fit: cover;
                 object-fit: cover;
             }
@@ -174,6 +193,7 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    margin-top:0;
 }
 
     .home .section_2 .cards {
@@ -182,29 +202,30 @@ body {
     }
 
         .home .section_2 .cards img {
-            height: 400px;
-            max-width: 320px;
+            height: 300px;
+            max-width: 220px;
             -o-object-fit: cover;
             object-fit: cover;
             border-radius: 50px;
-            -webkit-filter: brightness(40%);
-            filter: brightness(40%);
+            -webkit-filter: brightness(75%);
+            filter: brightness(75%);
             -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
         }
 
         .home .section_2 .cards span {
-            background-color: rgba(0, 0, 0, 0.5);
+            padding:20px 0;
+            background-color: rgba(0, 0, 0, 0);
             width: 100%;
             display: block;
             text-align: center;
             color: white;
             text-decoration: none;
-            height: 140px;
+            height: 100px;
             z-index: 2;
-            font-size: clamp(30px, 3vw, 36px);
+            font-size: clamp(20px, 3vw, 28px);
             position: relative;
-            top: -140px;
+            top: -100px;
             border-radius: 0px 0px 50px 50px;
         }
 
@@ -224,7 +245,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 700px;
+    height: 500px;
 }
 
     .home .section_3 .artwork_container {
@@ -244,7 +265,7 @@ body {
     }
 
         .home .section_3 .artwork_container .artwork_container_title {
-            height: 73px;
+            height: 50px;
             width: 100%;
             max-width: 430px;
             background-color: black;
@@ -259,12 +280,12 @@ body {
             -ms-flex-align: center;
             align-items: center;
             margin-top: 40px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
             .home .section_3 .artwork_container .artwork_container_title h2 {
                 color: white;
-                font-size: clamp(30px, 3vw, 36px);
+                font-size: clamp(20px, 3vw, 28px);
             }
 
         .home .section_3 .artwork_container .artworks {
@@ -301,13 +322,14 @@ body {
                 height: 100%;
                 text-decoration: none;
                 padding: 30px;
+                padding-top:10px;
             }
 
                 .home .section_3 .artwork_container .artworks .artwork a img {
                     width: 100%;
-                    max-width: 350px;
+                    max-width: 250px;
                     height: 100%;
-                    max-height: 350px;
+                    max-height: 250px;
                 }
 
                 .home .section_3 .artwork_container .artworks .artwork a .artwork_name {
@@ -347,6 +369,7 @@ body {
     width: 100%;
     max-width: 1366px;
     margin: auto;
+    margin-bottom:130px;
 }
 
     .home .section_4 .artist_wall {
@@ -375,98 +398,164 @@ body {
                 font-size: clamp(30px, 3vw, 36px);
             }
 
-        .home .section_4 .artist_wall .artists {
+        .home .section_4 .artist_wall .section_artist {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            -webkit-box-orient: vertical;
+            -webkit-box-orient: horizontal;
             -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
+            -ms-flex-direction: row;
+            flex-direction: row;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1366px;
         }
 
-            .home .section_4 .artist_wall .artists .artist {
+            .home .section_4 .artist_wall .section_artist .artist_contianer {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                -webkit-box-orient: horizontal;
+                -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
-                -ms-flex-direction: row;
-                flex-direction: row;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                background-color: white;
                 -webkit-box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
                 box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.424);
-                text-decoration: none;
-                margin-bottom: 40px;
+                margin: 0px 15px;
             }
 
-                .home .section_4 .artist_wall .artists .artist img {
-                    height: 250px;
-                    width: 250px;
+                .home .section_4 .artist_wall .section_artist .artist_contianer a {
+                    width: 330px;
+                    text-decoration: none;
+                    color: black;
                 }
 
-                .home .section_4 .artist_wall .artists .artist .artist_details {
-                    height: 250px;
-                    width: 100%;
-                    max-width: 500px;
-                    padding: 25px;
+                    .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                    }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_img {
+                            margin: 20px auto;
+                            
+                            max-width: 100px;
+                            height: 100px;
+                            max-height: 100px;
+                            border-radius: 300px;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                        }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_name {
+                            font-family: "Lato", sans-serif;
+                            font-size: clamp(15px, 2vh, 18px);
+                            color: black;
+                            width: 100%;
+                            max-width: 50%;
+                            text-align: center;
+                        }
+
+                        .home .section_4 .artist_wall .section_artist .artist_contianer a .artist_details .artist_bio {
+                            font-family: "Cardo", serif;
+                            text-align: center;
+                            width: 100%;
+                            max-width: 80%;
+                            text-align: center;
+                            color: #828282;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+
+                .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                    flex-direction: row;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    width: 330px;
                 }
 
-                    .home .section_4 .artist_wall .artists .artist .artist_details .artist_name {
-                        padding-bottom: 10px;
+                    .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container a {
+                        text-decoration: none;
                         color: black;
                     }
 
-                    .home .section_4 .artist_wall .artists .artist .artist_details .artist_bio {
-                        padding-top: 20px;
-                        border-top: 1px solid black;
-                        color: black;
-                    }
+                        .home .section_4 .artist_wall .section_artist .artist_contianer .artist_artwork_container a .artwork_image .artwork_img {
+                            width: 110px;
+                            height: 110px;
+                        }
 
 @-webkit-keyframes up {
     0% {
         opacity: 0;
-        -webkit-transform: translatey(-40px);
-        transform: translatey(-40px);
+        -webkit-transform: translateY(-40px);
+        transform: translateY(-40px);
     }
 
     50% {
         opacity: 50%;
-        -webkit-transform: translatey(-20px);
-        transform: translatey(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
     }
 
     100% {
         opacity: 100%;
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 
 @keyframes up {
     0% {
         opacity: 0;
-        -webkit-transform: translatey(-40px);
-        transform: translatey(-40px);
+        -webkit-transform: translateY(-40px);
+        transform: translateY(-40px);
     }
 
     50% {
         opacity: 50%;
-        -webkit-transform: translatey(-20px);
-        transform: translatey(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
     }
 
     100% {
         opacity: 100%;
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 
@@ -474,22 +563,22 @@ body {
     0% {
         -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 
     50% {
         -webkit-box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-        -webkit-transform: translatey(-20px);
-        transform: translatey(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
     }
 
     100% {
         -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 
@@ -497,22 +586,22 @@ body {
     0% {
         -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 
     50% {
         -webkit-box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-        -webkit-transform: translatey(-20px);
-        transform: translatey(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
     }
 
     100% {
         -webkit-box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        -webkit-transform: translatey(0px);
-        transform: translatey(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 /*# sourceMappingURL=Home.css.map */

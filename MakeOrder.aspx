@@ -19,22 +19,17 @@
                         <span>Address</span>
                     </div>
                     <div class="address_container">
+
                         <div class="address_dropdownlist">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Select an Address for Delivery
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <asp:Repeater ID="Repeater4" runat="server">
-                                        <ItemTemplate>
-                                            <li><div class="dropdown-item" ><%# Eval("addressName") %></div></li>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                </ul>
-                            </div>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT User_Address.addressID, Address.addressID AS Expr1, User_Address.userID, Address.addressName FROM Address INNER JOIN User_Address ON Address.addressID = User_Address.addressID INNER JOIN [User] ON User_Address.userID = [User].UserID WHERE (User_Address.userID = @UserID)">
+                                <SelectParameters>
+                                    <asp:SessionParameter Name="UserID" SessionField="UserID" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="addressName" DataValueField="addressName"></asp:DropDownList>
                         </div>
                         <div class="address_detail">
+                            <a href="./AddAddress.aspx">Add Address</a>
                         </div>
                     </div>
 
@@ -42,25 +37,28 @@
                         <span>Order Product</span>
                     </div>
                     <div class="artworks_container_all">
-                        <asp:Repeater ID="Repeater1" runat="server">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [User].UserID, [User].username, [User].picture, Cart.userID AS UserID2, Cart.artworkID, Artwork.artworkID AS ArtworkID2, Artwork.price, Artwork.name, Artwork.picture AS picture2, Artwork.description FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="UserID" SessionField="UserID" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2">
                             <ItemTemplate>
                                 <div class="artwork_container">
                                     <div class="artwork_image">
-                                        <img src="<%# GetImage(Eval("picture")) %>" alt="An Artwork Picture">
+                                        <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
                                     <div class="artwork_details">
                                         <span class="artwor_details_name">Name of the Artwork</span>
                                         <div class="artist">
-                                            <img src="<%# Eval("picture") %>" alt="An Artist Picture">
+                                            <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
                                             <span><%# Eval("name") %></span>
                                         </div>
                                         <div class="artwork_description">
                                             <%# Eval("description") %>
                                         </div>
                                         <div class="price_remove">
-                                            <span class="price">$<%# Eval("price") %></span>
-
-                                        </div>
+                                            <span class="price">$<%# Eval("price") %></span></div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -72,7 +70,12 @@
                     <h2>Summary</h2>
 
                     <div class="artwork_each_price">
-                        <asp:Repeater ID="Repeater2" runat="server">
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT Artwork.price, Artwork.name FROM [User] INNER JOIN Cart ON [User].UserID = Cart.userID INNER JOIN Artwork ON Cart.artworkID = Artwork.artworkID WHERE ([User].UserID = @UserID)">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="UserID" SessionField="UserID" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource3">
                             <ItemTemplate>
                                 <div class="each_artwork">
                                     <div class="artwork_quantity">
@@ -82,24 +85,29 @@
                                         </div>
                                     </div>
                                     <div class="summary_each_price">
-                                        $<%# Eval("price") %>
-                                    </div>
+                                        $<%# Eval("price") %></div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-
                     </div>
                     <div class="total_price">
-                        <asp:Repeater ID="Repeater3" runat="server">
+
+                        <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                            <SelectParameters>
+                                <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
                                 <div>
-                                    Total: <span style="padding-right: 10px;">$<%# Eval("Expr1") %></span>
-                                </div>
+                                    Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span></div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
                     <div class="checkout_button_container">
-                        <a href="./Payment.aspx?address='Home'" class="checkout_button" style="text-decoration: none; display: flex; justify-content: center; align-items: center;">Checkout</a>
+
+                        <asp:Button ID="Button2" runat="server" Text="Button" CssClass="checkout_button" Style="text-decoration: none; display: flex; justify-content: center; align-items: center;" OnClick="Button2_Click" />
+
                     </div>
                 </aside>
             </div>

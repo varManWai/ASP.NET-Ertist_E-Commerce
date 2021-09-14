@@ -104,13 +104,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="AddArtwork.aspx" />
-    <Content Include="AddGallery.aspx" />
+    <Content Include="AddAddress.aspx" />
+    <Content Include="Artist\AddArtwork.aspx" />
+    <Content Include="Artist\AddGallery.aspx" />
     <Content Include="ArtistArtwork.aspx" />
     <Content Include="ArtistDisplay.aspx" />
-    <Content Include="ArtworkInk.aspx" />
-    <Content Include="ArtworkPainting.aspx" />
-    <Content Include="ArtworkWatercolor.aspx" />
     <Content Include="ClientArtistArtwork.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
@@ -119,16 +117,16 @@
     <Content Include="css\Filter.css" />
     <Content Include="css\GalleryCRUD.css" />
     <Content Include="css\Homepage.css" />
-    <Content Include="DeleteArtwork.aspx" />
-    <Content Include="EditArtistProfile.aspx" />
-    <Content Include="EditArtwork.aspx" />
+    <Content Include="css\PurchaseDetails.css" />
+    <Content Include="Artist\DeleteArtwork.aspx" />
+    <Content Include="Artist\EditArtwork.aspx" />
     <Content Include="App_Data\ertistDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\ertistDB_log.ldf">
       <DependentUpon>ertistDB.mdf</DependentUpon>
     </Content>
-    <Content Include="GalleryDisplay.aspx" />
+    <Content Include="Artist\GalleryDisplay.aspx" />
     <Content Include="Cart.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -147,10 +145,10 @@
     <Content Include="css\Payment.css" />
     <Content Include="css\PurchaseHistory.css" />
     <Content Include="css\Wishlist.css" />
-    <Content Include="Default.aspx" />
     <Content Include="ArtworkDisplay.aspx" />
+    <Content Include="DeleteAddress.aspx" />
     <Content Include="Description.aspx" />
-    <Content Include="EditGallery.aspx" />
+    <Content Include="Artist\EditGallery.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -165,6 +163,7 @@
     <Content Include="Image\1.jpg" />
     <Content Include="Image\2.jpg" />
     <Content Include="Image\3.jpg" />
+    <Content Include="Image\banner.jpg" />
     <Content Include="Image\browser_logo.png" />
     <Content Include="Image\11.jpg" />
     <Content Include="Image\12.jpg" />
@@ -174,15 +173,19 @@
     <Content Include="Image\reg_user.jpg" />
     <Content Include="Image\search.svg" />
     <Content Include="Image\Star Clock at Night II.jpg" />
+    <Content Include="Image\userProfilePic.png" />
     <Content Include="Image\user_default_pic.svg" />
+    <Content Include="Image\user_picture.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MakeOrder.aspx" />
     <Content Include="Payment.aspx" />
+    <Content Include="PurchaseDetails.aspx" />
     <Content Include="PurchaseHistory.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterPick.aspx" />
-    <Content Include="UpdateArtwork.aspx" />
-    <Content Include="UpdateGallery.aspx" />
+    <Content Include="Artist\UpdateArtwork.aspx" />
+    <Content Include="Artist\UpdateGallery.aspx" />
+    <Content Include="UpdateAddress.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserProfileEdit.aspx" />
     <Content Include="Wishlist.aspx" />
@@ -223,18 +226,25 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddArtwork.aspx.cs">
+    <Compile Include="AddAddress.aspx.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAddress.aspx.designer.cs">
+      <DependentUpon>AddAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artist\AddArtwork.aspx.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddArtwork.aspx.designer.cs">
+    <Compile Include="Artist\AddArtwork.aspx.designer.cs">
       <DependentUpon>AddArtwork.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddGallery.aspx.cs">
+    <Compile Include="Artist\AddGallery.aspx.cs">
       <DependentUpon>AddGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddGallery.aspx.designer.cs">
+    <Compile Include="Artist\AddGallery.aspx.designer.cs">
       <DependentUpon>AddGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="ArtistArtwork.aspx.cs">
@@ -250,27 +260,6 @@
     </Compile>
     <Compile Include="ArtistDisplay.aspx.designer.cs">
       <DependentUpon>ArtistDisplay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ArtworkInk.aspx.cs">
-      <DependentUpon>ArtworkInk.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArtworkInk.aspx.designer.cs">
-      <DependentUpon>ArtworkInk.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ArtworkPainting.aspx.cs">
-      <DependentUpon>ArtworkPainting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArtworkPainting.aspx.designer.cs">
-      <DependentUpon>ArtworkPainting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ArtworkWatercolor.aspx.cs">
-      <DependentUpon>ArtworkWatercolor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArtworkWatercolor.aspx.designer.cs">
-      <DependentUpon>ArtworkWatercolor.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientArtistArtwork.aspx.cs">
       <DependentUpon>ClientArtistArtwork.aspx</DependentUpon>
@@ -293,25 +282,18 @@
     <Compile Include="ClientArtistProfile.aspx.designer.cs">
       <DependentUpon>ClientArtistProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DeleteArtwork.aspx.cs">
+    <Compile Include="Artist\DeleteArtwork.aspx.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DeleteArtwork.aspx.designer.cs">
+    <Compile Include="Artist\DeleteArtwork.aspx.designer.cs">
       <DependentUpon>DeleteArtwork.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditArtistProfile.aspx.cs">
-      <DependentUpon>EditArtistProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditArtistProfile.aspx.designer.cs">
-      <DependentUpon>EditArtistProfile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditArtwork.aspx.cs">
+    <Compile Include="Artist\EditArtwork.aspx.cs">
       <DependentUpon>EditArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditArtwork.aspx.designer.cs">
+    <Compile Include="Artist\EditArtwork.aspx.designer.cs">
       <DependentUpon>EditArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -323,11 +305,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="GalleryDisplay.aspx.cs">
+    <Compile Include="Artist\GalleryDisplay.aspx.cs">
       <DependentUpon>GalleryDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GalleryDisplay.aspx.designer.cs">
+    <Compile Include="Artist\GalleryDisplay.aspx.designer.cs">
       <DependentUpon>GalleryDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
@@ -346,19 +328,19 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ArtworkDisplay.aspx.cs">
       <DependentUpon>ArtworkDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ArtworkDisplay.aspx.designer.cs">
       <DependentUpon>ArtworkDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAddress.aspx.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteAddress.aspx.designer.cs">
+      <DependentUpon>DeleteAddress.aspx</DependentUpon>
     </Compile>
     <Compile Include="Description.aspx.cs">
       <DependentUpon>Description.aspx</DependentUpon>
@@ -367,11 +349,11 @@
     <Compile Include="Description.aspx.designer.cs">
       <DependentUpon>Description.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditGallery.aspx.cs">
+    <Compile Include="Artist\EditGallery.aspx.cs">
       <DependentUpon>EditGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditGallery.aspx.designer.cs">
+    <Compile Include="Artist\EditGallery.aspx.designer.cs">
       <DependentUpon>EditGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -406,6 +388,13 @@
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseDetails.aspx.cs">
+      <DependentUpon>PurchaseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseDetails.aspx.designer.cs">
+      <DependentUpon>PurchaseDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseHistory.aspx.cs">
       <DependentUpon>PurchaseHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,19 +423,26 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="UpdateArtwork.aspx.cs">
+    <Compile Include="Artist\UpdateArtwork.aspx.cs">
       <DependentUpon>UpdateArtwork.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateArtwork.aspx.designer.cs">
+    <Compile Include="Artist\UpdateArtwork.aspx.designer.cs">
       <DependentUpon>UpdateArtwork.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateGallery.aspx.cs">
+    <Compile Include="Artist\UpdateGallery.aspx.cs">
       <DependentUpon>UpdateGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateGallery.aspx.designer.cs">
+    <Compile Include="Artist\UpdateGallery.aspx.designer.cs">
       <DependentUpon>UpdateGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAddress.aspx.cs">
+      <DependentUpon>UpdateAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAddress.aspx.designer.cs">
+      <DependentUpon>UpdateAddress.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
@@ -500,16 +496,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63940</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63940/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

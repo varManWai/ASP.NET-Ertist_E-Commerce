@@ -50,9 +50,10 @@ namespace Ertist
             {
                 using (SqlCommand cmd = new SqlCommand("Validate_User"))
                 {
+                    string hashPass = Register.GetHash(password);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Password", password);
+                    cmd.Parameters.AddWithValue("@Password", hashPass);
                     cmd.Connection = con;
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="RegisterPick.aspx.cs" Inherits="Ertist.RegisterPick" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href="css/ArtistProfile.css" rel="stylesheet" />
     <style>
         .font_design{
             font-family: "Roboto Slab","Times New Roman",serif;
@@ -26,35 +26,41 @@
         }
     </style>
     
+    <div class="container">
+    <div class="profile-page">
+    <div class="main" style="margin-top:5%;">
         <div class="col" style="text-align: center; padding:30px;">
             <h1 class="font_design">Register as:</h1>
         </div>
      
-        <div class="row" style="margin:0 5% 7% 6%;">
-            <div class="col-sm-6">
+        <div class="row justify-content-lg-center">
+            <div class="col-sm-6" style="max-width:400px !important">
                 <div class="card text-center">
                     <div class="card-header" style="background-color:firebrick; padding:10px;color:white;">
                         <h2 class="font_design">User</h2>
                     </div>
                     <div class="card-body">
-                        <img src="Image/reg_user.jpg" alt="user" class="card-title" height="300px" width="300px"/>
+                        <img src="Image/reg_user.jpg" alt="user" class="card-title" height="200" width="350" style="object-fit:cover"/>
                         <br /><br />
                         <asp:Button ID="btn_user" runat="server" Text="Register" class="btn-reg" OnClick="btn_user_Click"/>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6" style="max-width:400px !important;max-height:400px !important">
                 <div class="card text-center">
                     <div class="card-header" style="background-color:firebrick; padding:10px; color:white;">
                         <h2 class="font_design">Artist</h2>
                     </div>
                     <div class="card-body">
-                        <img src="Image/reg_artist.jpg" class="card-title" alt="artist" height="300px" width="300px" />
+                        <img src="Image/reg_artist.jpg" class="card-title" alt="artist" height="200" width="350" style="object-fit:cover" />
                         <br /><br />
                         <asp:Button ID="btn_artist" runat="server" Text="Register" CssClass="btn-reg" OnClick="btn_artist_Click" />
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
 
 </asp:Content>

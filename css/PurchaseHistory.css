@@ -1,4 +1,18 @@
-﻿.cart-wrap {
+﻿input#btnSeeMore.art-pg-btn{
+    background-color: #ca3f49;
+    outline: none;
+    border: none;
+    border-radius: 300px;
+    width: 100%;
+    max-width: 158px;
+    height: 38px;
+    color: white;
+    font-size: clamp(10px, 1.5vw, 15px);
+    margin-left: 80%;
+    letter-spacing: 0.12em;
+}
+
+.cart-wrap {
     padding: 40px 0;
     font-family: 'Open Sans', sans-serif;
 }
@@ -17,11 +31,11 @@
     margin-bottom: 5px;
 }
 
-    .table-wishlist thead tr th {
+    .table-wishlist thead tr {
         padding: 8px 0 18px;
         color: #484848;
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 600;
     }
 
 .table-wishlist tr td {
@@ -49,9 +63,9 @@
         width: 50%;
     }
 
-    .table-wishlist tr td.price {
-        font-weight: 600;
-    }
+.table-wishlist tr .purchase {
+    font-weight: 600;
+}
 
     .table-wishlist tr td .quanlity {
         position: relative;
@@ -59,7 +73,7 @@
 
 .total {
     font-size: 24px;
-    font-weight: 600;
+    /*font-weight: 600;*/
     color: #8660e9;
 }
 
@@ -169,3 +183,6 @@
     font-size: 20px;
     color: #212529;
 }
+
+
+

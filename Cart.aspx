@@ -24,13 +24,13 @@
                     <span>Artwroks in Cart</span>
                 </div>
 
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" >
                     <ItemTemplate>
                         <div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="">
                             </div>
-                            <div class="artwork_details">
+                            <div class="artwork_details" style="width:614px;height:302px;">
                                 <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
                                     <img src="<%# GetImage(Eval("Expr1")) %>" alt="">
@@ -39,19 +39,20 @@
                                 <div class="artwork_description">
                                     <%# Eval("description") %>
                                 </div>
+                               
                                 <div class="price_remove">
-                                    <span class="price">$<%# Eval("price") %></span>
-                                    <button>REMOVE</button>
+                                    <span class="price">$<%# Eval("price") %></span><asp:Button ID="btnRemove" runat="server"  CustomParameter='<%# Eval("cartID") %>' Text="Remove" Style="background-color: #ca3f49; outline: none; border: none; border-radius: 300px; width: 100%; max-width: 158px; height: 38px; color: white; font-size: clamp(10px, 1.5vw, 15px); margin-left: 20px; letter-spacing: 0.12em;" OnClick="btnRemove_Click" />
                                 </div>
                             </div>
                         </div>
-                    </ItemTemplate>
+                     </ItemTemplate>
                 </asp:Repeater>
 
             </div>
 
 
             <aside class="summary">
+                <%--<h2>Summarysummary">--%>
                 <h2>Summary</h2>
                 <div class="artwork_each_price">
 
@@ -70,7 +71,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, [User].picture AS Expr1, [User].username FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, [User].picture AS Expr1, [User].username, Cart.cartID FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
                         <SelectParameters>
                             <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
                         </SelectParameters>
