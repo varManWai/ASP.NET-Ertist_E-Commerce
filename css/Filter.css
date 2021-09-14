@@ -1,0 +1,65 @@
+﻿/* Filter design */
+
+.filters-primary {
+    height: 100px;
+    background-color: rgb(246, 246, 246);
+    opacity: 0.85;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.filter-title {
+    font-size: medium;
+    vertical-align: middle;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: rgb(0,0,0,0.8);
+}
+
+body .navbar_section_mobile .navbar_section_lower .form #TxtSearch2 {
+    border-radius: 100vh;
+    border: none;
+    background: none;
+    font-size: 18px;
+    outline: none;
+    width: 100%;
+    color: #acacac;
+    padding-top: 5px;
+}
+
+body .navbar_section_mobile .navbar_section_lower .form #btnSearch2 {
+    border: none;
+    border-radius: 100vh;
+    padding: clamp(0px, 1vw, 10px);
+    margin: 0;
+    background-color: #e0e0e0;
+}
+
+.form #TxtSearch1 {
+    border-radius: 100vh;
+    border: none;
+    background: none;
+    font-size: 18px;
+    outline: none;
+    width: clamp(50px, 12vw, 350px);
+    color: #acacac;
+}
+
+.form #BtnSearch1 {
+    border: none;
+    border-radius: 100vh;
+    padding: 0;
+    margin: 0;
+    background: url('../Image/reg.jpg');
+}

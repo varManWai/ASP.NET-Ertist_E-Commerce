@@ -113,6 +113,8 @@
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
+    <Content Include="css\Banner.css" />
+    <Content Include="css\Filter.css" />
     <Content Include="css\GalleryCRUD.css" />
     <Content Include="css\Homepage.css" />
     <Content Include="css\PurchaseDetails.css" />
