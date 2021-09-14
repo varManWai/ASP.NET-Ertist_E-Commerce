@@ -55,24 +55,7 @@ namespace Ertist
                 dr.Close();
                 con.Close();
 
-                
-               
-                //string sqltotal = "SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Order_Artwork ON Artwork.artworkID = Order_Artwork.artworkID INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID WHERE ([Order].orderID = @oderID)";
-                //string strConnection = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-                //SqlConnection connection = new SqlConnection(strConnection);
-                //SqlCommand cmdtotal = new SqlCommand(sqltotal, connection);
-                //cmdtotal.Parameters.AddWithValue("@orderID", orderID);
-                
-                //connection.Open();
-                //SqlDataReader drtotal = cmd.ExecuteReader();
-                //if (drtotal.Read())
-                //{
-                //    lblTotalPrice.Text = "$ " + Convert.ToString(dr["Expr1"]);
-                //}
-
-                //drtotal.Close();
-                //connection.Close();
-
+            
             }
         }
 
