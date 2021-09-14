@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DeleteArtwork.aspx.cs" Inherits="Ertist.DeleteArtwork" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/button.css" rel="stylesheet" />
+    <link href="../css/button.css" rel="stylesheet" />
 
      <div style="padding:5%; margin-left:32%;">
     <h3>Delete Artwork</h3><br />

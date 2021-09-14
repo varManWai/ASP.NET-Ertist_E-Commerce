@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddArtwork.aspx.cs" Inherits="Ertist.AddArtwork1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/button.css" rel="stylesheet" />
+    <link href="../css/button.css" rel="stylesheet" />
     <style>        
         .auto-style1 {
             width: 140px;

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateArtwork.aspx.cs" Inherits="Ertist.UpdateArtwork" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="css/button.css" rel="stylesheet" />
+    <link href="../css/button.css" rel="stylesheet" />
     <div style="padding:5%; margin-left:32%;">
     <h3>Update Artwork</h3><br />
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Width="500px" Font-Size="14px" />
