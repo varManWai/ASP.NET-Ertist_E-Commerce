@@ -27,39 +27,74 @@
     color: rgb(0,0,0,0.8);
 }
 
-body .navbar_section_mobile .navbar_section_lower .form #TxtSearch2 {
-    border-radius: 100vh;
-    border: none;
-    background: none;
-    font-size: 18px;
-    outline: none;
-    width: 100%;
-    color: #acacac;
-    padding-top: 5px;
+.filter-row{
+    display:inline-flex;
+    width:100%;
+    vertical-align:middle;
+    height:fit-content;
+    flex-basis: 20%
 }
 
-body .navbar_section_mobile .navbar_section_lower .form #btnSearch2 {
-    border: none;
-    border-radius: 100vh;
+/* Search */
+.search-form #btnSearch {
     padding: clamp(0px, 1vw, 10px);
+    border: none;
+    border-radius: 100vh;
     margin: 0;
-    background-color: #e0e0e0;
+    background-color: #fff;
 }
 
-.form #TxtSearch1 {
+.search-form {
+    margin: 10px;
+    background-color: white;
+    border-radius: 300px;
+    padding: 8px 7px 7px 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position:relative
+}
+
+.search_input {
     border-radius: 100vh;
     border: none;
     background: none;
     font-size: 18px;
     outline: none;
-    width: clamp(50px, 12vw, 350px);
     color: #acacac;
 }
 
-.form #BtnSearch1 {
+/* Dropdown */
+.dropdown {
+    margin: auto clamp(5px, 2vw, 15px);
+}
+
+.dropdown #dropdownMenuButton1 {
+    background-color: #fff;
+    color: black;
     border: none;
-    border-radius: 100vh;
-    padding: 0;
-    margin: 0;
-    background: url('../Image/reg.jpg');
+    outline: none;
+    width: 100vw;
+    max-width: 250px;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: distribute;
+    justify-content: space-around !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: clamp(13px,1.5vw,18px);
+}
+
+.dropdown .dropdown-menu {
+    width: 100vw;
+    max-width: 250px;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+    font-size: clamp(15px,1.5vw,18px);
+    padding-top: 5px;
 }

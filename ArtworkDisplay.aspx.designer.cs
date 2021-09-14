@@ -13,22 +13,22 @@ namespace Ertist {
     public partial class Description {
 
         /// <summary>
-        /// TxtSearch2 control.
+        /// txtSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSearch2;
+        protected global::System.Web.UI.WebControls.TextBox txtSearch;
 
         /// <summary>
-        /// btnSearch2 control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnSearch2;
+        protected global::System.Web.UI.WebControls.ImageButton btnSearch;
 
         /// <summary>
         /// Repeater1 control.

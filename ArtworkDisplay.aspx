@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Title="Ertist" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArtworkDisplay.aspx.cs" Inherits="Ertist.Description" %>
+﻿<%@ Page Title="Ertist" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArtworkDisplay.aspx.cs" Inherits="Ertist.Description" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -97,151 +97,53 @@
         </div>
     </div>
     <section class="filters-primary">
-                    <p class="filter-title">Filter</p>
-                    <div class="filter-row">
-                        <div class="dropdown">
-                          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                          <div id="myDropdown" class="dropdown-content">
-                            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                            <a href="#about">About</a>
-                            <a href="#base">Base</a>
-                            <a href="#blog">Blog</a>
-                            <a href="#contact">Contact</a>
-                            <a href="#custom">Custom</a>
-                            <a href="#support">Support</a>
-                            <a href="#tools">Tools</a>
-                          </div>
-                        </div>
-                        <div class="form">
-                            <asp:TextBox ID="TxtSearch2" runat="server" CssClass="search_input" placeholder="Search"></asp:TextBox>
-                            <asp:ImageButton ID="btnSearch2" runat="server" ImageUrl="./Image/search.svg" />
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <%--<div class="select-primary selected">
-                                <span class="title">Medium</span>
-                                <span class="checked "><i class="icon icon-ico-check"></i></span>
-                                <form action="post">
-                                <div class="dropdown bootstrap-select sm_meds" data-t="sm_meds">
-                                    <div class="dropdown-menu" role="combobox">
-                                        <div class="inner open" role="listbox" aria-expanded="false" tabindex="-1">
-                                            <ul class="dropdown-menu inner">
-                                                <li>
-                                                    <a href="/en/our-artworks" role="option" aria-disabled="false" tabindex="0" aria-selected="false"><span class="glyphicon glyphicon-ok check-mark"></span><span class="text">-</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" aria-label="Medium">
-                                        <div class="filter-option">
-                                            <div class="filter-option-inner">
-                                                <div class="filter-option-inner-inner">Painting</div>
-                                            </div>
-                                        </div>
-                                        <span class="bs-caret"><span class="caret"></span></span>
-                                    </button>
-                                </div>
-                                </form>
-                            </div>--%>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <%--<div class="select-primary not-selected">
-                                <span class="title">
-                                    Painting categories <i class="arrow down"></i>
-                                </span>
-                                <span class="checked hidden"><i class="icon icon-ico-check"></i></span>
-                                      
-                                <form action="post">
-                                <div class="dropdown bootstrap-select sm_categories" data-t="sm_categories">
-                                    <div class="dropdown-menu" role="combobox">
-                                        <div class="inner open" role="listbox" aria-expanded="false" tabindex="-1">
-                                            <ul class="dropdown-menu inner">
-                                                <li>
-                                                    <a href="/en/painting" role="option" aria-disabled="false" tabindex="0" aria-selected="false"><span class="glyphicon glyphicon-ok check-mark"></span><span class="text">-</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" aria-label="Painting categories">
-                                        <div class="filter-option">
-                                            <div class="filter-option-inner">
-                                                <div class="filter-option-inner-inner">Painting categories</div>
-                                            </div>
-                                        </div>
-                                        <span class="bs-caret"><span class="caret"></span></span>
-                                    </button>
-                                </div>
-                                </form>
-                            </div>--%>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <%--<div class="select-primary not-selected">
-                                <span class="title">Painting styles<i class="arrow down"></i>
-                                </span>
-                                <span class="checked hidden"><i class="icon icon-ico-check"></i></span>
-                                <form action="post">
-                                <div class="dropdown bootstrap-select sm_styles" data-t="sm_styles">
-                                    <div class="dropdown-menu" role="combobox">
-                                        <div class="inner open" role="listbox" aria-expanded="false" tabindex="-1">
-                                            <ul class="dropdown-menu inner">
-                                                <li>
-                                                    <a href="/en/painting" role="option" aria-disabled="false" tabindex="0" aria-selected="false"><span class="glyphicon glyphicon-ok check-mark"></span><span class="text">-</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" aria-label="Painting styles">
-                                        <div class="filter-option">
-                                            <div class="filter-option-inner">
-                                                <div class="filter-option-inner-inner">Painting styles</div>
-                                            </div>
-                                        </div>
-                                        <span class="bs-caret"><span class="caret"></span></span>
-                                    </button>
-                                </div>
-                                </form>
-                            </div>--%>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <%--<div class="select-primary not-selected">
-                                <span class="title">Painting techniques<i class="arrow down"></i>
-                                </span>
-                                <span class="checked hidden"><i class="icon icon-ico-check"></i></span>
-                                <form action="post">
-                                <div class="dropdown bootstrap-select sm_materials" data-t="sm_materials">
-                                    <div class="dropdown-menu" role="combobox">
-                                        <div class="inner open" role="listbox" aria-expanded="false" tabindex="-1">
-                                            <ul class="dropdown-menu inner">
-                                                <li>
-                                                    <a href="/en/painting" role="option" aria-disabled="false" tabindex="0" aria-selected="false"><span class="glyphicon glyphicon-ok check-mark"></span><span class="text">-</span></a>
-                                                </li></ul>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" aria-label="Painting techniques">
-                                        <div class="filter-option">
-                                            <div class="filter-option-inner">
-                                                <div class="filter-option-inner-inner">Painting techniques</div>
-                                            </div>
-                                        </div>
-                                        <span class="bs-caret"><span class="caret"></span></span>
-                                    </button>
-                                </div>
-                                </form>
-                            </div>--%>
-                        </div>
-                    </div>
-            <%--<div class="filters-primary-my-search hidden">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="title">My search</div>
-                            <div class="search-bar hidden">
-                                <div class="bootstrap-tagsinput"><input type="text" placeholder=""></div><input type="text" autocomplete="off" class="ac-tags" style="display: none;">
-                                <button class="submit-search" type="submit"><i class="icon icon-ico-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
+        <div class="filter-row">
+            <p class="filter-title">Filter</p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="byCategoryMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">By Category</button>
+                <ul class="dropdown-menu" aria-labelledby="byCategoryMenu">
+                    <li><a class="dropdown-item" href="#">All</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="byAlphabetMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">By Alphabet</button>
+                <ul class="dropdown-menu" aria-labelledby="byAlphabetMenu">
+                    <li><a class="dropdown-item" href="#">#</a></li>
+                    <li><a class="dropdown-item" href="#">A</a></li>
+                    <li><a class="dropdown-item" href="#">B</a></li>
+                    <li><a class="dropdown-item" href="#">C</a></li>
+                    <li><a class="dropdown-item" href="#">D</a></li>
+                    <li><a class="dropdown-item" href="#">E</a></li>
+                    <li><a class="dropdown-item" href="#">F</a></li>
+                    <li><a class="dropdown-item" href="#">G</a></li>
+                    <li><a class="dropdown-item" href="#">H</a></li>
+                    <li><a class="dropdown-item" href="#">I</a></li>
+                    <li><a class="dropdown-item" href="#">J</a></li>
+                    <li><a class="dropdown-item" href="#">K</a></li>
+                    <li><a class="dropdown-item" href="#">L</a></li>
+                    <li><a class="dropdown-item" href="#">M</a></li>
+                    <li><a class="dropdown-item" href="#">N</a></li>
+                    <li><a class="dropdown-item" href="#">O</a></li>
+                    <li><a class="dropdown-item" href="#">P</a></li>
+                    <li><a class="dropdown-item" href="#">Q</a></li>
+                    <li><a class="dropdown-item" href="#">R</a></li>
+                    <li><a class="dropdown-item" href="#">S</a></li>
+                    <li><a class="dropdown-item" href="#">T</a></li>
+                    <li><a class="dropdown-item" href="#">U</a></li>
+                    <li><a class="dropdown-item" href="#">V</a></li>
+                    <li><a class="dropdown-item" href="#">W</a></li>
+                    <li><a class="dropdown-item" href="#">X</a></li>
+                    <li><a class="dropdown-item" href="#">Y</a></li>
+                    <li><a class="dropdown-item" href="#">Z</a></li>
+                </ul>
+            </div>
+            <div class="search-form">
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="search_input" placeholder="Search By Name"></asp:TextBox>
+                <asp:ImageButton ID="btnSearch" runat="server" ImageUrl="./Image/search.svg" />
+            </div>
+        </div>
         </section>
     <div style="width: 100%; max-width: 1366px; margin: auto; padding: 70px;">
         <div class="row">
