@@ -60,7 +60,7 @@
                                     <div class="artwork_image">
                                         <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
-                                    <div class="artwork_details" style="width:614px;">
+                                    <div class="artwork_details" style="width: 614px;">
                                         <span class="artwor_details_name">Name of the Artwork</span>
                                         <div class="artist">
                                             <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
@@ -70,7 +70,8 @@
                                             <%# Eval("description") %>
                                         </div>
                                         <div class="price_remove">
-                                            <span class="price">$<%# Eval("price") %></span></div>
+                                            <span class="price">$<%# Eval("price") %></span>
+                                        </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -97,7 +98,8 @@
                                         </div>
                                     </div>
                                     <div class="summary_each_price">
-                                        $<%# Eval("price") %></div>
+                                        $<%# Eval("price") %>
+                                    </div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -113,7 +115,8 @@
                         <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
                                 <div>
-                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span></div>
+                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span>
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -126,7 +129,7 @@
 
             </div>
         </div>
-
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     </section>
 
     <!-- Include the PayPal JavaScript SDK -->
@@ -134,7 +137,7 @@
         src="https://www.paypal.com/sdk/js?client-id=AW6etbpDGUmFpY-iA9-r3wXXmd2nDHo6PwCKP734surDr3TIqspck31udHgAXjKaUakbTysCiI7TB0Jz&currency=USD"></script>
 
 
-    
+
 
     <script>
         const total = <%= Session["payment"].ToString() %>
@@ -179,13 +182,14 @@
 
                     const element = document.getElementById('paypal-button-container');
 
-                   <%  sendEmail(); %>
+                  
+                    <% sendEmail();%>
 
 
-
-                    element.innerHTML = '';
-                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                    //Or go to another URL:  actions.redirect('thank_you.html');
+                    /*element.innerHTML = '';
+                    element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
+                    //Or go to another URL:  
+                    actions.redirect('./OrderSuccess.aspx');
                 });
             }
 

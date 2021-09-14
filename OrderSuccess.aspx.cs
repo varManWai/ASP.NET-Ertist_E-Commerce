@@ -14,19 +14,17 @@ using System.Text;
 
 namespace Ertist
 {
-    public partial class Payment : System.Web.UI.Page
+    public partial class OrderSuccess : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["artworkId"] = null;
+           
+            if (!IsPostBack)
+            {
+                sendEmail();
+            }
         }
-
-        public string GetImage(object img)
-        {
-            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
-        }
-
-        public void UpdateArtwork(int productId)
+        public static void UpdateArtwork(int productId)
         {
 
             string sql = @"UPDATE Artwork SET available = @available, stock = @stock FROM ARTWORK where artworkID = @artworkID";
@@ -39,7 +37,7 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@artworkID", productId);
 
             con.Open();
-            cmd.ExecuteNonQuery(); 
+            cmd.ExecuteNonQuery();
             con.Close();
 
         }
@@ -62,13 +60,13 @@ namespace Ertist
 
             //Repalce [newusername] = signup user name   
             MailText = MailText.Replace("[Username]", Convert.ToString(Session["username"]));
-            
+
             MailText = MailText.Replace("[orderID]", Convert.ToString(Session["email"]));
             MailText = MailText.Replace("[orderDate]", Convert.ToString(Session["email"]));
-            
-            MailText = MailText.Replace("[Total]", "$"+Convert.ToString(Session["payment"]));
 
-            
+            MailText = MailText.Replace("[Total]", "$" + Convert.ToString(Session["payment"]));
+
+
 
 
             string subject = "Ordered Seccuesfully";
