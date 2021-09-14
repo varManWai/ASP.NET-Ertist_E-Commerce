@@ -31,42 +31,17 @@ namespace Ertist
             con = new SqlConnection (strCon);
             SqlCommand cmdRepeater=null;
             SqlCommand cmdRepeaterCond=null;
-            int count=0;
 
             string categoryID = "";
             string alphabet = "";
+            int count;
 
             if (!Page.IsPostBack) {
-                if (categoryID != "") {
-                    categoryID = Request.QueryString ["categoryID"] ?? "";
-                    cmdRepeaterCond = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE categoryID = @categoryID ORDER BY artworkID Asc" + pagequery, con);  //Select the records
-                    con.Open ();
-                    cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
-                    Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
-                    Repeater1.DataBind ();  //Bind the repeater
-                    con.Close ();
-                    cmdRepeaterCond = new SqlCommand ("select COUNT(*) from Artwork WHERE categoryID = @categoryID", con);  
-                    con.Open ();
-                    cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
-                    count = ( int )cmdRepeaterCond.ExecuteScalar ();
-                    con.Close ();
-                }
-                else if (alphabet != "") {
-                    alphabet = Request.QueryString ["alphabet"] ?? "";
-                    cmdRepeaterCond = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE [name] LIKE '@alphabet%' ORDER BY artworkID Asc" + pagequery, con);  //Select the records
-                    con.Open ();
-                    cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
-                    Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
-                    Repeater1.DataBind ();  //Bind the repeater
-                    con.Close ();
-                    cmdRepeaterCond = new SqlCommand ("select COUNT(*) from Artwork WHERE [name] LIKE '@alphabet%'", con);  
-                    con.Open ();
-                    cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
-                    count = ( int )cmdRepeaterCond.ExecuteScalar ();
-                    con.Close ();
-                }
+                categoryID = Request.QueryString ["categoryID"] ?? "";
+                alphabet = Request.QueryString ["alphabet"] ?? "";
             }
-            else {
+
+            if(categoryID=="" && alphabet == "") {
                 cmdRepeater = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] order by artworkID Asc" + pagequery, con);  //Select the records
                 con.Open ();
                 SqlDataAdapter da = new SqlDataAdapter (cmdRepeater);
@@ -81,42 +56,53 @@ namespace Ertist
                 con.Open ();
                 count = ( int )cmdRepeater.ExecuteScalar ();
                 con.Close ();
+            }else if (categoryID != "" && alphabet=="") {
+                cmdRepeaterCond = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE categoryID = @categoryID ORDER BY artworkID Asc" + pagequery, con);  //Select the records
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
+                Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
+                Repeater1.DataBind ();  //Bind the repeater
+                con.Close ();
+                cmdRepeaterCond = new SqlCommand ("select COUNT(*) from Artwork WHERE categoryID = @categoryID", con);
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@categoryID", categoryID);
+                count = ( int )cmdRepeaterCond.ExecuteScalar ();
+                con.Close ();
+            }else if (alphabet != "" && categoryID=="") {
+                cmdRepeaterCond = new SqlCommand ("SELECT[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE ([name] LIKE @alphabet + '%') ORDER BY artworkID Asc" + pagequery, con);  //Select the records
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
+                Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
+                Repeater1.DataBind ();  //Bind the repeater
+                con.Close ();
+                cmdRepeaterCond = new SqlCommand ("select COUNT(*) from Artwork WHERE ([name] LIKE @alphabet + '%')", con);
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
+                count = ( int )cmdRepeaterCond.ExecuteScalar ();
+                con.Close ();
+            }
+            else {
+                count = 0;
             }
                 var uri = new Uri (Request.Url.AbsoluteUri);
                 var query = HttpUtility.ParseQueryString (uri.Query); //Get the query strings from the url
                 query.Remove ("pn"); //Remove the query string [pn] to avoid repetation
                 string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
-                paging.InnerHtml = Set_Paging (page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
+                paging.InnerHtml = Set_Paging (page, pagesize, count, "activeLink", link, "disableLink");  
+            //Fill the pagination in the div tag
 
-            ////display image in repeater
-            //SqlConnection con;
-            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //con = new SqlConnection(strCon);
-
-            ////open connection
-            //con.Open();
-
-            //string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price] FROM [ArtWork]";
-
-            //SqlCommand cmd = new SqlCommand(sqlSelect, con);
-
-            //Repeater1.DataSource = cmd.ExecuteReader();
-            //Repeater1.DataBind();
-
-            //close connection
-            //con.Close();
-
-            string strConn = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
-            SqlConnection conn = new SqlConnection (strCon);
+            //Display category in DDl
             string selectCat = "SELECT [name], [categoryID] FROM [Category]";
-            SqlCommand cmd = new SqlCommand (selectCat, conn);
+            SqlCommand cmd = new SqlCommand (selectCat, con);
 
-            conn.Open ();
+            con.Open ();
 
             Repeater2.DataSource = cmd.ExecuteReader ();
             Repeater2.DataBind ();
 
-            conn.Close ();
+            con.Close ();
+
+
         }
 
         public string GetImage(object img)
@@ -207,6 +193,28 @@ namespace Ertist
             {
             }
             return (ReturnValue);
+        }
+
+        protected void searchByName_TextChanged (object sender, EventArgs e) {
+            
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+            con = new SqlConnection (strCon);
+            SqlCommand cmdSearch = null;
+
+            con.Open ();
+
+            string selectSearch = "[artworkID], [name], [description], [picture], [price], [height], [width] FROM[ArtWork] WHERE ([name] LIKE '%' + @search + '%') ORDER BY artworkID Asc" + pagequery;
+            cmdSearch = new SqlCommand (selectSearch, con);
+            string searchInput = searchByName.Text;
+
+            cmdSearch.Parameters.AddWithValue ("@search", searchInput);
+            cmdSearch.ExecuteNonQuery ();
+
+            Repeater1.DataSource = cmdSearch.ExecuteReader ();
+            Repeater1.DataBind ();  //Bind the repeater
+
+            con.Close ();
         }
     }
 }
