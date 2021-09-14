@@ -41,7 +41,7 @@ namespace Ertist
             {
                 Repeater1.DataSource = ds;
                 Repeater1.DataBind();  //Bind the repeater
-                cmdRepeater = new SqlCommand("select COUNT(*) from Artwork", con);  //Count the total records
+                cmdRepeater = new SqlCommand("select COUNT(*) from [dbo].[User]  where roleID=2", con);  //Count the total records
                 con.Open();
                 int count = (int)cmdRepeater.ExecuteScalar();
                 con.Close();
