@@ -40,7 +40,7 @@
 
                     <td> <asp:TextBox ID="txtState" runat="server" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvState" runat="server" ErrorMessage="State is required" ControlToValidate="txtState" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revState" runat="server" ErrorMessage="State should not be more than 50 characters " Text="*" ForeColor="Red" ControlToValidate="txtState" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revState" runat="server" ErrorMessage="State should not be more than 50 characters " Text="*" ForeColor="Red" ControlToValidate="txtState" ValidationExpression="^[a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                  <tr>
