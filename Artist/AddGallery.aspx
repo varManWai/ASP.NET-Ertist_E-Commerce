@@ -14,21 +14,24 @@
         }
     </style>
 
-    <div style="font-size:14px; padding:2%" class="container">
+    <div style="font-size:14px; padding:2%; margin-left:32%;" class="container" >
             <div class="title-container">
-                <h3 class="text-center">Add Gallery</h3><br />
+                <h3>Add Gallery</h3><br />
             </div>
             <table class="gal-table">
                 <tr>
                     <td class="gal-lbl auto-style3">Gallery Name&nbsp;</td>
+                    <td style="width: 36px">&nbsp;</td>
                     <td class="auto-style4"><asp:TextBox ID="txtGalName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style3"></td>
+                    <td style="width: 36px">&nbsp;</td>
                     <td class="auto-style4"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3 gal-lbl" style="width: 140px">Cover Photo&nbsp;</td>
+                    <td style="width: 36px">&nbsp;</td>
                     <td><asp:FileUpload ID="imgUpload" runat="server" CssClass="auto-style2"/></td>
                 </tr>
                 <tr>

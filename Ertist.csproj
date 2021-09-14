@@ -149,6 +149,7 @@
     <Content Include="DeleteAddress.aspx" />
     <Content Include="Description.aspx" />
     <Content Include="Artist\EditGallery.aspx" />
+    <Content Include="EmailControl.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -355,6 +356,13 @@
     </Compile>
     <Compile Include="Artist\EditGallery.aspx.designer.cs">
       <DependentUpon>EditGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailControl.ascx.cs">
+      <DependentUpon>EmailControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailControl.ascx.designer.cs">
+      <DependentUpon>EmailControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

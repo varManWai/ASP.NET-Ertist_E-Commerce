@@ -28,8 +28,6 @@ namespace Ertist
 
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
 
-
-
             string addressName = txtAddressName.Text;
             string address = txtAddress.Text;
             string state = txtCity.Text;
