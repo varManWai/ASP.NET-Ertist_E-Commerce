@@ -18,31 +18,40 @@ namespace Ertist
 
             if (!Page.IsPostBack)
             {
-                string userid = Session["UserID"].ToString();
-                string sql = "Select * from [User] where UserID = @userID";
+                if(Session["UserID"] != null)
+                {   
+                    string userid = Session["UserID"].ToString();
+                    string sql = "Select * from [User] where UserID = @userID";
 
-                //Connect the db
-                string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-                SqlConnection con = new SqlConnection(strCon);
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@userID", userid);
+                    //Connect the db
+                    string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+                    SqlConnection con = new SqlConnection(strCon);
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@userID", userid);
 
-                //open the connection
-                con.Open();
+                    //open the connection
+                    con.Open();
 
-                //select use the execute reader
-                SqlDataReader dr = cmd.ExecuteReader();
+                    //select use the execute reader
+                    SqlDataReader dr = cmd.ExecuteReader();
 
-                //data binding
-                if (dr.Read())
-                {
-                    user_picture.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
-                    lbl_username.Text = (string)dr["username"];
-                    lbl_bio.Text = (string)dr["bio"];
+                    //data binding
+                    if (dr.Read())
+                    {
+                        user_picture.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])dr["picture"]);
+                        lbl_username.Text = (string)dr["username"];
+                        lbl_bio.Text = (string)dr["bio"];
+                    }
+
+                    dr.Close();
+                    con.Close();
+
                 }
-
-                dr.Close();
-                con.Close();
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+                
             }
 
         }
