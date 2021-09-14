@@ -18,14 +18,17 @@ namespace Ertist
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            string userid = Session["UserID"].ToString();
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
             con.Open();
 
             string sqlInsert = "INSERT INTO Address (addressName, address, state, city, postCode) VALUES(@addressName, @address, @state, @city, @postCode)";
+            
 
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
+            
 
             string addressName = txtAddressName.Text;
             string address = txtAddress.Text;
@@ -38,11 +41,20 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@state", state);
             cmd.Parameters.AddWithValue("@city", city);
             cmd.Parameters.AddWithValue("@postCode", postCode);
-
+            
             cmd.ExecuteNonQuery();
+            
+            con.Close();            
 
-            con.Close();
+            //con.Open();
+            //string sqlID = "INSERT INTO [User Address](userID) VALUES (@userID)";
+            //SqlCommand cmdID = new SqlCommand(sqlID, con);
+            //cmdID.Parameters.AddWithValue("@userID", userid);
+            //cmdID.ExecuteNonQuery();
+            //con.Close();
+
             Response.Redirect("UserProfile.aspx");
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
