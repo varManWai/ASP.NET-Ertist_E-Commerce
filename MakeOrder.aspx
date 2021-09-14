@@ -21,7 +21,7 @@
                     <div class="address_container">
 
                         <div class="address_dropdownlist">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT User_Address.addressID, Address.addressID AS Expr1, User_Address.userID, Address.addressName FROM Address INNER JOIN User_Address ON Address.addressID = User_Address.addressID INNER JOIN [User] ON User_Address.userID = [User].UserID WHERE (User_Address.userID = @UserID)">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT addressID, addressName, userID FROM Address WHERE (userID = @UserID)">
                                 <SelectParameters>
                                     <asp:SessionParameter Name="UserID" SessionField="UserID" />
                                 </SelectParameters>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="checkout_button_container">
 
-                        <asp:Button ID="Button2" runat="server" Text="Button" CssClass="checkout_button" Style="text-decoration: none; display: flex; justify-content: center; align-items: center;" OnClick="Button2_Click" />
+                        <asp:Button ID="Button2" runat="server" Text="Checkout" CssClass="checkout_button" Style="text-decoration: none; display: flex; justify-content: center; align-items: center;" OnClick="Button2_Click" />
 
                     </div>
                 </aside>
