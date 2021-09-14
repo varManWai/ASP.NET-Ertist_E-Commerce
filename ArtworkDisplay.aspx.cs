@@ -29,7 +29,7 @@ namespace Ertist
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
-            SqlCommand cmdRepeater = new SqlCommand("SELECT[artworkID],[name], [description], [picture], [price] FROM[ArtWork] order by artworkID Asc" + pagequery, con);  //Select the records
+            SqlCommand cmdRepeater = new SqlCommand("SELECT[artworkID],[name], [description], [picture], [price], [height], [width] FROM[ArtWork] order by artworkID Asc" + pagequery, con);  //Select the records
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(cmdRepeater);
             DataSet ds = new DataSet();
