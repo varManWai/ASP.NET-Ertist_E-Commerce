@@ -32,8 +32,7 @@
                                             <td width="15%" class="price" style="font-size: 13px;">                 
                                                     <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label>
                                                     <%--<asp:HyperLink ID="hylID" runat="server"><%# Eval("orderID") %></asp:HyperLink>--%>                                                 
-                                            </td>
-                                         
+                                            </td>                               
                                             <td width="15%" class="price" style="font-size: 13px; font-weight: 400;">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
 
@@ -57,7 +56,7 @@
                         </table>
                     </div>
                 </div>
-                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [Order].date, [Order].orderID, [Order].totalPrice, [Order].status FROM Order_Artwork INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID WHERE ([User].UserID = @userID)">
+                <asp:SqlDataSource ID="SqlPurchase" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [Order].date, [Order].orderID, [Order].totalPrice, [Order].status FROM Order_Artwork INNER JOIN [Order] ON Order_Artwork.orderID = [Order].orderID INNER JOIN [User] ON [Order].userID = [User].UserID WHERE ([User].UserID = @userID) GROUP BY [Order].date, [Order].orderID, [Order].totalPrice, [Order].status">
                     <SelectParameters>
                         <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
                     </SelectParameters>

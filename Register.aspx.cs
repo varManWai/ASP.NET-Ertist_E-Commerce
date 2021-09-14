@@ -33,7 +33,7 @@ namespace Ertist
         protected void RegisterUser(object sender, EventArgs e)
         {
             int userId = 0;
-            string role = Request.QueryString["role"];
+            string role = Request.QueryString["role"] ?? "3";
             int roleId = Convert.ToInt32(role);
             string constr = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))

@@ -1,0 +1,87 @@
+﻿/* Filter design */
+
+.filter-title {
+    font-size: x-large;
+    width: 20%;
+    color: rgb(0,0,0,0.8);
+    margin:20px 0 0 5px;
+}
+
+.filter-row {
+    display: inline-flex;
+    width: 100%;
+    vertical-align: middle;
+    height: fit-content;
+    background-color: rgb(246, 246, 246);
+    opacity: 0.85;
+    justify-content:center;
+}
+
+/* Search */
+.search-form #btnSearch {
+    padding: clamp(0px, 1vw, 10px);
+    border: none;
+    border-radius: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+
+.search-form {
+    margin: 10px;
+    background-color: white;
+    border-radius: 300px;
+    padding: 8px 7px 7px 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.search_input {
+    border-radius: 100vh;
+    border: none;
+    background: none;
+    font-size: 18px;
+    outline: none;
+    color: #acacac;
+}
+
+/* Dropdown */
+.dropdown {
+    margin: auto clamp(5px, 2vw, 15px);
+    z-index: 3;
+}
+
+    .dropdown #byCategoryMenu, .dropdown #byAlphabetMenu {
+        background-color: #fff;
+        color: black;
+        border: none;
+        outline: none;
+        width: 100vw;
+        max-width: 250px;
+        padding: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-pack: distribute;
+        justify-content: space-around !important;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-size: clamp(13px,1.5vw,18px);
+        
+    }
+
+    .dropdown .dropdown-menu {
+        width: 100vw;
+        max-width: 250px;
+        overflow-y: auto;
+        max-height: 200px;
+        
+    }
+
+        .dropdown .dropdown-menu .dropdown-item {
+            font-size: clamp(15px,1.5vw,18px);
+            padding-top: 5px;
+        }
+

@@ -46,14 +46,14 @@
             </div>
 	    </div>
 
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        <%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ertistDB %>" 
             
             SelectCommand="SELECT [name], [cover] FROM [Gallery] WHERE ([userID] = @userID)" >
             <SelectParameters>
                 <asp:SessionParameter Name="userID" SessionField="userid" Type="Int32" />
             </SelectParameters>
-        </asp:SqlDataSource>
+        </asp:SqlDataSource>--%>
 	
       <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
       <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>

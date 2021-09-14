@@ -131,12 +131,12 @@
                         %>
                         <div class="cart_button_section acc_login" style="">
                             <%--<i class="glyphicon glyphicon-star">--%>
-                            <a id="login_btn" href="./Login.aspx" style="padding: 10px 40px; border: #ca3f49 solid 2px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: #ca3f49; font-weight: 700; letter-spacing: 1px;">Login</a>
+                            <a id="login_btn" href="../Login.aspx" style="padding: 10px 40px; border: #ca3f49 solid 2px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: #ca3f49; font-weight: 700; letter-spacing: 1px;">Login</a>
                             <%--</i>--%>
                         </div>
                         <div class="cart_button_section " style="margin-left: 0px; margin-right: 20px; background-color: #ca3f49; border-radius: 10px">
                             <%--<i class="glyphicon glyphicon-star-empty">--%>
-                            <a id="register_btn" href="./RegisterPick.aspx" style="text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 2px; padding: 10px 30px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px;">Register</a>
+                            <a id="register_btn" href="../RegisterPick.aspx" style="text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 2px; padding: 10px 30px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px;">Register</a>
                             <%--</i>--%>
                         </div>
 
@@ -178,9 +178,9 @@
                                     {
                                         if (Session["roles"].Equals("Artist"))
                                         { %>
-                                <li><a class="dropdown-item" href="UserProfile.aspx">Profile</a></li>
-                                <li><a class="dropdown-item" href="GalleryDisplay.aspx">Gallery</a></li>
-                                <li><a class="dropdown-item" href="PurchaseHistory.aspx">Purchase History</a></li>
+                                <li><a class="dropdown-item" href="../UserProfile.aspx">Profile</a></li>
+                                <li><a class="dropdown-item" href="Artist/GalleryDisplay.aspx">Gallery</a></li>
+                                <li><a class="dropdown-item" href="../PurchaseHistory.aspx">Purchase History</a></li>
 
                                 <%}
                                     else
@@ -225,9 +225,10 @@
             <div class="navbar_section_lower">
                 <div class="navbar_lower_all">
                     <ul class="nav">
-                        <li><a class="nav_link current" href="Homepage.aspx">Home</a></li>
-                        <li><a class="nav_link" href="ArtworkDisplay.aspx">Artwork</a></li>
-                        <li><a class="nav_link" href="ArtistDisplay.aspx">Artists</a></li>
+                        <li><a class="nav_link current" href="../Homepage.aspx">Home</a></li>
+                        <li><a class="nav_link" href="../ArtworkDisplay.aspx">Artwork</a></li>
+                        <li><a class="nav_link" href="../ArtistDisplay.aspx">Artists</a></li>
+                        <li><a class="nav_link" href="../Contact.aspx">ContactUs</a></li>
                     </ul>
                 </div>
 

@@ -107,12 +107,12 @@
     <Content Include="AddAddress.aspx" />
     <Content Include="Artist\AddArtwork.aspx" />
     <Content Include="Artist\AddGallery.aspx" />
-    <Content Include="ArtistArtwork.aspx" />
     <Content Include="ArtistDisplay.aspx" />
     <Content Include="ClientArtistArtwork.aspx" />
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
+    <Content Include="css\Filter.css" />
     <Content Include="css\email.css" />
     <Content Include="css\GalleryCRUD.css" />
     <Content Include="css\Homepage.css" />
@@ -148,6 +148,10 @@
     <Content Include="DeleteAddress.aspx" />
     <Content Include="Description.aspx" />
     <Content Include="Artist\EditGallery.aspx" />
+    <Content Include="EmailControl.ascx" />
+    <Content Include="Error\Error404.aspx" />
+    <Content Include="Error\Error403.aspx" />
+    <Content Include="Error\Error500.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -246,13 +250,6 @@
     </Compile>
     <Compile Include="Artist\AddGallery.aspx.designer.cs">
       <DependentUpon>AddGallery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ArtistArtwork.aspx.cs">
-      <DependentUpon>ArtistArtwork.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArtistArtwork.aspx.designer.cs">
-      <DependentUpon>ArtistArtwork.aspx</DependentUpon>
     </Compile>
     <Compile Include="ArtistDisplay.aspx.cs">
       <DependentUpon>ArtistDisplay.aspx</DependentUpon>
@@ -355,6 +352,27 @@
     </Compile>
     <Compile Include="Artist\EditGallery.aspx.designer.cs">
       <DependentUpon>EditGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailControl.ascx.cs">
+      <DependentUpon>EmailControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailControl.ascx.designer.cs">
+      <DependentUpon>EmailControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Error403.aspx.cs">
+      <DependentUpon>Error403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Error403.aspx.designer.cs">
+      <DependentUpon>Error403.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

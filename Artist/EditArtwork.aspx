@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/GalleryCRUD.css" rel="stylesheet" />
+    <link href="../css/GalleryCRUD.css" rel="stylesheet" />
     <!---Display Images-->
     <div style="padding: 5%;">
         <div>

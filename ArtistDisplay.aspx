@@ -16,11 +16,37 @@
        #MainContent_paging span element {
             background-color: #ca3f49;
         }
+
+       .page_header {
+            background-color: #1b1b1b;
+            height: 150px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            width: 100%;
+       }
+
+        .page_header h1 {
+        color: #ffffff;
+        padding-bottom: 35px;
+        font-size: clamp(26px,4vw,36px);
+        }
+
     </style>
 
+   <div class="page_header">
+       <h1>Artist</h1>
+   </div>
+
     <!-- Page Content -->
-    <div class="container">
-        <h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artist </h3>
+    <div class="container" style="margin-top:5%">
+        <%--<h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artist </h3>--%>
     
         <div class="row">
 

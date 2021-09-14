@@ -55,8 +55,7 @@ namespace Ertist
                 dr.Close();
                 con.Close();
 
-
-               
+            
             }
         }
 
