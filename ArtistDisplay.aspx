@@ -46,8 +46,7 @@
 
     <!-- Page Content -->
     <div class="container" style="margin-top:5%">
-        <%--<h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artist </h3>--%>
-    
+
         <div class="row">
 
             <asp:Repeater ID="Repeater1" runat="server">

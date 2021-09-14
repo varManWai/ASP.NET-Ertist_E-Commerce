@@ -23,7 +23,7 @@ namespace Ertist
             message.From = new MailAddress(email, name);
             message.Subject = txtSubjext.Text;
             message.Body = txtBody.Text;
-            message.To.Add(new MailAddress("lohxy-wm19@student.tarc.edu.my", "hostname"));
+            message.To.Add(new MailAddress("lohxy-wm19@student.tarc.edu.my", "ERTIST"));
             SmtpClient mySmtpClient = new SmtpClient();
             mySmtpClient.Timeout = 30000;
             try
