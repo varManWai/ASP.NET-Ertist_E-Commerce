@@ -78,54 +78,71 @@ namespace Ertist
         
         protected void btnAddWish_Click1(object sender, EventArgs e)
         {
-            string artworkID = Request.QueryString["artworkID"] ?? "";
-            string userid = Session["UserID"].ToString();
+            if(Session["UserID"] != null)
+            {
+                string artworkID = Request.QueryString["artworkID"] ?? "";
+                string userid = Session["UserID"].ToString();
 
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            con = new SqlConnection(strCon);
-            con.Open();
+                SqlConnection con;
+                string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+                con = new SqlConnection(strCon);
+                con.Open();
 
-            string sqlInsert = "INSERT INTO Wishlist (artworkID, userID) VALUES(@artworkID, @userID)";
+                string sqlInsert = "INSERT INTO Wishlist (artworkID, userID) VALUES(@artworkID, @userID)";
+
+                SqlCommand cmd = new SqlCommand(sqlInsert, con);
+
+                //insert            
+
+                cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                cmd.Parameters.AddWithValue("@userID", userid);
+
+                //add the rest
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                //Response.Redirect("Wishlist.aspx");
+            }
+            else
+            {
+                string msg = "Please login to add artwork to wishlist.";
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + msg + "');", true);
+            }
             
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-
-            //insert            
-
-            cmd.Parameters.AddWithValue("@artworkID", artworkID);
-            cmd.Parameters.AddWithValue("@userID", userid);
-
-            //add the rest
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            //Response.Redirect("Wishlist.aspx");
         }
 
         protected void btnAddCart_Click(object sender, EventArgs e)
         {
-            string artworkID = Request.QueryString["artworkID"] ?? "";
-            string userid = Session["UserID"].ToString();
+            if (Session["UserID"] != null)
+            {
+                string artworkID = Request.QueryString["artworkID"] ?? "";
+                string userid = Session["UserID"].ToString();
 
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            con = new SqlConnection(strCon);
-            con.Open();
+                SqlConnection con;
+                string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+                con = new SqlConnection(strCon);
+                con.Open();
 
-            string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
+                string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
 
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-            cmd.Parameters.AddWithValue("@userID", userid);
+                SqlCommand cmd = new SqlCommand(sqlInsert, con);
+                cmd.Parameters.AddWithValue("@userID", userid);
 
-            //insert            
+                //insert            
 
-            cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                cmd.Parameters.AddWithValue("@artworkID", artworkID);
 
-            //add the rest
+                //add the rest
 
-            cmd.ExecuteNonQuery();
-            con.Close();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                string msg = "Please login to add artwork to cart.";
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + msg + "');", true);
+            }
 
         }
     }

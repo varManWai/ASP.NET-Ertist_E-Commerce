@@ -5,27 +5,39 @@
     <siteMapNode url="RegisterPick.aspx" title="Register" description="Register Page" />
 
     <siteMapNode url="ArtworkDisplay.aspx" title="Artwork" description="Artwork Page" />
-    <siteMapNode url="Description.aspx" title="Artwork Details" description="Artwork Details Page" />
     <siteMapNode url="ArtistDisplay.aspx" title="Artist" description="Artist Page" />
+    
+    <!-- 
     <siteMapNode url="ClientArtistProfile.aspx" title="Artist Profile" description="Artist Profile Page" />
+    <siteMapNode url="Description.aspx" title="Artwork Details" description="Artwork Details Page" />
     <siteMapNode url="ClientArtistDetails.aspx" title="Artist Details" description="Artist Details Page" />
     <siteMapNode url="ClientArtistArtwork.aspx" title="Artist Artworks" description="Artist Artworks Page" />
+    -->
 
     <siteMapNode url="UserProfile.aspx" title="User Profile" description="User Profile Page" />
+
+    <!-- 
     <siteMapNode url="UserProfileEdit.aspx" title="Edit User Profile" description="Edit User Profile Page" />
     <siteMapNode url="AddAddress.aspx" title="Add Address" description="Add Address Page" />
     <siteMapNode url="UpdateAddress.aspx" title="Update Address" description="Update Address Page" />
     <siteMapNode url="DeleteAddress.aspx" title="Delete Address" description="Delete Address Page" />
+    -->
+    
     <siteMapNode url="Cart.aspx" title="Cart" description="Cart Page" />
+    <siteMapNode url="PurchaseHistory.aspx" title="Purchase History" description="Purchase History Page" />
+
+    <!--
     <siteMapNode url="MakeOrder.aspx" title="Make Order" description="Make Order Page" />
     <siteMapNode url="Payment.aspx" title="Payment" description="Payment Page" />
-    <siteMapNode url="PurchaseHistory.aspx" title="Purchase History" description="Purchase History Page" />
     <siteMapNode url="PurchaseDetails.aspx" title="Purchase Details" description="Purchase Details Page" />
+    -->
                  
     <siteMapNode url="javascript:;" title="Artist" description="Artist Page" roles ="Artist">
      <siteMapNode url ="~/Artist/GalleryDisplay.aspx" title="Gallery" description="Gallery" />
       <siteMapNode url ="~/Artist/AddGallery.aspx" title="Add Gallery" description="Add Gallery" />
       <siteMapNode url ="~/Artist/EditGallery.aspx" title="Edit Gallery" description="Edit Gallery"  />
+      
+      
       <siteMapNode url ="~/Artist/UpdateGallery.aspx" title="Update Gallery" description="Update Gallery" />
       <siteMapNode url ="~/Artist/DeleteGallery.aspx" title="Delete Gallery" description="Delete Gallery" />
 
