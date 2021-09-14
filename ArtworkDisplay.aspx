@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link href="css/ArtworkDisplay.css" rel="stylesheet" />
-    <link href="css/Banner.css" rel="stylesheet" />
     <link href="css/Filter.css" rel="stylesheet" />
     <%--     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>--%>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -89,12 +88,31 @@
 
         .show {display: block;}
 
+        .page_header {
+            background-color: #1b1b1b;
+            height: 150px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            width: 100%;
+       }
+
+        .page_header h1 {
+        color: #ffffff;
+        padding-bottom: 35px;
+        font-size: clamp(26px,4vw,36px);
+        }
+
     </style>
     <br />
-    <div class="page-banner">
-        <div class="content">
-            <h3 style="font-size: clamp(26px,3vw,36px); text-align: center; padding-top: 20px; padding-bottom: 30px;">Artwork </h3>
-        </div>
+    <div class="page_header">
+      <h1>Artwork </h1>
     </div>
     <section class="filters-primary">
         <div class="filter-row">
@@ -119,10 +137,32 @@
                     data-bs-toggle="dropdown" aria-expanded="false">By Alphabet</button>
                 <ul class="dropdown-menu" aria-labelledby="byAlphabetMenu">
                     <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=">#</a></li>
-                    <% for(int i=65; i<=90; i++)
-                    {%>
-                        <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=<%(( char )i).ToString (); %>"><%Response.Write(((char)i).ToString()); %></a></li>
-                    <%}%>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=A">A</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=B">B</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=C">C</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=D">D</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=E">E</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=F">F</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=G">G</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=H">H</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=I">I</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=J">J</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=K">K</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=L">L</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=M">M</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=N">N</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=O">O</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=P">P</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=Q">Q</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=R">R</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=S">S</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=T">T</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=U">U</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=V">V</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=W">W</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=X">X</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=Y">Y</a></li>
+                    <li><a class="dropdown-item" href="ArtworkDisplay.aspx?alphabet=Z">Z</a></li>
                 </ul>
             </div>
             <div class="search-form">
