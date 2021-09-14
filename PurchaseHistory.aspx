@@ -32,8 +32,7 @@
                                             <td width="15%" class="price" style="font-size: 13px;">                 
                                                     <asp:Label ID="lblID" runat="server"><%# Eval("orderID") %></asp:Label>
                                                     <%--<asp:HyperLink ID="hylID" runat="server"><%# Eval("orderID") %></asp:HyperLink>--%>                                                 
-                                            </td>
-                                         
+                                            </td>                               
                                             <td width="15%" class="price" style="font-size: 13px; font-weight: 400;">
                                                 <asp:Label ID="lblDate" runat="server"><%# Eval("date") %></asp:Label></td>
 

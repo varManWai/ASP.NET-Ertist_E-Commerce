@@ -33,6 +33,7 @@ namespace Ertist
                 //data binding
                 if (dr.Read())
                 {
+                    txtAddressID.Text = (string)dr["addressID"].ToString();
                     txtAddressName.Text = (string)dr["addressName"];
                     txtAddress.Text = (string)dr["address"];
                     txtState.Text = (string)dr["state"];
@@ -48,8 +49,10 @@ namespace Ertist
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+
             int addressID = Convert.ToInt32(txtAddressID.Text);
-            string sql = "DELETE from Address where addressID = @addressID";
+            //string sql = "DELETE from Address where addressID = @addressID";
+            string sql = "DELETE User_Address FROM Address INNER JOIN User_Address ON Address.addressID = User_Address.addressID where Address.addressID = @addressID";
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             SqlConnection con = new SqlConnection(strCon);
             SqlCommand cmd = new SqlCommand(sql, con);
