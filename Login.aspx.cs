@@ -63,15 +63,15 @@ namespace Ertist
                     con.Close();
                 }
 
-                Session["UserID"] = userID;
-                Session["roles"] = roles;
-
                 switch (userID)
                 {
                     case -1:
                         errorMsg.Text = "Login failed. Please check your user name and password and try again.";
                         break;
                     default:
+
+                        Session["UserID"] = userID;
+                        Session["roles"] = roles;
 
                         FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, username, DateTime.Now, DateTime.Now.AddMinutes(2880), isPersistent,roles, FormsAuthentication.FormsCookiePath);
 
