@@ -21,7 +21,7 @@ namespace Ertist
             //open connection
             con.Open();
 
-            string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price] FROM [ArtWork]";
+            string sqlSelect = "SELECT [artworkID],[name], [description], [picture], [price], [height], [width] FROM [ArtWork]";
 
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
