@@ -29,29 +29,56 @@ namespace Ertist
             }
 
             SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            con = new SqlConnection(strCon);
-            SqlCommand cmdRepeater = new SqlCommand("SELECT * FROM [dbo].[User]  where roleID=2 order by userID Asc" + pagequery, con);  //Select the records
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(cmdRepeater);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            con.Close();
-            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            {
-                Repeater1.DataSource = ds;
-                Repeater1.DataBind();  //Bind the repeater
-                cmdRepeater = new SqlCommand("select COUNT(*) from [dbo].[User]  where roleID=2", con);  //Count the total records
-                con.Open();
-                int count = (int)cmdRepeater.ExecuteScalar();
-                con.Close();
+            string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+            con = new SqlConnection (strCon);
+            SqlCommand cmdRepeater = new SqlCommand ("SELECT * FROM [dbo].[User]  where roleID=2 order by userID Asc" + pagequery, con);  //Select the records
+            SqlCommand cmdRepeaterCond = null;
 
-                var uri = new Uri(Request.Url.AbsoluteUri);
-                var query = HttpUtility.ParseQueryString(uri.Query); //Get the query strings from the url
-                query.Remove("pn"); //Remove the query string [pn] to avoid repetation
-                string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
-                paging2.InnerHtml = Set_Paging(page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
+            string alphabet = "";
+            int count = 0;
+            
+
+            if (!Page.IsPostBack) {
+                alphabet = Request.QueryString ["alphabet"] ?? "";
             }
+
+            if (alphabet == "") {
+                con.Open ();
+                SqlDataAdapter da = new SqlDataAdapter (cmdRepeater);
+                DataSet ds = new DataSet ();
+                da.Fill (ds);
+                con.Close ();
+                if (ds.Tables.Count > 0 && ds.Tables [0].Rows.Count > 0) {
+                    Repeater1.DataSource = ds;
+                    Repeater1.DataBind ();  //Bind the repeater
+                    cmdRepeater = new SqlCommand ("select COUNT(*) from [dbo].[User]  where roleID=2", con);  //Count the total records
+                    con.Open ();
+                    count = ( int )cmdRepeater.ExecuteScalar ();
+                    con.Close ();
+
+                    
+                }
+            }
+            else if (alphabet != "") {
+                cmdRepeaterCond = new SqlCommand ("SELECT * FROM [dbo].[User]  where roleID=2 and ([username] LIKE @alphabet + '%') order by userID Asc" + pagequery, con);  //Select the records
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
+                Repeater1.DataSource = cmdRepeaterCond.ExecuteReader ();
+                Repeater1.DataBind ();  //Bind the repeater
+                con.Close ();
+                cmdRepeaterCond = new SqlCommand ("select COUNT(*) from [dbo].[User]  where roleID=2 and ([username] LIKE @alphabet + '%')", con);
+                con.Open ();
+                cmdRepeaterCond.Parameters.AddWithValue ("@alphabet", alphabet);
+                count = ( int )cmdRepeaterCond.ExecuteScalar ();
+                con.Close ();
+            }
+
+            var uri = new Uri (Request.Url.AbsoluteUri);
+            var query = HttpUtility.ParseQueryString (uri.Query); //Get the query strings from the url
+            query.Remove ("pn"); //Remove the query string [pn] to avoid repetation
+            string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
+            paging2.InnerHtml = Set_Paging (page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
+
         }
 
         public string GetImage(object img)
@@ -140,8 +167,36 @@ namespace Ertist
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Exception caught: {0}", ex);
             }
             return (ReturnValue);
+        }
+
+        protected void btnSearchArtist_Click (object sender, ImageClickEventArgs e) {
+            if (searchByArtist.Text != "") {
+                SqlConnection con;
+                string strCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+                con = new SqlConnection (strCon);
+                SqlCommand cmdSearch = null;
+                int count;
+
+                string searchInput = searchByArtist.Text;
+
+                con.Open ();
+
+                string selectSearch = "SELECT * FROM [dbo].[User]  where roleID=2 and ([username] LIKE '%' + @search + '%') order by userID Asc";
+                cmdSearch = new SqlCommand (selectSearch, con);
+                cmdSearch.Parameters.AddWithValue ("@search", searchInput);
+                Repeater1.DataSource = cmdSearch.ExecuteReader ();
+                Repeater1.DataBind ();
+                con.Close ();
+                cmdSearch = new SqlCommand ("SELECT * FROM [dbo].[User]  where roleID=2 and ([username] LIKE '%' + @search + '%')", con);
+                con.Open ();
+                cmdSearch.Parameters.AddWithValue ("@search", searchInput);
+                count = ( int )cmdSearch.ExecuteScalar ();
+                con.Close ();
+
+            }
         }
     }
 }

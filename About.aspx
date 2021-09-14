@@ -4,6 +4,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
+    <hr />
    
     <style type="text/css">
     body{font-family: Arial;font-size: 10pt;}
@@ -16,15 +17,16 @@
     table th, table td { padding: 5px; border-color: #ccc; }
     </style>
 
-    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"
-        SiteMapProvider="SiteMap" />
-    <asp:Menu ID="Menu" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal"
-        >
-        <LevelMenuItemStyles>
-            <asp:MenuItemStyle CssClass="main_menu" />
-            <asp:MenuItemStyle CssClass="level_menu" />
-        </LevelMenuItemStyles>
-    </asp:Menu>
+    <div style="margin-left:10%;">
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"
+                SiteMapProvider="SiteMap" />
+            <asp:Menu ID="Menu" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal">
+                <LevelMenuItemStyles>
+                    <asp:MenuItemStyle CssClass="main_menu" />
+                    <asp:MenuItemStyle CssClass="level_menu" />
+                </LevelMenuItemStyles>
+            </asp:Menu>
+    </div>
+    
 
-    <p>hi</p>
 </asp:Content>

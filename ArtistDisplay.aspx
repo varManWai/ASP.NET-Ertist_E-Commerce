@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArtistDisplay.aspx.cs" Inherits="Ertist.ArtistDisplay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <link href="css/Filter.css" rel="stylesheet" />
     <style>
         .activeLink {
             color: black;
@@ -43,7 +43,49 @@
    <div class="page_header">
        <h1>Artist</h1>
    </div>
-
+    <section class="filters-primary">
+        <div class="filter-row">
+            <div class="filter-title"><p class="content">Filter</p></div>
+            
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="artistAlphabetMenu"
+                    data-bs-toggle="dropdown" aria-expanded="false">By Alphabet</button>
+                <ul class="dropdown-menu" aria-labelledby="artistAlphabetMenu">
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=">#</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=A">A</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=B">B</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=C">C</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=D">D</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=E">E</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=F">F</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=G">G</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=H">H</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=I">I</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=J">J</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=K">K</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=L">L</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=M">M</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=N">N</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=O">O</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=P">P</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=Q">Q</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=R">R</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=S">S</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=T">T</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=U">U</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=V">V</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=W">W</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=X">X</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=Y">Y</a></li>
+                    <li><a class="dropdown-item" href="ArtistDisplay.aspx?alphabet=Z">Z</a></li>
+                </ul>
+            </div>
+            <div class="search-form">
+                <asp:TextBox ID="searchByArtist" runat="server" CssClass="search_input" placeholder="Search By Name" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
+                <asp:ImageButton ID="btnSearchArtist" runat="server" ImageUrl="./Image/search.svg" OnClick="btnSearchArtist_Click"/>
+            </div>
+        </div>
+        </section>
     <!-- Page Content -->
     <div class="container" style="margin-top:5%">
 

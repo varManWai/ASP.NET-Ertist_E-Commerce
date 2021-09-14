@@ -18,7 +18,7 @@
 }
 
 /* Search */
-.search-form #btnSearch {
+.search-form #btnSearch, .search-form #btnSearchArtist {
     padding: clamp(0px, 1vw, 10px);
     border: none;
     border-radius: 100vh;
@@ -51,7 +51,7 @@
     z-index: 3;
 }
 
-    .dropdown #byCategoryMenu, .dropdown #byAlphabetMenu {
+    .dropdown #byCategoryMenu, .dropdown #byAlphabetMenu, .dropdown #artistAlphabetMenu {
         background-color: #fff;
         color: black;
         border: none;
@@ -69,7 +69,6 @@
         align-items: center;
         font-family: "Roboto", sans-serif;
         font-size: clamp(13px,1.5vw,18px);
-        
     }
 
     .dropdown .dropdown-menu {
