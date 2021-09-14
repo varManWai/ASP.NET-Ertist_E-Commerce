@@ -25,8 +25,9 @@ namespace Ertist
         protected void Button2_Click(object sender, EventArgs e)
         {
             string address = DropDownList1.SelectedItem.Value;
-
-            Response.Redirect(url: "Payment?Address='" + address + "'");
+            Session["payment"] = null;
+            Session["email"] = null;
+            Response.Redirect(url: "Payment?Address=" + address);
         }
     }
 }

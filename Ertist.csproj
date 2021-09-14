@@ -113,6 +113,7 @@
     <Content Include="ClientArtistDetails.aspx" />
     <Content Include="ClientArtistProfile.aspx" />
     <Content Include="css\ArtistArtwork.css" />
+    <Content Include="css\email.css" />
     <Content Include="css\GalleryCRUD.css" />
     <Content Include="css\Homepage.css" />
     <Content Include="css\PurchaseDetails.css" />
@@ -158,6 +159,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Email.html" />
     <Content Include="Image\1.jpg" />
     <Content Include="Image\2.jpg" />
     <Content Include="Image\3.jpg" />
