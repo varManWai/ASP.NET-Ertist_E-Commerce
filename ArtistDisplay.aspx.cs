@@ -167,6 +167,7 @@ namespace Ertist
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Exception caught: {0}", ex);
             }
             return (ReturnValue);
         }

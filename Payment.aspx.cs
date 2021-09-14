@@ -18,7 +18,7 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["artworkId"] = null;
         }
 
         public string GetImage(object img)
@@ -26,8 +26,21 @@ namespace Ertist
             return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
-        public void UpdateArtwork()
+        public void UpdateArtwork(int productId)
         {
+
+            string sql = @"UPDATE Artwork SET available = @available, stock = @stock FROM ARTWORK where artworkID = @artworkID";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@available", "Not Available");
+            cmd.Parameters.AddWithValue("@stock", 0);
+            cmd.Parameters.AddWithValue("@artworkID", productId);
+
+            con.Open();
+            cmd.ExecuteNonQuery(); 
+            con.Close();
 
         }
 

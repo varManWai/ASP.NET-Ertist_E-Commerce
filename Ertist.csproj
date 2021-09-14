@@ -182,6 +182,7 @@
     <Content Include="Image\user_picture.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MakeOrder.aspx" />
+    <Content Include="OrderSuccess.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="PurchaseDetails.aspx" />
     <Content Include="PurchaseHistory.aspx" />
@@ -397,6 +398,13 @@
     </Compile>
     <Compile Include="MakeOrder.aspx.designer.cs">
       <DependentUpon>MakeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.designer.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
