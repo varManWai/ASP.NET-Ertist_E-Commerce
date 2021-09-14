@@ -17,14 +17,14 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Width="500px" />
             <table class="auto-style5">            
                 <tr>
-
-                    <td class="auto-style3" style="height: 22px; width: 140px">Address Name</td>
-                    <td style="height: 22px">
-                        <asp:TextBox ID="txtAddressName" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvAddressName" runat="server" ErrorMessage="Address Name is required" Text="*" ControlToValidate="txtAddressName" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revAddressName" runat="server" ErrorMessage="Address Name should not be more than 50 words " Text="*" ForeColor="Red" ControlToValidate="txtAddressName" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
-                    </td>
-                </tr>
+              <asp:TextBox ID="txtAddressID" runat="server" Visible="False"></asp:TextBox>
+              <td class="auto-style3" style="height: 22px; width: 140px">Address Name</td>
+              <td style="height: 22px">
+                  <asp:TextBox ID="txtAddressName" runat="server"></asp:TextBox>
+                  <asp:RequiredFieldValidator ID="rfvAddressName" runat="server" ErrorMessage="Address Name is required" Text="*" ControlToValidate="txtAddressName" ForeColor="Red"></asp:RequiredFieldValidator>
+                  <asp:RegularExpressionValidator ID="revAddressName" runat="server" ErrorMessage="Address Name should not be more than 50 words " Text="*" ForeColor="Red" ControlToValidate="txtAddressName" ValidationExpression="^[0-9a-zA-Z ]{0,50}$"></asp:RegularExpressionValidator>
+              </td>
+          </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td>&nbsp;</td>
