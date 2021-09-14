@@ -48,7 +48,7 @@
                                     <div class="artwork_image">
                                         <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
-                                    <div class="artwork_details">
+                                    <div class="artwork_details" style="width:614px;">
                                         <span class="artwor_details_name">Name of the Artwork</span>
                                         <div class="artist">
                                             <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
