@@ -18,13 +18,13 @@ namespace Ertist
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            string userID = Session["UserID"].ToString();
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
             con.Open();
 
-            string sqlInsert = "INSERT INTO Address (addressName, address, state, city, postCode) VALUES(@addressName, @address, @state, @city, @postCode)";
+            string sqlInsert = "INSERT INTO Address (addressName, address, state, city, postCode, userID) VALUES(@addressName, @address, @state, @city, @postCode, @userID)";
 
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
 
@@ -39,32 +39,33 @@ namespace Ertist
             cmd.Parameters.AddWithValue("@state", state);
             cmd.Parameters.AddWithValue("@city", city);
             cmd.Parameters.AddWithValue("@postCode", postCode);
+            cmd.Parameters.AddWithValue("@userID", userID);
 
             cmd.ExecuteNonQuery();
 
             con.Close();
 
-            con.Open();
+            //con.Open();
 
-            string userID = Session["UserID"].ToString();
-            string addressID = Request.QueryString["addressID"] ?? "";
-            string sql = "INSERT INTO User_Address (userID, addressID) values(@userID, @addressID)";
-            SqlCommand cmdUser = new SqlCommand(sql, con);
-            //SqlDataReader dr = cmdUser.ExecuteReader();
+            //string userID = Session["UserID"].ToString();
+            //string addressID = Request.QueryString["addressID"] ?? "";
+            //string sql = "INSERT INTO User_Address (userID, addressID) values(@userID, @addressID)";
+            //SqlCommand cmdUser = new SqlCommand(sql, con);
+            ////SqlDataReader dr = cmdUser.ExecuteReader();
 
-            //if (dr.Read()) {
-            //    txtAddressID.Text = (string)dr["addressID"].ToString();
-            //}
+            ////if (dr.Read()) {
+            ////    txtAddressID.Text = (string)dr["addressID"].ToString();
+            ////}
 
-            //string addressID = txtAddressID.Text;
+            ////string addressID = txtAddressID.Text;
             
-            cmdUser.Parameters.AddWithValue("@addressID", addressID);
-            cmdUser.Parameters.AddWithValue("@userID", userID);
+            //cmdUser.Parameters.AddWithValue("@addressID", addressID);
+            //cmdUser.Parameters.AddWithValue("@userID", userID);
 
-            cmdUser.ExecuteNonQuery();
+            //cmdUser.ExecuteNonQuery();
 
-            //dr.Close();
-            con.Close();
+            ////dr.Close();
+            //con.Close();
             //con.Open();
             //string sqlID = "INSERT INTO [User Address](userID) VALUES (@userID)";
             //SqlCommand cmdID = new SqlCommand(sqlID, con);
