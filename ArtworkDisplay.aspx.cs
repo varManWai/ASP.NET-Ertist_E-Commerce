@@ -69,6 +69,42 @@ namespace Ertist
 
             //close connection
             //con.Close();
+
+            string strConn = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+            SqlConnection conn = new SqlConnection (strCon);
+            string selectCat = "SELECT [name] FROM [Category]";
+            SqlCommand cmd = new SqlCommand (selectCat, conn);
+
+            conn.Open ();
+
+            Repeater2.DataSource = cmd.ExecuteReader ();
+            Repeater2.DataBind ();
+
+            conn.Close ();
+
+            if (!Page.IsPostBack) {
+                string categoryID = Request.QueryString ["categoryID"] ?? "";
+                string selCatArt = "SELECT Artwork.*, INNER JOIN Category ON Artwork.categoryID = Category.categoryID WHERE categoryID = @categoryID";
+
+                //Connect the db
+                string sCon = ConfigurationManager.ConnectionStrings ["ertistDB"].ConnectionString;
+                SqlConnection connect = new SqlConnection (sCon);
+                SqlCommand cmdSql = new SqlCommand (selCatArt, connect);
+                cmdSql.Parameters.AddWithValue ("@categoryID", categoryID);
+
+
+                //open the connection
+                con.Open ();
+
+                //select use the execute reader
+                SqlDataReader dr3 = cmdSql.ExecuteReader ();
+                if (dr3.Read ()) {
+                    
+                }
+
+                dr3.Close ();
+                connect.Close ();
+            }
         }
 
         public string GetImage(object img)

@@ -98,14 +98,22 @@
     </div>
     <section class="filters-primary">
         <div class="filter-row">
-            <p class="filter-title">Filter</p>
+            <div class="filter-title"><p class="content">Filter</p></div>
+            
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="byCategoryMenu"
                     data-bs-toggle="dropdown" aria-expanded="false">By Category</button>
                 <ul class="dropdown-menu" aria-labelledby="byCategoryMenu">
                     <li><a class="dropdown-item" href="#">All</a></li>
+                    <asp:Repeater ID="Repeater2" runat="server">
+                         <ItemTemplate>
+                            <li><a class="dropdown-item" href="ArtworkDisplay.aspx?categoryID=<%# DataBinder.Eval(Container.DataItem, "categoryID") %>"><%# Eval("name") %></a></li>
+                            <%--<asp:Label ID="lblCatName" runat="server"><%# Eval("name") %></asp:Label>--%>
+                        </ItemTemplate>        
+                    </asp:Repeater>
                 </ul>
             </div>
+            
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="byAlphabetMenu"
                     data-bs-toggle="dropdown" aria-expanded="false">By Alphabet</button>
@@ -165,8 +173,8 @@
                                     <asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label>
                                 </h3>
                                 <%-- <p style="color: gray; font-size:14px;">
-                        <i><asp:Label ID="lblType" runat="server" Text='<%# Eval("description") %>'></asp:Label></i>
-                    </p><br />--%>
+                                    <i><asp:Label ID="lblType" runat="server" Text='<%# Eval("description") %>'></asp:Label></i>
+                                </p><br />--%>
                                 <div class="price">
                                     <asp:Label ID="lblPrice" runat="server">$ <%# Eval("price") %></asp:Label>
                                 </div>
@@ -181,27 +189,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div id="paging" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server"></div>
+        <div id="paging" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server">
+        </div>
     </div>
-    <script>
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        function filterFunction() {
-          var input, filter, ul, li, a, i;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          div = document.getElementById("myDropdown");
-          a = div.getElementsByTagName("a");
-          for (i = 0; i < a.length; i++) {
-            txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              a[i].style.display = "";
-            } else {
-              a[i].style.display = "none";
-            }
-          }
-        }
-    </script>
-</asp:Content>
+    </asp:Content>

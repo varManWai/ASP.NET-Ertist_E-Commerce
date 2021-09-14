@@ -7,8 +7,8 @@
     text-align: center;
     border-radius: 5px;
     overflow: hidden;
-    z-index: 1;
-    transition: all .3s ease 0s
+    transition: all .3s ease 0s;
+    z-index:0;
 }
 
     .product-grid4:hover {
@@ -40,23 +40,23 @@
         transition: all .3s ease 0s
     }
 
-        .product-grid4 .social li {
-            display: inline-block;
-            opacity: 0;
-            transition: all .7s
-        }
+    .product-grid4 .social li {
+        display: inline-block;
+        opacity: 0;
+        transition: all .7s
+    }
 
-            .product-grid4 .social li:nth-child(1) {
-                transition-delay: .15s
-            }
+    .product-grid4 .social li:nth-child(1) {
+        transition-delay: .15s
+    }
 
-            .product-grid4 .social li:nth-child(2) {
-                transition-delay: .3s
-            }
+    .product-grid4 .social li:nth-child(2) {
+        transition-delay: .3s
+    }
 
-            .product-grid4 .social li:nth-child(3) {
-                transition-delay: .45s
-            }
+    .product-grid4 .social li:nth-child(3) {
+        transition-delay: .45s
+    }
 
     .product-grid4:hover .social li {
         opacity: 1
