@@ -126,7 +126,6 @@
                     <asp:Repeater ID="Repeater2" runat="server">
                          <ItemTemplate>
                             <li><a class="dropdown-item" href="ArtworkDisplay.aspx?categoryID=<%# DataBinder.Eval(Container.DataItem, "categoryID") %>"><%# Eval("name") %></a></li>
-                            <%--<asp:Label ID="lblCatName" runat="server"><%# Eval("name") %></asp:Label>--%>
                         </ItemTemplate>        
                     </asp:Repeater>
                 </ul>
