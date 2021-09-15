@@ -14,6 +14,7 @@ namespace Ertist
 {
     public partial class SiteMaster : MasterPage
     {
+        
         SqlCommand cmd;
         SqlDataAdapter da;
         DataSet ds;
@@ -21,9 +22,9 @@ namespace Ertist
         SqlConnection cnn;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
-            
-            
+
         }
 
 

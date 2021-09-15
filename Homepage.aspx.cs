@@ -31,23 +31,7 @@ namespace Ertist
 
             DataSet ds2 = GetData_2();
 
-           
-
-
-
-            /* DataSet ds3 = GetData_3("19");*/
-
-
-            string userId = "19";
-            //Create a second DataAdapter for the Titles table.
-            
-           /* SqlDataAdapter cmd2 = new SqlDataAdapter("SELECT TOP (3) [User].UserID, Gallery.galleryID, Gallery.userID AS Expr1, Artwork.artworkID, Artwork.picture FROM [User] INNER JOIN Gallery ON [User].UserID = Gallery.userID INNER JOIN Artwork ON Gallery.galleryID = Artwork.galleryID WHERE ([User].UserID = 19 )", cnn);
-            cmd2.Fill(ds2,"Gallery");
-
-            //Create the relation between the Authors and Titles tables.
-            ds2.Relations.Add("myrelation",
-            ds2.Tables["User"].Columns["UserID"],
-            ds2.Tables["Gallery"].Columns["UserID"]);*/
+          
 
         }
 

@@ -21,7 +21,10 @@ namespace Ertist
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadingDataToRepeater();
+            if (!Page.IsPostBack)
+            {
+                LoadingDataToRepeater();
+            }
         }
 
         private void LoadingDataToRepeater()
@@ -101,15 +104,15 @@ namespace Ertist
         {
             Button btn = sender as Button;
             string cartID = btn.Attributes["CustomParameter"].ToString();
-            string sql = "DELETE from Cart where cartID = @cartID";
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@cartID", cartID);
+            string sql2 = "DELETE from Cart where cartID = @cartID";
+            string strCon2 = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con2 = new SqlConnection(strCon2);
+            SqlCommand cmd2 = new SqlCommand(sql2, con2);
+            cmd2.Parameters.AddWithValue("@cartID", cartID);
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+            con2.Open();
+            cmd2.ExecuteNonQuery();
+            con2.Close();
             Response.Redirect("Cart.aspx");
         }
     }
