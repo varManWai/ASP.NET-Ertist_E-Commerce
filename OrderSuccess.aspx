@@ -14,14 +14,30 @@
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
             <%# Session["artworkId"] = Convert.ToInt32(Eval("ArtworkID2")) %>
-<%--           <%#  Ertist.OrderSuccess.UpdateArtwork(Convert.ToInt32(Session["artworkId"])); %>--%>
+            <% UpdateArtwork(Convert.ToInt32(Session["artworkId"])); %>
+            
         </ItemTemplate>
     </asp:Repeater>
-
-    <script>
-        
-    </script>
-
+    
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT TOP (1) orderID, userID FROM [Order] WHERE (userID = @userID)">
+        <SelectParameters>
+            <asp:SessionParameter Name="UserID" SessionField="UserID" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
+        <ItemTemplate>
+            <%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
+        </ItemTemplate>
+    </asp:Repeater>
+    
+    
+     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource1">
+        <ItemTemplate>
+            <%# Session["artworkId"] = Convert.ToInt32(Eval("ArtworkID2")) %>
+            <% insertOrderArtwork(Convert.ToInt32(Session["artworkId"])); %>
+            <% clearCart(Convert.ToInt32(Session["artworkId"])); %>
+        </ItemTemplate>
+    </asp:Repeater>
 
 
 </asp:Content>

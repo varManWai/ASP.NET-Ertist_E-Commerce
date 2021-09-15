@@ -27,6 +27,9 @@
                         </asp:SqlDataSource>
                         <asp:Repeater ID="Repeater6" runat="server" DataSourceID="SqlDataSource6">
                             <ItemTemplate>
+                                <div style="display:none">
+                                    <%# Session["addressID"] = Convert.ToInt32(Eval("addressID")) %>
+                                </div>
                                 <div class="address_name">
                                     <asp:Label ID="lblAddressName" runat="server" Text=""> <%# Eval("addressName") %></asp:Label>
                                 </div>
@@ -140,7 +143,7 @@
         const total = <%= Session["payment"].ToString() %>
 
             console.log(total);
-        console.log(total);
+            console.log(total);
 
 
         // Render the PayPal button into #paypal-button-container
@@ -179,14 +182,16 @@
 
                     const element = document.getElementById('paypal-button-container');
 
-                  
-                    <% sendEmail();%>
+                    console.log("laimanwai");
+                    
+                    
 
 
                     /*element.innerHTML = '';
                     element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
                     //Or go to another URL:  
-                    actions.redirect('./OrderSuccess.aspx');
+                    <%--<% Response.Redirect(url: "OrderSuccess"); %>--%>
+                    window.location.replace("OrderSuccess");
                 });
             }
 

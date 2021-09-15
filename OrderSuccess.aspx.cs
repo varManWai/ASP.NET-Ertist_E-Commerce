@@ -18,13 +18,14 @@ namespace Ertist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             if (!IsPostBack)
             {
+                insertOrder();
                 sendEmail();
             }
         }
-        public static void UpdateArtwork(int productId)
+        public void UpdateArtwork(int productId)
         {
 
             string sql = @"UPDATE Artwork SET available = @available, stock = @stock FROM ARTWORK where artworkID = @artworkID";
@@ -40,6 +41,62 @@ namespace Ertist
             cmd.ExecuteNonQuery();
             con.Close();
 
+
+
+        }
+
+        public void insertOrder()
+        {
+
+
+            string sql = @"INSERT INTO[Order] (status, totalPrice,date , shippingFee, addressID, userID) VALUES(N'Preparing', @totalPrice,GetDate(), 4.99, @addressId, @userId)";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@totalPrice", (Convert.ToDouble(Session["payment"]) + 4.99));
+            cmd.Parameters.AddWithValue("@addressId", Session["addressID"] );
+            cmd.Parameters.AddWithValue("@userId", Session["UserID"]);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        
+
+
+        public void clearCart(int artworkId)
+        {
+            string sql = @"DELETE FROM Cart Where artworkID = @artworkID AND userID = @userID";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@artworkID", Session["artworkId"]);
+            cmd.Parameters.AddWithValue("@userID", Session["userID"]);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
+        public void insertOrderArtwork(int artworkID)
+        {
+            string sql = @"INSERT INTO Order_Artwork(orderID, artworkID) VALUES (@orderID, @artworkID)";
+            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@orderID", Session["orderId"]);
+            cmd.Parameters.AddWithValue("@artworkID", artworkID);
+
+            
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
         public void sendEmail()
@@ -64,7 +121,7 @@ namespace Ertist
             MailText = MailText.Replace("[orderID]", Convert.ToString(Session["email"]));
             MailText = MailText.Replace("[orderDate]", Convert.ToString(Session["email"]));
 
-            MailText = MailText.Replace("[Total]", "$" + Convert.ToString(Session["payment"]));
+            MailText = MailText.Replace("[Total]", "$" + (Convert.ToDouble(Session["payment"]) + 4.99));
 
 
 
