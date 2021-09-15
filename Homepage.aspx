@@ -99,7 +99,7 @@
                                 <a href="ClientArtistProfile?artistID=<%# Eval("userId") %>">
                                     <div class="artist_details">
                                         <asp:HiddenField ID="hdfUserId" runat="server" Value='<%# Eval("userId") %>' />
-                                        <img src="<%# GetImage(Eval("picture")) %>" alt="" class="artist_img" />
+                                        <img src="<%# GetImage(Eval("picture")) %>" alt="" class="artist_img" style="height:100px;width:100px;object-fit:cover"/>
                                         <div class="artist_name"><%# Eval("username") %></div>
                                         <p class="artist_bio">
                                             <%# Eval("bio") %>
