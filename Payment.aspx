@@ -17,7 +17,7 @@
                         <span>Address</span>
                     </div>
                     <div class="address_container">
-                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT [User].UserID, User_Address.userID AS Expr1, User_Address.addressID, Address.addressName, Address.address, Address.addressID AS Expr2 FROM [User] INNER JOIN User_Address ON [User].UserID = User_Address.userID INNER JOIN Address ON User_Address.addressID = Address.addressID WHERE ([User].UserID = @UserID) AND (Address.addressName = @addressName)">
+                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT addressID, addressName, userID, address FROM Address WHERE (userID = @UserID) AND (addressName = @addressName)">
                             <SelectParameters>
                                 <asp:SessionParameter Name="UserID" SessionField="UserID" />
 
@@ -70,8 +70,7 @@
                                             <%# Eval("description") %>
                                         </div>
                                         <div class="price_remove">
-                                            <span class="price">$<%# Eval("price") %></span>
-                                        </div>
+                                            <span class="price">$<%# Eval("price") %></span></div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -98,8 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="summary_each_price">
-                                        $<%# Eval("price") %>
-                                    </div>
+                                        $<%# Eval("price") %></div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -115,8 +113,7 @@
                         <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
                                 <div>
-                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span>
-                                </div>
+                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span></div>
                             </ItemTemplate>
                         </asp:Repeater>
 
