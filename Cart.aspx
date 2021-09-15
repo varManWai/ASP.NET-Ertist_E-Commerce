@@ -39,17 +39,22 @@
                     <span>Artworks in Cart</span>
                 </div>
 
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="rpt2_ItemDataBound">
                     <ItemTemplate>
                         <div class="artwork_container">
+                             <asp:HiddenField ID="hdfUserId" runat="server" Value='<%# Eval("artworkID") %>' />
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="">
                             </div>
                             <div class="artwork_details" style="width: 614px; height: 302px;">
                                 <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
-                                    <img src="<%# GetImage(Eval("Expr1")) %>" alt="">
-                                    <span><%# Eval("username") %></span>
+                                    <asp:Repeater ID="Repeater3" runat="server">
+                                        <ItemTemplate>
+                                            <img src="<%# GetImage(Eval("picture")) %>" alt="">
+                                            <span><%# Eval("username") %></span>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                                 <div class="artwork_description">
                                     <%# Eval("description") %>
@@ -62,7 +67,6 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-
             </div>
 
 
@@ -71,8 +75,12 @@
                 <h2>Summary</h2>
                 <div class="artwork_each_price">
 
-
-                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource1">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, [User].picture AS Expr1, [User].username, Cart.cartID FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)" >
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    <asp:Repeater ID="Repeater4" runat="server" DataSourceID="SqlDataSource1">
                         <ItemTemplate>
                             <div class="each_artwork">
                                 <div class="artwork_quantity">
@@ -86,11 +94,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, Artwork.date, Artwork.stock, Artwork.available, Artwork.categoryID, Artwork.galleryID, [User].picture AS Expr1, [User].username, Cart.cartID FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
-                        <SelectParameters>
-                            <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
-                        </SelectParameters>
-                    </asp:SqlDataSource>
+
                 </div>
 
                 <div class="total_price" style="display: flex; flex-direction: column; border-top: 2px grey solid; margin-top: 20px">
@@ -105,8 +109,8 @@
                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
 
-                           
-                            
+
+
                             <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
                                 Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span></div>
                             <div style="display: flex; flex-direction: row; justify-content: space-between; font-weight: 700; border-top: 2px grey solid; margin-top: 10px; padding: 10px 0px">

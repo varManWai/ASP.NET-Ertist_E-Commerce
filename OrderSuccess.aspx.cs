@@ -23,6 +23,8 @@ namespace Ertist
 
             if (!IsPostBack)
             {
+                
+
                 insertOrder();
                 
             }

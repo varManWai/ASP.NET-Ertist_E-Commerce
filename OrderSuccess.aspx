@@ -17,9 +17,10 @@
         <ItemTemplate>
             <div style="display:none">
                 <asp:Label ID="Label1" runat="server" Text="Label"><%# Eval("artworkID") %></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text='<%# UpdateArtwork(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
             </div>
 
-           <asp:Label ID="Label3" runat="server" Text='<%# UpdateArtwork(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
+           
 
            
         </ItemTemplate>
