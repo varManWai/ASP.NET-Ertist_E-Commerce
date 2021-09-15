@@ -32,6 +32,7 @@
     <!--
     <siteMapNode url="MakeOrder.aspx" title="Make Order" description="Make Order Page" />
     <siteMapNode url="Payment.aspx" title="Payment" description="Payment Page" />
+    <siteMapNode url="OrderSuccess.aspx" title="Order Success" description="Order Success Page" />
     <siteMapNode url="PurchaseDetails.aspx" title="Purchase Details" description="Purchase Details Page" />
     -->
 
