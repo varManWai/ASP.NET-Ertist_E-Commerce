@@ -53,6 +53,9 @@ namespace Ertist
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+            lblFileUpload.Text = " ";
+            lblUpdated.Text = " ";
+
             SqlConnection con;
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             con = new SqlConnection(strCon);
@@ -80,12 +83,14 @@ namespace Ertist
 
                 con.Open();
                 cmd.ExecuteNonQuery(); //use in update, insert, delete
+                Boolean chgImage = true;
 
             if (FileUpload1.HasFile)
             {
-                string[] validFileTypes = { "gif", "png", "jpg", "jpeg"};
+                string[] validFileTypes = { "gif", "png", "jpg", "jpeg", "GIF","PNG","JPG","JPEG"};
                 string ext = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName);
                 bool isValidFile = false;
+                
 
                     for (int i = 0; i < validFileTypes.Length; i++){
                         if (ext == "." + validFileTypes[i]){
@@ -95,26 +100,63 @@ namespace Ertist
                     }
 
                     if (!isValidFile){
-                        lblFileUpload.ForeColor = System.Drawing.Color.Red;
                         lblFileUpload.Text = "Invalid File. Please upload a File with extension " +
                         string.Join(",", validFileTypes);
+                        chgImage = false;
+                    }
+                    else{
 
-                    }else{
+                        //Is the file too big to upload?
+                        int fileSize = FileUpload1.PostedFile.ContentLength;
+                        if (fileSize > 2100000)
+                        {
+                            lblFileUpload.Text = " ";
+                            chgImage = false;
+                        }
+                        else
+                        {
+                            byte[] imgbyte = FileUpload1.FileBytes; 
+                            try
+                            {
+                                string sql2 = @"update [User] set picture = @picture where userID = @userID";
+                                SqlCommand cmd2 = new SqlCommand(sql2, con);
+                                cmd2.Parameters.AddWithValue("@userID", userID);
+                                cmd2.Parameters.AddWithValue("@picture", imgbyte);
+                                cmd2.ExecuteNonQuery();
+                            }
+                            catch(SqlException ex)
+                            {
+                                lblFileUpload.Text = ex.Message;
+                                chgImage = false;
+                            }
+                            
+                        }
 
-                        byte[] imgbyte = FileUpload1.FileBytes;
-
-                        string sql2 = @"update [User] set picture = @picture where userID = @userID";
-                        SqlCommand cmd2 = new SqlCommand(sql2, con);
-                        cmd2.Parameters.AddWithValue("@userID", userID);
-
-                        cmd2.Parameters.AddWithValue("@picture", imgbyte);
-                        cmd2.ExecuteNonQuery();
-                }
+                    }
 
             }
             
             con.Close();
-            Response.Redirect("UserProfile.aspx");
+            
+            if (chgImage)
+            {
+                Response.Redirect("UserProfile.aspx");
+            }
+            else
+            {
+                lblUpdated.Text = "Image is not updated.";
+            }
+            
+        }
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (FileUpload1.PostedFile.ContentLength > 2100000)
+            {
+                args.IsValid = false;
+
+            }else{
+                args.IsValid = true;
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

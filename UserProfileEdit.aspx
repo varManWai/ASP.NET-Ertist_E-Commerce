@@ -29,12 +29,12 @@
                     <td class="auto-style3" style="width: 140px">Profile Picture</td>
                     <td class="auto-style3"><asp:Image ID="user_picture" class="img-raised rounded-circle img-fluid" runat="server" /></td>
                     <td class="auto-style3"><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Only png, jpg, jpeg and gif file is allowed!" ValidationExpression ="^.+(.jpg|.JPG|.png|.PNG|.jpeg|.JPEG|.gif|.GIF)$" ControlToValidate="FileUpload1" Display="Dynamic" ForeColor="Red"> </asp:RegularExpressionValidator>
-                    <asp:Label ID="lblFileUpload" runat="server"></asp:Label></td>
-                </tr>
+                        <asp:Label ID="lblFileUpload" runat="server" ForeColor="Red"></asp:Label></td>
+                    </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3"><asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="FileUpload1" OnServerValidate="CustomValidator1_ServerValidate" Display="Dynamic" ForeColor="Red" ErrorMessage="File size should not be greater than 2MB.">File size should not be greater than 2MB.</asp:CustomValidator></td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="width: 140px"></td>
@@ -135,7 +135,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style1"></td>
-                    <td class="auto-style5"></td>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblUpdated" runat="server" ForeColor="red"></asp:Label> </td>
                 </tr>
                
                 <tr>
