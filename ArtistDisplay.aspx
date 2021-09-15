@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArtistDisplay.aspx.cs" Inherits="Ertist.ArtistDisplay" %>
+
+<%@ Register Src="~/Paging.ascx" TagPrefix="uc1" TagName="Paging" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="css/Filter.css" rel="stylesheet" />
     <style>
@@ -102,7 +105,7 @@
                             <a href="ClientArtistProfile.aspx?artistID=<%# DataBinder.Eval(Container.DataItem, "UserID") %>">
                                 <img src="<%# GetImage(Eval("picture")) %>" class="card-img-top" alt="artist" style="height:236px; width:315px; object-fit:cover;">
                             </a>
-                            &nbsp;&nbsp;&nbsp;<div class="card-body text-center">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="card-body text-center">
                                 <h5 class="card-title mb-0"><%# Eval("username") %></h5>
                                 <div class="card-text text-black-50"><%# Eval("bio") %></div>
                             </div>

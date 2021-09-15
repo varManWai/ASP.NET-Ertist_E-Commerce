@@ -77,13 +77,7 @@ namespace Ertist
             var query = HttpUtility.ParseQueryString (uri.Query); //Get the query strings from the url
             query.Remove ("pn"); //Remove the query string [pn] to avoid repetation
             string link = HttpContext.Current.Request.Url.AbsolutePath + "?" + query;
-            paging2.InnerHtml = Set_Paging (page, pagesize, count, "activeLink", link, "disableLink");  //Fill the pagination in the div tag
-
-        }
-
-        public string GetImage(object img)
-        {
-            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
+            paging2.InnerHtml = Set_Paging(page, pagesize, count, "activeLink", link, "disableLink");
         }
 
         public string Set_Paging(Int32 PageNumber, int PageSize, Int64 TotalRecords, string ClassName, string PageUrl, string DisableClassName)
@@ -170,6 +164,11 @@ namespace Ertist
                 Console.WriteLine("Exception caught: {0}", ex);
             }
             return (ReturnValue);
+        }
+
+        public string GetImage(object img)
+        {
+            return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
         protected void btnSearchArtist_Click (object sender, ImageClickEventArgs e) {

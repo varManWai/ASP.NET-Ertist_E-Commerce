@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ertist {
+namespace Ertist
+{
 
 
-    public partial class ArtistDisplay {
+    public partial class ArtistDisplay
+    {
 
         /// <summary>
         /// searchByArtist control.
