@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ertist {
+namespace Ertist
+{
 
 
-    public partial class SiteMaster {
+    public partial class SiteMaster
+    {
 
         /// <summary>
         /// TxtSearch1 control.

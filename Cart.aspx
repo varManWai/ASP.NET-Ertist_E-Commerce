@@ -16,12 +16,12 @@
             <h1>Shopping Cart</h1>
         </div>
 
-         <% if (Session["UserID"] == null)
+        <% if (Session["UserID"] == null)
             {
 
         %>
         <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="font-size: 50px;padding-top:50px">Please login first</div>
+            <div style="font-size: 50px; padding-top: 50px">Please login first</div>
         </div>
 
 
@@ -32,6 +32,11 @@
             else
             {
         %>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server"></asp:SqlDataSource>
+        <asp:Repeater ID="Repeater4" DataSourceID="SqlDataSource3" runat="server"> <ItemTemplate> 
+
+
+
 
         <div class="cart_all">
             <div class="artwork_container_all">
@@ -41,6 +46,9 @@
 
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
+                        <% if (Eval("name") != null)
+                            {
+                        %>
                         <div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="">
@@ -60,6 +68,15 @@
                                 </div>
                             </div>
                         </div>
+                        <% }
+                            else
+                            { %>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <div style="font-size: 50px; padding-top: 50px">Please login first</div>
+                        </div>
+
+                        <%} %>
                     </ItemTemplate>
                 </asp:Repeater>
 
@@ -94,38 +111,37 @@
                     </asp:SqlDataSource>
                 </div>
 
-                <div class="total_price" style="display:flex;flex-direction:column;border-top:2px grey solid;margin-top:20px">
-                    <div style="display:flex;flex-direction:row;justify-content:space-between;font-size:18px;">
-                        Shipping Fee: <span style="padding-right: 10px;font-size:18px;color:black;font-weight:500; text-align:right;" >$4.99</span>
+                <div class="total_price" style="display: flex; flex-direction: column; border-top: 2px grey solid; margin-top: 20px">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                        Shipping Fee: <span style="padding-right: 10px; font-size: 18px; color: black; font-weight: 500; text-align: right;">$4.99</span>
                     </div>
-
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
-                            <div style="display:flex;flex-direction:row;justify-content:space-between;font-size:18px;">
-                                Subtotal: <span style="padding-right: 10px;color:black;font-weight:500;font-size:18px;">$<%# Eval("Expr1") %></span>
-                            </div>
-                            <div style="display:flex;flex-direction:row;justify-content:space-between;font-weight:700;border-top:2px grey solid;margin-top:10px;padding:10px 0px">
-                                Total: <span style="padding-right: 10px;color:black;font-weight:700;">$<%# Eval("Expr1")  %></span>
 
+
+
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                                Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span>
                             </div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; font-weight: 700; border-top: 2px grey solid; margin-top: 10px; padding: 10px 0px">
+                                Total: <span style="padding-right: 10px; color: black; font-weight: 700;">$<%# getTotal(Eval("Expr1"))  %></span>
+                            </div>
+
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
-                    <SelectParameters>
-                        <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
-                    </SelectParameters>
-                </asp:SqlDataSource>
+
                 <div class="checkout_button_container">
                     <a href="./MakeOrder.aspx" class="checkout_button" style="text-decoration: none; display: flex; justify-content: center; align-items: center;">Checkout</a>
                 </div>
             </aside>
     </section>
-
+            </ItemTemplate></asp:Repeater>
     <%}
     %>
-
-
-
-
 </asp:Content>
