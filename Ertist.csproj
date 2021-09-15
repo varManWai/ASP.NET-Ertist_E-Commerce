@@ -190,6 +190,7 @@
     <Content Include="RegisterPick.aspx" />
     <Content Include="Artist\UpdateArtwork.aspx" />
     <Content Include="Artist\UpdateGallery.aspx" />
+    <Content Include="SearchAll.aspx" />
     <Content Include="UpdateAddress.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserProfileEdit.aspx" />
@@ -441,6 +442,13 @@
     </Compile>
     <Compile Include="RegisterPick.aspx.designer.cs">
       <DependentUpon>RegisterPick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAll.aspx.cs">
+      <DependentUpon>SearchAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAll.aspx.designer.cs">
+      <DependentUpon>SearchAll.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

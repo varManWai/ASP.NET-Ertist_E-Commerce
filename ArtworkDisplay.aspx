@@ -111,9 +111,7 @@
 
     </style>
     <br />
-    <div class="page_header">
-      <h1>Artwork </h1>
-    </div>
+    
     <section class="filters-primary">
         <div class="filter-row">
             <div class="filter-title"><p class="content">Filter</p></div>
@@ -170,6 +168,9 @@
             </div>
         </div>
         </section>
+    <div class="page_header">
+      <h1>Artwork</h1>
+    </div>
     <div style="width: 100%; max-width: 1366px; margin: auto; padding: 70px;">
         <div class="row">
             <asp:Repeater ID="Repeater1" runat="server">

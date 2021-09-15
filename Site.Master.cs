@@ -40,5 +40,10 @@ namespace Ertist
             Session.RemoveAll();
         }
 
+        protected void BtnSearch1_Click (object sender, ImageClickEventArgs e) {
+            if (TxtSearch1.Text != "") {
+                Response.Redirect (string.Format ("~/SearchAll.aspx?input={0}", TxtSearch1.Text));
+            }
+        }
     }
 }
