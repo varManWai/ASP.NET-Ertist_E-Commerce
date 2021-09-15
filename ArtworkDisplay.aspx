@@ -109,6 +109,11 @@
         font-size: clamp(26px,4vw,36px);
         }
 
+        .no-results{
+            text-align:center;
+            color:black
+        }
+
     </style>
     <br />
     
@@ -206,6 +211,8 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+
+            <h3 class="no-results"><asp:Label ID="lblNotFound" runat="server"></asp:Label></h3>
         </div>
         <div id="paging" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server">
         </div>

@@ -15,6 +15,9 @@
             color:grey;
             font-size:large
         }
+        .no-results{
+            text-align:center;
+        }
     </style>
     <div class="container">
     <h3 class="search-title">Artists</h3>
@@ -30,6 +33,7 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+        <h3 class="no-results"><asp:Label ID="lblArtistNotFound" runat="server"></asp:Label></h3>
     </div>
 
     <hr />
@@ -46,6 +50,7 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+        <h3 class="no-results"><asp:Label ID="lblArtworkNotFound" runat="server"></asp:Label></h3>
     </div>
         </div>
 
