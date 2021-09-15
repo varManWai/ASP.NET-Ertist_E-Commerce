@@ -13,7 +13,22 @@
             <h1>Wishlist</h1>
         </div>
 
+         <% if (Session["UserID"] == null)
+            {
 
+        %>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="font-size: 50px;padding-top:50px">Please login first</div>
+        </div>
+
+
+
+
+        <% 
+            }
+            else
+            {
+        %>
 
         <div class="cart_all">
             <div class="artwork_container_all">
@@ -56,6 +71,7 @@
 
         <%--<asp:Button ID="Button1" runat="server" Text="Button" Width="156px" />--%>
     </section>
-
+     <%}
+    %>
 
 </asp:Content>

@@ -118,7 +118,7 @@ namespace Ertist
             //Repalce [newusername] = signup user name   
             MailText = MailText.Replace("[Username]", Convert.ToString(Session["username"]));
 
-            MailText = MailText.Replace("[orderID]", Convert.ToString(Session["orderID"]));
+            MailText = MailText.Replace("[orderID]", Convert.ToString(Session["orderId"]));
             MailText = MailText.Replace("[orderDate]", Convert.ToString(Session["orderDate"]));
 
             MailText = MailText.Replace("[Total]", "$" + (Convert.ToDouble(Session["payment"]) + 4.99));

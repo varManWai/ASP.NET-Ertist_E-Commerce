@@ -21,7 +21,7 @@
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT TOP (1) * FROM [Order] WHERE (userID = @userID) ORDER BY orderID DESC">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT TOP (1) orderID, date FROM [Order] WHERE (userID = @userID) ORDER BY orderID DESC">
         <SelectParameters>
             <asp:SessionParameter Name="UserID" SessionField="UserID" />
         </SelectParameters>
