@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderSuccess.aspx.cs" Inherits="Ertist.OrderSuccess" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="display:flex;justify-content:center;align-items:center">
-        <p style="height: 244px">Ordered Succesfully. </p>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column">
+        <div style="font-size: 50px; padding-top: 50px">Ordered Succesfully. </div>
         <a href="./Homepage.aspx">Back to Home</a>
     </div>
 
@@ -15,8 +15,8 @@
     </asp:SqlDataSource>
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
+            <div style="display: none"><%# Session["artworkId"] = Convert.ToInt32(Eval("artworkID")) %></div>
 
-            <%# Session["artworkId"] = Convert.ToInt32(Eval("ArtworkID2")) %>
             <% UpdateArtwork(Convert.ToInt32(Session["artworkId"])); %>
         </ItemTemplate>
     </asp:Repeater>
@@ -28,17 +28,21 @@
     </asp:SqlDataSource>
     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
         <ItemTemplate>
-            <%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
-            <%# Session["orderDate"] = (Eval("date"))  %>
+            <div style="display: none"><%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
+
+            <%# Session["orderDate"] = (Eval("date"))  %></div>
         </ItemTemplate>
     </asp:Repeater>
 
 
     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
-            <%# Session["artworkId"] = Convert.ToInt32(Eval("ArtworkID2")) %>
-            <% insertOrderArtwork(Convert.ToInt32(Session["artworkId"])); %>
-            <%-- <% clearCart(Convert.ToInt32(Session["artworkId"])); %>--%>
+            <div style="display: none">
+                <%# Session["artworkId2"] = Convert.ToInt32(Eval("artworkID")) %>
+            </div>
+
+            <% insertOrderArtwork(Convert.ToInt32(Session["artworkId2"])); %>
+            <% clearCart(Convert.ToInt32(Session["artworkId2"])); %>
         </ItemTemplate>
     </asp:Repeater>
 
