@@ -3,6 +3,7 @@
   <siteMapNode url="Homepage.aspx" title="Home"  description="" roles ="*">
     <siteMapNode url="Login.aspx" title="Login" description="Login page"/>
     <siteMapNode url="RegisterPick.aspx" title="Register" description="Register Page" />
+    <siteMapNode url="SearchAll.aspx" title="SearchAll" description="SearchAll Page" />
 
     <siteMapNode url="ArtworkDisplay.aspx" title="Artwork" description="Artwork Page" />
     <siteMapNode url="ArtistDisplay.aspx" title="Artist" description="Artist Page" />
@@ -24,6 +25,7 @@
 
     <siteMapNode url="UserProfile.aspx" title="User Profile" description="User Profile Page" />
     <siteMapNode url="Cart.aspx" title="Cart" description="Cart Page" />
+    <siteMapNode url="Wishlist.aspx" title="Wishlist" description="Wishlist Page" />
     <siteMapNode url="PurchaseHistory.aspx" title="Purchase History" description="Purchase History Page" />
     
 
@@ -40,7 +42,6 @@
       <siteMapNode url ="~/Artist/AddGallery.aspx" title="Add Gallery" description="Add Gallery" />
       <siteMapNode url ="~/Artist/EditGallery.aspx" title="Edit Gallery" description="Edit Gallery"  />
       <siteMapNode url ="~/Artist/UpdateGallery.aspx" title="Update Gallery" description="Update Gallery" />
-      <siteMapNode url ="~/Artist/DeleteGallery.aspx" title="Delete Gallery" description="Delete Gallery" />
       <siteMapNode url ="~/Artist/AddArtwork.aspx" title="Add Artwork" description="Add Artwork" />
       <siteMapNode url ="~/Artist/EditArtwork.aspx" title="Edit Artwork" description="Edit Artwork" />
       <siteMapNode url ="~/Artist/UpdateArtwork.aspx" title="Update Artwork" description="Update Artwork" />

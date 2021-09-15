@@ -88,21 +88,41 @@ namespace Ertist
                 con = new SqlConnection(strCon);
                 con.Open();
 
-                string sqlInsert = "INSERT INTO Wishlist (artworkID, userID) VALUES(@artworkID, @userID)";
-
-                SqlCommand cmd = new SqlCommand(sqlInsert, con);
-
-                //insert            
-
+                string sqlFind = "SELECT * FROM WISHLIST WHERE artworkID = @artworkID AND userID = @userID";
+                SqlCommand cmd = new SqlCommand(sqlFind, con);
                 cmd.Parameters.AddWithValue("@artworkID", artworkID);
                 cmd.Parameters.AddWithValue("@userID", userid);
+                //select use the execute reader
+                SqlDataReader dr = cmd.ExecuteReader();
+                Boolean found = false;
 
-                //add the rest
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Artwork Added');", true);
-                cmd.ExecuteNonQuery();
+                //data binding
+                if (dr.Read())
+                {
+                   found = true;
+                   ClientScript.RegisterStartupScript(GetType(), "alert", "alert('This artwork is already in the wishlist.');", true);
+                }
+
                 con.Close();
+                dr.Close();
 
-                //Response.Redirect("Wishlist.aspx");
+                if(!found)
+                {
+                    con.Open();
+                    string sqlInsert = "INSERT INTO Wishlist (artworkID, userID) VALUES(@artworkID, @userID)";
+
+                        SqlCommand cmd2 = new SqlCommand(sqlInsert, con);
+
+                        //insert     
+                        cmd2.Parameters.AddWithValue("@artworkID", artworkID);
+                        cmd2.Parameters.AddWithValue("@userID", userid);
+
+                        //add the rest
+                        ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Artwork Added');", true);
+                        cmd2.ExecuteNonQuery();
+                        con.Close();
+                        //Response.Redirect("Wishlist.aspx");
+                }
             }
             else
             {
