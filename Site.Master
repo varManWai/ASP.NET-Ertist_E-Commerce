@@ -145,8 +145,7 @@
                             else
                             { %>
 
-                        <!-- <asp:LoginView ID="LoginView1" runat="server">
-                            <LoggedInTemplate> -->
+                       
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -195,28 +194,11 @@
                                         OnLoggingOut="MasterLoginStatus_LoggingOut" />
                                 </li>
                             </ul>
-                            <%--</ul>--%>
                         </div>
-                        <%--<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" SiteMapProvider="Sitemap" />
-                                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
-                                    <LevelMenuItemStyles>
-                                        <asp:MenuItemStyle CssClass="dropdown-item" />
-                                        <asp:MenuItemStyle CssClass="dropdown-item" />
-                                    </LevelMenuItemStyles>
-                                </asp:Menu>--%>
-
-                        <%--<div class="cart_button_section logout_user" style="background-color: #ca3f49; border-radius: 10px">--%>
-                        <%--<i class="glyphicon glyphicon-remove">--%>
-                        <%-- <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect"
-                                LogoutPageUrl="~/Login.aspx" Style="padding: 10px 40px; background-color: transparent; height: 60px; width: 100%; max-width: 300px; display: flex; justify-content: center; align-items: center; border-radius: 10px; text-decoration: none; font-size: clamp(12px,1.5vw,15px); color: white; font-weight: 700; letter-spacing: 1px;"
-                                OnLoggingOut="MasterLoginStatus_LoggingOut" />--%>
-                        <%--</i>--%>
-                        <%--</div>--%>
-
-
-                        <!-- </LoggedInTemplate>
-                        </asp:LoginView>-->
                         <% } %>
+
+                       
+                        
                     </div>
                 </div>
 

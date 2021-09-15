@@ -32,11 +32,6 @@
             else
             {
         %>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server"></asp:SqlDataSource>
-        <asp:Repeater ID="Repeater4" DataSourceID="SqlDataSource3" runat="server"> <ItemTemplate> 
-
-
-
 
         <div class="cart_all">
             <div class="artwork_container_all">
@@ -46,9 +41,6 @@
 
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
-                        <% if (Eval("name") != null)
-                            {
-                        %>
                         <div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="">
@@ -68,15 +60,6 @@
                                 </div>
                             </div>
                         </div>
-                        <% }
-                            else
-                            { %>
-
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <div style="font-size: 50px; padding-top: 50px">Please login first</div>
-                        </div>
-
-                        <%} %>
                     </ItemTemplate>
                 </asp:Repeater>
 
@@ -99,8 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="summary_each_price">
-                                    $<%# Eval("price") %>
-                                </div>
+                                    $<%# Eval("price") %></div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -123,14 +105,12 @@
                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
 
-
-
+                           
+                            
                             <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
-                                Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span>
-                            </div>
+                                Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span></div>
                             <div style="display: flex; flex-direction: row; justify-content: space-between; font-weight: 700; border-top: 2px grey solid; margin-top: 10px; padding: 10px 0px">
-                                Total: <span style="padding-right: 10px; color: black; font-weight: 700;">$<%# getTotal(Eval("Expr1"))  %></span>
-                            </div>
+                                Total: <span style="padding-right: 10px; color: black; font-weight: 700;">$<%# getTotal(Eval("Expr1"))  %></span></div>
 
                         </ItemTemplate>
                     </asp:Repeater>
@@ -141,7 +121,7 @@
                 </div>
             </aside>
     </section>
-            </ItemTemplate></asp:Repeater>
+
     <%}
     %>
 </asp:Content>

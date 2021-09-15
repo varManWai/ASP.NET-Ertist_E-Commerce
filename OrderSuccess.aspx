@@ -15,7 +15,7 @@
     </asp:SqlDataSource>
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
-            <div style="">
+            <div style="display:none">
                 <asp:Label ID="Label1" runat="server" Text="Label"><%# Eval("artworkID") %></asp:Label>
             </div>
 
