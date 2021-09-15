@@ -17,13 +17,12 @@ namespace Ertist
 
         protected void BtnSend_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string email = txtFrom.Text.Trim();
             MailMessage message = new MailMessage();
-            message.From = new MailAddress(email, name);
+            message.From = new MailAddress("ertist@mail.com");
             message.Subject = txtSubjext.Text;
-            message.Body = txtBody.Text;
-            message.To.Add(new MailAddress("lohxy-wm19@student.tarc.edu.my", "ERTIST"));
+
+            message.Body = "Sender Name: " + txtName.Text + "\nSender Email: " + txtFrom.Text.Trim() + "\nBody: " + txtBody.Text;
+            message.To.Add(new MailAddress("laizoke98@gmail.com", "ERTIST"));
             SmtpClient mySmtpClient = new SmtpClient();
             mySmtpClient.Timeout = 30000;
             try
