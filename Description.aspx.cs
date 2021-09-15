@@ -92,8 +92,7 @@ namespace Ertist
                 SqlCommand cmd = new SqlCommand(sqlFind, con);
                 cmd.Parameters.AddWithValue("@artworkID", artworkID);
                 cmd.Parameters.AddWithValue("@userID", userid);
-                //select use the execute reader
-                SqlDataReader dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader(); 
                 Boolean found = false;
 
                 //data binding
@@ -145,27 +144,39 @@ namespace Ertist
                 con = new SqlConnection(strCon);
                 con.Open();
 
+                string sqlFind = "SELECT * FROM Cart WHERE artworkID = @artworkID AND userID = @userID";
+                SqlCommand cmd = new SqlCommand(sqlFind, con);
+                cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                cmd.Parameters.AddWithValue("@userID", userid);
+                SqlDataReader dr = cmd.ExecuteReader();
+                Boolean availability = true;
+                Boolean found = false;
+                
                 if (temp.Equals("Not Available"))
                 {
-                    
+                    availability = false;
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('This artwork is not available');", true);
                 }
-                else
+                else if (dr.Read())
                 {
+                    found = true;
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('This artwork is already in the cart.');", true);
+                }
+
+                con.Close();
+                dr.Close();
+
+                if (!found && availability){
+                    con.Open();
                     string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
 
-                    SqlCommand cmd = new SqlCommand(sqlInsert, con);
-                    cmd.Parameters.AddWithValue("@userID", userid);
-
-                    //insert            
-
-                    cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                    SqlCommand cmd2 = new SqlCommand(sqlInsert, con);
+                    cmd2.Parameters.AddWithValue("@userID", userid);    
+                    cmd2.Parameters.AddWithValue("@artworkID", artworkID);
 
                     //add the rest
-
-                    
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Artwork Added');", true);
-                    cmd.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
                     con.Close();
                 }
 
