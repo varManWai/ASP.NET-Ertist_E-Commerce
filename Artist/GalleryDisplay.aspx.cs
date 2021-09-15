@@ -18,7 +18,7 @@ namespace Ertist
             string sqlSelect = "SELECT [name], [cover], [galleryID] FROM [Gallery] WHERE userID = @userid";
             SqlCommand cmd = new SqlCommand(sqlSelect, con);
 
-            int userid = ( int ) Session["UserID"];
+            int userid = Convert.ToInt32(Session["UserID"]);
 
             con. Open ();
 

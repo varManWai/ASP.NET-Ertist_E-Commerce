@@ -28,7 +28,7 @@ namespace Ertist
                 SqlConnection con = new SqlConnection(strCon);
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@artworkID", artworkID);
-             
+
 
                 //open the connection
                 con.Open();
@@ -64,7 +64,7 @@ namespace Ertist
                     lblStatus.Text = (string)dr["available"];
                     lblHeight.Text = Convert.ToString(dr["height"]);
                     lblWidth.Text = Convert.ToString(dr["width"]);
-                    hplArtist.Text = (string)dr["username"];                  
+                    hplArtist.Text = (string)dr["username"];
                     hplArtist.NavigateUrl = "~/ClientArtistProfile.aspx?artistID=" + Convert.ToString(dr["UserID"]);
                     //lblArtist.Text = (string)dr["username"];
                 }
@@ -72,13 +72,13 @@ namespace Ertist
                 dr.Close();
                 con.Close();
 
-                
+
             }
         }
-        
+
         protected void btnAddWish_Click1(object sender, EventArgs e)
         {
-            if(Session["UserID"] != null)
+            if (Session["UserID"] != null)
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
                 string userid = Session["UserID"].ToString();
@@ -98,7 +98,7 @@ namespace Ertist
                 cmd.Parameters.AddWithValue("@userID", userid);
 
                 //add the rest
-
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Artwork Added');", true);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -109,7 +109,7 @@ namespace Ertist
                 string msg = "Please login to add artwork to wishlist.";
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + msg + "');", true);
             }
-            
+
         }
 
         protected void btnAddCart_Click(object sender, EventArgs e)
@@ -118,25 +118,37 @@ namespace Ertist
             {
                 string artworkID = Request.QueryString["artworkID"] ?? "";
                 string userid = Session["UserID"].ToString();
+                string temp = lblStatus.Text;
 
                 SqlConnection con;
                 string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
                 con = new SqlConnection(strCon);
                 con.Open();
 
-                string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
+                if (temp.Equals("Not Available"))
+                {
+                    
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('This artwork is not available');", true);
+                }
+                else
+                {
+                    string sqlInsert = "INSERT INTO Cart (artworkID, userID) VALUES(@artworkID, @userID)";
 
-                SqlCommand cmd = new SqlCommand(sqlInsert, con);
-                cmd.Parameters.AddWithValue("@userID", userid);
+                    SqlCommand cmd = new SqlCommand(sqlInsert, con);
+                    cmd.Parameters.AddWithValue("@userID", userid);
 
-                //insert            
+                    //insert            
 
-                cmd.Parameters.AddWithValue("@artworkID", artworkID);
+                    cmd.Parameters.AddWithValue("@artworkID", artworkID);
 
-                //add the rest
+                    //add the rest
 
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Artwork Added');", true);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+
             }
             else
             {
@@ -146,5 +158,5 @@ namespace Ertist
 
         }
     }
- 
+
 }
