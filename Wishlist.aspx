@@ -18,7 +18,7 @@
         <div class="cart_all">
             <div class="artwork_container_all">
                 <div class="total_artwork_cart">
-                    <span>Artwroks in Wishlist</span>
+                    <span>Artworks in Wishlist</span>
                 </div>
 
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
