@@ -18,18 +18,18 @@
                     <div class="address">
                         <span>Address</span>
                     </div>
-                    <div class="address_container">
+                    <div class="address_container" style="display:flex">
 
-                        <div class="address_dropdownlist">
+                        <div class="address_dropdownlist" Style="height:47px !important;position:relative;bottom:10px;background-color:white;text-decoration:none;color:black;padding-top:30px;">
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT addressID, addressName, userID FROM Address WHERE (userID = @UserID)">
                                 <SelectParameters>
                                     <asp:SessionParameter Name="UserID" SessionField="UserID" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
-                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="addressName" DataValueField="addressName"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="addressName" DataValueField="addressName" Style="font-size:18px;display:flex;align-items:flex-end;justify-content:flex-end;height:47px;width:736px !important ;padding-top:10px;padding-bottom:10px;text-align:center;background-color:transparent;text-decoration:none;color:black;display:block;"></asp:DropDownList>
                         </div>
                         <div class="address_detail">
-                            <a href="./AddAddress.aspx">Add Address</a>
+                            <a href="./AddAddress.aspx" style="width:100%;padding-top:10px;padding-bottom:10px;text-align:center;background-color:#ca3f49;text-decoration:none;color:white;display:block;">Add Address</a>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                                     <div class="artwork_image">
                                         <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
-                                    <div class="artwork_details" style="width:614px;">
+                                    <div class="artwork_details" style="width: 614px;">
                                         <span class="artwor_details_name">Name of the Artwork</span>
                                         <div class="artist">
                                             <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
@@ -58,7 +58,8 @@
                                             <%# Eval("description") %>
                                         </div>
                                         <div class="price_remove">
-                                            <span class="price">$<%# Eval("price") %></span></div>
+                                            <span class="price">$<%# Eval("price") %></span>
+                                        </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -85,13 +86,16 @@
                                         </div>
                                     </div>
                                     <div class="summary_each_price">
-                                        $<%# Eval("price") %></div>
+                                        $<%# Eval("price") %>
+                                    </div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
-                    <div class="total_price">
-
+                    <div class="total_price" style="display:flex;flex-direction:column;border-top:2px grey solid;margin-top:20px">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                            Shipping Fee: <span style="padding-right: 10px; font-size: 18px; color: black; font-weight: 500; text-align: right;">$4.99</span>
+                        </div>
                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
                             <SelectParameters>
                                 <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
@@ -99,8 +103,12 @@
                         </asp:SqlDataSource>
                         <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
-                                <div>
-                                    Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span></div>
+                                <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                                    Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span>
+                                </div>
+                                <div style="display: flex; flex-direction: row; justify-content: space-between; font-weight: 700;border-top:2px grey solid;margin-top:10px;padding:10px 0px">
+                                    Total: <span style="padding-right: 10px; color: black; font-weight: 700;">$<%# Eval("Expr1") %></span>
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>

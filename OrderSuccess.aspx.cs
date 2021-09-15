@@ -110,7 +110,7 @@ namespace Ertist
 
 
             //Fetching Email Body Text from EmailTemplate File.  
-            string FilePath = "C:\\Users\\USER\\source\\repos\\XinyiLoh\\Ertist\\Email.html";
+            string FilePath = ".\\Email.html";
             StreamReader str = new StreamReader(FilePath);
             string MailText = str.ReadToEnd();
             str.Close();
@@ -118,8 +118,8 @@ namespace Ertist
             //Repalce [newusername] = signup user name   
             MailText = MailText.Replace("[Username]", Convert.ToString(Session["username"]));
 
-            MailText = MailText.Replace("[orderID]", Convert.ToString(Session["email"]));
-            MailText = MailText.Replace("[orderDate]", Convert.ToString(Session["email"]));
+            MailText = MailText.Replace("[orderID]", Convert.ToString(Session["orderID"]));
+            MailText = MailText.Replace("[orderDate]", Convert.ToString(Session["orderDate"]));
 
             MailText = MailText.Replace("[Total]", "$" + (Convert.ToDouble(Session["payment"]) + 4.99));
 

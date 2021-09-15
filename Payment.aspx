@@ -17,7 +17,7 @@
                         <span>Address</span>
                     </div>
                     <div class="address_container">
-                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT addressID, addressName, userID, address FROM Address WHERE (userID = @UserID) AND (addressName = @addressName)">
+                        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT * FROM Address WHERE (userID = @UserID) AND (addressName = @addressName)">
                             <SelectParameters>
                                 <asp:SessionParameter Name="UserID" SessionField="UserID" />
 
@@ -34,7 +34,7 @@
                                     <asp:Label ID="lblAddressName" runat="server" Text=""> <%# Eval("addressName") %></asp:Label>
                                 </div>
                                 <div class="address_detail">
-                                    <asp:Label ID="lblAddress" runat="server" Text=""> <%# Eval("address") %></asp:Label>
+                                    <asp:Label ID="lblAddress" runat="server" Text=""> <%# Eval("address")%> &nbsp<%# Eval("postcode") %> &nbsp<%# Eval("state")%>&nbsp <%# Eval("city")%> </asp:Label>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -140,6 +140,7 @@
 
 
     <script>
+
         const total = <%= Session["payment"].ToString() %>
 
             console.log(total);

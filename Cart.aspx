@@ -24,13 +24,13 @@
                     <span>Artwroks in Cart</span>
                 </div>
 
-                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" >
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
                     <ItemTemplate>
                         <div class="artwork_container">
                             <div class="artwork_image">
                                 <img src="<%# GetImage(Eval("picture")) %>" alt="">
                             </div>
-                            <div class="artwork_details" style="width:614px;height:302px;">
+                            <div class="artwork_details" style="width: 614px; height: 302px;">
                                 <span class="artwor_details_name"><%# Eval("name") %></span>
                                 <div class="artist">
                                     <img src="<%# GetImage(Eval("Expr1")) %>" alt="">
@@ -39,13 +39,13 @@
                                 <div class="artwork_description">
                                     <%# Eval("description") %>
                                 </div>
-                               
+
                                 <div class="price_remove">
-                                    <span class="price">$<%# Eval("price") %></span><asp:Button ID="btnRemove" runat="server"  CustomParameter='<%# Eval("cartID") %>' Text="Remove" Style="background-color: #ca3f49; outline: none; border: none; border-radius: 300px; width: 100%; max-width: 158px; height: 38px; color: white; font-size: clamp(10px, 1.5vw, 15px); margin-left: 20px; letter-spacing: 0.12em;" OnClick="btnRemove_Click" />
+                                    <span class="price">$<%# Eval("price") %></span><asp:Button ID="btnRemove" runat="server" CustomParameter='<%# Eval("cartID") %>' Text="Remove" Style="background-color: #ca3f49; outline: none; border: none; border-radius: 300px; width: 100%; max-width: 158px; height: 38px; color: white; font-size: clamp(10px, 1.5vw, 15px); margin-left: 20px; letter-spacing: 0.12em;" OnClick="btnRemove_Click" />
                                 </div>
                             </div>
                         </div>
-                     </ItemTemplate>
+                    </ItemTemplate>
                 </asp:Repeater>
 
             </div>
@@ -67,7 +67,8 @@
                                     </div>
                                 </div>
                                 <div class="summary_each_price">
-                                    $<%# Eval("price") %></div>
+                                    $<%# Eval("price") %>
+                                </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -77,11 +78,21 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
-                <div class="total_price">
+
+                <div class="total_price" style="display:flex;flex-direction:column;border-top:2px grey solid;margin-top:20px">
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;font-size:18px;">
+                        Shipping Fee: <span style="padding-right: 10px;font-size:18px;color:black;font-weight:500; text-align:right;" >$4.99</span>
+                    </div>
+
                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource2">
                         <ItemTemplate>
-                            <div>
-                                Total: <span style="padding-right: 10px">$<%# Eval("Expr1") %></span></div>
+                            <div style="display:flex;flex-direction:row;justify-content:space-between;font-size:18px;">
+                                Subtotal: <span style="padding-right: 10px;color:black;font-weight:500;font-size:18px;">$<%# Eval("Expr1") %></span>
+                            </div>
+                            <div style="display:flex;flex-direction:row;justify-content:space-between;font-weight:700;border-top:2px grey solid;margin-top:10px;padding:10px 0px">
+                                Total: <span style="padding-right: 10px;color:black;font-weight:700;">$<%# Eval("Expr1")  %></span>
+
+                            </div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>
