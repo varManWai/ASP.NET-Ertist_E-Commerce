@@ -23,9 +23,9 @@ namespace Ertist
                 if (this.Page.User.Identity.IsAuthenticated)
                 {
                     FormsAuthentication.SignOut();
-                    Session["UserID"] = null;
-                    Session["roles"] = null;
-                    Session.Remove("UserID");
+                    //Session["UserID"] = null;
+                    //Session["roles"] = null;
+                    //Session.Remove("UserID");
                     Session.RemoveAll();
                     Session.Abandon();
                     Session.Clear();
