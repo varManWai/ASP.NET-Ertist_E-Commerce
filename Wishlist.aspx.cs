@@ -8,64 +8,84 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
+using System.Web.Configuration;
+
+
 namespace Ertist
 {
     public partial class Wishlist : System.Web.UI.Page
     {
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        DataSet ds2;
+        string connectionString = WebConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+        SqlConnection cnn;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                LoadingDataToRepeater();
+            }
 
         }
 
-        public void wishlistFunction()
+        private void LoadingDataToRepeater()
         {
-            ////display image in repeater
-            //SqlConnection con;
-            //string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            //con = new SqlConnection(strCon);
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            try
+            {
+                string sql = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, [User].UserID, Wishlist.userID AS Expr2, Wishlist.artworkID AS Expr3, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID WHERE ([User].UserID = @userID)";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@userID", Session["UserID"]);
+                da = new SqlDataAdapter(cmd);
+                ds2 = new DataSet();
+                da.Fill(ds2);
 
-            ////open connection
-            //con.Open();
 
-
-
-
-
-
-            //string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = '20'";
-            //SqlCommand cmd = new SqlCommand(sqlSelect, con);
-            ////string userId = Session["UserID"].ToString();
-            ////cmd.Parameters.AddWithValue("@UserId", userId);
-            ////Response.Write(cmd);
-
-            //Repeater1.DataSource = cmd.ExecuteReader();
-            //Repeater1.DataBind();
-
-            //if (!string.IsNullOrEmpty(Session["UserID"] as string))
-            //{
-            //    int userId = (int) Session["UserID"];
-            //    string sqlSelect = "SELECT Artwork.artworkID, Artwork.name, Artwork.price, Artwork.description, Artwork.picture, [User].username, [User].picture AS Expr1, Wishlist.wishlistID FROM Artwork INNER JOIN Wishlist ON Artwork.artworkID = Wishlist.artworkID INNER JOIN [User] ON Wishlist.userID = [User].UserID AND [User].UserID = @userId";
-            //    SqlCommand cmd = new SqlCommand(sqlSelect, con);
+                Repeater2.DataSource = ds2;
+                Repeater2.DataBind();
 
 
 
-            //    cmd.Parameters.AddWithValue("@userId", userId);
-            //    Repeater1.DataSource = cmd.ExecuteReader();
-            //    Repeater1.DataBind();
-            //}
-            //Response.Write(cmd);
-
-
-
-
-
-
-
-
-            //close connection
-            //con.Close();
+                cmd.Dispose();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
         }
+
+        protected void rpt2_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
+            {
+                var hdfUserId = (HiddenField)e.Item.FindControl("hdfUserId");
+                var repeater3 = (Repeater)e.Item.FindControl("Repeater3");
+
+                string sql = "SELECT [User].picture, [User].username, Gallery.userID, [User].UserID AS Expr1, Artwork.galleryID, Artwork.artworkID FROM Gallery INNER JOIN [User] ON Gallery.userID = [User].UserID INNER JOIN Artwork ON Gallery.galleryID = Artwork.galleryID WHERE (Artwork.artworkID = @artworkID)";
+                cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@artworkID", Convert.ToInt32(hdfUserId.Value));
+
+
+                da = new SqlDataAdapter(cmd);
+                ds2 = new DataSet();
+                da.Fill(ds2);
+
+
+                repeater3.DataSource = ds2;
+                repeater3.DataBind();
+
+
+
+                cmd.Dispose();
+                cnn.Close();
+            }
+        }
+
+
 
         public string GetImage(object img)
         {
@@ -77,15 +97,15 @@ namespace Ertist
 
             Button btn = sender as Button;
             string wishlistID = btn.Attributes["CustomParameter"].ToString();
-            string sql = "DELETE from Wishlist where wishlistID = @wishlistID";
-            string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
-            SqlConnection con = new SqlConnection(strCon);
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@wishlistID", wishlistID);
+            string sql2 = "DELETE from Wishlist where wishlistID = @wishlistID";
+            string strCon2 = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
+            SqlConnection con2 = new SqlConnection(strCon2);
+            SqlCommand cmd2 = new SqlCommand(sql2, con2);
+            cmd2.Parameters.AddWithValue("@wishlistID", wishlistID);
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+            con2.Open();
+            cmd2.ExecuteNonQuery();
+            con2.Close();
             Response.Redirect("Wishlist.aspx");
 
 

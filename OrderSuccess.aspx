@@ -16,6 +16,7 @@
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
             <div style="display:none">
+                <%# Session["username"] = Eval("username")%>
                 <asp:Label ID="Label1" runat="server" Text="Label"><%# Eval("artworkID") %></asp:Label>
                 <asp:Label ID="Label3" runat="server" Text='<%# UpdateArtwork(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
             </div>
