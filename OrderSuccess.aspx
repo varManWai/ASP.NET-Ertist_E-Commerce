@@ -19,7 +19,7 @@
         </ItemTemplate>
     </asp:Repeater>
     
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT TOP (1) * FROM [Order] WHERE (userID = @userID)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ertistDB %>" SelectCommand="SELECT TOP (1) * FROM [Order] WHERE (userID = @userID) ORDER BY orderID DESC">
         <SelectParameters>
             <asp:SessionParameter Name="UserID" SessionField="UserID" />
         </SelectParameters>
@@ -27,7 +27,7 @@
     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
         <ItemTemplate>
             <%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
-             <%# Session["orderDate"] = Convert.ToInt32(Eval("date"))  %>
+             <%# Session["orderDate"] = (Eval("date"))  %>
         </ItemTemplate>
     </asp:Repeater>
     
@@ -36,7 +36,7 @@
         <ItemTemplate>
             <%# Session["artworkId"] = Convert.ToInt32(Eval("ArtworkID2")) %>
             <% insertOrderArtwork(Convert.ToInt32(Session["artworkId"])); %>
-            <% clearCart(Convert.ToInt32(Session["artworkId"])); %>
+           <%-- <% clearCart(Convert.ToInt32(Session["artworkId"])); %>--%>
         </ItemTemplate>
     </asp:Repeater>
 

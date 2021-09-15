@@ -110,7 +110,7 @@ namespace Ertist
 
 
             //Fetching Email Body Text from EmailTemplate File.  
-            string FilePath = ".\\Email.html";
+            string FilePath = HttpContext.Current.Request.MapPath("~/Email.html");
             StreamReader str = new StreamReader(FilePath);
             string MailText = str.ReadToEnd();
             str.Close();

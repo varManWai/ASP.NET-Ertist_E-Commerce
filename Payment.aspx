@@ -56,7 +56,6 @@
                             <ItemTemplate>
                                 <div style="display: none">
                                     <%# Session["email"] = Eval("email") %>
-                                    <%# Session["username"] = Eval("username") %>
                                 </div>
 
                                 <div class="artwork_container">
@@ -64,10 +63,10 @@
                                         <img src="<%# GetImage(Eval("picture2")) %>" alt="An Artwork Picture">
                                     </div>
                                     <div class="artwork_details" style="width: 614px;">
-                                        <span class="artwor_details_name">Name of the Artwork</span>
+                                        <span class="artwor_details_name"><%# Eval("name") %></span>
                                         <div class="artist">
                                             <img src="<%# GetImage(Eval("picture")) %>" alt="An Artist Picture">
-                                            <span><%# Eval("name") %></span>
+                                            <span><%# Session["username"] = Eval("username") %></span>
                                         </div>
                                         <div class="artwork_description">
                                             <%# Eval("description") %>
