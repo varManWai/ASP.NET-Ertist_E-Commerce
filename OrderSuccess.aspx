@@ -15,9 +15,13 @@
     </asp:SqlDataSource>
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
-            <div style="display: none"><%# Session["artworkId"] = Convert.ToInt32(Eval("artworkID")) %></div>
+            <div style="display:none">
+                <asp:Label ID="Label1" runat="server" Text="Label"><%# Eval("artworkID") %></asp:Label>
+            </div>
 
-            <% UpdateArtwork(Convert.ToInt32(Session["artworkId"])); %>
+           <asp:Label ID="Label3" runat="server" Text='<%# UpdateArtwork(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
+
+           
         </ItemTemplate>
     </asp:Repeater>
 
@@ -28,9 +32,10 @@
     </asp:SqlDataSource>
     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
         <ItemTemplate>
-            <div style="display: none"><%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
-
-            <%# Session["orderDate"] = (Eval("date"))  %></div>
+            <div style="display: none">
+                <%# Session["orderId"] = Convert.ToInt32(Eval("orderID"))  %>
+                <%# Session["orderDate"] = (Eval("date"))  %>
+            </div>
         </ItemTemplate>
     </asp:Repeater>
 
@@ -38,13 +43,18 @@
     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="SqlDataSource1">
         <ItemTemplate>
             <div style="display: none">
-                <%# Session["artworkId2"] = Convert.ToInt32(Eval("artworkID")) %>
+                <asp:Label ID="Label2" runat="server" Text='<%# insertOrderArtwork(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
+             <asp:Label ID="Label3" runat="server" Text='<%# clearCart(Convert.ToInt32(Eval("artworkID"))) %>'></asp:Label>
             </div>
+            
+          
+            
 
-            <% insertOrderArtwork(Convert.ToInt32(Session["artworkId2"])); %>
-            <% clearCart(Convert.ToInt32(Session["artworkId2"])); %>
+          
+           
+            
         </ItemTemplate>
     </asp:Repeater>
 
-
+    <% sendEmail(); %>
 </asp:Content>

@@ -22,6 +22,18 @@ namespace Ertist
             return "data:image/jpg;base64," + Convert.ToBase64String((byte[])img);
         }
 
+        public Double getTotal(object data)
+        {
+            try
+            {
+                return (Convert.ToDouble(data) + 4.99);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             try

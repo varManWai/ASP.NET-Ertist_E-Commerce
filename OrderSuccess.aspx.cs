@@ -16,16 +16,18 @@ namespace Ertist
 {
     public partial class OrderSuccess : System.Web.UI.Page
     {
+        public static int int1 = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!IsPostBack)
             {
                 insertOrder();
-                sendEmail();
+                
             }
         }
-        public void UpdateArtwork(int productId)
+        public int UpdateArtwork(int productId)
         {
 
             string sql = @"UPDATE Artwork SET available = @available, stock = @stock FROM ARTWORK where artworkID = @artworkID";
@@ -41,7 +43,7 @@ namespace Ertist
             cmd.ExecuteNonQuery();
             con.Close();
 
-
+            return 1;
 
         }
 
@@ -64,25 +66,30 @@ namespace Ertist
         }
 
         
+        public static int getId(object data)
+        {
 
+            return Convert.ToInt32(data);
+        }
 
-        public void clearCart(int artworkId)
+        public int clearCart(int artworkId)
         {
             string sql = @"DELETE FROM Cart Where artworkID = @artworkID AND userID = @userID";
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
             SqlConnection con = new SqlConnection(strCon);
             SqlCommand cmd = new SqlCommand(sql, con);
 
-            cmd.Parameters.AddWithValue("@artworkID", Session["artworkId"]);
+            cmd.Parameters.AddWithValue("@artworkID", artworkId);
             cmd.Parameters.AddWithValue("@userID", Session["userID"]);
 
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+            return 1;
         }
 
 
-        public void insertOrderArtwork(int artworkID)
+        public int insertOrderArtwork(int artworkID)
         {
             string sql = @"INSERT INTO Order_Artwork(orderID, artworkID) VALUES (@orderID, @artworkID)";
             string strCon = ConfigurationManager.ConnectionStrings["ertistDB"].ConnectionString;
@@ -97,6 +104,7 @@ namespace Ertist
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+            return 1;
         }
 
         public void sendEmail()

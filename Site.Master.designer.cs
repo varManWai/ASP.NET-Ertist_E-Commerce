@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ertist {
+namespace Ertist
+{
 
 
-    public partial class SiteMaster {
+    public partial class SiteMaster
+    {
 
         /// <summary>
         /// TxtSearch1 control.
@@ -31,13 +33,49 @@ namespace Ertist {
         protected global::System.Web.UI.WebControls.ImageButton BtnSearch1;
 
         /// <summary>
-        /// LoginView1 control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Rpt1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Rpt1;
+
+        /// <summary>
+        /// UserImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image UserImage;
+
+        /// <summary>
+        /// LoginName1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+
+        /// <summary>
+        /// LoginStatus2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus2;
 
         /// <summary>
         /// TxtSearch2 control.

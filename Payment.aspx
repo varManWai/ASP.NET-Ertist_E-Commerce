@@ -122,7 +122,10 @@
 
 
                     </div>
-                    <div class="total_price">
+                    <div class="total_price" style="display: flex; flex-direction: column; border-top: 2px grey solid; margin-top: 20px">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                            Shipping Fee: <span style="padding-right: 10px; font-size: 18px; color: black; font-weight: 500; text-align: right;">$4.99</span>
+                        </div>
                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString='<%$ ConnectionStrings:ertistDB %>' SelectCommand="SELECT SUM(Artwork.price) AS Expr1 FROM Artwork INNER JOIN Cart ON Artwork.artworkID = Cart.artworkID INNER JOIN [User] ON Cart.userID = [User].UserID WHERE ([User].UserID = @userID)">
                             <SelectParameters>
                                 <asp:SessionParameter SessionField="UserID" Name="userID"></asp:SessionParameter>
@@ -130,8 +133,10 @@
                         </asp:SqlDataSource>
                         <asp:Repeater ID="Repeater3" DataSourceID="SqlDataSource4" runat="server">
                             <ItemTemplate>
-                                <div>
-                                    Total: <span style="padding-right: 10px">$<%# Session["payment"] = Eval("Expr1") %></span></div>
+                                <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 18px;">
+                                    Subtotal: <span style="padding-right: 10px; color: black; font-weight: 500; font-size: 18px;">$<%# Eval("Expr1") %></span></div>
+                                <div style="display: flex; flex-direction: row; justify-content: space-between; font-weight: 700; border-top: 2px grey solid; margin-top: 10px; padding: 10px 0px">
+                                     Total: <span style="padding-right: 10px; color: black; font-weight: 700;">$<%# Session["payment"] = getTotal(Eval("Expr1"))  %></span></div>
                             </ItemTemplate>
                         </asp:Repeater>
 
