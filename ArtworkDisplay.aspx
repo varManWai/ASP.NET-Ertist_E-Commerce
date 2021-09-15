@@ -109,11 +109,14 @@
         font-size: clamp(26px,4vw,36px);
         }
 
+        .no-results{
+            text-align:center;
+            color:black
+        }
+
     </style>
     <br />
-    <div class="page_header">
-      <h1>Artwork </h1>
-    </div>
+    
     <section class="filters-primary">
         <div class="filter-row">
             <div class="filter-title"><p class="content">Filter</p></div>
@@ -170,6 +173,9 @@
             </div>
         </div>
         </section>
+    <div class="page_header">
+      <h1>Artwork</h1>
+    </div>
     <div style="width: 100%; max-width: 1366px; margin: auto; padding: 70px;">
         <div class="row">
             <asp:Repeater ID="Repeater1" runat="server">
@@ -205,6 +211,8 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+
+            <h3 class="no-results"><asp:Label ID="lblNotFound" runat="server"></asp:Label></h3>
         </div>
         <div id="paging" style="margin-left: 5px; font-size: 0.4cm; font-weight: bold; color: #ca3f49; padding: 15px; border-radius: 3px; text-align: center;" runat="server">
         </div>

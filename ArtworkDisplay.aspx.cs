@@ -222,6 +222,10 @@ namespace Ertist
                 count = ( int )cmdSearch.ExecuteScalar ();
                 con.Close ();
 
+                if (count == 0) {
+                    lblNotFound.Text = "No Artwork Found.";
+                }
+
             }
         }
     }

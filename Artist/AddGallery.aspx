@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddGallery.aspx.cs" Inherits="Ertist.AddGallery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/GalleryCRUD.css" rel="stylesheet" />
-    <link href="css/button.css" rel="stylesheet" />
+    <link href="../css/GalleryCRUD.css" rel="stylesheet" />
 
     <style>        
         .auto-style3 {
@@ -14,9 +13,9 @@
         }
     </style>
 
-    <div style="font-size:14px; padding:2%; margin-left:32%;" class="container" >
+    <div style="font-size:14px; padding:2%" class="container" >
             <div class="title-container">
-                <h3>Add Gallery</h3><br />
+                <h3 class="text-center">Add Gallery</h3><br />
             </div>
             <table class="gal-table">
                 <tr>
@@ -40,7 +39,6 @@
                         <asp:Label ID="lblErr" runat="server" Text="" CssClass="gal-err-lbl"></asp:Label>
                     </td>--%>
                 </tr>
-                    
         </table>
 
            <div class="gal-con-btn-container">

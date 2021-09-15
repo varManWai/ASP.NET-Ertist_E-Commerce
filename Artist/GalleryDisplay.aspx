@@ -35,7 +35,7 @@
                             <ItemTemplate>
                                 <div class="gal-column">
                                 <div class="gal-card">
-                                    <a href="../ArtistArtwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>"><img src="<%# GetImage(Eval("cover")) %>" class="rounded"></a>
+                                    <a href="../ClientArtistArtwork.aspx?galleryID=<%# DataBinder.Eval(Container.DataItem, "galleryID") %>"><img src="<%# GetImage(Eval("cover")) %>" class="rounded"></a>
                                     <h3><asp:Label ID="lblName" runat="server"><%# Eval("name") %></asp:Label></h3>
                                 </div>
                                 </div>

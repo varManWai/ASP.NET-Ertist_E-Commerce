@@ -26,6 +26,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/Filter.css">
 
     <style>
         body {
@@ -99,10 +100,9 @@
                     </div>
                     <div class="navbar_upper_button">
                         <div class="form">
-                            <asp:TextBox ID="TxtSearch1" runat="server" CssClass="search_input" placeholder="Search"></asp:TextBox>
-                            <asp:ImageButton ID="BtnSearch1" runat="server" ImageUrl="./Image/search.svg" />
+                            <asp:TextBox ID="TxtSearch1" runat="server" CssClass="search_input" placeholder="Search" onkeydown = "return (event.keyCode!=13);"></asp:TextBox>
+                            <asp:ImageButton ID="BtnSearch1" runat="server" ImageUrl="./Image/search.svg" OnClick="BtnSearch1_Click" />
                         </div>
-
 
                         <div class="cart_button_section">
                             <a href="./Cart.aspx" class="cart_button">
@@ -298,7 +298,7 @@
                 <div class="navbar_lower_all">
                     <div class="form">
                         <asp:TextBox ID="TxtSearch2" runat="server" CssClass="search_input" placeholder="Search"></asp:TextBox>
-                        <asp:ImageButton ID="btnSearch2" runat="server" ImageUrl="./Image/search.svg" />
+                        <asp:ImageButton ID="btnSearch2" runat="server" ImageUrl="./Image/search.svg"/>
                     </div>
                 </div>
 

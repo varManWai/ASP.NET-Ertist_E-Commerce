@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditGallery.aspx.cs" Inherits="Ertist.EditGallery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/GalleryCRUD.css" rel="stylesheet" />
+    <link href="../css/GalleryCRUD.css" rel="stylesheet" />
     <!---Display Images-->           
     <div style="padding: 5%;">
         <div>
@@ -20,7 +20,6 @@
             BorderStyle="None" BorderWidth="1px" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="name" HeaderText="Gallery Name" SortExpression="name" />
                 <asp:TemplateField HeaderText="Cover Photo">
                     <ItemTemplate>

@@ -40,9 +40,7 @@
 
     </style>
 
-   <div class="page_header">
-       <h1>Artist</h1>
-   </div>
+   
     <section class="filters-primary">
         <div class="filter-row">
             <div class="filter-title"><p class="content">Filter</p></div>
@@ -86,6 +84,9 @@
             </div>
         </div>
         </section>
+    <div class="page_header">
+       <h1>Artist</h1>
+   </div>
     <!-- Page Content -->
     <div class="container" style="margin-top:5%">
 
