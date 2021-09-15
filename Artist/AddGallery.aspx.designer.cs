@@ -7,12 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ertist
-{
+namespace Ertist {
 
 
-    public partial class AddGallery
-    {
+    public partial class AddGallery {
+
+        /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
 
         /// <summary>
         /// txtGalName control.
@@ -24,6 +31,24 @@ namespace Ertist
         protected global::System.Web.UI.WebControls.TextBox txtGalName;
 
         /// <summary>
+        /// rfvtxtGalName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvtxtGalName;
+
+        /// <summary>
+        /// revtxtGalName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revtxtGalName;
+
+        /// <summary>
         /// imgUpload control.
         /// </summary>
         /// <remarks>
@@ -31,6 +56,24 @@ namespace Ertist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload imgUpload;
+
+        /// <summary>
+        /// rfvImgUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvImgUpload;
+
+        /// <summary>
+        /// revImgUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revImgUpload;
 
         /// <summary>
         /// btnAddGal control.

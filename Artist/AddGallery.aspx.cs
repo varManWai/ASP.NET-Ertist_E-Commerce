@@ -3,6 +3,7 @@ using System. Collections. Generic;
 using System. Configuration;
 using System. Data;
 using System. Data. SqlClient;
+using System.Drawing;
 using System. IO;
 using System. Linq;
 using System. Web;
@@ -60,6 +61,18 @@ namespace Ertist
         {
             //lblErr. Text = "";
             Response. Redirect ("EditGallery.aspx");
+        }
+
+        protected void CustomValidator1_ServerValidate (object source, ServerValidateEventArgs args) {
+
+            Bitmap bmIP = new Bitmap (imgUpload.PostedFile.InputStream);
+            if (bmIP.Width > 100 | bmIP.Height > 100) {
+                args.IsValid = false;
+            }
+            else {
+                args.IsValid = true;
+            }
+
         }
     }
 }
