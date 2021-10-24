@@ -17,6 +17,7 @@ This website is an e-commerce website that sells artworks posted by artists.
 * JavaScript
 * Bootstrap
 * SCSS
+* C#
 * ASP.NET
 * Paypal Sandbox API
 * MySql
